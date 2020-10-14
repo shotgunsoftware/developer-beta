@@ -44,12 +44,12 @@ Python API는 최신 인증서 사본을 제공하지만 2019년 2월 21일부�
 
 1. 툴킷 배포 방법에 따라 `tank core` 명령을 통해 최신 버전의 툴킷 API로 업그레이드하거나 파이프라인 구성의 `core/core_api.yml` 파일을 업데이트하는 방법으로 업그레이드합니다.
 
-2. [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](ttps://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem)에서 최신 인증서 목록을 다운로드합니다.
+2. [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem)에서 최신 인증서 목록을 다운로드합니다.
 
 3. `SHOTGUN_API_CACERTS`를 이 파일을 저장한 위치로 설정합니다. 하지만 툴킷은 Python API에서처럼 연결을 만들 때 `ca_certs` 매개변수 지정을 허용하지 않습니다.
 
 ### Python API 또는 툴킷을 업데이트할 수 없는 경우
 
-1. [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](ttps://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem)에서 최신 인증서 목록을 다운로드합니다.
+1. [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem)에서 최신 인증서 목록을 다운로드합니다.
 
 2. `SSL_CERT_FILE` 환경 변수를 이 파일을 저장한 위치로 설정합니다.

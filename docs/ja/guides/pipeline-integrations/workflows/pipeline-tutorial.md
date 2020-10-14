@@ -1,11 +1,11 @@
 ---
 layout: default
-title: パイプラインのチュートリアル
+title: アニメーション パイプラインのチュートリアル
 pagename: toolkit-pipeline-tutorial
 lang: ja
 ---
 
-# パイプラインのチュートリアル
+# アニメーション パイプラインのチュートリアル
 
 このチュートリアルは、アニメーションや視覚効果用のシンプルで一般的なパイプラインの作成について説明します。このチュートリアルに従うと、外観加工を介してモデリングのアセットをプロダクション シーンに転送するのに必要なすべての処理を提供するパイプラインを作成できます。
 
@@ -447,7 +447,7 @@ Loader アプリのレイアウトは作業ファイル アプリと似ていま
 
 ##### Shotgun 統合を再ロードする
 
-カスタマイズを試すには、Maya セッション内で統合を再ロードする必要があります。このためには、**[Shotgun] > [[タスク名]] > [Work Area Info...]**メニュー アクションをクリックします。
+カスタマイズを試すには、Maya セッション内で統合を再ロードする必要があります。このためには、**[Shotgun] > [タスク名] > [Work Area Info...]**メニュー アクションをクリックします。
 
 {% include figure src="./images/tutorial/image_30.png" %}
 
@@ -846,7 +846,7 @@ Shotgun でメディアをレビューする方法の詳細については、[�
 
 おめでとうございます。これで完了です。このチュートリアルが、Shotgun 統合を使用して独自のカスタム パイプラインを作成する際の第一歩になるはずです。スタジオ固有のニーズに合わせて既存の Shotgun アプリを拡張する方法について理解できたことでしょう。
 
-Toolkit に関する質問がある場合や、他のスタジオで Toolkit がどのように使用されているかを知りたい場合は、[shotgun-dev Google Group](https://groups.google.com/a/shotgunsoftware.com/forum/#!forum/shotgun-dev) にアクセスしてください。常に最新の投稿を読むことができるよう、サブスクライプすることをお勧めします。
+Toolkit に関する質問がある場合や、他のスタジオで Toolkit がどのように使用されているかを知りたい場合は、[shotgun-dev Google Group](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups&hl=ja#!forum/shotgun-dev) にアクセスしてください。常に最新の投稿を読むことができるよう、サブスクライプすることをお勧めします。
 
 機能やワークフローを既定の統合で実現できないと感じた場合は、独自のアプリをいつでも作成できます。初めてアプリを作成する場合は、[こちら](https://support.shotgunsoftware.com/hc/ja/articles/219033158)を参照してください。
 

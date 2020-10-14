@@ -23,11 +23,11 @@ Webhook 允许向您控制的服务通知 Shotgun 中发生的事件。当您创
 
 当动画团队完成工作后，为何不提前准备，更改同一镜头中下游任务的状态，以指示可以开始执行更多工作？这样，您就可以自动通知不同领域的指定艺术家一切都已准备就绪！
 
-另一个说明如何自动进行状态管理的示例是，在创建新的注释后触发任务状态更改。这是一种很好的方法，可以告知艺术家和制作团队，主管在审核会话后已请求更改或修复当前作品。
+另一个说明如何自动进行状态管理的示例是，在创建新的 `Note` 后触发 `Task` 实体状态更改。这是一种很好的方法，可以告知艺术家和制作团队，主管在审核会话后已请求更改或修复当前作品。
 
 ## 何时应使用 Webhook，而不是 Shotgun 事件进程？
 
-Webhook 和 [Shotgun 事件进程](https://github.com/shotgunsoftware/shotgunEvents/wiki)提供类似的功能，但存在一些关键区别。事件进程要求您运行、监视和维护自己的服务。您的所有代码都必须使用 Python 编写，并且允许您启动自己的 Shotgun 连接。相反，Webhook 会应答连接，并且可以使用任何编程语言编写。它们可以在无服务器环境中托管，例如 [AWS Lambda](https://aws.amazon.com/lambda/)，也可以触发任何在线提供的自动化平台，例如 [Zapier](https://zapier.com) 和 [IFTTT](https://ifttt.com)。如果您的用例用到 Webhook，这应该是首选解决方案。
+Webhook 和 [Shotgun 事件进程](https://github.com/shotgunsoftware/shotgunEvents/wiki)提供类似的功能，但存在一些关键区别。事件进程要求您运行、监视和维护自己的服务。您的所有代码都必须使用 Python 编写，并且允许您启动自己的 Shotgun 连接。相反，Webhook 会应答连接，并且可以使用任何编程语言编写。它们可以在无服务器环境中托管，例如 [AWS Lambda](https://aws.amazon.com/cn/lambda)，也可以触发任何在线提供的自动化平台，例如 [Zapier](https://zapier.com) 和 [IFTTT](https://ifttt.com)。如果您的用例用到 Webhook，这应该是首选解决方案。
 
 ## 创建 Webhook
 
@@ -55,7 +55,7 @@ Webhook 和 [Shotgun 事件进程](https://github.com/shotgunsoftware/shotgunEve
 
 下面使用 Python 举例说明如何验证有效负载的签名。
 
-```python
+```
 >>> import hmac
 >>> import hashlib
 >>> body | `<json body>'
@@ -169,7 +169,7 @@ True
 
 #### 确认有什么用途？
 
-确认允许在带外详细报告对 Webhook URL 已成功接收的交付的处理是成功还是失败。这使您可以将从 Shotgun 接收交付的状态与此次交付的关联事件处理成功还是失败分开。通过这种方式，成功交付的事件可以包含其他信息以用于调试。一个很好的示例是在创建资产时触发的 Webhook。如果该 Webhook 的职责是为每个新资产在磁盘上创建目录结构，则 Webhook URL 可以成功接收交付，但由于磁盘或网络故障无法创建关联的目录。然后它可以使用详细的错误消息更新交付记录，说明未创建目录结构及其原因。
+确认允许在带外详细报告对 Webhook URL 已成功接收的交付的处理是成功还是失败。这会将从 Shotgun 接收交付的状态与此次交付的关联事件处理成功还是失败分开。通过这种方式，成功交付的事件可以包含其他信息以用于调试。一个很好的示例是在创建 `Asset` 实体时触发的 Webhook。如果该 Webhook 的职责是为每个新 `Asset` 在磁盘上创建目录结构，则 Webhook URL 可以成功接收交付，但由于磁盘或网络故障无法创建关联的目录。然后它可以使用详细的错误消息更新交付记录，说明未创建目录结构及其原因。
 
 ## 测试 Webhook
 
@@ -196,4 +196,3 @@ webhook.site 服务存在严格的速率限制。这意味着，最后很容易�
 | 成功 | < 400 | 交付已接收并成功处理。 |
 | 错误 | >= 400 | 交付已接收，但未成功处理。 |
 | 重定向 | 3xx | 交付已接收，但应重定向到其他 URL。 |
-

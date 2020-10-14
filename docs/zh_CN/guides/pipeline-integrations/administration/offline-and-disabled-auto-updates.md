@@ -1,150 +1,139 @@
 ---
 layout: default
-title: Disabling auto updates and offline usage
+title: 脱机使用和禁用自动更新
 pagename: disabling-auto-updates-and-offline
 lang: zh_CN
 ---
 
-# Disabling auto updates and offline usage
+# 脱机使用和禁用自动更新
 
-## Auto updates
-### What parts auto update?
+- [自动更新](#auto-updates)
+   - [哪些部分会自动更新？](#what-parts-auto-update)
+   - [哪些部分不会自动更新？](#what-doesnt-auto-update)
+- [脱机运行集成](#running-the-integrations-offline)
+   - [初始设置](#initial-setup)
+   - [管理更新](#managing-updates)
+- [禁用自动更新](#disabling-auto-updates)
+   - [在项目级别或站点级别禁用更新](#disabling-updates-at-a-project-or-site-level)
+   - [针对除一个项目以外的其他所有项目禁用更新](#disabling-updates-for-all-but-one-project)
+   - [升级](#upgrading)
 
-By default Shotgun Desktop will automatically check for updates, and install them to the local machine if it finds any.
+## 自动更新
+### 哪些部分会自动更新？
 
-It checks for updates on two components:
+默认情况下，Shotgun Desktop 将自动检查更新，并在找到更新时将其安装到本地计算机。
 
-- `tk-framework-desktopstartup` - A frame work which aids the launch of Shotgun Desktop.
-- `tk-config-basic` - The default site config.
+它会检查两个组件的更新：
 
-The configuration acts as a manifest for the versions of the apps, engines, frameworks, and core version that should be used by Shotgun Desktop.
-By updating the config, you are potentially updating any of these components as well.
-Any updates that are found are downloaded and stored in the user's local cache, rather than modifying the original Shotgun Desktop installed files.
+- `tk-framework-desktopstartup` - 用于帮助启动 Shotgun Desktop 的框架。
+- `tk-config-basic` - 默认站点配置。
 
-Shotgun Create as an application has it's own update mechanism separate from Shotgun Desktop which is not covered here.
-However the integration features provided in Shotgun Create work in a similar way, and will also auto update `tk-config-basic` into the same user cache.
+该配置用作保存 Shotgun Desktop 应使用的应用、插件、框架和核心版本的清单文件。更新该配置也可能会更新其中的任何组件。找到的任何更新都将下载并存储在用户的本地缓存中，而不是修改原始的 Shotgun Desktop 安装文件。
 
-### What doesn't auto update?
+Shotgun Create 作为应用程序，具有与 Shotgun Desktop 不同的独立更新机制，此处未涵盖此内容。但是，Shotgun Create 中提供的集成功能以类似的方式工作，而且还会将 `tk-config-basic` 自动更新到同一用户缓存中。
 
-If you have taken over a site configuration, then it won't check for newer `tk-config-basic` updates but more on that further down.
-Also any projects that aren't using the default site configuration (I.e. a project where the Toolkit advanced setup wizard has been run on it.), will not have their configuration auto updated.
+### 哪些部分不会自动更新？
 
-### What if I can't or don't want to auto update?
+- 如果您已接管站点配置，则系统不会检查较新的 `tk-config-basic` 更新，相关详细信息[请见下文](#disabling-updates-at-a-project-or-site-level)。
 
-There are scenarios where you might want to run integrations in an environment where there is no connection to the internet or just have control when updates roll out.
-{% include info title="Note" content="If possible we recommend that you continue to allow auto updates to avoid missing out on new features and bug fixes." %}
+- 未使用默认站点配置的任何项目（即，对其运行了 Toolkit 高级设置向导的项目）的配置不会自动更新。
 
-The following sections describes how to address each of these scenarios.
+- 与 Shotgun Desktop 捆绑在一起的资源（如 Python 和 QT）不会自动更新。我们有时会在需要更新这些部分时发布新的 Shotgun Desktop 安装程序。
 
-- Offline Usage Scenarios
-- Disabling auto updates
+## 脱机运行集成
 
-## Running the integrations offline.
+### 初始设置
 
-### Initial Setup
+如果您的工作室 Internet 访问受限或无法访问 Internet，则需要确保在本地缓存所需的所有部分。您仍需要一台可以连接到 Internet 的计算机，以便下载 Shotgun Create 或 Shotgun Desktop。
 
-If your studio has restricted internet access or no internet access then you will need to ensure that you have all the required parts cached locally.
-You will still need one machine that can connect to the internet in order to download Shotgun Create or Shotgun Desktop.
+Shotgun Desktop 预先打包了运行基本集成所需的所有依存项。虽然 Shotgun Create 也捆绑了这些依存项，但您仍需按照[管理更新](#managing-updates)中提及的步骤进行操作。
 
-Shotgun Create and Shotgun Desktop come prepackaged with all the dependencies required to run the basic integrations.
-When you start either of them up, it will automatically try to look for updates, but if it cannot connect to the Shotgun App Store, it will simply run the most recent version that exists locally.
+启动任一项后，它将自动尝试查找更新，但如果无法连接到 Shotgun 应用商店，它将仅运行本地的最新版本。
 
-It is recommended that you follow the "Managing updates" steps bellow after installing Shotgun Desktop, as the components bundled with the installer may not be the latest.
+建议在安装 Shotgun Desktop 后，按照下面的[管理更新](#managing-updates)步骤操作，因为与安装程序捆绑在一起的组件可能不是最新组件。
 
-{% include info title="Note" content="Depending on your network setup, it can sometimes get stuck looking for updates online even though it won't be able to access them. 
-In this situation you can set the environment variable `SHOTGUN_DISABLE_APPSTORE_ACCESS` to `\"1\"` to stop it from trying." %}
+{% include info title="注意" content="根据您的网络设置情况，有时可能即使无法访问更新，也会一直尝试联机查找更新。
+在这种情况下，您可以将环境变量 `SHOTGUN_DISABLE_APPSTORE_ACCESS` 设置为 `\"1\"` 以阻止其尝试查找更新。" %}
 
-{% include info title="Note" content="You will still need to be able to connect to your Shotgun site. When we say offline we are talking about not being able to connect to our app store to download updates." %}
+{% include info title="注意" content="您仍然需要能够连接到 Shotgun 站点。我们所说的脱机是指无法连接到我们的应用商店来下载更新。" %}
 
-### Managing updates
+### 管理更新
 
-To update the `tk-framework-desktopstartup` component, you will need to [download the latest version](https://github.com/shotgunsoftware/tk-framework-desktopstartup/releases), and set the environment variable
-`SGTK_DESKTOP_STARTUP_LOCATION` to point to its location on disk.
+要更新 `tk-framework-desktopstartup` 组件，您需要[下载最新版本](https://github.com/shotgunsoftware/tk-framework-desktopstartup/releases)，并将环境变量 `SGTK_DESKTOP_STARTUP_LOCATION` 设置为指向其在磁盘上的位置（这仅适用于 Shotgun Desktop）。
 
-For the `tk-config-basic` component it's a bit more tricky, due to all its dependencies.
+对于 `tk-config-basic` 组件，由于它的所有依存项，情况有点棘手。
 
-1. Run Shotgun Desktop on a workstation connected to the internet. When it starts up, the latest upgrades will be automatically downloaded.
-(Ensure `SHOTGUN_DISABLE_APPSTORE_ACCESS` is not set on this machine.)
-2. Copy the bundle cache to a shared location where all machines can access it.
-3. Set the `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS` environment variable on offline machines to point to this location.
-4. When Desktop starts up on offline machines, they will pick up the latest upgrades that are available in the bundle cache.
+1. 在连接到 Internet 的工作站上运行 Shotgun Desktop 或 Shotgun Create。当它启动时，将会自动下载最新升级。（确保未在此计算机上设置 `SHOTGUN_DISABLE_APPSTORE_ACCESS`。）
+2. 将缓存复制到所有计算机都可以访问的共享位置。
+3. 在脱机计算机上设置 `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS` 环境变量以指向此位置。
+4. 在脱机计算机上启动 Shotgun Desktop 或 Shotgun Create 后，它们将选取缓存中可用的最新升级。
 
-{% include info title="Warning" content="Depending on your network setup, it can sometimes get stuck looking for updates online even though it won't be able to access them. 
-In this situation you can set the environment variable `SHOTGUN_DISABLE_APPSTORE_ACCESS` to `\"1\"` to stop it from trying." %}
+{% include info title="警告" content="根据您的网络设置情况，有时可能即使无法访问更新，也会一直尝试联机查找更新。
+在这种情况下，您可以将环境变量 `SHOTGUN_DISABLE_APPSTORE_ACCESS` 设置为 `\"1\"` 以阻止其尝试查找更新。" %}
 
-**CREATE does come with it's own bundled config, however it doesn't seem to have the engines, or atleast doesn't share them when launching Maya for example.**
+## 禁用自动更新
 
-## Disabling auto updates
+### 在项目级别或站点级别禁用更新
 
-### Disabling updates for a single project
+{% include info title="注意" content="如果可能，我们建议您继续允许自动更新，以免错过新功能和错误修复。" %}
 
-1. Determine the version you want to lock your project to. You can find the integration releases [here](https://support.shotgunsoftware.com/hc/en-us/sections/115000020494-Integrations).
-2. In Shotgun, create a Pipeline Configuration entity for the project you want to lock down, with the following fields populated (In this example, we are locking down the config to use v1.0.36 of the integrations):
-    - Name: `Primary`
-    - Project: The project you want to lock down
-    - Plugin ids: `basic.*`
-    - Descriptor: `sgtk:descriptor:app_store?name=tk-config-basic&version=v1.0.36`
-  ![Pipeline Configuration entity with a setup for a project with disabled updates.](images/offline-and-disabled-auto-updates/freeze_single_project.png)
- 
-3. Anyone starting Shotgun Desktop on the project will now always use `v1.0.36`. Any new users starting to work on the project will also get `v1.0.36`.
+要对集成禁用自动更新，请按照以下步骤操作。
 
-#### Good to know
+1. 确定要使用的版本。您可以在[此处](https://support.shotgunsoftware.com/hc/en-us/sections/115000020494-Integrations)查找集成版本。
+2. 在 Shotgun 中，在项目或全局页面上创建工作流配置实体，并填充以下字段（在此示例中，我们将配置锁定为使用集成 v1.0.36）：
 
-- The next time a user launches Desktop while connected to the Internet, `v1.0.36` of the basic config, and all of its related code, will be downloaded to their machine.
-- `basic.*` means that all plugins in the basic configuration will pick up this override. If, for example, you wanted to freeze the Nuke and Maya integrations only, you could specify `basic.maya`, `basic.nuke`.
-- To test, you can create a duplicate of this Pipeline Configuration entity, and add your username to the `User Restrictions` field. This will restrict the entity such that it's only available to you and won't impact other users. You can then launch Maya or some other software from this duplicate configuration and confirm that it’s running the expected integrations versions. 
+   1. 名称(Name)：`Primary`
+   2. 项目(Project)：如果希望对所有项目禁用更新，请保留为空；如果仅希望锁定单个项目，请选取特定项目。
+   3. 插件 ID(Plugin ids)：`basic.*`
+   4. 描述符(Descriptor)：`sgtk:descriptor:app_store?name=tk-config-basic&version=v1.0.36`
 
-#### Known issues
+   ![工作流配置实体（包含已禁用更新的项目的设置）。](images/offline-and-disabled-auto-updates/freeze-all-projects.jpg)
+3. 启动 Shotgun Desktop，如果将“项目”(Project)字段留空，则 Shotgun Desktop 将切换为使用此版本（如果尚未使用此版本）。
 
-- The Flame integration is namespaced `basic.flame`, and so is implied to be part of `basic.*`. 
-However, the Flame integration isn't actually included in the basic config. So, if you are using Flame for a project and implement this override, the Flame integration will stop working.
-The solution would be to create an additional Pipeline Configuration override specifically for flame:
-    - Name: `Primary`
-    - Project: The project you want to lock down (or None for all projects)
-    - Plugin ids: `basic.flame`
-    - Descriptor: `sgtk:descriptor:app_store?name=tk-config-flameplugin`
+   ![Shotgun Desktop 的“关于”(About)](images/offline-and-disabled-auto-updates/shotgun-desktop-about.png)
 
-### Disabling updates for all projects
+   如果设置项目，则只有该项目会受到影响，您在 Shotgun Desktop 的“关于”(About)窗口中看不到变化。
+4. [可选] 要锁定 `tk-framework-desktopstartup` 的版本，您需要[下载最新版本](https://github.com/shotgunsoftware/tk-framework-desktopstartup/releases)，并将环境变量 `SGTK_DESKTOP_STARTUP_LOCATION` 设置为指向其在磁盘上的位置（这仅适用于 Shotgun Desktop）。
 
-To disable updates for all your projects, you can follow the steps in the above example, but leave the `Project` field blank.
+大部分功能由配置控制（这可以按上述步骤锁定），但是，如“哪些部分会自动更新？”部分中所述，组件也会更新，并且与配置分开处理。这也仅适用于 Shotgun Desktop。
 
-With no override in the `Project` field, this Pipeline Configuration entity will apply to all projects, including the “site” project, i.e., the site configuration that is used by Desktop outside of any project.
+#### 补充知识
 
-![Pipeline Configuration entity with a setup for disabled updates on all projects.](images/offline-and-disabled-auto-updates/freeze_all_projects.jpg)
+- 您无需手动下载配置版本，Shotgun Desktop 会在启动或您进入项目时予以处理。
+- `basic.*` 表示基本配置中的所有插件都将选取此覆盖。例如，如果您想要仅冻结 Nuke 和 Maya 集成，可以指定 `basic.maya` 和 `basic.nuke`。
+- 要进行测试，您可以创建此工作流配置实体的副本，并将您的用户名添加到 `User Restrictions` 字段中。这将限制该实体，使其仅可供您使用，而不会影响其他用户。然后，您可以从此配置副本启动 Maya 或某些其他软件，并确认它运行的是预期的集成版本。
+- 将“项目”(Project)字段留空就是我们所说的站点配置。Shotgun Desktop 使用站点配置，因为它在项目外运行。在 Shotgun Desktop 中选择项目时，它也会加载项目配置。
 
-#### Good to know
+- Flame 集成的命名空间为 `basic.flame`，从表面上看应该包含在 `basic.*` 中。
+   但实际上 Flame 集成并不包含在基本配置中。因此，如果您在某个项目中使用 Flame，然后执行此覆盖，则 Flame 集成将停止工作。
+   解决方案是专门为 Flame 创建另一个工作流配置覆盖：
+   - 配置名称(Config Name)：`Primary`
+   - 项目(Project)：要锁定的项目（如果要锁定所有项目，则为空）
+   - 插件 ID(Plugin ids)：`basic.flame`
+   - 描述符(Descriptor)：`sgtk:descriptor:app_store?name=tk-config-flameplugin`
 
-If you lock down your entire site to use, for example, `v1.2.3`, you can still lock down an individual project to use another config (see "Disabling updates for all but one project" bellow).
+### 针对除一个项目以外的其他所有项目禁用更新
 
-#### Known issues
+如果您针对上述示例中提到的所有项目禁用了更新，但希望对特定项目启用更新
+您可以
 
-Flame would be affected by this. See the ‘Known Issues’ section of the above scenario for a solution.
+1. 按上述部分中所述，针对站点禁用更新。
+2. 使用以下字段值配置例外项目的工作流配置实体：
+   - 配置名称(Config Name)：`Primary`
+   - 项目(Project)：不希望锁定的项目
+   - 插件 ID(Plugin ids)：`basic.*`
+   - 描述符(Descriptor)：`sgtk:descriptor:app_store?name=tk-config-basic`
+      ![两个工作流配置，一个针对整个站点禁用更新，另一个针对单个项目启用更新](images/offline-and-disabled-auto-updates/freeze-all-but-one-project.jpg)
+      在“描述符”(Descriptor)字段中忽略版本号后，项目现在将跟踪基本配置的最新版本。
 
-### Disabling updates for all but one project
+### 升级
 
-If you have disabled updates on all projects as mentioned in the example above, but would like to enable updates on a specific project
-You can
+在更新配置时，您可能希望先测试更新版本，然后再将其推给所有用户。
 
-- Disabling updates for your site as described in the above section.
-- Configure the exception project’s Pipeline Configuration entity to have the following field values:
-    - Name: `Primary`
-    - Project: The project you want not to lock down
-    - Plugin ids: `basic.*`
-    - Descriptor: `sgtk:descriptor:app_store?name=tk-config-basic`
-    ![Two Pipeline Configurations, one disabling updates to the whole site, and the other enabling updates on a single project](images/offline-and-disabled-auto-updates/freeze_all_but_one_project.jpg)
-
-#### Good to know
-
-Note that you’ve omitted the version number from the Descriptor field for the project. This will mean that the project is tracking the latest release of the basic config.
-
-### Upgrading
-Scenario: We’re locked down to v1.0.0, and we’d like to upgrade to v2.0.0, but first I want to test out the new version before deploying it to the studio.*
-Solution
-
-Duplicate the Pipeline Configuration entity in Shotgun by right-clicking on it and selecting "Duplicate Selected".
-Name the cloned config “update test”, and assign yourself to the User Restrictions field.
-You will now begin to use this Pipeline Configuration.
-Change the descriptor to point to the version you wish to test.
-You can invite any users you want to partake in testing by adding them to the User Restrictions field.
-Once you are happy with testing, simply update the main Pipeline Configuration to use that version.
-Once users restart Desktop or DCCs, the update will be picked up.
+1. 通过右键单击并选择**“复制选定项”(Duplicate Selected)**，在 Shotgun 中复制工作流配置实体。
+2. 将克隆的配置命名为“update test”，并在“用户限制”(User Restrictions)字段中指定您自己。
+3. 现在，您将开始使用此工作流配置。
+4. 将“描述符”(Descriptor)更改为指向要测试的版本。
+4. 您可以根据需要在 `User Restrictions` 字段中添加用户以邀请他们参与测试。
+5. 对测试满意后，只需将主工作流配置更新为使用该版本即可。
+6. 用户重新启动 Shotgun Desktop 并在 Shotgun 集成运行的情况下重新启动当前打开的任何软件后，将会立即获取更新。

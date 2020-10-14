@@ -51,7 +51,7 @@ Shotgun Desktop 中的“高级项目设置向导”会根据默认配置生成�
 | 更新 | 自动更新 | 手动更新 |
 | 文件系统支持 | 不支持文件系统数据结构 | 包含用于支持文件夹结构和文件命名标准的工具 |
 | 软件集成 | 3ds Max、Houdini、Maya、Nuke、Photoshop、Flame | 基本 + Hiero、Motionbulder、Mari |
-| Toolkit 应用 | Shotgun 面板、发布器、加载器 | 基本 + 工作文件、快照、场景细分、Nuke 写入节点、Houdini Mantra 节点等 |
+| Toolkit 应用 | Shotgun Panel、Publisher、Loader | 基本 + 工作文件、快照、场景细分、Nuke 写入节点、Houdini Mantra 节点等 |
 
 在本手册中，您将使用 Shotgun Desktop 中的向导，根据默认配置为项目生成工作流配置。生成此配置将使您能够进行支持专用制作工作流所需的自定义。
 
@@ -186,4 +186,4 @@ Shotgun Toolkit 提供了许多便利的方法来编辑、克隆或接管配置�
 
 理想情况下，您的设施需要针对特定任务进行优化。您可以使用多个根文件夹来优化事务，例如在一台服务器上进行样片视频播放，在另一台服务器上进行交互式处理。Toolkit 允许您使用多个存储根，以便于实现上述工作流。了解如何[从单存储配置转换为多存储配置](../../../quick-answers/administering/convert-from-single-root-to-multi.md)。
 
-现在，已经为您的项目进行了工作流配置，可以开始编辑它了！跳转到下一个手册[编辑工作流配置](./editing_app_setting.md)，以了解操作方法。
+现在，已经为您的项目进行了工作流配置，可以开始编辑它了！跳转到下一个手册[编辑工作流配置](editing_app_setting.md)，以了解操作方法。

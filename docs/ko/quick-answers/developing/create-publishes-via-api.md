@@ -7,16 +7,16 @@ lang: ko
 
 # API를 통해 게시물을 작성하려면 어떻게 해야 합니까?
 
-sgtk API는 Shotgun에서 `PublishedFiles` 엔티티를 등록할 수 있는 [편의 메서드](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.register_publish)를 제공합니다.
+sgtk API는 Shotgun에서 `PublishedFiles` 엔티티를 등록할 수 있는 [편의 방식](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.register_publish)를 제공합니다.
 
 또한 [자체 API](https://developer.shotgunsoftware.com/tk-multi-publish2/)와 함께 Publish 앱도 제공합니다.
-Publish API는 궁극적으로 Core sgtk API 메서드를 사용하여 PublishedFile을 등록하지만 사용자 지정 가능한 컬렉션, 유효성 확인 및 게시 관련 프레임워크도 제공합니다. 이와 관련하여 Publish API 설명서와 함께 [파이프라인 튜토리얼](https://developer.shotgunsoftware.com/ko/cb8926fc/)에 자체 게시 플러그인 작성 예제도 제공합니다.
+Publish API는 궁극적으로 Core sgtk API 방식을 사용하여 PublishedFile을 등록하지만 사용자 지정 가능한 컬렉션, 유효성 확인 및 게시 관련 프레임워크도 제공합니다. 이와 관련하여 Publish API 설명서와 함께 [파이프라인 튜토리얼](https://developer.shotgunsoftware.com/ko/cb8926fc/)에 자체 게시 플러그인 작성 예제도 제공합니다.
 
-## register_publish() API 메서드 사용
-로우 Shotgun API 호출을 사용하여 Shotgun에서 게시 레코드를 생성하는 것도 가능하지만 툴킷의 편의 메서드를 이용하는 것이 훨씬 좋습니다.
-게시를 생성하는 모든 툴킷 앱은 [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.register_publish)라는 API 유틸리티 메서드를 사용 중입니다.
+## register_publish() API 방식 사용
+로우 Shotgun API 호출을 사용하여 Shotgun에서 게시 레코드를 생성하는 것도 가능하지만 툴킷의 편의 방식을 이용하는 것이 훨씬 좋습니다.
+게시를 생성하는 모든 툴킷 앱은 [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.register_publish)라는 API 유틸리티 방식을 사용 중입니다.
 
-기본적으로 이 메서드는 Shotgun에서 새로운 PublishedFile 엔티티를 생성하며, 툴킷 컨셉을 사용하여 생성을 쉽게 만들어줍니다. 여러분의 코드로 무언가를 실행하려면 다음의 행을 이용해야 할 것입니다.
+기본적으로 이 방식은 Shotgun에서 새로운 PublishedFile 엔티티를 생성하며, 툴킷 컨셉을 사용하여 생성을 쉽게 만들어줍니다. 여러분의 코드로 무언가를 실행하려면 다음의 행을 이용해야 할 것입니다.
 
 ```python
 # Get access to the Toolkit API

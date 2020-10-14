@@ -63,11 +63,11 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 ![Python アプリの情報](./images/installing_app/2_python_app_info.png)
 
-**[System Name]**は主要な識別子です(`tk-multi-pythonconsole`)。**[Latest Version:]**も必要です( v1.1.2)。
+**システム名**は主要な識別子です(`tk-multi-pythonconsole`)。**最新バージョン**も必要です( v1.1.2)。
 
 ### Maya のプロジェクト環境内に Python コンソール アプリが含まれていないことを確認する
 
-**手順 2:** Maya を起動し、Shotgun メニューを選択して(**[Shotgun] > プロジェクト the_other_side**)、プロジェクト環境内にある、このプロジェクトで使用可能なアプリのリストを表示します。
+**手順 2:** Maya を起動し、Shotgun メニューを選択して(**[Shotgun] > [プロジェクト the_other_side]（Project the_other_side）**)、プロジェクト環境内にある、このプロジェクトで使用可能なアプリのリストを表示します。
 
 ![アプリのリスト](./images/installing_app/3_list_of_apps.png)
 

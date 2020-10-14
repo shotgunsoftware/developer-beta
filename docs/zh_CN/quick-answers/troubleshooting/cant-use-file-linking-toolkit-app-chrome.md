@@ -20,7 +20,7 @@ lang: zh_CN
 
 ### Shotgun Desktop 是否正在运行？
 
-是的，我们知道。 您可能已经检查过了，但我们必须要问一下。:)
+是的，我们知道。您可能已经检查过了，但我们必须要问一下。:)
 
 ### Shotgun Desktop 启动后，您是否重新启动了 Chrome？
 
@@ -46,7 +46,7 @@ lang: zh_CN
 
 规避这些问题的最简单方法就是单击**“高级”(ADVANCED)**和**“Proceed to localhost (unsafe)”**。 这样，Chrome 便会知道您还是接受了证书，并允许 Shotgun 网站与 Shotgun Desktop 通信。
 
-{% include info title="注意" content="这只会启用网络浏览器和 Shotgun Desktop 之间的连接。信任设置可让这两个应用程序之间的通信流动，并不代表信任 Internet 上的任何其他服务器****。遗憾的是，需要在出现问题的每台计算机上重复此过程。如果此方法无法解决问题，或者您认为部署到所有用户过于复杂，建议您采取以下步骤。" %}
+{% include info title="注意" content="这只会启用网络浏览器和 Shotgun Desktop 之间的连接。信任设置可让这两个应用程序之间的通信流动，**并不代表信任 Internet 上的任何其他服务器**。遗憾的是，需要在出现问题的每台计算机上重复此过程。如果此方法无法解决问题，或者您认为部署到所有用户过于复杂，建议您采取以下步骤。" %}
 
 {% include info title="注意" content="此修复步骤不适用于 **ERR_SSL_SERVER_CERT_BAD_FORMAT** 错误，而且您将需要重新生成证书，如下所述。" %}
 

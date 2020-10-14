@@ -16,7 +16,7 @@ Shotgun のアクション メニューで Toolkit アプリケーションの�
 
 ### Shotgun Desktop は動作していますか?
 
-もちろん、そうだと思います。 既に確認済みだと思いますが、 念のためお尋ねしました。 
+もちろん、そうだと思います。 既に確認済みだと思いますが、 念のためお尋ねしました。:)
 
 ### ファイアウォール ソフトウェアを使用していますか?
 
@@ -40,7 +40,7 @@ Firefox が証明書を受け入れていることを確認するには、https:
 
 ![Firefox に例外を追加](images/add-exception-firefox.png)
 
-****[証明書を取得]（Get Certificate）**、**[セキュリティ例外を承認]（Confirm Security Exception）の順にクリックします。 証明書を信頼できないというメッセージは無視します。証明書は認証局ではなく Shotgun Desktop によって生成されているため、問題ありません。
+**[証明書を取得]（Get Certificate）**、**[セキュリティ例外を承認]（Confirm Security Exception）**の順にクリックします。 証明書を信頼できないというメッセージは無視します。証明書は認証局ではなく Shotgun Desktop によって生成されているため、問題ありません。
 
 これで Shotgun サイトからローカル ファイル リンクにアクセスし、Toolkit アプリケーションを起動できるようになるはずです。 例外を追加しても問題が解決しない場合は、support@shotgunsoftware.com までご連絡ください。
 

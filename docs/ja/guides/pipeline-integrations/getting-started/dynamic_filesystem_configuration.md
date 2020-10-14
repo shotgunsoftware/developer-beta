@@ -186,7 +186,7 @@ YAML ファイルは、`CustomEntity01` フォルダに付ける名前を Toolki
 
 **手順 10:** `asset_type/` と `asset_type.yml` を `CustomEntity01` フォルダに移動します。
 
-フォルダ構造を `Dining-Room/Prop/filet` のようにしたいので、`asset_type` フォルダは階層内の `CustomEntity01` フォルダよりも*下に *にする必要があります。`asset_type/` と `asset_type.yml` を `CustomEntity01` フォルダに移動します。
+フォルダ構造を `Dining-Room/Prop/filet` のようにしたいので、`asset_type` フォルダは階層内の `CustomEntity01` フォルダよりも*下に*にする必要があります。`asset_type/` と `asset_type.yml` を `CustomEntity01` フォルダに移動します。
 
 ![Python アプリ](./images/dynamic_filesystem_configuration/17_schema.png)
 
@@ -215,7 +215,7 @@ assets/Classroom/Prop/spoon
 filters:
     - { "path": "project", "relation": "is", "values": [ "$project" ] }
     - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
-    - { "path": "sg_set", "relation": "is", "values": [ "$CustomEntity04" ] }
+    - { "path": "sg_set", "relation": "is", "values": [ "$CustomEntity01" ] }
 ```
 
 
@@ -373,7 +373,7 @@ Maya で、**[Shotgun] > [File Open]（ファイルを開く）**に移動し、
 
 成功しました!
 
-テンプレートの新しい設定を使用して、**[File Save]**ダイアログボックスに**プレビュー：Dining-Room_scene.v001.ma **が表示されていることに注意してください。
+テンプレートの新しい設定を使用して、**[File Save]**ダイアログボックスに**プレビュー：Dining-Room_scene.v001.ma**が表示されていることに注意してください。
 
 **Work Area**: Workfiles がファイルを保存するパスとして **.../Shotgun/projects/the_other_side/assets/Dining-Room/Prop/Filet/model/work/maya** を表示します。
 

@@ -40,7 +40,7 @@ https://localhost:9000으로 이동하여 Firefox가 인증서를 수락하는�
 
 ![Firefox에 예외 추가](images/add-exception-firefox.png)
 
-****인증서 가져오기(Get Certificate)**를 클릭한 다음 **보안 예외 확인(Confirm Security Exception)을 클릭합니다. 인증서를 신뢰할 수 없다는 메시지는 무시해도 됩니다. 인증서가 인증 기관이 아닌 Shotgun 데스크톱에 의해 생성된 경우에 보통 발생하는 일입니다.
+**인증서 가져오기(Get Certificate)**를 클릭한 다음 **보안 예외 확인(Confirm Security Exception)**을 클릭합니다. 인증서를 신뢰할 수 없다는 메시지는 무시해도 됩니다. 인증서가 인증 기관이 아닌 Shotgun 데스크톱에 의해 생성된 경우에 보통 발생하는 일입니다.
 
 이제 Shotgun 사이트에서 로컬 파일 링크에 액세스하고 툴킷 응용프로그램을 실행할 수 있습니다. 예외를 추가한 뒤에도 계속 문제가 발생하면 support@shotgunsoftware.com으로 문의하십시오.
 

@@ -141,7 +141,7 @@ Toolkit のパイプライン設定は、パイプラインに対するユーザ
 
 **ヒント:** メニューが表示されない場合は、一部のメニュー項目が非表示になっていることを示す**[>>]**が表示されています。**[>>]**を選択して Shotgun メニューを表示するか、Maya ウィンドウの幅を広げます。
 
-**手順 14:** **メニューの右上にある[Shotgun] > プロジェクト the_other_side > [Work Area Info...]**を選択します。
+**手順 14:** メニューの右上にある**[Shotgun] > [Project the_other_side] > [Work Area Info...]**を選択します。
 
 ![Work Area Info](./images/editing_app_setting/13_work_area_info.png)
 
@@ -357,4 +357,4 @@ Workfiles アプリのシステム名は `tk-multi-workfiles2` です。名前�
 * [Toolkit 設定の概要](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s)(SIGGRAPH 2018 Developer Day で収録)
 * [既定の設定の概要ウェビナー](https://www.youtube.com/watch?v=eKHaC1dZCeE)
 
-アプリの構成設定の変更に関する学習は以上です。次は、[Toolkit の構成にアプリを追加](./installing_app.md)してみましょう。
+アプリの構成設定の変更に関する学習は以上です。次は、[Toolkit の構成にアプリを追加](installing_app.md)してみましょう。

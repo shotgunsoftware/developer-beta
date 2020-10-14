@@ -7,7 +7,7 @@ lang: zh_CN
 
 # 如何卸载应用或插件？
 
-您可以通过编辑配置的环境 YAML 文件来删除应用或插件，使其不再存在。环境文件允许您将应用配置为仅适用于特定上下文或插件，而不是完全删除它们。有关编辑环境文件的更多常规信息，请查看[此手册](../../toolkit/learning-resources/guides/editing_app_setting.md)。
+您可以通过编辑配置的环境 YAML 文件来删除应用或插件，使其不再存在。环境文件允许您将应用配置为仅适用于特定上下文或插件，而不是完全删除它们。有关编辑环境文件的更多常规信息，请查看[此手册](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)。
 
 ## 示例
 

@@ -50,8 +50,8 @@ Shotgun 데스크톱의 고급 프로젝트 설정(Advanced Project Setup) 마�
 | 접근성 | 시스템 위치에 저장됨 | 수동으로 편집 가능한 파일 |
 | 업데이트 | 자동으로 업데이트됨 | 수동으로 업데이트됨 |
 | 파일 시스템 지원 | 파일 시스템 스키마 지원 안 함 | 폴더 구조와 파일 명명 표준을 지원하는 도구 포함 |
-| 소프트웨어 통합 | 3ds Max, Houdini, Maya, Nuke, Photoshop, Flame | Basic + Hiero, Motionbulder, Mari |
-| 툴킷 앱 | Shotgun Panel, Publisher, Loader | Basic + Workfiles, Snap Shot, Scene Breakdown, Nuke Write Node, Houdini Mantra Node 등 |
+| 소프트웨어 통합 | 3ds Max, Houdini, Maya, Nuke, Photoshop, Flame | 기초 구성 + Hiero, Motionbulder, Mari |
+| 툴킷 앱 | Shotgun Panel, Publisher, Loader | 기초 구성 + Workfiles, Snap Shot, Scene Breakdown, Nuke Write Node, Houdini Mantra Node 등 |
 
 이 안내서에서는 Shotgun 데스크톱의 마법사를 사용하여 기본 구성을 기반으로 프로젝트의 파이프라인 구성을 생성합니다. 이 구성을 생성하면 자체 프로덕션 파이프라인을 지원하는 데 필요한 커스터마이즈를 수행할 수 있게 됩니다.
 
@@ -186,4 +186,4 @@ Shotgun 툴킷에서는 구성을 간편하게 편집하고 복제하고 가져�
 
 스튜디오에서 대개 특정한 작업에 맞게 최적화하는 것을 이상적으로 여깁니다. 둘 이상의 루트 폴더를 사용하여 한 서버에서는 데일리를 위한 비디오 재생과 같은 작업을, 다른 서버에서는 대화식 처리를 수행하는 식으로 작업을 최적화할 수 있습니다. 툴킷에서는 이와 같은 워크플로우를 용이하게 하기 위해 둘 이상의 저장소 루트를 사용할 수 있도록 허용합니다. [단일 루트에서 다중 루트 구성으로 변환하는 방법](../../../quick-answers/administering/convert-from-single-root-to-multi.md)을 확인하십시오.
 
-프로젝트에 대한 파이프라인 구성을 갖추었으므로 편집을 시작해 보시기 바랍니다. 다음 안내서인 [파이프라인 구성 편집](./editing_app_setting.md)으로 이동하여 방법을 알아보십시오.
+프로젝트에 대한 파이프라인 구성을 갖추었으므로 편집을 시작해 보시기 바랍니다. 다음 안내서인 [파이프라인 구성 편집](editing_app_setting.md)으로 이동하여 방법을 알아보십시오.

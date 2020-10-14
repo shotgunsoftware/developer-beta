@@ -9,9 +9,11 @@ lang: zh_CN
 
 ## 简介
 
-Toolkit 工作流的核心是环境配置。在 Toolkit 工作流配置中，环境配置文件用于定义在不同的 DCC 中哪些 Toolkit 应用可用，以及为每个应用自定义相应设置。本文档提供了有关环境配置文件的结构和功能的完整参考，并涵盖了用于在一个项目中配置不同工作流的 Toolkit 环境**概念、配置结构、文件引用以及可用自定义项确定方式。
+Toolkit 工作流的核心是环境配置。在 Toolkit 工作流配置中，环境配置文件用于定义在不同的 DCC 中哪些 Toolkit 应用可用，以及为每个应用自定义相应设置。本文档提供了有关环境配置文件的结构和功能的完整参考，并涵盖了用于在一个项目中配置不同工作流的 Toolkit *环境*概念、配置结构、文件引用以及可用自定义项确定方式。
 
-{% include info title="注意" content="本文档提供了有关环境配置文件的参考，而[有关“编辑工作流配置”的 Toolkit 基础知识手册](./learning-resources/guides/editing_app_setting.md)提供了有关编辑配置设置的分步示例。" %}
+{% include info title="注意" content="本文档提供了有关环境配置文件的参考，而[有关“编辑工作流配置”的 Toolkit 基础知识手册](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)提供了有关编辑配置设置的分步示例。" %}
+
+
 
 ## 什么是环境？
 
@@ -29,7 +31,7 @@ Shotgun Toolkit 平台为常用内容创建软件提供了一组完全可自定�
 
 使用 Toolkit 时，您可以相当自由地构建环境配置。本文档提供了您可用的所有选项的参考，以便您掌握必要的知识来选择更适合特定工作流需求的选项。
 
-本文档也穿插提供了一些我们在作为起点提供的工作流配置（称为[默认配置](https://github.com/shotgunsoftware/tk-config-default2)）中所做的特定选择。如果您已准备好自定义工作流，第一步是[为您的项目创建一个可编辑的工作流配置](./learning-resources/guides/editing_app_setting.md)。
+本文档也穿插提供了一些我们在作为起点提供的工作流配置（称为[默认配置](https://github.com/shotgunsoftware/tk-config-default2)）中所做的特定选择。如果您已准备好自定义工作流，第一步是[为您的项目创建一个可编辑的工作流配置](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)。
 
 虽然这些选择只是惯例，并没有硬编码到 Toolkit 工作流中，但将默认配置作为示例进行参考很有用，可以了解在自定义工作流时可用的功能，并了解在构建自己的配置时可以应用的最佳实践。此外，由于这是面向 Toolkit 新用户的建议起点，因此有助于了解其中一些惯例。本文档中自始至终区分介绍 Toolkit 环境配置的常规功能和默认配置中的特定选择。有关默认配置的环境结构的特定详细信息，请参见[其自述文件](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)。
 
@@ -107,7 +109,7 @@ engines:
 
 ### 位置描述符
 
-每个 Toolkit 包都有一个 `location` 设置，我们将其称为包的描述符**。描述符告知 Toolkit 在何处查找给定包，以及根据其类型，是直接访问它还是在本地缓存它。Toolkit 包可以来自多个位置，例如，Shotgun App Store、git 库、磁盘上的路径或上传到 Shotgun 站点的 zip 文件。其中每个位置都有一个对应的描述符类型，相应类型具有特定设置。下面是上述示例中 `tk-maya` 插件的描述符：
+每个 Toolkit 包都有一个 `location` 设置，我们将其称为包的*描述符*。描述符告知 Toolkit 在何处查找给定包，以及根据其类型，是直接访问它还是在本地缓存它。Toolkit 包可以来自多个位置，例如，Shotgun App Store、git 库、磁盘上的路径或上传到 Shotgun 站点的 zip 文件。其中每个位置都有一个对应的描述符类型，相应类型具有特定设置。下面是上述示例中 `tk-maya` 插件的描述符：
 
 ```yaml
     location:
@@ -182,7 +184,7 @@ engines:
 * 文件会开始变长，即使尚未添加任何配置设置也是如此。
 * 您可以设想将在其他插件和其他环境中使用这些应用。例如，您可能将在不同的插件（如 Houdini、Nuke 或 Photoshop）和不同的环境（如 `asset_step` 或 `shot_step`）中使用所有这三个应用（Panel、About 应用以及 Workfiles 应用）。在配置中的多个位置定义常用应用设置，这意味着进行更改时，必须在多个位置进行修改。
 
-为了解决最后两个问题，Toolkit 支持 includes**。
+为了解决最后两个问题，Toolkit 支持 *includes*。
 
 ### includes
 
@@ -294,20 +296,20 @@ engines:
 {% include info title="注意" content="默认配置使用一个第二层嵌套（未在此处说明）。还具有描述符以外的设置的每个应用或插件在 `includes/settings` 中都有一个设置文件（如 `includes/settings/tk-maya.yml` 和 `includes/settings/tk-multi-workfiles2.yml`）。插件设置文件包含应用设置文件中的应用设置，环境配置文件包含插件设置文件中的插件设置。有关默认配置结构的详细信息，请参见[其自述文件](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)。有关修改配置设置的详细介绍，请参见[有关“编辑配置设置”的 Toolkit 基础知识手册](./learning-resources/guides/editing_app_setting.md)。" %}
 
 
-## 稀疏配置
+## 简约配置
 
-每个 Toolkit 包都有一组可用的配置设置，每个设置都有默认值。Toolkit 允许使用稀疏**配置：如果未在环境配置文件（和/或其包含的文件）中明确指定配置设置，则将使用包中的默认值。
+每个 Toolkit 包都有一组可用的配置设置，每个设置都有默认值。Toolkit 允许使用*简约*配置：如果未在环境配置文件（和/或其包含的文件）中明确指定配置设置，则将使用包中的默认值。
 
 在我们的示例中，除了 `location` 外，我们没有为应用指定任何设置。因此，在配置的当前状态中，三个应用的所有设置都将使用默认值。那么，我们如何知道哪些配置设置可用？
 
-{% include info title="注意" content="虽然不要求 Toolkit 配置是稀疏配置，但默认配置是稀疏配置。" %}
+{% include info title="注意" content="虽然不要求 Toolkit 配置是简约配置，但默认配置是简约配置。" %}
 
 ## 确定可用配置设置
 
-使用稀疏配置时，难以直接通过查看配置文件确定哪些配置设置可用于应用。要确定应用有哪些配置设置可用，可以采用两种方式：
+使用简约配置时，难以直接通过查看配置文件确定哪些配置设置可用于应用。要确定应用有哪些配置设置可用，可以采用两种方式：
 
 * **应用文档：**每个应用都有其自己的文档页面，每个页面都有“配置选项”部分。此部分列出相应应用的所有可用配置设置，每个设置都有说明和默认值。例如，您可以[查看 Workfiles 文档页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088)。[应用和插件页面](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088)列出了所有应用和插件的文档页面。
-* **清单文件：**每个 Toolkit 包的根目录中都包含一个名为 `info.yml` 的文件。我们将此文件称为包的清单文件**，此文件定义相应包的所有可用配置设置，每个设置都有说明和默认值。您可以在自己的包缓存中查找清单文件（例如工作流配置中的 `install/app_store/tk-multi-workfiles2/v0.11.8/info.yml`），也可以在 Github 中查找清单文件（[例如，此处是 Workfiles 的清单文件](https://github.com/shotgunsoftware/tk-multi-workfiles2/blob/master/info.yml)）。
+* **清单文件：**每个 Toolkit 包的根目录中都包含一个名为 `info.yml` 的文件。我们将此文件称为包的*清单文件*，此文件定义相应包的所有可用配置设置，每个设置都有说明和默认值。您可以在自己的包缓存中查找清单文件（例如工作流配置中的 `install/app_store/tk-multi-workfiles2/v0.11.8/info.yml`），也可以在 Github 中查找清单文件（[例如，此处是 Workfiles 的清单文件](https://github.com/shotgunsoftware/tk-multi-workfiles2/blob/master/info.yml)）。
 
 ## 修改配置设置
 
@@ -342,7 +344,7 @@ engines:
 
 * [Toolkit 基础知识手册：编辑工作流配置](./learning-resources/guides/editing_app_setting.md)
 * [Toolkit 基础知识手册：添加应用](./learning-resources/guides/installing_app.md)
-* [动画工作流教程](../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
+* [动画工作流教程](../../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
 * [描述符参考文档](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
 * [网络讲座：Toolkit 管理](https://youtu.be/7qZfy7KXXX0)
 * [文件系统配置参考](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868)

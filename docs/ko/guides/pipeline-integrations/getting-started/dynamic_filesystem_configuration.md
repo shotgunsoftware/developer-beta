@@ -15,7 +15,7 @@ lang: ko
 
 기본 구성에서 에셋은 `asset_type/asset/pipeline_step`과 같은 폴더 구조로 관리됩니다. 이 안내서에서는 "Set"라는 커스텀 엔티티를 사용하여 각 에셋이 사용되는 프로덕션 세트별로 에셋을 추가 구성합니다. 먼저 Shotgun에서 커스텀 엔티티를 설정한 다음 이를 사용하여 지정된 세트에 생성된 에셋을 관리합니다. 폴더 구조는 `set/asset_type/asset/pipeline_step`과 같은 형태입니다.
 
-일부 씬은 차고에서 진행되고 나머지 씬은 다이닝룸에서 진행하는 프로젝트를 수행한다고 가정하고 세트별로 에셋을 구성하는 방식을 설명하겠습니다. 설정을 사용하면, "렌치", "기름통" 또는 “작업대"와 같은 에셋에 대한 파일은 "garage" 폴더에 구성되고 "접시", "와인병" 또는 "테이블보"와 같은 에셋에 대한 파일은 "dining_room" 폴더에 구성됩니다. 예제에서 군침 도는 "필레" 에셋은 적절하게 다이닝룸에 배치됩니다.
+일부 씬은 차고에서 진행되고 나머지 씬은 다이닝룸에서 진행하는 프로젝트를 수행한다고 가정하고 세트별로 에셋을 구성하는 방식을 설명하겠습니다. 설정을 사용하면, "wrench", "oilcan" 또는 “workbench"와 같은 에셋에 대한 파일은 "garage" 폴더에 구성되고 "plate", "winebottle" 또는 "tablecloth"와 같은 에셋에 대한 파일은 "dining_room" 폴더에 구성됩니다. 예제에서 군침 도는 "filet" 에셋은 적절하게 다이닝룸에 배치됩니다.
 
 예제에서는 프로젝트에 대한 파일 명명 템플릿도 편집하여 에셋에 대한 Maya 작업 파일에 해당 이름의 세트가 포함되도록 합니다. 동적으로 생성된 파일 이름은 다이닝룸에 대한 파일과 다른 세트에서 사용된 파일로 구분됩니다.
 
@@ -130,7 +130,7 @@ Shotgun이 새 필드를 구성합니다.
 
 {% include info title="참고" content="활성 프로덕션 구성에 영향을 주지 않도록 *복제된* 구성에서 구성을 테스트하는 것이 좋습니다. 복제 프로세스는 구성의 *복사본*을 만들어 변경 사항을 라이브 구성에 적용하기 전에 안전하게 편집할 수 있습니다. 구성 복제에 대한 자세한 내용은 [구성 스테이징 및 롤아웃](https://support.shotgunsoftware.com/hc/ko/articles/219033168-Configuration-staging-and-rollout#Cloning%20your%20Configuration) 문서에서 찾을 수 있습니다." %}
 
-**7단계:** 파이프라인 구성으로 이동합니다. 스키마 폴더(`<pipeline_configuration_root>/config/core/schema`)로 드릴다운하고 `project` 폴더를 엽니다.
+**7단계:** 파이프라인 구성으로 이동합니다. 스키마 폴더(`<pipeline_configuration_root>/config/core/schema`)로 찾아 들어가고 `project` 폴더를 엽니다.
 
 ![Python 앱](./images/dynamic_filesystem_configuration/15_file_structure.png)
 
@@ -215,7 +215,7 @@ assets/Classroom/Prop/spoon
 filters:
     - { "path": "project", "relation": "is", "values": [ "$project" ] }
     - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
-    - { "path": "sg_set", "relation": "is", "values": [ "$CustomEntity04" ] }
+    - { "path": "sg_set", "relation": "is", "values": [ "$CustomEntity01" ] }
 ```
 
 

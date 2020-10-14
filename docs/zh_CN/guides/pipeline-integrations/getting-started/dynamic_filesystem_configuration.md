@@ -215,7 +215,7 @@ assets/Classroom/Prop/spoon
 filters:
     - { "path": "project", "relation": "is", "values": [ "$project" ] }
     - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
-    - { "path": "sg_set", "relation": "is", "values": [ "$CustomEntity04" ] }
+    - { "path": "sg_set", "relation": "is", "values": [ "$CustomEntity01" ] }
 ```
 
 

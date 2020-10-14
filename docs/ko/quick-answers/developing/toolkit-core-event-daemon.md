@@ -100,10 +100,10 @@ def import_sgtk(project):
 
 ## 분산 구성
 
-위 예에서는 [중앙 집중식 구성](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)을 사용한다고 가정하고 있지만 [분산 구성](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)을 사용할 경우에는 상황이 약간 다릅니다. 분산 구성의 경우 sgtk API를 가져오려면 [부트스트랩 API](https://developer.shotgunsoftware.com/tk-core/initializing.html#bootstrap-api)를 사용해야 합니다. 부트스트랩 API를 사용하는 경우 일반적으로 비 프로젝트 중심 sgtk API를 가져온 다음 이를 사용하여 지정된 프로젝트에 대한 엔진을 부트스트랩합니다.
-이 부트스트랩 프로세스는 sgtk 모듈 교환을 처리하여 부트스트랩 프로세스 마지막에 엔진 오브젝트를 사용할 수 있도록 합니다. 부트스트랩 후 sgtk를 가져오면 프로젝트에 적합한 관련 sgtk 모듈을 가져옵니다. 위의 예에서 다중 프로젝트에 대해 sgtk를 로드해야 하는 대신 다중 프로젝트에 대해 부트스트랩해야 합니다. 여기 작은 캐시는 한 번에 하나의 엔진만 실행할 수 있으므로 다른 엔진을 로드하기 전에 먼저 삭제해야 합니다.
+위 예에서는 [중앙 집중식 구성](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)을 사용한다고 가정하고 있지만 [분산 구성](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)을 사용할 경우에는 상황이 약간 다릅니다. 분산 구성의 경우 sgtk API를 가져오려면 [부트스트랩(Bootstrap) API](https://developer.shotgunsoftware.com/tk-core/initializing.html#bootstrap-api)를 사용해야 합니다. 부트스트랩(Bootstrap) API를 사용하는 경우 일반적으로 비 프로젝트 중심 sgtk API를 가져온 다음 이를 사용하여 지정된 프로젝트에 대한 엔진을 부트스트랩합니다.
+이 부트스트랩(Bootstrap) 프로세스는 sgtk 모듈 교환을 처리하여 부트스트랩 프로세스 마지막에 엔진 오브젝트를 사용할 수 있도록 합니다. 부트스트랩(Bootstrap) 후 sgtk를 가져오면 프로젝트에 적합한 관련 sgtk 모듈을 가져옵니다. 위의 예에서 다중 프로젝트에 대해 sgtk를 로드해야 하는 대신 다중 프로젝트에 대해 부트스트랩(Bootstrapping)해야 합니다. 여기 작은 캐시는 한 번에 하나의 엔진만 실행할 수 있으므로 다른 엔진을 로드하기 전에 먼저 삭제해야 합니다.
 
-{% include warning title="경고" content="구성을 부트스트랩하면 프로세스가 구성을 로컬로 캐시하고 모든 종속성을 다운로드해야 하므로 속도가 느려질 수 있습니다. 이벤트 데몬 플러그인에서 부트스트랩하면 성능에 심각한 영향을 미칠 수 있습니다. 한 가지 가능한 접근 방식은 각 프로젝트 부트스트랩에 대해 별도의 Python 인스턴스를 생성하여 플러그인에서 명령을 전달하는 것입니다. 이렇게 하면 필요할 때마다 프로젝트를 다시 부트스트랩하지 않아도 됩니다." %}
+{% include warning title="경고" content="구성을 부트스트랩(Bootstrapping)하면 프로세스가 구성을 로컬로 캐시하고 모든 종속성을 다운로드해야 하므로 속도가 느려질 수 있습니다. 이벤트 데몬 플러그인에서 부트스트랩(Bootstrapping)하면 성능에 심각한 영향을 미칠 수 있습니다. 한 가지 가능한 접근 방식은 각 프로젝트 부트스트랩(Bootstrap)에 대해 별도의 Python 인스턴스를 생성하여 플러그인에서 명령을 전달하는 것입니다. 이렇게 하면 필요할 때마다 프로젝트를 다시 부트스트랩(Bootstrapping)하지 않아도 됩니다." %}
 
 
 예는 다음과 같습니다.
@@ -137,4 +137,4 @@ engine.destroy()
 ...
 ```
 
-{% include info title="참고" content="중앙 집중식 구성도 부트스트랩할 수 있으므로 혼합하여 사용할 경우 다른 메서드가 필요하지 않습니다." %}
+{% include info title="참고" content="중앙 집중식 구성도 부트스트랩(Bootstrapping)할 수 있으므로 혼합하여 사용할 경우 다른 방식이 필요하지 않습니다." %}

@@ -1,41 +1,65 @@
-# Translated text strings used by the table of contents
+﻿# Translated text strings used by the table of contents
 # 
 # For documentation, see https://developer.shotgunsoftware.com/tk-doc-generator/authoring/toc/
 #
 
+reference: リファレンス
+guides: ガイド
+offerings: サービス
+
+spc-cloud_studios: AWS Cloud Studio
+
 rv: RV
 toolkit: Toolkit
 shotgun: Shotgun
+review: レビュー
 quick-answers: クイック アンサー
+pipeline-integrations: パイプライン統合
 
 python-api: Python API
 rest-api: REST API
-event-triggers: イベント駆動型トリガ
-jira-bridge: Jira Bridge (ベータ版)
-examples: サンプル
-reference: リファレンス
+event-triggers: イベント駆動型トリガを記述する
+action-menu-items: カスタム アクション メニュー アイテムを作成する
+jira-bridge-guide: JIRA と Shotgun 間でデータを同期する
+jira-bridge-ref: JIRA Bridge 開発リソース
+examples: 例
 webinars: ウェビナーの録画
+developer-training-videos: 開発者向けトレーニング ビデオ 
+episodic-pipeline-tutorial: エピソード パイプライン チュートリアル
 
-core-api: Core API
-qt-widgets: QT ウィジェット
-shotgun-utils: Shotgun ユーティリティ
+core-api: Toolkit Core API
+qt-widgets: QT ウィジェット フレームワーク
+shotgun-utils: Shotgun ユーティリティ フレームワーク
 publish-api: パブリッシュ API
+hiero-export-api: Hiero 書き出し API
+development: 開発
 app-development: アプリケーション開発
+engine-development: エンジン開発
+file-system-configuration: ファイル システム設定
 
-user-manual: ユーザ マニュアル
+rv-user-manual: RV ユーザ マニュアル
 technical-reference: テクニカル リファレンス
+rv-technical-reference: RV テクニカル リファレンス
 rv-sdi: RV-SDI
 forums: フォーラム
 
+rv-maya-integration: RV/Maya の統合
+rv-nuke-integration: RV/Nuke の統合
+rv-shotgun-integration: RV Shotgun の統合
 maya: Maya
 nuke: Nuke
 shotgun: Shotgun
-screening-room: Screening Room と Shotgun Review
+screening-room-and-shotgun-review: Screening Room と Shotgun Review
 troubleshooting: トラブルシューティング
 extending-rv: RV の拡張
 
-other: その他
+videos: ビデオ
+siggraph-shotgun-day: SIGGRAPH Shotgun Day
+developer-training: 開発者向けトレーニング
+toolkit-webinars: Toolkit ウェビナー
 
+other: その他
+community: コミュニティ
 shotgun-support: Shotgun サポート
 service-status: サービス ステータス
 new-support-request: 新しいサポート リクエスト

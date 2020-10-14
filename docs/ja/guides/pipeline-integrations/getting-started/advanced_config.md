@@ -163,7 +163,7 @@ Shotgun Toolkit では、さまざまな方法で設定の編集、クローン�
 
 ### コマンド ラインを使用して既定の設定を作成する
 
-いずれかのプロジェクト設定内で `tank` コマンドを使用すると、端末から管理コマンドを実行できます。各プロジェクトには専用の `tank` コマンドがあります。`tank setup_project` コマンドの機能は、[Advanced Setup Wizard]の機能と似ていて、既存のプロジェクトの設定や既定の設定に基づいて、プロジェクトで使用される編集可能な設定をディスク上に作成することができます。[ の実行方法については、`tank setup_project`こちら](https://support.shotgunsoftware.com/hc/ja/articles/219033178#setup_project)を、[ コマンドの詳細については、`tank`こちら](https://support.shotgunsoftware.com/hc/ja/articles/219033178#Using%20the%20tank%20command)を参照してください。
+いずれかのプロジェクト設定内で `tank` コマンドを使用すると、端末から管理コマンドを実行できます。各プロジェクトには専用の `tank` コマンドがあります。`tank setup_project` コマンドの機能は、[Advanced Setup Wizard]の機能と似ていて、既存のプロジェクトの設定や既定の設定に基づいて、プロジェクトで使用される編集可能な設定をディスク上に作成することができます。`tank setup_project` の実行方法については、[こちら](https://support.shotgunsoftware.com/hc/ja/articles/219033178#setup_project)を、`tank` コマンドの詳細については、[ こちら](https://support.shotgunsoftware.com/hc/ja/articles/219033178#Using%20the%20tank%20command)を参照してください。
 
 ### プロダクション中に設定を編集する
 
@@ -187,4 +187,4 @@ Shotgun Toolkit では、さまざまな方法で設定の編集、クローン�
 
 理想的なのは、特定のタスクに合わせて施設を最適化することです。複数のルート フォルダを使用すると、1 台のサーバで日常業務を行い、もう 1 台のサーバでインタラクティブな処理を行うようビデオの再生を最適化することができます。Toolkit では複数のストレージのルートを操作し、上記のようなワークフローを容易に実行することができます。[単一ルート設定からマルチルート設定への変換方法](../../../quick-answers/administering/convert-from-single-root-to-multi.md)を確認してください。
 
-これで、プロジェクトのパイプライン設定が作成されたので、編集してみましょう。詳細については、次のガイドの「[パイプライン設定の編集](./editing_app_setting.md)」にアクセスしてください。
+これで、プロジェクトのパイプライン設定が作成されたので、編集してみましょう。詳細については、次のガイドの「[パイプライン設定の編集](editing_app_setting.md)」にアクセスしてください。

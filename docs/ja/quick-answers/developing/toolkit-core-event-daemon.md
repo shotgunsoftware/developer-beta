@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shotgun Event デーモンを使用してさまざまな Toolkit コア モジュールをロードするにはどうすればいいですか?
+title: Shotgun のイベント デーモンを使用してさまざまな Toolkit コア モジュールをロードするにはどうすればいいですか?
 pagename: toolkit-core-event-daemon
 lang: ja
 ---

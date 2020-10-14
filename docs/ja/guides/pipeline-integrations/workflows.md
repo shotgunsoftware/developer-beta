@@ -1,8 +1,12 @@
 ---
 layout: default
-title: Workflows
+title: ワークフロー
 pagename: toolkit-workflows
 lang: ja
 ---
 
-# Workflows
+# ワークフロー
+
+Shotgun のパイプライン統合をカスタマイズすると、フィーチャ アニメーション、エピソード ワークフロー、ビジュアル エフェクト、ゲームなど、さまざまなワークフロー作成ツールを使用できるようになります。
+
+このセクションには、特定のワークフローを構築するためのリソースが含まれています。

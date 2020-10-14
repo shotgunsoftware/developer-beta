@@ -42,7 +42,7 @@ lang: zh_CN
 
 Shotgun Toolkit [将数据缓存到用户的主目录](../administering/where-is-my-cache.md)。此缓存可以包括许多不同的 SQLite 数据库以及缓存的应用和配置。通常，用户的主目录存储在计算机的本地硬盘驱动器上，但是工作室将它们重定向到网络存储是相当常见的。这样做会影响性能，尤其是 SQLite 数据库，这些数据库用于浏览器集成和文件夹创建/查找等。
 
-如果您的用户目录存储在服务器位置，我们建议使用 [`SHOTGUN_HOME` 环境变量](https://developer.shotgunsoftware.com/tk-core/initializing.html#environment-variables)重新指定 Shotgun Toolkit 缓存的路径。`SHOTGUN_HOME` 环境变量用于设置 Toolkit 缓存各种数据的位置，例如包缓存、缩略图、用于快速查找数据和其他内容的 SQLite 数据库。
+如果您的用户目录存储在服务器位置，我们建议使用 [`SHOTGUN_HOME` 环境变量](https://developer.shotgunsoftware.com/tk-core/initializing.html#environment-variables)重新指定 Shotgun Toolkit 缓存的路径。`SHOTGUN_HOME` 环境变量用于设置 Toolkit 缓存各种数据的位置，例如缓存、缩略图、用于快速查找数据和其他内容的 SQLite 数据库。
 
 ### 调试
 
@@ -70,7 +70,7 @@ Shotgun Toolkit [将数据缓存到用户的主目录](../administering/where-is
 
 总之，如果您的存储速度较慢，但是 Internet 连接良好，那么分布式配置可能是最佳的解决方案，但是如果您的服务器存储性能很好，而 Internet 连接很差，那么集中式配置可能更合适。
 
-{% include info title="注意" content="如果您对分布式配置感兴趣，但担心按计算机下载依赖项，则可以仅集中包缓存，以便在所有用户之间共享。" %}
+{% include info title="注意" content="如果您对分布式配置感兴趣，但担心按计算机下载依赖项，则可以仅集中缓存，以便在所有用户之间共享。" %}
 
 当使用分布式配置时，用户只需在缓存中找不到相关内容时才下载它，一旦某个用户已下载它，其他用户也能够利用它。为此，您可以在每台计算机上设置 [`SHOTGUN_BUNDLE_CACHE_PATH` 环境变量](https://developer.shotgunsoftware.com/tk-core/initializing.html#environment-variables) 以指向共享位置。
 

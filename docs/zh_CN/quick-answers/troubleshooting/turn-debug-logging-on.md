@@ -7,6 +7,10 @@ lang: zh_CN
 
 # 如何启用调试日志记录？
 
+有时，您想要查看比 Toolkit 工具默认输出更多的日志记录数据。您可以启用**调试日志记录**以获取更详细的日志输出，且有多种方法可以执行此操作。
+
+{% include info title="注意" content="不确定在何处查找日志文件？请参见[我的日志文件位于何处？](./where-are-my-log-files.md)文档。" %}
+
 ## 通过 Shotgun Desktop 启用调试
 
 启用调试最简单的方法是，通过 Shotgun Desktop 应用进行启用。登录 Shotgun Desktop 后便可进行相关设置：单击应用右下方的个人资料图片，然后依次选择**“高级”(Advanced)和“Toggle Debug Logging”。**此设置在会话之间持久有效，因此请在完成后将其禁用。
@@ -59,9 +63,7 @@ b. 删除 `TK_DEBUG` 环境变量。
 
 {% include info title="注意" content="关闭 Shotgun Desktop 和终端后，调试日志记录将不再启用。" %}
 
-## 检查日志文件中的调试输出
 
-要查找您的日志文件，请参见我们的文档[我的日志文件位于何处？](./where-are-my-log-files.md)
 
 ## 高级配置调试日志记录选项
 
@@ -69,7 +71,7 @@ b. 删除 `TK_DEBUG` 环境变量。
 
 每个插件在环境文件中都有一项 `debug_logging` 设置。启用此项时，会将其他调试级日志消息发送至软件中的默认输出（例如，Nuke 或 Maya 中的脚本编辑器）。 在插件中运行的所有应用都会发出这些调试级消息，因此，为插件启用此设置实际上也是为所有应用启用它。
 
-这不会将任何日志消息输出到文件。为了可以将日志消息输出到文件，我们正在致力于开发一个更标准的日志记录框架。例外情况是 [SG Desktop](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039818-Shotgun-Desktop) 和 [Photoshop 插件](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000026653-Photoshop-CC)，它们会将输出同时记录到 GUI 控制台和文件。
+这不会将任何日志消息输出到文件。为了可以将日志消息输出到文件，我们正在致力于开发一个更标准的日志记录框架。例外情况是 [Shotgun Desktop](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039818-Shotgun-Desktop) 和 [Photoshop 插件](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000026653-Photoshop-CC)，它们会将输出同时记录到 GUI 控制台和文件。
 
 ### 为软件中的插件启用调试日志记录
 
@@ -94,6 +96,8 @@ engines:
 ```
 
 保存文件并在镜头工序环境下重新启动 Nuke。现在，您可以在脚本编辑器窗口中看到调试输出。
+
+{% include info title="注意" content="如果通过 Shotgun Desktop 复选框、环境变量或插件配置设置中的任意一个启用调试日志记录，则将输出调试日志记录。此外，这三项中的每一项均独立于其他项进行修改：复选框值是持久有效的应用设置，完全独立于插件设置或环境变量。这意味着，尽管 Desktop 复选框可能处于取消选中状态，但调试日志记录可能仍会通过其他方法之一进行启用。" %}
 
 ### 为 tank 命令启用调试日志记录
 
@@ -163,3 +167,4 @@ engines:
     You are currently running version v0.15.18 of the Shotgun Pipeline Toolkit
     No need to update the Toolkit Core API at this time!
     DEBUG [10:11:39 981.74405098]: Exiting with exit code None
+

@@ -357,4 +357,4 @@ Workfiles 应用的系统名称是 `tk-multi-workfiles2`，名称中的 `multi` 
 * [Toolkit 配置简介](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s)（来源：SIGGRAPH 2018 Developer Day）
 * [揭秘默认配置网络讲座](https://www.youtube.com/watch?v=eKHaC1dZCeE)
 
-现在您已了解如何修改应用配置设置，请尝试[将应用添加到 Toolkit 配置](./installing_app.md)。
+现在您已了解如何修改应用配置设置，请尝试[将应用添加到 Toolkit 配置](installing_app.md)。
