@@ -354,7 +354,7 @@ Web アプリケーションとローカル デスクトップとの通信は複
 
 1. `tk-shotgun` エンジンは正しい YAML 環境ファイルで設定されているものの、その環境設定内にアプリが存在しない。この場合、このエンティティ タイプに対してアクションが存在しないことが意図されている可能性があります。
 
-2. `tk-shotgun` エンジンが正しい YML 環境ファイルで設定されていて、アプリが存在するにもかかわらず、アクションがメニューに表示されない。これは、アプリが初期化に失敗したことが原因の可能性があります。この場合、問題に関する説明が [tk-shotgun.log and tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/) に記録されています。
+2. `tk-shotgun` エンジンが正しい YML 環境ファイルで設定されていて、アプリが存在するにもかかわらず、アクションがメニューに表示されない。これは、アプリが初期化に失敗したことが原因の可能性があります。この場合、問題に関する説明が [tk-shotgun.log および tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/) に記録されています。
 
 3. このエンティティ タイプに対応する環境に、`tk-shotgun` の環境設定が含まれていない。この場合の最終的な結果は、このリストの 1 番と同じです。この場合、パイプライン設定の `pick_environment` フックを確認することでこのエンティティ タイプに対してどの環境がロードされているかを判断でき、そこで `tk-shotgun` の環境設定を確認できます。
 
@@ -415,7 +415,7 @@ Web アプリケーションとローカル デスクトップとの通信は複
 
 **ローカル ホスト サイトで {% include product %} Desktop を実行する**
 
-{% include product %} サイトの URL の最後が `shotgunstudio.com` でない場合は、ローカルの {% include product %} サイトを実行していることを示します。この場合、サイトと {% include product %} との統合の準備が完了していない可能性があり、開始前に {% include product %} チームによる何らかの調整が必要になる場合があります。その場合はサポートいたしますので、[サポート リクエストを送信](https://support.shotgunsoftware.com/hc/ja/requests/new)してください。
+{% include product %} サイトの URL の最後が `shotgunstudio.com` または `shotgrid.autodesk.com` でない場合は、ローカルの {% include product %} サイトを実行していることを示します。この場合、サイトと {% include product %} との統合の準備が完了していない可能性があり、開始前に {% include product %} チームによる何らかの調整が必要になる場合があります。その場合はサポートいたしますので、[サポート リクエストを送信](https://support.shotgunsoftware.com/hc/ja/requests/new)してください。
 
 **ローカル ホスト サイトでアプリ ストアに接続する**
 
@@ -423,7 +423,7 @@ Web アプリケーションとローカル デスクトップとの通信は複
 
 `app_store_http_proxy: <proxy_server_address>`
 
-この `<proxy_server_address>` は[開発者ドキュメント](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)に記載された命名規則に従った文字列です。
+この `<proxy_server_address>` は[開発者ドキュメント](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)
 
 プロジェクトごとにこの設定を上書きする必要がある場合は、プロジェクトのパイプライン設定の `config/core/shotgun.yml` に上書きします。
 
@@ -441,7 +441,7 @@ _シナリオ: {% include product %} の統合を実行したいと考えてい�
 
 **ソリューション**
 
-- 一時的にインターネットに接続できる場合は、{% include product %} Desktop をダウンロードします。ShotGrid Desktop には一連の[統合](https://support.shotgunsoftware.com/hc/ja/articles/115000068574#Introduction)があらかじめパッケージ化されており、サポートされているすべての DCC 向けの {% include product %} の統合に必要なアプリとエンジンがあらかじめすべてバンドルされています。ShotGrid Desktop を起動すると自動的にアップグレードが検索されますが、{% include product %} App Store に接続できない場合は、ローカルに存在する最新のバージョンが実行されます。
+- 一時的にインターネットに接続できる場合は、{% include product %} Desktop をダウンロードします。Shotgun Desktop には一連の[統合](https://support.shotgunsoftware.com/hc/ja/articles/115000068574#Introduction)があらかじめパッケージ化されており、サポートされているすべての DCC 向けの {% include product %} の統合に必要なアプリとエンジンがあらかじめすべてバンドルされています。Shotgun Desktop を起動すると自動的にアップグレードが検索されますが、{% include product %} App Store に接続できない場合は、ローカルに存在する最新のバージョンが実行されます。
 
 **知っておきたい情報**
 

@@ -10,7 +10,7 @@ lang: ko
 ## 소개
 
 이 안내서에서는 툴킷 앱의 정의, 툴킷 앱을 제작하는 방법 및 앱 개발과 관련한 몇 가지 기본적인 사항에 대해 설명합니다.
-ShotGrid Pipeline Toolkit은 ShotGrid 소프트웨어가 관리하는 앱과 엔진의 모음일 뿐 아니라 커스텀 파이프라인 도구를 빠르고 쉽게 빌드할 수 있게 해 주는 개발 플랫폼이기도 합니다!
+{% include product %} Pipeline Toolkit은 {% include product %} 소프트웨어가 관리하는 앱과 엔진의 모음일 뿐 아니라 커스텀 파이프라인 도구를 빠르고 쉽게 빌드할 수 있게 해 주는 개발 플랫폼이기도 합니다!
 
 - [툴킷 앱이란?](#what-is-a-toolkit-app)
 - [자체 앱 제작](#creating-your-own-app)
@@ -35,19 +35,19 @@ ShotGrid Pipeline Toolkit은 ShotGrid 소프트웨어가 관리하는 앱과 엔
 
 툴킷 앱은 다음과 같이 정의할 수 있습니다.
 
-- 일반적으로 최종 사용자가 ShotGrid 통합을 통해 실행하는 도구입니다.
-- 앱은 대개 사용자가 앱의 작업을 안내할 수 있는 그래픽 사용자 인터페이스를 갖추고 있지만 필수 사항은 아닙니다. 또한 앱은 통합에 등록된 명령일 수 있습니다. 이러한 명령은 호스트 소프트웨어의 ShotGrid 메뉴에서 사용자가 실행할 수 있습니다.
+- 일반적으로 최종 사용자가 {% include product %} 통합을 통해 실행하는 도구입니다.
+- 앱은 대개 사용자가 앱의 작업을 안내할 수 있는 그래픽 사용자 인터페이스를 갖추고 있지만 필수 사항은 아닙니다. 또한 앱은 통합에 등록된 명령일 수 있습니다. 이러한 명령은 호스트 소프트웨어의 {% include product %} 메뉴에서 사용자가 실행할 수 있습니다.
 - 다른 프로세스 또는 앱이 상호 작용할 수 있는 API/공용 방식을 가질 수 있습니다.
 - 다중 플랫폼에 기반하며 소프트웨어에 구속받지 않습니다.
-- 툴킷 앱은 [환경](https://developer.shotgridsoftware.com/ko/487a9f2c/#%ED%99%98%EA%B2%BD%EC%9D%B4%EB%9E%80)별로 다르게 구성할 수 있습니다.
+- 툴킷 앱은 [환경](https://developer.shotgunsoftware.com/ko/487a9f2c/#%ED%99%98%EA%B2%BD%EC%9D%B4%EB%9E%80)별로 다르게 구성할 수 있습니다.
 - 컨텍스트를 인식할 수 있습니다. 예를 들어 앱은 사용자가 작업 중인 태스크를 인식하고 그에 따라 작업을 수행할 수 있습니다.
 - 툴킷 엔진에서만 실행할 수 있습니다.
 
-툴킷 앱은 툴킷 엔진에 의해 초기화됩니다. [엔진](https://developer.shotgridsoftware.com/tk-core/platform.html#engines)은 특정 소프트웨어 환경에서 실행되도록 설계되었으며 툴킷 앱을 실행할 인터페이스를 제공합니다. 엔진은 앱에서 다양한 소프트웨어 환경을 처리하는 데 필요한 복잡성을 추상화합니다.
+툴킷 앱은 툴킷 엔진에 의해 초기화됩니다. [엔진](https://developer.shotgunsoftware.com/tk-core/platform.html#engines)은 특정 소프트웨어 환경에서 실행되도록 설계되었으며 툴킷 앱을 실행할 인터페이스를 제공합니다. 엔진은 앱에서 다양한 소프트웨어 환경을 처리하는 데 필요한 복잡성을 추상화합니다.
 따라서 앱은 해당 목적을 이행하기 위한 기능을 제공하는 데만 중점을 두며 창 부모-자식 관리, 사용자의 컨텍스트 추적 또는 앱 시작 단축키 등의 기능을 처리할 필요가 없습니다.
 
 ## 자체 앱 제작
-ShotGrid 소프트웨어를 통해 관리 및 릴리즈되는 모든 앱과 엔진은 오픈 소스로, [GitHub](https://github.com/shotgunsoftware)에서 찾아볼 수 있습니다.
+{% include product %} 소프트웨어를 통해 관리 및 릴리즈되는 모든 앱과 엔진은 오픈 소스로, [GitHub](https://github.com/shotgunsoftware)에서 찾아볼 수 있습니다.
 
 이 섹션에서는 스타터 템플릿을 사용하여 새 앱을 생성하는 방법을 살펴봅니다.
 사용자들이 이미 GitHub 및 git 워크플로우에 익숙할 것으로 생각되기는 하지만 git을 소스 제어 솔루션으로 사용하고 있지 않더라도 툴킷 개발은 얼마든지 진행할 수 있습니다.
@@ -69,15 +69,15 @@ ShotGrid 소프트웨어를 통해 관리 및 릴리즈되는 모든 앱과 엔�
 ## 3부: 구성에 앱 추가
 구성에 앱을 추가하는 방법에 대한 자세한 내용은 "[앱 추가](../getting-started/installing_app.md)" 안내서를 참조하십시오.
 
-앱을 구성에 추가할 때는 앱이 사용되는 위치(예: Nuke에서만 사용, 여러 다른 소프트웨어 또는 ShotGrid 데스크톱에서 독립 실행형으로 사용)를 고려해야 합니다.
+앱을 구성에 추가할 때는 앱이 사용되는 위치(예: Nuke에서만 사용, 여러 다른 소프트웨어 또는 {% include product %} 데스크톱에서 독립 실행형으로 사용)를 고려해야 합니다.
 또한 앱의 기반 컨텍스트도 고려해야 합니다.
 예를 들어 사용자가 작업 중인 태스크에 대해 알고 있는 경우에만 앱을 실행하거나, 알려진 프로젝트에서만 실행할 수 있습니까?
 이을 알면 그에 맞게 앱 설정을 추가해야 하는 환경 YAML 및 엔진을 지정합니다.
 
 확실하지 않을 경우에는 먼저 프로젝트 환경의 `tk-shell` 엔진에 추가해 두는 것이 좋습니다.
-이 방법을 사용하면 [IDE에서 실행](./sgtk-developer-bootstrapping.md)하거나 [중앙 집중식 구성](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)이 있는 경우에는 tank 명령을 사용하여 명령행을 통해 실행할 수 있습니다. 이렇게 하면 개발 속도가 빨라집니다.
+이 방법을 사용하면 [IDE에서 실행](./sgtk-developer-bootstrapping.md)하거나 [중앙 집중식 구성](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)이 있는 경우에는 tank 명령을 사용하여 명령행을 통해 실행할 수 있습니다. 이렇게 하면 개발 속도가 빨라집니다.
 
-시작하려면 앱 위치에 대한 [dev 디스크립터](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)를 사용하십시오.
+시작하려면 앱 위치에 대한 [dev 디스크립터](https://developer.shotgunsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)를 사용하십시오.
 
 ```yaml
 tk-multi-starterapp:
@@ -125,20 +125,20 @@ save_template:
     description: The template to use when building the path to save the file into
     allows_empty: False
 ```
-이 설정을 지정하면 앱 코드에서 템플릿 이름을 하드 코딩할 필요가 없고 대신 `info.yml`에 기본적으로 정의되거나 환경 YAML 파일에서 재정의된 설정에서 [값을 가져올](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Application.get_setting) 수 있습니다.
+이 설정을 지정하면 앱 코드에서 템플릿 이름을 하드 코딩할 필요가 없고 대신 `info.yml`에 기본적으로 정의되거나 환경 YAML 파일에서 재정의된 설정에서 [값을 가져올](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Application.get_setting) 수 있습니다.
 
 ```python
 template = app.get_setting("save_template")
 ```
 즉, 앱이 실행되는 환경에 따라 다른 템플릿을 사용하도록 앱을 구성할 수 있습니다.
 
-[참조 문서](https://developer.shotgridsoftware.com/tk-core/platform.html#the-configuration-section)에서 구성 설정에 대한 자세한 내용을 확인할 수 있습니다.
+[참조 문서](https://developer.shotgunsoftware.com/tk-core/platform.html#the-configuration-section)에서 구성 설정에 대한 자세한 내용을 확인할 수 있습니다.
 
 ### 프레임워크
 
 앞으로 프레임워크를 사용할 것이라면 프레임워크를 매니페스트 파일에 추가할 수 있습니다.
 
-예를 들어 Qt Widgets 및 ShotGrid 유틸리티 프레임워크를 앱에 사용할 것이라면 다음을 `info.yml`에 추가하십시오.
+예를 들어 Qt Widgets 및 {% include product %} 유틸리티 프레임워크를 앱에 사용할 것이라면 다음을 `info.yml`에 추가하십시오.
 
 ```python
 # the frameworks required to run this app
@@ -163,13 +163,12 @@ frameworks:
 
 프레임워크와 그 유용성에 대한 자세한 정보는 다음 링크에서 확인하십시오.
 
-- [Qt Widgets 프레임워크](https://developer.shotgridsoftware.com/tk-framework-qtwidgets/)
-- [ShotGrid 유틸리티 프레임워크](https://developer.shotgridsoftware.com/tk-framework-shotgunutils/)
+- [Qt Widgets 프레임워크](https://developer.shotgunsoftware.com/tk-framework-qtwidgets/)
+- [{% include product %} utils 프레임워크](https://developer.shotgridsoftware.com/tk-framework-shotgunutils/)
 
 ### 변경 사항 다시 로드
 
-Maya 등의 소프트웨어 내에서 앱을 테스트하는 경우, 구성에 하나 이상의 dev 항목을 추가한 즉시 툴킷에서 자동으로 ShotGrid 메뉴에 **다시 로드 및 다시 시작**(Reload and Restart) 옵션을 추가합니다.
-![ShotGrid 메뉴 다시 로드 및 다시 시작 옵션](./images/reload-restart.png)
+Maya 등의 소프트웨어 내에서 앱을 테스트하는 경우, 구성에 하나 이상의 dev 항목을 추가한 즉시 툴킷에서 자동으로 {% include product %} 메뉴에 **다시 로드 및 다시 시작**(Reload and Restart) 옵션을 추가합니다. ![{% include product %} 메뉴 다시 로드 및 다시 시작 옵션.](/images/reload-restart.png)
 
 이 버튼을 클릭하면 구성 및 코드가 다시 로드되고 엔진이 다시 시작됩니다.
 즉, Maya를 시작하고, 시도해 보려는 코드나 구성 변경을 적용할 때마다 **다시 로드 및 다시 시작**(Reload and Restart) 버튼을 누르기만 하면 변경 사항을 가져오는 과정을 빠르게 반복할 수 있습니다.
@@ -177,10 +176,10 @@ Maya 등의 소프트웨어 내에서 앱을 테스트하는 경우, 구성에 �
 {% include info title="참고" content="화면에 활성 상태인 UI가 있는 경우 이 UI는 자동으로 업데이트되지 않으며, 메뉴에서 해당 UI로 이동하여 다시 시작해야 합니다." %}
 
 ## 5부: 테스트
-코드를 테스트하려면 다른 사용자들을 ShotGrid에서 `PipelineConfiguration` 엔티티의 `User Restrictions` 필드에 추가하여 dev 샌드박스로 초대하기만 하면 됩니다.
-사용자를 추가하면 바로 ShotGrid Create 및 브라우저 액션 내의 메뉴에 새 항목이 표시되고, ShotGrid 데스크톱 내부에서 구성을 선택하는 옵션도 제공됩니다.
+코드를 테스트하려면 다른 사용자들을 {% include product %}에서 `PipelineConfiguration` 엔티티의 `User Restrictions` 필드에 추가하여 dev 샌드박스로 초대하기만 하면 됩니다.
+사용자를 추가하면 바로 {% include product %} Create 및 브라우저 액션 내의 메뉴에 새 항목이 표시되고, {% include product %} 데스크톱 내부에서 구성을 선택하는 옵션도 제공됩니다.
 
-![ShotGrid 데스크톱에서 선택 가능한 Dev 구성](./images/dev-configuration.png)
+![{% include product %} 데스크톱에서 선택 가능한 Dev 구성.](/images/dev-configuration.png)
 
 {% include info title="참고" content="사용자들에게도 앱 코드를 볼 수 있는 액세스 권한이 있어야 합니다. 그렇지 않으면 앱이 로드되지 않습니다." %}
 
@@ -189,7 +188,7 @@ Maya 등의 소프트웨어 내에서 앱을 테스트하는 경우, 구성에 �
 [3부](#part-3---adding-the-app-to-your-config)에서는 dev 디스크립터를 사용하여 앱을 가리키도록 구성을 설정했습니다.
 릴리즈한 소프트웨어의 경우 모든 사용자가 앱에 액세스할 수 있고 안전하고 쉽게 업그레이드할 수 있도록 버전이 지정되어야 할 것입니다.
 
-ShotGrid에서 제공하는 모든 앱은 툴킷 앱 스토어를 사용하여 업데이트 및 릴리즈를 트래킹합니다. 앱은 다음과 비슷한 형식의 위치 태그를 가집니다.
+{% include product %}에서 제공하는 모든 앱은 툴킷 앱 스토어를 사용하여 업데이트 및 릴리즈를 트래킹합니다. 앱은 다음과 비슷한 형식의 위치 태그를 가집니다.
 
 ```yaml
 location:
@@ -203,7 +202,7 @@ location:
 앱 릴리즈를 소싱하는 몇 가지 옵션이 있습니다.
 
 - [Git](https://developer.shotgridsoftware.com/tk-core/descriptor.html#tracking-against-tags-in-git) 및 [GitHub](https://developer.shotgridsoftware.com/tk-core/descriptor.html#tracking-against-releases-on-github)
-- [ShotGrid 업로드](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)
+- [{% include product %} 업로드](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)
 - [로컬 경로](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)
 
 프로덕션 구성에서 앱을 추가하고 필요에 맞는 디스크립터를 사용하도록 전환합니다.
@@ -225,10 +224,10 @@ git에 첫 번째 태그를 생성하고 나면(예: `v1.0.0`) 태그를 가리�
 설정하고 나면 `tank updates`를 간단히 실행할 수 있고, 새 태그가 생성되었다면 업그레이드할지 묻는 메시지가 나타납니다.
 이제 워크플로우는 공식 앱 스토어 앱의 경우와 동일합니다.
 
-{% include warning title="주의" content="git 디스크립터는 [중앙 집중식 구성](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)에서 잘 작동합니다. 중앙 집중식 구성에서 앱 캐싱은 일반적으로 관리자(admin)가 실행하며 모든 사용자가 액세스할 수 있는 중앙 위치에 저장됩니다. 그러나 [분산 구성](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)을 사용하는 경우에는 적합하지 않을 수 있습니다. 앱이 사용자별로 다운로드되므로 각 사용자가 리포지토리에서 인증받고 코드에 액세스하기 위해 git를 설치하고 설정해야 합니다." %}
+{% include warning title="주의" content="git 디스크립터는 [중앙 집중식 구성](https://developer.shotgunsoftware.com/tk-core/initializing.html#centralized-configurations)에서 잘 작동합니다. 중앙 집중식 구성에서 앱 캐싱은 일반적으로 관리자(admin)가 실행하며 모든 사용자가 액세스할 수 있는 중앙 위치에 저장됩니다. 그러나 [분산 구성](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)을 사용하는 경우에는 적합하지 않을 수 있습니다. 앱이 사용자별로 다운로드되므로 각 사용자가 리포지토리에서 인증받고 코드에 액세스하기 위해 git를 설치하고 설정해야 합니다." %}
 
 ## 기존 앱 수정
-빈 스타터 템플릿으로 시작하는 것보다 기존 앱(예: ShotGrid 소프트웨어의 표준 앱 중 하나)에 작은 기능을 추가하는 것이 좋을 때도 있습니다.
+빈 스타터 템플릿으로 시작하는 것보다 기존 앱(예: {% include product %} 소프트웨어의 표준 앱 중 하나)에 작은 기능을 추가하는 것이 좋을 때도 있습니다.
 수정된 버전의 앱으로 작업할 때에는 보통 소스 앱과 비교하여 차이점을 '트래킹'하면서 변경 사항이나 버그 픽스를 정기적으로 끌어오는 방식을 사용합니다.
 
 이러한 유형의 개발을 진행할 때에는 부모 코드를 픽업한 다음 일부 변경 사항을 적용하고, 이를 파이프라인에 릴리즈합니다.

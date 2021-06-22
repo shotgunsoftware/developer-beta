@@ -1,41 +1,63 @@
-# Translated text strings used by the table of contents
+﻿# Translated text strings used by the table of contents
 # 
 # For documentation, see https://developer.shotgridsoftware.com/tk-doc-generator/authoring/toc/
 #
 
+reference: 参考
+guides: 手册
+trusted-solutions: 可信的解决方案
+
 rv: RV
 toolkit: Toolkit
 shotgun: ShotGrid
+review: 审核
 quick-answers: 快速解答
+pipeline-integrations: 工作流集成
 
 python-api: Python API
 rest-api: REST API
-event-triggers: 事件驱动的触发器
-jira-bridge: Jira 桥接（Beta 版）
+event-triggers: 编写事件驱动的触发器
+action-menu-items: 创建自定义的动作菜单项
+jira-bridge-guide: 在 Jira 与 ShotGrid 之间同步数据
+jira-bridge-ref: Jira 桥接开发资源
 examples: 示例
-reference: 参考
 webinars: 网络讲座录像
+developer-training-videos: 开发人员培训视频
+episodic-pipeline-tutorial: 剧集工作流教程
 
-core-api: 核心 API
+core-api: Toolkit 核心 API
 qt-widgets: QT 控件
 shotgun-utils: ShotGrid 实用程序
 publish-api: 发布 API
+hiero-export-api: Hiero 导出 API
+development: 开发
 app-development: 应用开发
+engine-development: 插件开发
+file-system-configuration: 文件系统配置
 
-user-manual: 用户手册
-technical-reference: 技术参考文件
+rv-user-manual: RV 用户手册
+technical-reference: 技术参考
+rv-technical-reference: RV 技术参考
 rv-sdi: RV-SDI
 forums: 论坛
 
+rv-maya-integration: RV Maya 集成
+rv-nuke-integration: RV Nuke 集成
+rv-shotgun-integration: RV ShotGrid 集成
 maya: Maya
 nuke: Nuke
 shotgun: ShotGrid
-screening-room: 审片室和 ShotGrid 审看
+screening-room-and-shotgun-review: 审片室和 ShotGrid 审看
 troubleshooting: 疑难解答
 extending-rv: 扩展 RV
 
-other: 其他
+videos: 视频
+siggraph-shotgun-day: SIGGRAPH ShotGrid 日
+developer-training: 开发人员培训
+toolkit-webinars: Toolkit 网络讲座
 
+other: 其他
+community: 社区
 shotgun-support: ShotGrid 支持
 service-status: 服务状态
 new-support-request: 新的支持请求

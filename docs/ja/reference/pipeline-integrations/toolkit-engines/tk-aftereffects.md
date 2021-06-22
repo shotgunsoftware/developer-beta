@@ -9,7 +9,7 @@ lang: ja
 
 {% include product %} Engine for After Effects は、{% include product %} と After Effects のワークフローを統合するプラットフォームを提供します。{% include product %} Toolkit の標準エンジンで構成され、[tk-framework-adobe](https://github.com/shotgunsoftware/tk-framework-adobe) (CEP) を使用します。
 
-有効にすると、**[{% include product %} Adobe パネル](ShotGrid Adobe Panel)** というパネルが After Effects で使用できるようになります。現在の {% include product %} コンテキストの情報とそのコンテキストにインストールされたアプリに登録されているコマンドが表示されます。
+有効にすると、**[{% include product %} Adobe パネル] (Shotgun Adobe Panel)** というパネルが After Effects で使用できるようになります。現在の {% include product %} コンテキストの情報とそのコンテキストにインストールされたアプリに登録されているコマンドが表示されます。
 
 ![エンジン](../images/engines/aftereffects_extension.png)
 

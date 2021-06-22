@@ -73,7 +73,7 @@ whitelist=*.shotgunstudio.com
 
 Linux 上でサーバは libffi に依存しています。Desktop が起動時にクラッシュし、libffi が見つからないというメッセージがログに記録された場合は、このパッケージをインストールする必要があります。
 
-セットアップ時の問題や質問については、support@shotgunsoftware.com までお問い合わせください。サーバの実行に関して問題が発生する場合は、**config.ini** ファイルの **debug** を **1** に設定して、Desktop のログ ファイルを追加します。
+セットアップ中の問題や質問がある場合は、[サポート サイト](https://knowledge.autodesk.com/ja/contact-support)にアクセスしてサポートを依頼してください。サーバの実行に関して問題が発生する場合は、**config.ini** ファイルの **debug** を **1** に設定して、Desktop のログ ファイルを追加します。
 
 ログ ファイルは次の場所にあります。
 

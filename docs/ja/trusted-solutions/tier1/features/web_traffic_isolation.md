@@ -7,7 +7,7 @@ lang: en
 
 # Web Traffic Isolation
 
-Communication between your client systems and your ShotGrid site will traverse the open Internet by default. Web Traffic Isolation allows you to restrict access to your ShotGrid site from the public Internet entirely and ensure that all traffic transits directly between your AWS VPC and Autodesk's AWS VPC.
+Communication between your client systems and your {% include product %} site will traverse the open Internet by default. Web Traffic Isolation allows you to restrict access to your {% include product %} site from the public Internet entirely and ensure that all traffic transits directly between your AWS VPC and Autodesk's AWS VPC.
 
 <img alt="web-traffic-isolation-overview" src="../images/web-traffic-isolation-overview.png" width="400">
 

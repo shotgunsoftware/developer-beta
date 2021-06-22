@@ -23,9 +23,9 @@ lang: zh_CN
 
 要使用本手册并为项目创建可自定义的配置，需要以下内容：
 
-1. 有效的 {% include product %} 站点。您可以[在此处注册 ShotGrid](https://www.shotgunsoftware.com/zh-cn/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) 并获取 30 天试用版以开始探索。
-2. {% include product %} Desktop。如果未安装 Desktop，则可以[单击此链接开始。](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574#Installation%20of%20Desktop)
-3. 可用于存储项目文件和工作流配置的文件系统的访问权限。在该文件系统上，创建一个名为 `Shotgun` 的文件夹，其中包含两个文件夹 `projects` 和 `configs`。
+1. 有效的 {% include product %} 站点。您可以[在此处注册 {% include product %}](https://www.shotgridsoftware.com/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) 并获取 30 天试用版以开始探索。
+2. {% include product %} 桌面。 如果未安装 Desktop，则可以[单击此链接开始。](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574#Installation%20of%20Desktop)
+3. 可用于存储项目文件和工作流配置的文件系统的访问权限。在该 Shotgun 管理的文件系统上，创建一个名为 `Shotgun` 的文件夹，其中包含两个文件夹 `projects` 和 `configs`。
 
 ## 关于高级项目设置向导
 
@@ -39,7 +39,7 @@ lang: zh_CN
 
 ### 创建配置
 
-每个项目都需要一个配置。第一次通过 {% include product %} Desktop 访问项目时，将下载并配置基本配置。此基本配置会自动检测用户在其系统上安装的受支持的内容创建软件，并将配置与项目相关联。工作流配置中的设置监管受支持软件应用程序中的集成。[Panel](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033098) 应用显示 {% include product %} 的项目信息，并使艺术家可以回复注释和查看版本，而无需退出其工作会话。[Publisher](https://support.shotgunsoftware.com/hc/zh-cn/articles/219032998) 应用允许艺术家将其作品提供给团队中的其他人，通过 [Loader](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033078) 应用，艺术家可以加载其队友发布的文件。基本配置不包括文件系统管理设置，也不支持文件或者目录命名的模板开发。它也不会像配置默认配置那样，需要添加大量的应用工具。它是一个简单的配置，允许在不对配置文件进行任何手动编辑的情况下运行 Toolkit。向导将基本配置替换为默认配置。它提供了更多的应用和软件集成，以支持您开始工作。虽然也可以编辑基本配置，但只有在您拥有高级设置后，才能设置项目以进行自定义。
+每个项目都需要一个配置。第一次通过 {% include product %} Desktop 访问项目时，将下载并配置基本配置。此基本配置会自动检测用户在其系统上安装的受支持的内容创建软件，并将配置与项目相关联。工作流配置中的设置监管受支持软件应用程序中的集成。[面板](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033098)应用显示 {% include product %} 的项目信息，并使艺术家可以回复注释和查看版本，而无需退出其工作会话。[Publisher](https://support.shotgunsoftware.com/hc/zh-cn/articles/219032998) 应用允许艺术家将其作品提供给团队中的其他人，通过 [Loader](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033078) 应用，艺术家可以加载其队友发布的文件。基本配置不包括文件系统管理设置，也不支持文件或者目录命名的模板开发。它也不会像配置默认配置那样，需要添加大量的应用工具。它是一个简单的配置，允许在不对配置文件进行任何手动编辑的情况下运行 Toolkit。向导将基本配置替换为默认配置。它提供了更多的应用和软件集成，以支持您开始工作。虽然也可以编辑基本配置，但只有在您拥有高级设置后，才能设置项目以进行自定义。
 
 
 ### 基本配置和默认配置之间的差异
@@ -83,7 +83,7 @@ Desktop 在加载项目页面时，自动下载和配置基本配置，并自动
 
 ![高级项目设置](./images/advanced_config/6_advanced_project_setup.png)
 
-此时将显示一个对话框，其中包含四个选项，“{% include product %} Default”处于选中状态。此时，除了默认选择的“{% include product %} Default”，您还可以选择根据现有其他项目的配置、Git 库配置或从磁盘路径选择配置文件来配置该项目的工作流。
+此时将显示一个对话框，其中包含四个选项，“{% include product %} Default”处于选中状态。此时，除了默认选择的“Shotgun Default”，您还可以选择根据现有其他项目的配置、Git 库配置或从磁盘路径选择配置文件来配置该项目的工作流。
 
 对于本练习，我们将选择**“{% include product %} Default”**。此选项将根据 {% include product %} 默认配置为您的项目创建工作流配置。
 
@@ -109,7 +109,7 @@ Desktop 在加载项目页面时，自动下载和配置基本配置，并自动
 
 {% include product %} Toolkit 支持三种操作系统：Linux、Mac 和 Windows。
 
-**步骤 8：**选择用于存储项目数据的操作系统旁边的字段。选择文件夹图标，并导航到在本练习之前在文件系统上创建的项目文件夹。
+**步骤 8：**选择用于存储项目数据的操作系统旁边的字段。选择文件夹图标，并导航到在本练习之前在 Shotgun 管理的文件系统上创建的项目文件夹。
 
 ![存储根文件夹](./images/advanced_config/11_storage_root_folder.png)
 
@@ -186,4 +186,4 @@ Toolkit 既适用于分布式设置，又适用于集中式设置。在分布式
 
 理想情况下，您的设施需要针对特定任务进行优化。您可以使用多个根文件夹来优化事务，例如在一台服务器上进行样片视频播放，在另一台服务器上进行交互式处理。Toolkit 允许您使用多个存储根，以便于实现上述工作流。了解如何[从单存储配置转换为多存储配置](../../../quick-answers/administering/convert-from-single-root-to-multi.md)。
 
-现在，已经为您的项目进行了工作流配置，可以开始编辑它了！跳转到下一个手册[编辑工作流配置](./editing_app_setting.md)，以了解操作方法。
+现在，已经为您的项目进行了工作流配置，可以开始编辑它了！跳转到下一个手册[编辑工作流配置](editing_app_setting.md)，以了解操作方法。

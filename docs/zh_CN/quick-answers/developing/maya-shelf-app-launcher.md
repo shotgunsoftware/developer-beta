@@ -43,6 +43,6 @@ except Exception, e:
     cmds.error(msg)
 ```
 
-选择此代码并将其拖动到自定义工具架。请参见 [Maya 文档以了解有关如何使用自定义工具架按钮的详细信息](https://knowledge.autodesk.com/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2016/CHS/Maya/files/GUID-C693E884-F81A-4858-B5D6-3856EB8F394E-htm.html)。
+选择此代码并将其拖动到自定义工具架。请参见 [Maya 文档以了解有关如何使用自定义工具架按钮的详细信息](https://knowledge.autodesk.com/zh-hans/support/maya/learn-explore/caas/CloudHelp/cloudhelp/2016/CHS/Maya/files/GUID-C693E884-F81A-4858-B5D6-3856EB8F394E-htm.html)。
 
 您应该可以使用此代码示例启动在 Maya 中启用的任何 Toolkit 应用，方法是修改顶部的 `tk_app` 和 `call_func` 变量。

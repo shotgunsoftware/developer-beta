@@ -79,15 +79,16 @@ sgtk.LogManager().global_debug = True
 
 ## 第 3 部分：身份认证
 
-在已启动 ShotGrid Toolkit 的环境之外运行使用 Toolkit API 的脚本时，始终需要进行身份认证。
-因此，要执行引导，需要向 ShotGrid 站点认证 Toolkit API 的身份。
+在已启动 {% include product %} Toolkit 的环境之外运行使用 Toolkit API 的脚本时，始终需要进行身份认证。
+
+因此，要执行引导，需要向 {% include product %} 站点认证 Toolkit API 的身份。
 
 您可以使用用户凭据或脚本凭据进行身份认证。
 
 - 如果目的是为面向用户的过程（如启动应用或运行需要用户输入的代码）引导，则用户身份认证是最佳方式（这是我们的所有集成的默认工作方式）。
 - 如果您要编写脚本来自动执行某项操作，并且没有用户要进行身份认证，则应使用脚本凭据。
 
-身份认证通过 [`ShotgunAuthenticator`](https://developer.shotgridsoftware.com/tk-core/authentication.html?highlight=shotgunauthenticator#sgtk.authentication.ShotgunAuthenticator) 类进行处理。
+身份认证通过 [`{% include product %}Authenticator`](https://developer.shotgridsoftware.com/tk-core/authentication.html?highlight=shotgunauthenticator#sgtk.authentication.ShotgunAuthenticator) 类进行处理。
 下面是用户和脚本身份认证示例。
 
 ### 用户身份认证
@@ -109,7 +110,7 @@ authenticator.clear_default_user()
 # information.
 user = authenticator.get_user()
 
-# Tells Toolkit which user to use for connecting to Shotgun. Note that this should
+# Tells Toolkit which user to use for connecting to ShotGrid. Note that this should
 # always take place before creating an `Sgtk` instance.
 sgtk.set_authenticated_user(user)
 ```
@@ -126,11 +127,11 @@ authenticator = sgtk.authentication.ShotgunAuthenticator()
 # Create a user programmatically using the script's key.
 user = authenticator.create_script_user(
  api_script="Script Name",
- api_key="4e48f....<use the key from your Shotgun site>",
+ api_key="4e48f....<use the key from your ShotGrid site>",
  host="https://yoursite.shotgunstudio.com"
 )
 
-# Tells Toolkit which user to use for connecting to Shotgun.
+# Tells Toolkit which user to use for connecting to ShotGrid.
 sgtk.set_authenticated_user(user)
 ```
 
@@ -143,7 +144,7 @@ sgtk.set_authenticated_user(user)
 
 1. 检索或找到 Toolkit 配置文件夹。
 2. 确保[缓存](../../../quick-answers/administering/where-is-my-cache.md#bundle-cache)中存在配置依存项（如应用和插件）。
-   如果它们不存在，并且它们使用基于相关服务的描述符（如 [`app_store`](https://developer.shotgridsoftware.com/tk-core/descriptor.html#the-shotgun-app-store) 或 [`shotgun`](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)），则该过程会将其下载到缓存。
+   如果它们不存在，并且它们使用基于远程服务的描述符（如 [`app_store`](https://developer.shotgridsoftware.com/tk-core/descriptor.html#the-shotgun-app-store) 或 [`{% include product %}`](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)），则该过程会将其下载到缓存。
 3. 将当前加载的 sgtk 核心换为适合配置的核心。
 4. 初始化插件、应用和框架。
 
@@ -177,12 +178,13 @@ mgr.plugin_id = "basic.shell"
 此参数将直接传递给 [`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 方法。请参见下面的[“实体”部分](#entity)中的示例。
 
 #### 实体
-[`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 方法 `entity` 参数用于为启动的插件设置[上下文](https://developer.shotgridsoftware.com/tk-core/core.html#context)以及[环境](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=environment#module-pick_environment)。该实体可以是将配置设置为与其一起使用的任何实体类型。
+[`ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 方法 `entity` 参数用于为启动的插件设置[上下文](https://developer.shotgridsoftware.com/tk-core/core.html#context)以及[环境](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=environment#module-pick_environment)。
+该实体可以是将配置设置为与其一起使用的任何实体类型。
 例如，如果提供 `Project` 实体，则插件将在项目上下文中启动，并使用项目环境设置。
 同样，您可以提供 `Task` 实体（即任务链接到 `Asset`），则它将使用 `asset_step.yml` 环境启动。
-这取决于默认配置行为，[选择的环境](https://developer.shotgridsoftware.com/zh_CN/487a9f2c/#toolkit-%E7%A1%AE%E5%AE%9A%E5%BD%93%E5%89%8D%E7%8E%AF%E5%A2%83%E7%9A%84%E6%96%B9%E5%BC%8F)通过核心挂钩 [`pick_environment.py`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.11/core/hooks/pick_environment.py) 进行控制，因此可以更改为根据上下文或其他参数选取不同的环境。
+这取决于默认配置行为，[选择的环境](https://developer.shotgridsoftware.com/zh_CN/487a9f2c/?title=Environment+Configuration+Reference#how-toolkit-determines-the-current-environment)通过核心挂钩 [`pick_environment.py`](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.11/core/hooks/pick_environment.py) 进行控制，因此可以更改为根据上下文或其他参数选取不同的环境。
 
-您需要以 ShotGrid 实体词典的格式提供实体，必须至少包含类型和 ID：
+您需要以 {% include product %} 实体词典的格式提供实体，必须至少包含类型和 ID：
 
 ```python
 task = {"type": "Task", "id": 17264}
@@ -239,11 +241,11 @@ authenticator = sgtk.authentication.ShotgunAuthenticator()
 # Create a user programmatically using the script's key.
 user = authenticator.create_script_user(
  api_script="Script Name",
- api_key="4e48f....<use the key from your Shotgun site>",
+ api_key="4e48f....<use the key from your ShotGrid site>",
  host="https://yoursite.shotgunstudio.com"
 )
 
-# Tells Toolkit which user to use for connecting to Shotgun.
+# Tells Toolkit which user to use for connecting to ShotGrid.
 sgtk.set_authenticated_user(user)
 
 # Bootstrap
@@ -262,7 +264,7 @@ engine = mgr.bootstrap_engine("tk-shell", entity=project)
 
 现在，您已经有了插件实例，接下来就可以开始使用 Toolkit API。
 
-在介绍如何启动应用之前，需要指出的是，您可以通过插件获取[当前上下文](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context)、[Sgtk 实例](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk)和 [ShotGrid API 实例](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.shotgun)。
+在介绍如何启动应用之前，需要指出的是，您可以通过插件获取[当前上下文](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context)、[Sgtk 实例](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk)和 [{% include product %} API 实例](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.shotgun)。
 
 ```python
 engine.context
@@ -342,11 +344,11 @@ authenticator = sgtk.authentication.ShotgunAuthenticator()
 # Create a user programmatically using the script's key.
 user = authenticator.create_script_user(
  api_script="Script Name",
- api_key="4e48f....<use the key from your Shotgun site>",
+ api_key="4e48f....<use the key from your ShotGrid site>",
  host="https://yoursite.shotgunstudio.com"
 )
 
-# Tells Toolkit which user to use for connecting to Shotgun.
+# Tells Toolkit which user to use for connecting to ShotGrid.
 sgtk.set_authenticated_user(user)
 
 # Bootstrap

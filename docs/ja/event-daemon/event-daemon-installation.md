@@ -13,7 +13,7 @@ lang: ja
 <a id="System_Requirements"></a>
 ## 動作環境
 
-デーモンは、Python がインストールされ、{% include product %} サーバにネットワーク アクセスできる任意のマシン上で実行できます。** サーバ上で実行する必要は**ありません{% include product %}。実際、ホストされているバージョンの {% include product %} を使用している場合、これはオプションではありません。ただし、必要に応じて {% include product %} サーバ上で実行することもできます。そうでなければ、任意のサーバで実行できます。
+デーモンは、Python がインストールされ、{% include product %} サーバにネットワーク アクセスできる任意のマシン上で実行できます。** サーバ上で実行する必要は** ありません{% include product %}。実際、ホストされているバージョンの {% include product %} を使用している場合、これはオプションではありません。ただし、必要に応じて {% include product %} サーバ上で実行することもできます。そうでなければ、任意のサーバで実行できます。
 
 * Python v2.6、v2.7 または 3.7
 * [{% include product %} Python API](https://github.com/shotgunsoftware/python-api)

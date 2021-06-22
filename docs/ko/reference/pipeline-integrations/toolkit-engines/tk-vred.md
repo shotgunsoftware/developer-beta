@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Vred
+title: VRed
 pagename: tk-vred
 lang: ko
 ---

@@ -12,7 +12,7 @@ lang: zh_CN
 
 目录：
 - [什么是 Toolkit 框架？](#what-is-a-toolkit-framework)
-- [预制 ShotGrid 框架](#pre-made-shotgun-frameworks)
+- [预制 {% include product %} 框架](#pre-made-shotgun-frameworks)
 - [创建框架](#creating-a-framework)
 - [通过挂钩使用框架](#using-frameworks-from-hooks)
 
@@ -23,10 +23,11 @@ Toolkit [框架](https://developer.shotgridsoftware.com/tk-core/platform.html?hi
 而是需要将框架导入应用或插件中。它使您可以独立保存可重用的逻辑，以便在多个插件和应用中使用。
 可重用的 UI 组件库就是一个框架示例，其中可能包含一个播放列表拾取器组件。然后，您可以将此框架导入应用中，并将播放列表拾取器组件插入到主应用 UI 中。
 
-## 预制 ShotGrid 框架
+## 预制 {% include product %} 框架
 
-ShotGrid 提供了一些预制的[框架](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039798-Integrations-Apps-and-Engines#frameworks)，在创建自己的应用时，您会发现这些框架非常有用。
-[Qt 控件](https://developer.shotgridsoftware.com/tk-framework-qtwidgets/)和 [ShotGrid 实用程序](https://developer.shotgridsoftware.com/tk-framework-shotgunutils/)框架在应用开发中特别有用。
+{% include product %} 提供了一些预制的[框架](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039798#frameworks)，在创建自己的应用时，您会发现这些框架非常有用。
+
+[Qt 控件](https://developer.shotgridsoftware.com/tk-framework-qtwidgets/)和 [{% include product %} 实用程序](https://developer.shotgridsoftware.com/tk-framework-shotgunutils/)框架在应用开发中特别有用。
 
 ## 创建框架
 
@@ -35,7 +36,7 @@ ShotGrid 提供了一些预制的[框架](https://support.shotgunsoftware.com/hc
 此外，您的框架不会向插件注册命令。
 
 您可以直接在框架实例本身中存储方法，或将模块存储在 `python/` 文件夹中。
-例如，[ShotGrid 实用程序框架将它们存储在 Python 文件夹中](https://github.com/shotgunsoftware/tk-framework-shotgunutils/tree/v5.6.2/python)。
+例如，[Shotgun 实用程序框架将它们存储在 Python 文件夹中](https://github.com/shotgunsoftware/tk-framework-shotgunutils/tree/v5.6.2/python)。
 要访问它们，需要导入框架，然后使用 [`import_module()` 方法](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Framework.import_module)访问子模块。
 
 API 文档中包含有关如何[导入框架](https://developer.shotgridsoftware.com/tk-core/platform.html?highlight=hide_tk_title_bar#frameworks)的示例。

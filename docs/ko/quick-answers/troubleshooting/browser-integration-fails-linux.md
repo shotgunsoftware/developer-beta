@@ -8,7 +8,7 @@ lang: ko
 # {% include product %} 데스크톱/브라우저 통합을 Linux에서 실행할 수 없습니다
 
 Linux에서 {% include product %} 데스크톱을 처음 실행하면 다음 오류 메시지 중 하나가 나타날 수 있습니다. 그러면 해당 오류에 대해 아래 단계를 수행하여 오류가 해결되는지 확인해 보십시오.
-여전히 해결되지 않으면 support@shotgunsoftware.com으로 문의하시기 바랍니다.
+여전히 해결되지 않으면 [지원 사이트](https://knowledge.autodesk.com/ko/contact-support)에서 도움을 요청하십시오.
 
 ### 목차
 - [OPENSSL_1.0.1_EC 또는 HTTPSConnection 관련 문제](#openssl_101_ec-or-httpsconnection-related-issues)
@@ -57,7 +57,7 @@ libffi를 설치했는데도 여전히 작동하지 않으면 다음 symlink를 
 sudo ln -s /usr/lib64/libffi.so.6.0.1 /usr/lib64/libffi.so.5
 ```
 
-위 방법으로 성공한 사용자들도 있고, 그렇지 못한 사용자들도 있습니다. 최신 버전 {% include product %} 데스크톱에는 웹 소켓 서버에 대한 종속성이 일부 추가되었습니다. 현재 {% include product %} 팀에서 해당 내용을 살펴보고 있습니다.
+위 방법으로 성공한 사용자들도 있고, 그렇지 못한 사용자들도 있습니다. 최신 버전 {% include product %} 데스크톱에는 웹 소켓 서버에 대한 종속성이 일부 추가되었습니다. 현재 Shotgun 팀에서 해당 내용을 살펴보고 있습니다.
 
 ## 인증서 유효성 확인 실패 관련 문제
 
@@ -71,7 +71,7 @@ certutil: function failed: SEC_ERROR_BAD_DATABASE: security library: bad databas
 
 **솔루션**
 
-컴퓨터에 Google Chrome이 설치되어 있다면 이를 실행한 다음 {% include product %} 데스크톱을 다시 실행합니다. 그래도 문제가 발생하면 support@shotgunsoftware.com으로 문의하시기 바랍니다.
+컴퓨터에 Google Chrome이 설치되어 있다면 이를 실행한 다음 {% include product %} 데스크톱을 다시 실행합니다. 그래도 문제가 발생하면 [지원 사이트](https://knowledge.autodesk.com/ko/contact-support)에서 도움을 요청하십시오.
 
 Chrome이 없으면 터미널을 열고 다음 명령을 실행합니다.
 

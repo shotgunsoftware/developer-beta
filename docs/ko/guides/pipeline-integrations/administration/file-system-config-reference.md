@@ -16,7 +16,7 @@ _이 문서에서는 툴킷 구성에 대한 제어 권한이 있는 경우에�
 
 1. **폴더 생성:** {% include product %}에서 객체를 만든 후에는 작업이 시작될 수 있도록 디스크에 폴더를 만들어야 합니다. 이 작업은 디스크에 샷을 나타내는 폴더를 만드는 것처럼 간단할 수도 있고, 샷에 대해 작업하는 각 사용자가 디스크의 개별 영역에서 작업할 수 있도록 사용자별 작업 샌드박스를 설정하는 것처럼 복잡할 수 있습니다.
 
-   - 툴킷은 응용프로그램을 시작할 때(예: 샷 BECH_0010을 위해 Maya를 시작할 때) 폴더 생성을 자동화하며 Maya를 시작하기 전에 폴더가 있는지 확인합니다. 폴더가 없으면 즉시 만들어집니다. 폴더는 [셸에서의 tank 명령](https://support.shotgunsoftware.com/hc/ko/articles/219033178-Administering-Toolkit#Useful%20tank%20commands) 및 [ShotGrid의 폴더 만들기](https://support.shotgunsoftware.com/hc/ko/articles/219040688-Beyond-your-first-project#Shotgun%20Integration)(Create Folders) 메뉴를 통해 API 방식을 사용하여 만들 수도 있습니다. 이 폴더 생성 프로세스는 특별한 구성 파일 세트를 통해 진행됩니다. 자세한 정보는 아래 문서의 [1부](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference#Part%201%20-%20Folder%20Creation%20Syntax)를 참조하십시오.
+   - 툴킷은 응용프로그램을 시작할 때(예: 샷 BECH_0010을 위해 Maya를 시작할 때) 폴더 생성을 자동화하며 Maya를 시작하기 전에 폴더가 있는지 확인합니다. 폴더가 없으면 즉시 만들어집니다. 폴더는 [셸에서의 tank 명령](https://support.shotgunsoftware.com/hc/ko/articles/219033178-Administering-Toolkit#Useful%20tank%20commands) 및 [Shotgun의 폴더 만들기(Create Folders)](https://support.shotgunsoftware.com/hc/ko/articles/219040688-Beyond-your-first-project#Shotgun%20Integration) 메뉴를 통해 API 방식을 사용하여 만들 수도 있습니다. 이 폴더 생성 프로세스는 특별한 구성 파일 세트를 통해 진행됩니다. 자세한 정보는 아래 문서의 [1부](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference#Part%201%20-%20Folder%20Creation%20Syntax)를 참조하십시오.
 2. **작업 열기 및 저장:** 작업하는 동안 디스크의 표준화된 위치에서 파일을 열고 저장해야 합니다. 이러한 파일 위치는 일반적으로 작업 시작 전에 만들어진 폴더 구조 내에 있습니다.
 
    - 폴더 구조가 설정되면 해당 구조를 사용하여 디스크의 주요 위치를 식별할 수 있습니다. 이러한 위치를 [템플릿](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference#Part%202%20-%20Configuring%20File%20System%20Templates)이라고 합니다. 예를 들어 `maya_shot_publish`라는 템플릿을 정의하여 샷을 위해 게시된 Maya 파일을 참조할 수 있습니다.  [툴킷 앱](https://support.shotgunsoftware.com/hc/ko/articles/219039798)은 이 템플릿을 사용합니다. Publish 앱은 이 템플릿을 사용하여 파일을 작성해야 할 위치를 제어할 수 있으며 [Workfiles 앱](https://support.shotgunsoftware.com/hc/ko/articles/219033088-Your-Work-Files)은 템플릿을 사용하여 파일을 열 위치를 확인할 수 있습니다. 툴킷의 환경 구성 내에서 각 앱이 사용하는 템플릿을 제어할 수 있습니다. 툴킷에서 사용되는 모든 주요 파일 위치는 단일 템플릿 파일에 정의되므로 쉽게 확인할 수 있습니다.
@@ -27,7 +27,7 @@ _이 문서에서는 툴킷 구성에 대한 제어 권한이 있는 경우에�
 
 ![구성](./images/file-system-config-reference/core_config.png)
 
-위의 이미지는 스키마 구성을 보여 줍니다. 툴킷 폴더 생성을 실행하면 {% include product %}의 엔티티와 디스크의 폴더 간에 연결이 설정됩니다.  툴킷은 이 폴더 스키마 구성을 사용하여 디스크에 일련의 폴더를 생성하고 각 폴더는 {% include product %}에 [`Filesystem Location`](https://developer.shotgridsoftware.com/cbbf99a4/) 엔티티로 등록됩니다. 즉, {% include product %} 데이터(예: 샷 및 에셋 이름) 및 구성이 디스크 및 {% include product %}의 실제 폴더에 "지정"된다고 생각할 수 있습니다. 구성은 항상 "project"라는 폴더에서 시작됩니다. 이 폴더는 항상 {% include product %}의 연결된 프로젝트를 나타내며 프로젝트의 툴킷 이름으로 대체됩니다. 이 레벨 아래에는 정적 폴더가 있습니다. 폴더 작성자는 자동으로 **sequences**와 같은 폴더를 만듭니다.
+위의 이미지는 스키마 구성을 보여 줍니다. 툴킷 폴더 생성을 실행하면 {% include product %}의 엔티티와 디스크의 폴더 간에 연결이 설정됩니다.  툴킷은 이 폴더 스키마 구성을 사용하여 디스크에 일련의 폴더를 생성하고 각 폴더는 {% include product %}에 [`Filesystem Location`](https://developer.shotgunsoftware.com/cbbf99a4/) 엔티티로 등록됩니다. 즉, {% include product %} 데이터(예: 샷 및 에셋 이름) 및 구성이 디스크 및 {% include product %}의 실제 폴더에 "지정"된다고 생각할 수 있습니다. 구성은 항상 "project"라는 폴더에서 시작됩니다. 이 폴더는 항상 {% include product %}의 연결된 프로젝트를 나타내며 프로젝트의 툴킷 이름으로 대체됩니다. 이 레벨 아래에는 정적 폴더가 있습니다. 폴더 작성자는 자동으로 **sequences**와 같은 폴더를 만듭니다.
 
 sequences 폴더 내에는 **sequence** 폴더와 **sequence.yml** 파일이 있습니다. 툴킷은 폴더와 같은 이름을 가진 YAML 파일을 발견할 때마다 YAML 파일의 컨텐츠를 읽고 원하는 동적 동작을 추가합니다. 이 경우, **sequence.yml** 파일에는 project 폴더 아래 세 가지 유형의 항목으로 구성된 구조가 있습니다.
 
@@ -83,7 +83,7 @@ sequences 폴더 내에는 **sequence** 폴더와 **sequence.yml** 파일이 있
    - 위의 예와 같이 단일 필드를 사용할 수 있습니다(예: `name: code`).
    - 여러 필드를 괄호로 묶어 사용할 수 있습니다(예: `name:``"{asset_type}_{code}"`).
    - 링크된 다른 엔티티의 필드를 포함하려면 표준 `name: "{sg_sequence.Sequence.code}_{code}"` 도트 구문을 사용할 수 있습니다(예: {% include product %}).
-- **filters** 필드는 {% include product %} 쿼리이며 [{% include product %} API 구문](http://developer.shotgridsoftware.com/python-api/reference.html)을 비슷하게 따릅니다. 이는 사전 목록이며 각 사전에는 _path_, _relation_ 및 _values_ 키가 있어야 합니다. 유효한 $syntax 값은 상응하는 {% include product %} 엔티티(예: 프로젝트의 경우 `"$project"`, sequence.yml이 상위 디렉토리 계층에 있는 경우 `"$sequence"`)가 있는 모든 상위 폴더입니다. {% include product %} 엔티티 링크의 경우 $syntax(예: `{ "path": "project", "relation": "is", "values": [ "$project" ] }`)를 사용하여 구성에서 상위 폴더를 참조할 수 있습니다. [아래 예](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference#Examples)에서 자세히 설명합니다.
+- **filters** 필드는 {% include product %} 쿼리이며 [{% include product %} API 구문](http://developer.shotgunsoftware.com/python-api/reference.html)을 비슷하게 따릅니다. 이는 사전 목록이며 각 사전에는 _path_, _relation_ 및 _values_ 키가 있어야 합니다. 유효한 $syntax 값은 상응하는 {% include product %} 엔티티(예: 프로젝트의 경우 `"$project"`, sequence.yml이 상위 디렉토리 계층에 있는 경우 `"$sequence"`)가 있는 모든 상위 폴더입니다. {% include product %} 엔티티 링크의 경우 $syntax(예: `{ "path": "project", "relation": "is", "values": [ "$project" ] }`)를 사용하여 구성에서 상위 폴더를 참조할 수 있습니다. [아래 예](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference#Examples)에서 자세히 설명합니다.
 
 
 ## 다중 폴더
@@ -874,7 +874,7 @@ _동적 토큰 `$sequence`는 런타임에 실제 객체로 해석되었습니�
 - `subset`  및 `subset_format` - 지정된 입력 문자열의 하위 집합을 추출하여 키 값으로 만듭니다. 예를 들어 사용자 이름 전체에서 이니셜 키를 만들거나 모든 샷 이름의 첫 세 글자를 포함하는 키를 만들 수 있습니다.
 
 
-템플릿 키에 대한 기술적인 상세 정보는 [API 참조](http://developer.shotgridsoftware.com/tk-core/core.html#template-system)를 참조하십시오.
+템플릿 키에 대한 기술적인 상세 정보는 [API 참조](http://developer.shotgunsoftware.com/tk-core/core.html#template-system)를 참조하십시오.
 
 ### 예 - 영숫자 이름
 
@@ -1053,7 +1053,7 @@ UTC 시간으로 기본 설정되는 YYYY.MM.DD 형식의 타임스탬프입니�
 
 {% include info title="참고" content="문자열 키의 이름이 연관된 ShotGrid 엔티티가 있는 동적 스키마 폴더의 엔티티 유형과 일치하면 해당 폴더 이름이 토큰으로 대체됩니다. 예를 들어 위의 코드 조각과 같이 'string' 유형의 {Sequence} 템플릿 키를 사용하고 스키마에서 'sequence'라는 동적 폴더가 있는 경우 해당 `sequence.yml` 파일에서 `shotgun_entity` 유형으로 정의되며 ShotGrid의 'Sequence' 엔티티 유형에 연결됩니다. 툴킷은 템플릿 키가 이 동적 폴더의 엔티티 유형이라는 것을 인식합니다(여기서는 둘 다 Sequence임). 따라서 툴킷은 폴더 이름(즉, 특정 시퀀스의 이름)을 가져와서 템플릿 키로 대체합니다." %}
 
-선택적 속성을 정의해야 하는 경우 이 양식이 필요합니다. 현재 유일한 선택적 속성은 `root_name`이며 이 속성은 다중 루트가 있는 프로젝트의 경로에 대한 프로젝트 루트를 지정하는 데 사용할 수 있습니다.  [다중 루트](https://developer.shotgridsoftware.com/9ea9dd4e/)는 새로운 저장소 루트를 추가하여 일부 프로젝트 파일을 저장할 때 사용됩니다.
+선택적 속성을 정의해야 하는 경우 이 양식이 필요합니다. 현재 유일한 선택적 속성은 `root_name`이며 이 속성은 다중 루트가 있는 프로젝트의 경로에 대한 프로젝트 루트를 지정하는 데 사용할 수 있습니다.  [다중 루트](https://developer.shotgunsoftware.com/9ea9dd4e/)는 새로운 저장소 루트를 추가하여 일부 프로젝트 파일을 저장할 때 사용됩니다.
 
 `root_name: name_of_project_root`
 
@@ -1106,7 +1106,7 @@ name과 version은 동일한 파일에 정의된 키 이름입니다.
 
 ![episode_hierarchy](images/file-system-config-reference/episode_hierarchy.jpg)
 
-{% include info title="참고" content="[위의 상위 폴더를 사용하여 만들기 섹션](https://support.shotgunsoftware.com/hc/ko/articles/219039868#Create%20With%20Parent%20Folder)을 참조하여 툴킷의 중첩 관계를 다시 확인합니다(ShotGrid의 프로젝트 계층과는 완전히 독립적임)." %}
+{% include info title="참고" content="[위의 상위 폴더를 사용하여 만들기 섹션](https://support.shotgunsoftware.com/hc/ko/articles/219039868#Create%20With%20Parent%20Folder)을 참조하여 툴킷의 중첩 관계를 다시 확인합니다(Shotgun의 프로젝트 계층과는 완전히 독립적임)." %}
 
 **추가 참조:**
 

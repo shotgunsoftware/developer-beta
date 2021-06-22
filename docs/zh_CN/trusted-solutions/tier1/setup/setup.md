@@ -5,7 +5,7 @@ pagename: tier1-setup
 lang: en
 ---
 
-# ShotGrid Isolation Feature Set - Setup
+# {% include product %} Isolation Feature Set - Setup
 
 Isolation the isolation features are independent of each other, and can be activated independently of each other. Media replication have as pre-requisite for Media Isolation to be implemented.
 
@@ -40,7 +40,7 @@ Before you start working on your setup, [put a plan in place](./planning.md). Ch
 
 ## [Migration Test Site](./shotgun_poc_site.md)
 
-To help you setting up the Isolation features without breaking your production environment and to helping smooting the migration to your isolated environment, ShotGrid propose to use a test site on which to test your setup before applying the result to production.
+To help you setting up the Isolation features without breaking your production environment and to helping smooting the migration to your isolated environment, {% include product %} propose to use a test site on which to test your setup before applying the result to production.
 
 ## [Media Isolation](./s3_bucket.md)
 

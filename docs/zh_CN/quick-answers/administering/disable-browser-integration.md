@@ -11,10 +11,9 @@ lang: zh_CN
 
 1. 在如下位置创建或打开文本文件：
 
-        Windows: %APPDATA%\{% include product %}\preferences\toolkit.ini
-        Macosx: ~/Library/Preferences/{% include product %}/toolkit.ini
-        Linux: ~/.{% include product %}/preferences/toolkit.ini
-
+        Windows：%APPDATA%\{% include product %}\preferences\toolkit.ini
+        Macosx：~/Library/Preferences/{% include product %}/toolkit.ini
+        Linux：~/.{% include product %}/preferences/toolkit.ini
 2. 添加以下部分：
 
         [BrowserIntegration]

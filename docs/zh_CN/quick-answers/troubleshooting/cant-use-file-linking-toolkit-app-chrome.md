@@ -9,7 +9,7 @@ lang: zh_CN
 
 ## 概述
 
-在 {% include product %} 中，动作菜单有时不显示可用 Toolkit 应用程序的列表，或者在使用本地文件链接时有时会出错，即使 {% include product %} Desktop 正在运行中。 这是 Chrome 中的 {% include product %} Desktop 浏览器集成的疑难解答手册，希望对您有所帮助。我们为 [Firefox](./cant-use-file-linking-toolkit-app-firefox.md) 提供单独手册。
+在 {% include product %} 中，动作菜单有时不显示可用 Toolkit 应用程序的列表，或者在使用本地文件链接时有时会出错，即使 {% include product %} Desktop 正在运行中。这是 Chrome 中的 {% include product %} Desktop 浏览器集成的疑难解答手册，希望对您有所帮助。我们为 [Firefox](./cant-use-file-linking-toolkit-app-firefox.md) 提供单独手册。
 
 - [诊断问题](#diagnosing-the-issue)
 - [如何快速修复证书问题](#how-to-quickly-fix-certificate-issues)
@@ -20,7 +20,7 @@ lang: zh_CN
 
 ### {% include product %} Desktop 是否正在运行？
 
-是的，我们知道。 您可能已经检查过了，但我们必须要问一下。:)
+是的，我们知道。您可能已经检查过了，但我们必须要问一下。:)
 
 ### {% include product %} Desktop 启动后，您是否重新启动了 Chrome？
 
@@ -46,7 +46,7 @@ lang: zh_CN
 
 规避这些问题的最简单方法就是单击**“高级”(ADVANCED)**和**“Proceed to localhost (unsafe)”**。 这样，Chrome 便会知道您还是接受了证书，并允许 {% include product %} 网站与 {% include product %} Desktop 通信。
 
-{% include info title="注意" content="这只会启用网络浏览器和 ShotGrid Desktop 之间的连接。信任设置可让这两个应用程序之间的通信流动，并不代表信任 Internet 上的任何其他服务器****。遗憾的是，需要在出现问题的每台计算机上重复此过程。如果此方法无法解决问题，或者您认为部署到所有用户过于复杂，建议您采取以下步骤。" %}
+{% include info title="注意" content="这只会启用网络浏览器和 ShotGrid Desktop 之间的连接。信任设置可让这两个应用程序之间的通信流动，**并不代表信任 Internet 上的任何其他服务器**。遗憾的是，需要在出现问题的每台计算机上重复此过程。如果此方法无法解决问题，或者您认为部署到所有用户过于复杂，建议您采取以下步骤。" %}
 
 {% include info title="注意" content="此修复步骤不适用于 **ERR_SSL_SERVER_CERT_BAD_FORMAT** 错误，而且您将需要重新生成证书，如下所述。" %}
 
@@ -60,7 +60,7 @@ Chrome 会定期升级其自签名证书的安全性，这些更新有时会破�
 
 {% include product %} Desktop 完成启动并处于运行状态后，建议您在地址栏中键入 [chrome://restart](chrome://restart/) 来重新启动 Chrome，确保已完全关闭 Chrome 并清空其证书缓存。
 
-如果您的计算机未连接到 Internet，无法下载更新，请联系 support@shotgunsoftware.com。
+如果您的计算机未连接到 Internet，无法下载更新，请访问我们的[支持站点](https://knowledge.autodesk.com/zh-hans/contact-support)以获取帮助。
 
 ## 修复 Windows 上的 NET::ERR_CERT_AUTHORITY_INVALID
 

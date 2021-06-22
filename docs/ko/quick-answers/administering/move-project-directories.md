@@ -13,7 +13,7 @@ lang: ko
 
 - 이전 위치에서 새 위치로 프로젝트 파일을 복사(또는 이동)합니다.
 - {% include product %}에서 **관리자(Admin) > 사이트 기본 설정(Site Preferences)** 페이지로 이동해 **파일 관리(File Management)** 섹션을 엽니다.
-   ![사이트 기본 설정의 {% include product %} 저장소 루트 섹션](./images/shotgun-storage-roots.png)
+   ![ 사이트 기본 설정의 {% include product %} 저장소 루트 섹션](./images/shotgun-storage-roots.png)
 - 각 플랫폼의 경로와 함께 이름이 "primary"인 로컬 파일 저장소를 프로젝트 파일의 새 저장소로 업데이트합니다. 특정 플랫폼을 사용하고 있지 않다면 그냥 비워 두십시오.
 - 페이지 위나 아래에 있는 **"변경 사항 저장(Save Changes)"** 버튼을 클릭합니다.
 - 지금 막 {% include product %}에 저장한 새로운 경로 값과 일치하도록 프로젝트 구성의 `config/core/roots.yml` 파일을 업데이트합니다.

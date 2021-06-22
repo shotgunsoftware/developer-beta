@@ -109,7 +109,7 @@ engines:
 
 ### 位置描述符
 
-每个 Toolkit 包都有一个 `location` 设置，我们将其称为包的*描述符*。描述符告知 Toolkit 在何处查找给定包，以及根据其类型，是直接访问它还是在本地缓存它。Toolkit 包可以来自多个位置，例如，{% include product %} App Store、git 库、磁盘上的路径或上传到 {% include product %} 站点的 zip 文件。其中每个位置都有一个对应的描述符类型，相应类型具有特定设置。下面是上述示例中 `tk-maya` 插件的描述符：
+每个 Toolkit 包都有一个 `location` 设置，我们将其称为包的*描述符*。描述符告知 Toolkit 在何处查找给定包，以及根据其类型，是直接访问它还是在本地缓存它。Toolkit 包可以来自多个位置，例如，{% include product %} 应用商店、git 库、磁盘上的路径或上传到 {% include product %} 站点的 zip 文件。其中每个位置都有一个对应的描述符类型，相应类型具有特定设置。下面是上述示例中 `tk-maya` 插件的描述符：
 
 ```yaml
     location:
@@ -118,7 +118,7 @@ engines:
         version: v0.9.4
 ```
 
-这是类型为 `app_store` 的描述符，此描述符告知 Toolkit 从 {% include product %} App Store 获取给定包。类型为 `app_store` 的描述符具有设置 `name` 和 `version`。
+这是类型为 `app_store` 的描述符，此描述符告知 Toolkit 从 {% include product %} 应用商店获取给定包。类型为 `app_store` 的描述符具有设置 `name` 和 `version`。
 
 相反，如果您正在开发自定义包 - 即您正在为工作室中的一个特定工作流编写一个 Toolkit 应用，您可能希望直接从磁盘上的路径获取它。在此示例中，将使用类型为 `dev` 的描述符，它可能如下所示：
 

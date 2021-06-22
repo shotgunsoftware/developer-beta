@@ -29,16 +29,16 @@ lang: zh_CN
 
 要使用本手册，需要满足以下条件：
 
-1. 有效的 [{% include product %}](https://www.shotgunsoftware.com/zh-cn/signup/) 站点。您应该拥有至少已创建一个资产的项目。资产应具有模型任务。
+1. 活动的 [{% include product %}](https://www.shotgridsoftware.com/signup/) 站点。您应该拥有至少已创建一个资产的项目。资产应具有模型任务。
 2. 对如何使用 {% include product %} 站点管理资产具有基本了解
 3. 在系统上安装 [{% include product %} Desktop](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574#Installation%20of%20Desktop)。
-4. 已标识项目的克隆工作流配置，或者完成[配置快速入门](./advanced_config.md)手册并克隆在该练习中创建的配置。
+4. 用于已标识项目的克隆工作流配置，或完成[配置快速入门](./advanced_config.md)手册，并克隆在该练习中创建的配置。
 5. 基本熟悉 YAML。
-6. 为存储工作流配置的文件系统设置适当的读取和写入权限。
+6. 为存储工作流配置的 Shotgun 管理的文件系统设置适当的读取和写入权限。
 7. 已设置适当的读取和写入权限，以允许 Toolkit 读取和写入到制作文件系统。
 8. Maya 的有效固定期限的使用许可。获取 [Maya](https://www.autodesk.com.cn/products/maya/free-trial) 的 30 天试用版
 
-{% include info title="注意" content="本手册基于 `tk-config-default2` 工作流配置。如果您的配置文件已修改，则文件和文件夹的位置、YAML 设置的区块可能就与此处描述的不同。" %}
+{% include info title="注意" content="本手册基于 `tk-config-default2` 工作流配置。如果您的配置文件已修改，则文件和文件夹的位置、YAML 设置的区块可能就与此处描述的不同。"%}
 
 ### 关于文件数据结构和模板
 
@@ -48,7 +48,7 @@ Toolkit 平台允许您使用**数据结构**来动态构建您的文件夹结�
 
 **模板**允许您使用数据结构中的 {% include product %} 数据和信息，在创建文件时对其进行动态命名和保存。默认配置提供一组入门模板，您可以对其进行编辑以符合您的工作流需求。
 
-{% include info title="注意" content="ShotGrid 集成的基本设置不包括文件系统管理。为了为您的项目配置文件系统管理，您的项目需要高级设置。第一个手册[配置快速入门](./advanced_config.md)介绍了高级设置过程" %}
+{% include info title="注意" content="ShotGrid 集成的基本设置不包括文件系统管理。为了为您的项目配置文件系统管理，您的项目需要高级设置。第一个手册[配置快速入门](./advanced_config.md)介绍了高级设置流程" %}
 
 ## 开始练习
 
@@ -70,9 +70,9 @@ Toolkit 平台允许您使用**数据结构**来动态构建您的文件夹结�
 
 ![Python 应用](./images/dynamic_filesystem_configuration/4_enable_entity.png)
 
-这样做可以使此自定义实体在 {% include product %} 中处于活动状态，并将显示名称设置为 *Set*。实际上，您正在创建自定义实体的别名，因为实体的系统名称仍为 `CustomEntity01`。在此示例中，我们将使用 `CustomEntity01`；您可能会使用不同的自定义实体。
+这样做可以使此自定义实体在 {% include product %} 中处于活动状态，并将显示名称设置为 *Set*。实际上，您正在创建自定义实体的别名，因为实体的应用插件名称仍为 `CustomEntity01`。在此示例中，我们将使用 `CustomEntity01`；您可能会使用不同的自定义实体。
 
-{% include info title="注意" content="记住所选自定义实体的系统名称。" %}
+{% include info title="注意" content="记住所选自定义实体的应用插件名称。" %}
 
 ### 添加数据字段以将资产与集关联
 
@@ -124,7 +124,7 @@ Toolkit 平台允许您使用**数据结构**来动态构建您的文件夹结�
 
 ### 设置数据结构
 
-现在，您已启用“集”自定义实体，已创建一个名为“Dining Room”的集实体，并且已将“资产”实体链接到“Dining Room”集。您已获得 {% include product %} 站点中的所有要素，现在可以修改您的文件夹结构。美工人员开始处理某个任务时，Toolkit 会使用关联的 {% include product %} 数据来确定要在文件系统中创建的文件夹。将根据工作流配置的数据结构自动创建并命名新文件夹。
+现在，您已启用“集”自定义实体，已创建一个名为“Dining Room”的集实体，并且已将“资产”实体链接到“Dining Room”集。您已获得 {% include product %} 站点中的所有要素，现在可以修改您的文件夹结构。艺术家开始处理某个任务时，Toolkit 会使用关联的 {% include product %} 数据来确定要在文件系统中创建的文件夹。将根据工作流配置的数据结构自动创建并命名新文件夹。
 
 现在，您需要定义随着艺术家逐步完成制作工作流，您希望 Toolkit 动态生成的文件夹结构。可以通过编辑数据结构来完成此操作。
 
@@ -150,7 +150,7 @@ Toolkit 平台允许您使用**数据结构**来动态构建您的文件夹结�
 
 `<project>/assets/<CustomEntity01>/<asset_type>/<asset>/<step>`
 
-“集”实体表示为 `CustomEntity01`。我们已在 {% include product %} 中为 CustomEntity01 指定*显示名称* Set，但在我们的配置中，我们将始终按其系统名称 `CustomEntity01` 对其进行引用。
+“集”实体表示为 `CustomEntity01`。我们已在 {% include product %} 中为 CustomEntity01 指定*显示名称* Set，但在我们的配置中，我们将始终按其应用插件名称 `CustomEntity01` 对其进行引用。
 
 ### 数据结构如何使用 YAML 文件
 
@@ -160,7 +160,7 @@ Toolkit 平台允许您使用**数据结构**来动态构建您的文件夹结�
 
 数据结构的 `project` 文件夹中包含与 {% include product %} 跟踪的不同实体相关的文件夹。您正在添加新的资产实体 CustomEntity01，使 {% include product %} 能够跟踪集中的项。这些项是资产，因此您将编辑资产下的文件夹和 YAML 文件。
 
-同样，我们的目标是从 `asset_type/asset/step` 文件夹结构转入 `set/asset_type/asset/step`。因此，我们要添加一个文件夹来表示数据结构中的集，还有一个对应的 YAML 文件。由于我们需要对自定义实体使用系统名称，因此我们将创建 `CustomEntity01/` 文件夹和 `CustomEntity01.yml`。
+同样，我们的目标是从 `asset_type/asset/step` 文件夹结构转入 `set/asset_type/asset/step`。因此，我们要添加一个文件夹来表示数据结构中的集，还有一个对应的 YAML 文件。由于我们需要对自定义实体使用应用插件名称，因此我们将创建 `CustomEntity01/` 文件夹和 `CustomEntity01.yml`。
 
 **步骤 8：**在数据结构的 `project/assets` 文件夹中添加 `CustomEntity01` 文件夹。
 
@@ -215,7 +215,7 @@ assets/Classroom/Prop/spoon
 filters:
     - { "path": "project", "relation": "is", "values": [ "$project" ] }
     - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
-    - { "path": "sg_set", "relation": "is", "values": [ "$CustomEntity04" ] }
+    - { "path": "sg_set", "relation": "is", "values": [ "$CustomEntity01" ] }
 ```
 
 
@@ -292,7 +292,7 @@ In total, 23 folders were processed.
 
 ### 为集实体添加模板键
 
-首先要做的就是使用实体的系统名称，为集实体定义一个新的键。
+首先要做的就是使用实体的应用插件名称，为集实体定义一个新的键。
 
 **步骤 14：**将以下行添加到 `templates.yml` 的 `keys` 部分，注意正确缩进：
 
@@ -303,11 +303,11 @@ In total, 23 folders were processed.
 
 ### 修改模板
 
-由于模板定义了 Toolkit 读取和写入文件的位置，因此我们在此处定义的路径必须与数据结构中定义的文件夹结构保持一致，这一点至关重要。毕竟，制作文件应该进入我们正在创建的文件系统。因此，我们将要修改所有资产相关模板，以匹配我们在数据结构中定义的新文件夹结构。
+由于模板定义了 Toolkit 读取和写入文件的位置，因此我们在此处定义的路径必须与数据结构中定义的文件夹结构保持一致，这一点至关重要。毕竟，制作文件应该进入我们正在创建的 Shotgun 管理的文件系统。因此，我们将要修改所有资产相关模板，以匹配我们在数据结构中定义的新文件夹结构。
 
 然后，我们将修改 Maya 中资产步骤上工作文件的模板，使其在文件名中也包含集。在默认配置中，相关模板是 `maya_asset_work`，我们将从此处开始。
 
-{% include info title="注意" content="在 Maya 中对基于资产的 Workfiles 使用名为 `maya_asset_work` 的模板是默认配置的约定。要确认这是否是正确的模板，请检查 `asset_step` 环境的 `tk-maya` 插件中 `tk-multi-workfiles2` 的 `template_work` 设置值（此处为 Github 中）[(https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.4/env/includes/settings/tk-multi-workfiles2.yml#L217)]。" %}
+{% include info title="注意" content="在 Maya 中对基于资产的 Workfiles 使用名为 `maya_asset_work` 的模板是默认配置的约定。要确认这是否是正确的模板，请检查 `asset_step` 环境的 `tk-maya` 插件中 `tk-multi-workfiles2` 的 `template_work` 设置值（[此处为 Github 中](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.4/env/includes/settings/tk-multi-workfiles2.yml#L217)）。" %}
 
 **步骤 15：**打开 `templates.yml` 并搜索 `maya_asset_work`。
 
@@ -324,7 +324,7 @@ In total, 23 folders were processed.
 
 默认配置有三个常用根变量：`@shot_root`、`@sequence_root` 和 `@asset_root`。我们将修改 `@asset_root`，这一单个更改将影响与资产相关的每个模板。
 
-### 编辑模板使其匹配文件系统数据结构中的路径
+### 编辑模板使其匹配 Shotgun 管理的文件系统数据结构中的路径
 
 **步骤 16：**在 `templates.yml` 的 `paths` 部分顶部搜索 `asset_root`。在默认配置中，它类似如下：
 
@@ -375,7 +375,7 @@ In total, 23 folders were processed.
 
 请注意，**“File Save”**对话框使用模板中的新设置显示**“Preview: Dining-Room_scene.v001.ma”**。
 
-**“Work Area:”**显示 **.../{% include product %}/projects/the_other_side/assets/Dining-Room/Prop/Filet/model/work/maya** 作为 Workfiles 保存文件的位置的路径。
+**“工作区”(Work Area)**显示 **.../{% include product %}/projects/the_other_side/assets/Dining-Room/Prop/Filet/model/work/maya** 作为 Workfiles 保存文件的位置的路径。
 
 ## 高级主题
 
@@ -383,9 +383,9 @@ In total, 23 folders were processed.
 
 在此示例中，我们修改了一个模板，但对于文件系统配置还有更多工作可以做。在真实的示例中，您可能会更改*所有*与资产相关的文件，使其采用相同的文件命名约定。您可以根据其他实体（季、剧集、关卡等）进行修改、创建用户文件夹、根据使用正则表达式操纵的 {% include product %} 数据对文件夹命名，等等。您可以在[文件系统配置参考](https://support.shotgunsoftware.com/hc/zh-cn/articles/219039868)中了解有关所有 Toolkit 文件夹和数据结构选项的信息。
 
-### 路径缓存
+### 缓存路径
 
-在创建文件夹时，将在磁盘上的文件夹与 {% include product %} 实体之间创建映射。这些映射将存储为 {% include product %} 中的 FilesystemLocation 实体，并缓存在用户计算机上的 SQLite 数据库中。要详细了解路径缓存的工作方式及其使用方式，请参见[此文档](../../../quick-answers/administering/what-is-path-cache.md)。
+在创建文件夹时，将在磁盘上的文件夹与 {% include product %} 实体之间创建映射。这些映射将存储为 {% include product %} 中的 FilesystemLocation 实体，并缓存在用户计算机上的 SQLite 数据库中。要详细了解缓存路径的工作方式及其使用方式，请参见[此文档](../../../quick-answers/administering/what-is-path-cache.md)。
 
 
 ### 其他资源

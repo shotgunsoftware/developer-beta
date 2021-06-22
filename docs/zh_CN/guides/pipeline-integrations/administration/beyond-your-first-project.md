@@ -23,7 +23,7 @@ lang: zh_CN
 
 # 基本配置
 
-本节包含一系列参数调整和有用的配置内容。如果您刚刚设置好第一个 Toolkit 项目，很可能需要进行一些细微的调整才能让一切正常运行。本节将介绍这些不同的步骤。请注意，某些步骤需要编辑配置文件和执行一些“底层”操作。如果您对任何方面有任何疑问或问题，请通过 `support@shotgunsoftware.com` 联系我们的支持团队！
+本节包含一系列参数调整和有用的配置内容。如果您刚刚设置好第一个 Toolkit 项目，很可能需要进行一些细微的调整才能让一切正常运行。本节将介绍这些不同的步骤。请注意，某些步骤需要编辑配置文件和执行一些“底层”操作。如果您对任何方面有任何疑问，请访问我们的[支持站点](https://knowledge.autodesk.com/zh-hans/contact-support)以获取帮助。
 
 ## 设置应用程序路径
 
@@ -57,15 +57,15 @@ Toolkit 与 {% include product %} 集成，并通过向用户界面不同部分�
 
 ## 向 {% include product %} 用户界面添加发布
 
-安装 Toolkit 后，通常有必要对 {% include product %} 用户界面布局做一些细微的调整。在您发布文件时，{% include product %} Pipeline Toolkit 可创建_发布实体_，以便向关键资产（例如镜头和资产）添加_“发布”(Publishes)选项卡_。要执行此操作，请确保您以管理员用户身份登录。首先，导航到一个资产或镜头，然后进入设计模式__：
+安装 Toolkit 后，通常有必要对 {% include product %} 用户界面布局做一些细微的调整。在您发布文件时，{% include product %} Pipeline Toolkit 可创建_发布实体_，以便向关键资产（例如镜头和资产）添加_“发布”(Publishes)选项卡_。要执行此操作，请确保您以管理员用户身份登录。首先，导航到一个资产或镜头，然后进入_设计模式_：
 
 ![](images/Beyond-your-first-project/design_mode.png)
 
-现在单击其中一个选项卡上的小三角形菜单，然后选择“添加新选项卡”(Add New Tab)__动作。 这将打开一个对话框 UI。将选项卡命名为“发布”(Publishes)__，并确保它与已发布文件实体__关联：
+现在单击其中一个选项卡上的小三角形菜单，然后选择 _“添加新选项卡”(Add New Tab)_ 动作。 这将打开一个对话框 UI。将选项卡命名为 _“发布”(Publishes)_，并确保它与已_发布文件_实体关联：
 
 ![](images/Beyond-your-first-project/create_tab.png)
 
-现在单击“保存”(Save)__保存更改。 这样就全部搞定了！
+现在单击 _“保存”(Save)_ 保存更改。 这样就全部搞定了！
 
 注意：{% include product %} 会选择几个默认字段，供您在创建新选项卡时添加。您可能想要针对发布添加一些额外的字段。为此，可以单击新的“发布”(Publishes)选项卡下电子表格右上角的小加号按钮。我们建议您添加下列字段：
 
@@ -93,13 +93,13 @@ Python 的路径存储在配置文件中，您可以手动编辑这些文件：
 
 如果文件是空白的，表示您使用的是早期版本的 {% include product %} Desktop。如果是这样，只需尝试使用默认的 Python 路径更新这些空白文件即可。这些路径如下所示：
 
-- Macosx (Darwin)：  `/Applications/Shotgun.app/Contents/Frameworks/Python/bin/python`
-- `C:\Program Files\Shotgun\Python\python.exe`Windows：
-- `/opt/Shotgun/Python/bin/python`Linux：
+- Macosx (Darwin)： `/Applications/Shotgun.app/Contents/Frameworks/Python/bin/python`
+- Windows： `C:\Program Files\Shotgun\Python\python.exe`
+- Linux： `/opt/Shotgun/Python/bin/python`
 
 如果您已将 {% include product %} Desktop 安装在非标准位置，或者打算使用自定义的 Python 位置，请确保文件中的路径指向有效的 Python 安装。此安装需要为 v2.6 或更高版本（但不能是 Python 3！）。如果您想执行基于用户界面的应用程序和工具，请确保您指定的 Python 已安装了 PyQt 或 PySide，并且已链接至 QT v4.6 或更高版本。
 
-另外还要注意，为了能在多个操作系统上运行 Toolkit，在运行项目设置向导时，您需要指定所有需要的平台的路径。如果您尚未这样做，并且想向存储路径或配置位置添加另一个操作系统，请通过 `support@shotgunsoftware.com` 联系我们，我们将很乐意指导您完成相关步骤。
+另外还要注意，为了能在多个操作系统上运行 Toolkit，在运行项目设置向导时，您需要指定所有需要的平台的路径。如果您尚未执行此操作，并且想要将其他操作系统添加到存储路径或配置位置，请访问我们的[支持站点](https://knowledge.autodesk.com/zh-hans/contact-support)以获取帮助。
 
 # 后续步骤
 
@@ -147,7 +147,7 @@ Python 的路径存储在配置文件中，您可以手动编辑这些文件：
 
 Toolkit 附带一个文件夹创建系统，它会尝试自动在磁盘上创建文件夹，确保当您启动应用程序时，所有必要的结构在磁盘上都存在，并且已事先准备就绪！这方面的配置可在上面所示的 `schema` 文件夹中找到。
 
-另外要与此相提并论的是 Toolkit 的模板系统，__它让您可轻松定义各种可配置的文件、发布内容、工作文件、渲染等的路径。 模板存储在上面的 `templates.yml` 文件中。
+另外要与此相提并论的是 Toolkit 的_模板系统_，它让您可轻松定义各种可配置的文件、发布内容、工作文件、渲染等的路径。 模板存储在上面的 `templates.yml` 文件中。
 
 结合运用项目配置的这两个部分，可以调整 Toolkit 使用的各种应用，让它们将数据写出到您的现有工作流可以识别的磁盘位置。
 
@@ -156,7 +156,7 @@ Toolkit 附带一个文件夹创建系统，它会尝试自动在磁盘上创建
 - [文件夹配置](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033178#Creating%20folders%20on%20disk%20with%20Sgtk)
 - [文件系统模板](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033178#Configuring%20Templates)
 
-Toolkit 配置本质上由一系列已配置的**应用和插件**组成。 此配置位于 `env` 文件夹中。 如果说上面讨论的文件系统配置文件定义了资源在磁盘上应该“位于何处”，__那么环境配置及其应用和插件则定义了工作流应该执行“什么操作”。__
+Toolkit 配置本质上由一系列已配置的**应用和插件**组成。 此配置位于 `env` 文件夹中。 如果说上面讨论的文件系统配置文件定义了资源在磁盘上应该“位于_何处_”，那么环境配置及其应用和插件则定义了工作流应该执行“_什么_操作”。
 
 
 ### 核心 API 平台

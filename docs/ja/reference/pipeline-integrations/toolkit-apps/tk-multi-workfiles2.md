@@ -83,11 +83,11 @@ maya_shot_work:
     root_name: 'primary'
 ```
 
-## [コンテキスト変更](Context Change)ダイアログ
+## [コンテキスト変更] (Context Change)ダイアログ
 
 ![コンテキスト変更](../images/apps/multi-workfiles2-change_context.png)
 
-[コンテキスト変更](Context Change)ダイアログは、右側にファイルを参照する領域がないことを除けば、[開く] (Open)ダイアログと同様です。[コンテキスト変更](Context Change)ボタンを押すと、タスクまたはエンティティを選択して、現在のエンジンのコンテキストを変更できます。
+[コンテキスト変更] (Context Change)ダイアログは、右側にファイルを参照する領域がないことを除けば、[開く] (Open)ダイアログと同様です。[コンテキスト変更] (Context Change)ボタンを押すと、タスクまたはエンティティを選択して、現在のエンジンのコンテキストを変更できます。
 
 アプリ設定で `show_change_context: true/false` を設定すると、このダイアログを無効または有効にできます。
 

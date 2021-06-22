@@ -44,12 +44,12 @@ Windows 証明書ストアに必要な CA 証明書を追加します。Windows 
 
 1. Toolkit の展開方法に応じて、`tank core` コマンドを使用するか、パイプライン設定の `core/core_api.yml` ファイルを更新して、最新バージョンの Toolkit API にアップグレードします。
 
-2. [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](ttps://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem) にある証明書の最新リストをダウンロードします。
+2. [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem) にある証明書の最新リストをダウンロードします。
 
 3. `{% include product %}_API_CACERTS` をこのファイルの保存場所に設定します。ただし、接続を作成するときに、Python API のように Toolkit から `ca_certs`ca_certs パラメータを指定することはできません。
 
 ### Python API または Toolkit を更新できない場合
 
-1. [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](ttps://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem) にある証明書の最新リストをダウンロードします。
+1. [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem) にある証明書の最新リストをダウンロードします。
 
 2. `SSL_CERT_FILE` 環境変数をこのファイルの保存場所に設定します。

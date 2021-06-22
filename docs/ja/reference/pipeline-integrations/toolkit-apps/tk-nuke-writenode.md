@@ -244,7 +244,7 @@ sg_entity = mgr.get_entity_from_environment()
 nuke_engine = mgr.bootstrap_engine("tk-nuke", entity=sg_entity)
 ```
 
-設定がこの例よりも複雑な場合、または Nuke (`.nk`)スクリプトでなく `-t` フラグを使用して、 Python スクリプトをコマンド ラインに渡している場合は、このスクリプトを拡張しなければならない可能性があります。
+設定がこの例よりも複雑な場合、または Nuke (`.nk`)スクリプトでなく `-t` フラグを使用して、Python スクリプトをコマンド ラインに渡している場合は、このスクリプトを拡張しなければならない可能性があります。
 
 #### 期限固有の手順
 

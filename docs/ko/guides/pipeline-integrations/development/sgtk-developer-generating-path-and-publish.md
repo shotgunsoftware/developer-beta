@@ -7,7 +7,7 @@ lang: ko
 
 # 경로 생성 및 게시
 
-이 안내서에서는 파이프라인 통합을 빌드하는 ShotGrid 툴킷 Python API를 시작하는 방법 대해 설명합니다.
+이 안내서에서는 파이프라인 통합을 빌드하는 {% include product %} 툴킷 Python API를 시작하는 방법에 대해 설명합니다.
 
 이 안내서를 통해 API를 사용하는 방법에 대한 기본적인 예제를 살펴보십시오. 학습을 모두 마치면 툴킷 API를 가져와 경로를 생성하고 게시할 수 있게 될 것입니다.
 
@@ -30,22 +30,22 @@ lang: ko
 ## 1부: Sgtk 가져오기
 
 툴킷 API는 `sgtk`라는 Python 패키지에 포함되어 있습니다.
-각 툴킷 구성에는 [`tk-core`](https://developer.shotgridsoftware.com/tk-core/overview.html)의 일부로 제공되는 자체 API 사본이 있습니다.
+각 툴킷 구성에는 [`tk-core`](https://developer.shotgunsoftware.com/tk-core/overview.html)의 일부로 제공되는 자체 API 사본이 있습니다.
 프로젝트 구성에서 API를 사용하려면 작업할 구성에서 `sgtk` 패키지를 가져와야 합니다. 이 패키지를 다른 구성에서 가져오면 오류가 발생합니다.
 
 {% include info title="참고" content="경우에 따라 `tank` 패키지에 대한 참조가 있을 수 있습니다. 이는 동일한 작업에 대한 이전 이름입니다. 앞으로 계속 사용할 수 있는 올바른 이름은 `sgtk`입니다." %}
 
 API를 가져오려면 [코어의 python 폴더](https://github.com/shotgunsoftware/tk-core/tree/v0.18.167/python)에 대한 경로가 [`sys.path`](https://docs.python.org/3/library/sys.html#sys.path)에 있는지 확인해야 합니다.
-그러나 이 예의 경우 ShotGrid 데스크톱의 Python 콘솔에서 이 코드를 실행하는 것이 좋습니다.
+그러나 이 예의 경우 {% include product %} 데스크톱의 Python 콘솔에서 이 코드를 실행하는 것이 좋습니다.
 이 경우 올바른 `sgtk` 패키지 경로가 `sys.path`에 이미 추가되어 있습니다.
-마찬가지로, ShotGrid 통합이 이미 실행 중인 소프트웨어 내에서 이 코드를 실행하는 경우에는 경로를 추가할 필요가 없습니다.
+마찬가지로, {% include product %} 통합이 이미 실행 중인 소프트웨어 내에서 이 코드를 실행하는 경우에는 경로를 추가할 필요가 없습니다.
 
-ShotGrid이 이미 시작된 환경에서 코드를 실행하는 경우 다음과 같이 간단한 방식으로 API를 가져올 수 있습니다.
+{% include product %}가 이미 시작된 환경에서 코드를 실행하는 경우 다음과 같이 간단한 방식으로 API를 가져올 수 있습니다.
 
 ```python
 import sgtk
 ```
-ShotGrid 통합 외부에서 API를 사용하려면(예: 즐겨 사용하는 IDE에서 테스트하는 경우) 먼저 API에 대한 경로를 설정해야 합니다.
+{% include product %} 통합 외부에서 API를 사용하려면(예: 즐겨 사용하는 IDE에서 테스트하는 경우) 먼저 API에 대한 경로를 설정해야 합니다.
 
 ```python
 import sys
@@ -58,14 +58,14 @@ import sgtk
 
 ## 2부: Sgtk 인스턴스 가져오기
 
-툴킷 API를 사용하려면 [`Sgtk`](https://developer.shotgridsoftware.com/tk-core/core.html#sgtk) 클래스의 인스턴스를 만들어야 합니다.
+툴킷 API를 사용하려면 [`Sgtk`](https://developer.shotgunsoftware.com/tk-core/core.html#sgtk) 클래스의 인스턴스를 만들어야 합니다.
 
-[`Sgtk`](https://developer.shotgridsoftware.com/tk-core/core.html#sgtk)는 `sgtk` 패키지의 클래스로, API에 대한 메인 인터페이스 역할을 합니다.
+[`Sgtk`](https://developer.shotgunsoftware.com/tk-core/core.html#sgtk)는 `sgtk` 패키지의 클래스로, API에 대한 메인 인터페이스 역할을 합니다.
 `Sgtk` 인스턴스를 만들면 컨텍스트 가져오기, 폴더 만들기 또는 템플릿 액세스 같은 작업을 수행할 수 있습니다.
 
 API 설명서에 언급된 것처럼 `Sgtk` 인스턴스를 직접 만들지는 않습니다. 다음은 `Sgtk` 인스턴스를 가져오기 위한 몇 가지 옵션입니다.
 
-1. ShotGrid 통합이 이미 실행 중인 환경(예: Maya가 ShotGrid에서 시작된 경우 Maya Python 콘솔)에서 Python 코드를 실행하는 경우 현재 엔진에서 `Sgtk` 인스턴스를 가져올 수 있습니다.
+1. {% include product %} 통합이 이미 실행 중인 환경(예: Maya가 {% include product %}에서 시작된 경우 Maya Python 콘솔)에서 Python 코드를 실행하는 경우 현재 엔진에서 `Sgtk` 인스턴스를 가져올 수 있습니다.
    `Engine.sgtk` 특성은 엔진의 `Sgtk` 인스턴스를 유지합니다.
    따라서 Maya와 같은 응용프로그램에서 다음을 실행할 수 있습니다.
 
@@ -77,20 +77,20 @@ API 설명서에 언급된 것처럼 `Sgtk` 인스턴스를 직접 만들지는 
    tk = current_engine.sgtk
    ```
 
-   [`Engine.sgtk`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk) 특성을 통해 `Sgtk` 인스턴스에 액세스할 수 있습니다.
+   [`Engine.sgtk`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.sgtk) 특성을 통해 `Sgtk` 인스턴스에 액세스할 수 있습니다.
 
    *참고: `Engine.sgtk` 특성을 1부에서 가져온 `sgtk` 패키지와 혼동하거나 동일하게 간주해서는 안 됩니다.*
 
-2. [`sgtk.sgtk_from_entity()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_entity) - 엔진이 아직 시작되지 않은 환경에서 실행 중인 경우 이 방식을 사용하여 엔티티 ID에 맞게 `Sgtk` 인스턴스를 가져올 수 있습니다.
+2. [`sgtk.sgtk_from_entity()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_entity) - 엔진이 아직 시작되지 않은 환경에서 실행 중인 경우 이 방식을 사용하여 엔티티 ID에 맞게 `Sgtk` 인스턴스를 가져올 수 있습니다.
    ID를 제공하는 엔티티는 `sgtk` API를 가져온 프로젝트에 속해야 합니다.
    *이 방식은 분산 구성에서 작동하지 않습니다. 자세한 내용은 [부트스트랩 안내서](sgtk-developer-bootstrapping.md)를 참조하십시오.*
 
-3. [`sgtk.sgtk_from_path()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_path) - 구성 경로나 프로젝트 루트 폴더 내부 또는 이에 대한 경로(예: 작업 파일 또는 샷 폴더)를 허용하는 경우를 제외하고 `sgtk_from_entity()`와 비슷합니다.
+3. [`sgtk.sgtk_from_path()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.sgtk_from_path) - 구성 경로나 프로젝트 루트 폴더 내부 또는 이에 대한 경로(예: 작업 파일 또는 샷 폴더)를 허용하는 경우를 제외하고 `sgtk_from_entity()`와 비슷합니다.
    *이 방식은 분산 구성에서 작동하지 않습니다. 자세한 내용은 [부트스트랩 안내서](sgtk-developer-bootstrapping.md)를 참조하십시오.*
 
 이 안내서에서는 엔진이 이미 시작된 환경에서 이 코드를 실행한다고 가정하므로 옵션 1을 사용합니다.
 또한 `Sgtk` 클래스 인스턴스를 `tk`라는 변수에 저장합니다.
-ShotGrid Python 콘솔을 사용 중인 경우 `tk` 변수가 이미 전역 변수로 미리 정의되어 있습니다.
+{% include product %} Python 콘솔을 사용 중인 경우 `tk` 변수가 이미 전역 변수로 미리 정의되어 있습니다.
 
 이제 `Sgtk` 인스턴스가 있으므로 API를 사용할 준비가 되었습니다.
 이제 게시 스크립트는 다음과 같습니다.
@@ -113,7 +113,7 @@ tk = current_engine.sgtk
 툴킷 API를 사용하여 작업 중인 엔티티에 대한 중요한 상세 정보를 저장하고 앱 또는 다른 프로세스와 공유할 수 있어야, 이렇게 컨텍스트를 인식한 작동이 가능합니다.
 예를 들어 툴킷에서 작업 중인 태스크를 인식할 경우 게시된 파일을 ShotGrid에서 해당하는 태스크에 자동으로 링크할 수 있습니다.
 
-[`Context` 클래스](https://developer.shotgridsoftware.com/tk-core/core.html#context)는 이러한 정보의 컨테이너로 사용됩니다.
+[`Context` 클래스](https://developer.shotgunsoftware.com/tk-core/core.html#context)는 이러한 정보의 컨테이너로 사용됩니다.
 클래스 인스턴스 내에 몇 가지 항목 중 `Task`, `Step`, `entity`(예: `Shot` 또는 `Asset`), `Project` 및 현재 `HumanUser`를 저장할 수 있습니다.
 
 지정된 세션에서 원하는 만큼의 컨텍스트 객체 유형을 생성할 수 있습니다. 그러나 엔진이 있는 경우 엔진이 트래킹할 수 있는 단일 컨텍스트의 개념이 적용됩니다.
@@ -128,7 +128,7 @@ tk = current_engine.sgtk
 
 {% include info title="참고" content="경로에서 컨텍스트를 가져오려면 이미 생성된 폴더가 있어야 합니다. 이 부분은 안내서의 다음 단계에서 설명합니다." %}
 
-그러나 새 컨텍스트를 생성하는 대신 다음과 같이 [2부](#part-2-getting-an-sgtk-instance)에서 수집한 [현재 컨텍스트를 엔진에서 가져올](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context) 수 있습니다.
+그러나 새 컨텍스트를 생성하는 대신 다음과 같이 [2부](#part-2-getting-an-sgtk-instance)에서 수집한 [현재 컨텍스트를 엔진에서 가져올](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.context) 수 있습니다.
 
 ```python
 context = current_engine.context
@@ -188,7 +188,7 @@ context = tk.context_from_entity("Task", 13155)
 2. 이렇게 하면 툴킷이 프로그래밍 방식으로 구조를 이해하고 해당 구조에서 컨텍스트를 파생하고 파일을 배치할 위치를 알 수 있습니다.
 
 나중에 경로를 해석할 수 있도록 디스크에 폴더가 있는지 확인해야 합니다.
-이를 위해서는 [Sgtk.create_filesystem_structure()](https://developer.shotgridsoftware.com/tk-core/core.html?#sgtk.Sgtk.create_filesystem_structure) 방식을 사용합니다.
+이를 위해서는 [Sgtk.create_filesystem_structure()](https://developer.shotgunsoftware.com/tk-core/core.html?#sgtk.Sgtk.create_filesystem_structure) 방식을 사용합니다.
 
 ```python
 tk.create_filesystem_structure("Task", context.task["id"])
@@ -221,11 +221,11 @@ tk.create_filesystem_structure("Task", context.task["id"])
 
 파일을 배치하거나 툴킷에서 찾을 위치를 확인해야 할 때 템플릿을 사용하여 디스크 내에서의 절대 경로를 해석할 수 있습니다.
 
-[템플릿](https://developer.shotgridsoftware.com/tk-core/core.html#templates)은 기본적으로 컨텍스트 및 기타 데이터를 적용할 때 파일 시스템 경로로 해석할 수 있는 토큰화된 문자열입니다.
+[템플릿](https://developer.shotgunsoftware.com/tk-core/core.html#templates)은 기본적으로 컨텍스트 및 기타 데이터를 적용할 때 파일 시스템 경로로 해석할 수 있는 토큰화된 문자열입니다.
 템플릿은 [프로젝트의 파이프라인 구성](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference#Part%202%20-%20Configuring%20File%20System%20Templates)을 통해 커스터마이즈할 수 있으며 템플릿의 목적은 파일이 저장된 위치에서 작업하기 위한 표준화된 방법을 제공하는 것입니다.
 
 가장 먼저 수행할 작업은 생성하려는 경로에 대한 템플릿 인스턴스를 가져오는 것입니다.
-생성한 `Sgtk` 인스턴스를 사용하여 `Sgtk.templates` 속성을 통해 원하는 `Template` 인스턴스에 액세스할 수 있습니다. 이 속성은 키가 템플릿 이름이고 값이 [`Template`](https://developer.shotgridsoftware.com/tk-core/core.html#template) 인스턴스인 사전(dictionary)입니다.
+생성한 `Sgtk` 인스턴스를 사용하여 `Sgtk.templates` 속성을 통해 원하는 `Template` 인스턴스에 액세스할 수 있습니다. 이 속성은 키가 템플릿 이름이고 값이 [`Template`](https://developer.shotgunsoftware.com/tk-core/core.html#template) 인스턴스인 사전(dictionary)입니다.
 
 ```python
 template = tk.templates["maya_shot_publish"]
@@ -246,7 +246,7 @@ fields = context.as_template_fields(template)
 
 >> {'Sequence': 'seq01_chase', 'Shot': 'shot01_running_away', 'Step': 'comp'}
 ```
-[`Context.as_template_fields()`](https://developer.shotgridsoftware.com/tk-core/core.html#sgtk.Context.as_template_fields) 방식을 사용하면 템플릿 키를 올바르게 해석하기 위한 값을 포함하는 사전(dictionary)이 제공됩니다.
+[`Context.as_template_fields()`](https://developer.shotgunsoftware.com/tk-core/core.html#sgtk.Context.as_template_fields) 방식을 사용하면 템플릿 키를 올바르게 해석하기 위한 값을 포함하는 사전(dictionary)이 제공됩니다.
 그러나 모든 키에 대해 값이 제공되지는 않습니다. `name`, `version` 및 `maya_extension`은 여전히 누락된 상태입니다.
 
 `maya_extension` 키는 템플릿 키 섹션에서 [기본값을 정의](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.8/core/templates.yml#L139)하므로 기본값을 제외한 다른 값을 원하더라도 해당 값을 제공할 필요가 없습니다.
@@ -259,7 +259,7 @@ fields["name"] = "myscene"
 fields["version"] = 1
 ```
 
-이제 모든 필드가 준비되었습니다. 다음과 같이 [`Template.apply_fields()`](https://developer.shotgridsoftware.com/tk-core/core.html#sgtk.Template.apply_fields)를 사용하여 템플릿을 절대 경로로 해석할 준비가 되었습니다.
+이제 모든 필드가 준비되었습니다. 다음과 같이 [`Template.apply_fields()`](https://developer.shotgunsoftware.com/tk-core/core.html#sgtk.Template.apply_fields)를 사용하여 템플릿을 절대 경로로 해석할 준비가 되었습니다.
 
 ```python
 publish_path = template.apply_fields(fields)
@@ -273,9 +273,9 @@ publish_path = template.apply_fields(fields)
 이 단계는 예를 들어 템플릿이 스키마에 없는 폴더를 정의하여 이에 따라 원래 `create_filesystem_structure()` 호출에서 생성되지 않은 폴더를 정의하는 경우에 필요할 수 있습니다.
 
 이 작업을 수행할 때 편리하게 사용할 수 있는 몇 가지 방법이 있습니다.
-코드가 툴킷 앱 또는 후크에서 실행 중인 경우 [`Application.ensure_folder_exists()`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Application.ensure_folder_exists) 방식을 사용할 수 있습니다.
-엔진이 있는 경우 [`Engine.ensure_folder_exists()`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.ensure_folder_exists) 방식을 사용할 수 있습니다.
-또는 엔진 외부에서 코드를 실행하는 경우 [`sgtk.util.filesystem.ensure_folder_exists()`](https://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.filesystem.ensure_folder_exists) 방식을 사용할 수 있습니다.
+코드가 툴킷 앱 또는 후크에서 실행 중인 경우 [`Application.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Application.ensure_folder_exists) 방식을 사용할 수 있습니다.
+엔진이 있는 경우 [`Engine.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.ensure_folder_exists) 방식을 사용할 수 있습니다.
+또는 엔진 외부에서 코드를 실행하는 경우 [`sgtk.util.filesystem.ensure_folder_exists()`](https://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.filesystem.ensure_folder_exists) 방식을 사용할 수 있습니다.
 전체 파일 경로가 아닌 해당 디렉토리의 폴더만 생성해야 합니다.
 [`os`](https://docs.python.org/3/library/os.html) 모듈을 가져오고 [`os.path.dirname(publish_path)`](https://docs.python.org/3/library/os.path.html#os.path.dirname)를 실행하여 폴더의 전체 파일 경로를 추출할 수 있습니다.
 
@@ -283,7 +283,7 @@ publish_path = template.apply_fields(fields)
 이 시점에는 경로가 있으며, 이 경로를 사용하여 Maya에 파일을 저장하거나 다른 위치에서 파일을 복사하도록 지시할 수 있습니다.
 이 안내서에서는 해당 위치에서 디스크에 파일을 실제로 생성하는 동작을 구현하는 것은 중요하게 다루지 않습니다.
 해당 위치에 파일이 없더라도 경로를 게시할 수 있습니다.
-그러나 [`sgtk.util.filesystem.touch_file()`](https://developer.shotgridsoftware.com/tk-core/utils.html?#sgtk.util.filesystem.touch_file)을 사용하여 툴킷이 디스크에 빈 파일을 생성하도록 할 수 있습니다.
+그러나 [`sgtk.util.filesystem.touch_file()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.filesystem.touch_file)을 사용하여 툴킷이 디스크에 빈 파일을 생성하도록 할 수 있습니다.
 
 
 ### 최종 결과
@@ -330,15 +330,15 @@ sgtk.util.filesystem.touch_file(publish_path)
 
 여기에서 사용할 수 있는 두 가지 방법이 있습니다.
 
-1. 이 특별한 예제에서는 게시 파일을 해석하므로 [ShotGrid API](https://developer.shotgridsoftware.com/python-api/)를 사용하여 `PublishedFile` 엔티티에 대해 다음으로 사용 가능한 버전 번호를 쿼리할 수 있습니다.
+1. 이 특별한 예제에서는 게시 파일을 해석하므로 [{% include product %} API](https://developer.shotgunsoftware.com/python-api/)를 사용하여 `PublishedFile` 엔티티에 대해 다음으로 사용 가능한 버전 번호를 쿼리할 수 있습니다.
 2. 디스크의 파일을 스캔하고 이미 있는 버전을 확인한 후 다음 버전 번호를 추출할 수도 있습니다.
-   이 옵션은 작업 중인 파일이 ShotGrid에서 트래킹되지 않는 경우(예: 작업 파일)에 유용합니다.
+   이 옵션은 작업 중인 파일이 {% include product %}에서 트래킹되지 않는 경우(예: 작업 파일)에 유용합니다.
 
 첫 번째 옵션이 이 안내서의 예에 가장 적합하지만 두 방법 모두 각자 용도가 있으므로 사용되므로 둘 다 설명하겠습니다.
 
-### ShotGrid에 다음 버전 번호 쿼리
+### {% include product %}에 다음 버전 번호 쿼리
 
-ShotGrid API와 [`summarize()` 방식](https://developer.shotgridsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.summarize)을 사용하여 동일한 이름과 태스크를 공유하는 `PublishedFile` 엔티티 중에서 가장 높은 버전 번호를 가져온 다음 1을 추가하면 됩니다.
+{% include product %} API와 [`summarize()` 방식](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.summarize)을 사용하여 동일한 이름과 태스크를 공유하는 `PublishedFile` 엔티티 중에서 가장 높은 버전 번호를 가져온 다음 1을 추가하면 됩니다.
 
 ```python
 r = sg.summarize(entity_type="PublishedFile",
@@ -386,16 +386,16 @@ def get_next_version_number(tk, template_name, fields):
 fields["version"] = get_next_version_number(tk, "maya_shot_work", fields)
 ```
 
-[`sgtk.paths_from_template()`](https://developer.shotgridsoftware.com/tk-core/core.html?highlight=paths_from_template#sgtk.Sgtk.paths_from_template) 방식은 제공된 템플릿 및 필드와 일치하는 디스크의 파일을 모두 수집합니다.
+[`sgtk.paths_from_template()`](https://developer.shotgunsoftware.com/tk-core/core.html?highlight=paths_from_template#sgtk.Sgtk.paths_from_template) 방식은 제공된 템플릿 및 필드와 일치하는 디스크의 파일을 모두 수집합니다.
 이 방식은 파일 목록을 찾아서 사용자에게 표시하려는 시나리오에도 유용합니다.
 
 두 옵션 중 하나를 사용하도록 선택할 수 있으며, 이 안내서에서는 코드를 간단하게 유지할 수 있도록 옵션 1의 코드를 사용합니다.
 
 ## 7부: 게시된 파일 등록
 
-이제 경로가 생성되고 게시할 준비가 되었습니다. 유틸리티 방식 [`sgtk.util.register_publish()`](https://developer.shotgridsoftware.com/tk-core/utils.html?#sgtk.util.register_publish)를 사용하여 이 작업을 수행할 수 있습니다.
+이제 경로가 생성되고 게시할 준비가 되었습니다. 유틸리티 방식 [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.register_publish)를 사용하여 이 작업을 수행할 수 있습니다.
 
-ShotGrid API의 [`Shotgun.create()`](https://developer.shotgridsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.create) 방식을 사용하여 `PublishedFile` 엔티티를 만들 수도 있지만 필요한 모든 필드가 제공되고 올바르게 입력되기 때문에 툴킷 API를 사용하는 것이 가장 좋습니다.
+{% include product %} API의 [`{% include product %}.create()`](https://developer.shotgunsoftware.com/python-api/reference.html#shotgun_api3.shotgun.Shotgun.create) 방식을 사용하여 `PublishedFile` 엔티티를 만들 수도 있지만 필요한 모든 필드가 제공되고 올바르게 입력되기 때문에 툴킷 API를 사용하는 것이 가장 좋습니다.
 
 ```python
 # So as to match the Publish app's default behavior, we are adding the extension to the end of the publish name.
@@ -412,8 +412,8 @@ sgtk.util.register_publish(tk,
                            published_file_type = "Maya Scene")
 ```
 
-또한 [Publish 앱](https://support.shotgunsoftware.com/hc/ko/articles/115000097513-Publishing-your-work)[이 자체 API](https://developer.shotgridsoftware.com/tk-multi-publish2/)와 함께 제공된다는 점도 주목할 만합니다.
-이 경우에도 기본적으로 동일한 [`sgtk.util.register_publish()`](https://developer.shotgridsoftware.com/tk-core/utils.html?#sgtk.util.register_publish) 방식을 사용하지만 컬렉션, 유효성 확인 및 게시를 처리하는 프레임워크를 제공하여 게시 프로세스를 기반으로 빌드합니다.
+또한 [Publish 앱](https://support.shotgunsoftware.com/hc/ko/articles/115000097513-Publishing-your-work)이 [자체 API](https://developer.shotgunsoftware.com/tk-multi-publish2/)와 함께 제공된다는 점도 주목할 만합니다.
+이 경우에도 기본적으로 동일한 [`sgtk.util.register_publish()`](https://developer.shotgunsoftware.com/tk-core/utils.html?#sgtk.util.register_publish) 방식을 사용하지만 컬렉션, 유효성 확인 및 게시를 처리하는 프레임워크를 제공하여 게시 프로세스를 기반으로 빌드합니다.
 
 ## 8부: 전체 스크립트
 
@@ -499,6 +499,6 @@ sgtk.util.register_publish(tk,
 ### 최종 의견
 
 이 안내서를 통해 툴킷 API를 시작하는 방법에 대한 기본적인 이해를 갖추게 되었기를 바랍니다.
-물론 API를 사용하는 다른 방법도 많이 있으므로 자세한 내용은 [tk-core API](https://developer.shotgridsoftware.com/tk-core/index.html)를 참조해 주십시오.
+물론 API를 사용하는 다른 방법도 많이 있으므로 자세한 내용은 [tk-core API](https://developer.shotgunsoftware.com/tk-core/index.html)를 참조해 주십시오.
 
 또한 API에 대한 질문에 답을 구하고 이 안내서에 대해 피드백을 남길 수 있는 [포럼](https://community.shotgunsoftware.com/c/pipeline/6)도 방문해 주십시오.

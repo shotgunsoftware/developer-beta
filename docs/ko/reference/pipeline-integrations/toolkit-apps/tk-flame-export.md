@@ -58,7 +58,7 @@ Submit 버튼을 클릭하면 다음과 같이 여러 작업이 즉시 수행됩
 
 LINKBOX_ENGINE:{% include product %}software/tk-flame: Flame 엔진
 
-통합 또는 커스터마이즈에 관한 질문이 있으면 언제든지 지원 팀(toolkitsupport@shotgunsoftware.com)에 문의해 주십시오.
+통합 또는 커스터마이즈에 관한 질문이 있으면 언제든지 [지원 사이트](https://knowledge.autodesk.com/ko/contact-support)를 방문해 주십시오.
 
 # 고급 항목
 

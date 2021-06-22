@@ -24,18 +24,18 @@ lang: zh_CN
 
 要使用本手册并对工作流配置执行编辑，需要以下内容：
 
-1. 有效的 [{% include product %}](https://www.shotgunsoftware.com/zh-cn/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) 站点。
+1. 活动的 [{% include product %}](https://www.shotgridsoftware.com/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) 站点。
 2. 包含至少一个资产的项目。您可以将资产添加到在第一个手册中创建的 the_other_side 项目。您可以在[配置快速入门](./advanced_config.md)手册中查看如何为项目创建资产。
-3. 已标识项目的工作流配置，或者完成[配置快速入门](./advanced_config.md)手册并使用在该练习中创建的配置。
-4. 为存储工作流配置的文件系统设置适当的读取和写入权限。
+3. 用于已标识项目的工作流配置，或完成[配置快速入门](./advanced_config.md)手册，并使用在该练习中创建的配置。
+4. 为存储工作流配置的 Shotgun 管理的文件系统设置适当的读取和写入权限。
 5. 在系统上安装 {% include product %} Desktop。
 6. Maya 的有效固定期限的使用许可。在[此处](https://www.autodesk.com.cn/products/maya/free-trial)获取 Maya 的 30 天试用版
 
-{% include info title="注意" content="本手册基于 `tk-config-default2` 工作流配置。如果您的配置文件已修改，则文件和文件夹的位置、YAML 设置的区块可能就与此处描述的不同。" %}
+{% include info title="注意" content="本手册基于 `tk-config-default2` 工作流配置。如果您的配置文件已修改，则文件和文件夹的位置、YAML 设置的区块可能就与此处描述的不同。"%}
 
 ## 关于工作文件应用
 
-工作文件应用监管 {% include product %} 软件集成中的文件管理，并控制对浏览、打开和保存工作文件功能的访问。**“+New Task”**按钮是工作文件应用的一个动作，允许用户添加任务，而无需转到 {% include product %} 执行此操作。配置分解为每个环境的文件。这样，您可以管理相对于工作流中不同阶段的功能，从而控制用户何时可以创建、命名和保存文件、执行任务或执行某些功能。这与工作文件应用中的所有功能相关，也适用于修改任何应用或插件的设置。请在本文档末尾的[高级主题](#advanced-topics)中查找更多详细信息。
+Workfiles 应用监管 {% include product %} 软件集成中的文件管理，并控制对浏览、打开和保存工作文件功能的访问。**“+New Task”**按钮是 Workfiles 应用的一个动作，允许用户添加任务，而无需转到 {% include product %} 执行此操作。配置分解为每个环境的文件。这样，您可以管理相对于工作流中不同阶段的功能，从而控制用户何时可以创建、命名和保存文件、执行任务或执行某些功能。这与工作文件应用中的所有功能相关，也适用于修改任何应用或插件的设置。有关更多详细信息，请参见本文档末尾的[高级主题](#advanced-topics)。
 
 ## 熟悉配置文件
 
@@ -75,7 +75,7 @@ Toolkit 使用 YAML 文件来配置功能。之所以选择 YAML 作为配置的
 
 ## 编辑配置文件
 
-{% include product %} Toolkit 允许对集成在各种软件包中的应用进行更改。工作文件应用的一个功能是**“+New Task”**按钮，该按钮允许用户在**“File Open”**对话框中添加新任务。默认情况下，在项目的每个阶段为每个用户启用此功能。但是工作室可能希望限制此功能，例如，如果他们拥有特定的命名约定，或者想要将任务创建限制到项目的制作管理团队。在这种情况下，他们会为艺术家在 Maya 中工作时使用的工作流中的所有点禁用**“+New Task”**按钮。
+{% include product %} Toolkit 允许对集成在各种软件包中的应用进行更改。工作文件应用的一个功能是**“+New Task”**按钮，该按钮允许用户在**“File Open”**对话框中添加新任务。默认情况下，在项目的每个阶段为每个用户启用此功能。但是工作室可能希望限制此功能，例如，如果他们拥有特定的命名约定，或者想要将任务创建限制到项目的生产管理团队。在这种情况下，他们会为艺术家在 Maya 中工作时使用的工作流中的所有点禁用**“+New Task”**按钮。
 
 ## 为 Maya 中的项目禁用“+New Task”按钮
 
@@ -135,13 +135,13 @@ Toolkit 工作流配置用于自定义环境以满足您的工作流需求。工
 
 **步骤 12：**显示 Maya 主窗口。
 
-**步骤 13：**在 Maya 窗口的右上角找到**“ShotGrid”**菜单项。
+**步骤 13：**在 Maya 窗口的右上角找到**“{% include product %}”**菜单项。
 
-![Maya {% include product %} 2](./images/editing_app_setting/12_Maya_Shotgun2.png)
+![Maya {% include product %}2](./images/editing_app_setting/12_Maya_Shotgun2.png)
 
 **提示：**如果此菜单不可见，则会显示 **>>** 以表明某些菜单项处于隐藏状态。选择 **>>** 以显示“{% include product %}”菜单，或者您可以加宽 Maya 窗口。
 
-**步骤 14：**在菜单右上角选择**“{% include product %} > Project the_other_side > Work Area Info…”**。
+**步骤 14：**在菜单右上角选择**“{% include product %} > 项目 the_other_side > 工作区信息…”(ShotGrid > Project the_other_side > Work Area Info…)**。
 
 ![工作区信息](./images/editing_app_setting/13_work_area_info.png)
 
@@ -342,7 +342,7 @@ settings.tk-multi-workfiles2.launch_at_startup:
 
 ### 其他插件
 
-Workfiles 应用的系统名称是 `tk-multi-workfiles2`，名称中的 `multi` 表明它是一个**多应用**。多应用与软件无关，即，无论您是在 Maya、Nuke、Houdini 还是其他任何受支持的应用中运行它们，它们的特性和功能都是相同的。如果要在所有软件包中禁用 Workfiles 中的任务创建，则应按照本手册中针对每个**插件**（`tk-nuke`、`tk-houdini` 等）的步骤进行操作。
+Workfiles 应用的应用插件名称是 `tk-multi-workfiles2`，名称中的 `multi` 表明它是一个**多应用**。多应用与软件无关，即，无论您是在 Maya、Nuke、Houdini 还是其他任何受支持的应用中运行它们，它们的特性和功能都是相同的。如果要在所有软件包中禁用 Workfiles 中的任务创建，则应按照本手册中针对每个**插件**（`tk-nuke`、`tk-houdini` 等）的步骤进行操作。
 
 ### 其他环境
 
@@ -350,11 +350,11 @@ Workfiles 应用的系统名称是 `tk-multi-workfiles2`，名称中的 `multi` 
 
 ### 创建自定义环境
 
-默认配置附带了一组预定义的工作流工序：`project`、`sequence`、`shot`、`shot_step`、`asset` 和 `asset_step`。但是，工作室可能需要为工作流的每个阶段（即 `asset_step_rig`、`asset_step_model`、`shot_step_anim`、`shot_step_light` 等）使用不同的配置设置。Toolkit 支持自定义环境。有关详细信息，请参见[“环境配置参考”的“自定义环境”部分](../../../toolkit/env_config_ref.md#custom-environments)。
+默认配置附带了一组预定义的工作流工序：`project`、`sequence`、`shot`、`shot_step`、`asset` 和 `asset_step`。但是，工作室可能需要为工作流的每个阶段（即 `asset_step_rig`、`asset_step_model`、`shot_step_anim`、`shot_step_light` 等）使用不同的配置设置。Toolkit 支持自定义环境。有关详细信息，请参见[“环境配置参考”的“自定义环境”部分](../../../reference/pipeline-integrations/env-config-ref.md#custom-environments)。
 
 ### 视频资源
 
 * [Toolkit 配置简介](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s)（来源：SIGGRAPH 2018 Developer Day）
 * [揭秘默认配置网络讲座](https://www.youtube.com/watch?v=eKHaC1dZCeE)
 
-现在您已了解如何修改应用配置设置，请尝试[将应用添加到 Toolkit 配置](./installing_app.md)。
+现在您已了解如何修改应用配置设置，请尝试[将应用添加到 Toolkit 配置](installing_app.md)。

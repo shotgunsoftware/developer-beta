@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ShotGrid Event デーモンを使用してさまざまな Toolkit コア モジュールをロードするにはどうすればいいですか?
+title: ShotGrid のイベント デーモンを使用してさまざまな Toolkit コア モジュールをロードするにはどうすればいいですか?
 pagename: toolkit-core-event-daemon
 lang: ja
 ---

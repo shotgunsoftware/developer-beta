@@ -11,17 +11,17 @@ lang: en
 
 ### S3 Infrequent Access
 
-We recommend enabling S3 Infrequent Access to easily reduce costs without impacting performance. For the ShotGrid Cloud hosted offering, we apply a policy for all objects older than one month.
+We recommend enabling S3 Infrequent Access to easily reduce costs without impacting performance. For the {% include product %} Cloud hosted offering, we apply a policy for all objects older than one month.
 
-With Infrequent Access, objects are stored at a lower cost. However, if they are accessed, it will involve an additional cost. ShotGrid has observed that one month was the right policy to use globally, but you may want to adapt that policy to your studio workflows as needed.
+With Infrequent Access, objects are stored at a lower cost. However, if they are accessed, it will involve an additional cost. {% include product %} has observed that one month was the right policy to use globally, but you may want to adapt that policy to your studio workflows as needed.
 
 Read more about S3 Infrequent Access and other storage classes [here](https://aws.amazon.com/s3/storage-classes/).
 
 ## S3 Bucket policy
 
-We recommend you restrict access to your S3 bucket to only your VPC and ShotGrid transcoding services IPs. There is an example policy, replace `your_vpc_id` and `your_s3_bucket` by your values.
+We recommend you restrict access to your S3 bucket to only your VPC and {% include product %} transcoding services IPs. There is an example policy, replace `your_vpc_id` and `your_s3_bucket` by your values.
 
-We strongly recommend you test media access and media transcoding in your migration test site right after applying the bucket policy changes to be sure your S3 bucket is still accessible from your VPC and from ShotGrid transcoders.
+We strongly recommend you test media access and media transcoding in your migration test site right after applying the bucket policy changes to be sure your S3 bucket is still accessible from your VPC and from {% include product %} transcoders.
 
 ```
 {
@@ -59,6 +59,7 @@ We strongly recommend you test media access and media transcoding in your migrat
                 },
                 "StringNotEquals": {
                     "aws:sourceVpc": [
+                        "vpc-2fd62a56",
                         "your_vpc_id"
                     ]
                 }

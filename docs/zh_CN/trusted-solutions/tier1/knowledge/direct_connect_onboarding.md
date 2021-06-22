@@ -2,9 +2,10 @@
 layout: default
 title: ShotGrid AWS Direct Connect Onboarding
 pagename: tier1-knowledge-direct_connect_onboarding
+lang: en
 ---
 
-# ShotGrid AWS Direct Connect Onboarding
+# {% include product %} AWS Direct Connect Onboarding
 
 
 ## Introduction
@@ -40,7 +41,7 @@ If you answer “yes” to the following, then request a dedicated Direct Connec
 
 If you answer “yes” to the following, then request a dedicated Direct Connect connection through the AWS Console and select a Partner to assist (Option 1b):
 
-- Are you planning to use AWS Direct Connect to connect to other AWS resources outside of ShotGrid?
+- Are you planning to use AWS Direct Connect to connect to other AWS resources outside of {% include product %}?
 - Do you have the time and resources to complete the setup?
 - Are you looking for any one of the following - 1Gbps, 10Gbps port, or a dedicated connection?
 

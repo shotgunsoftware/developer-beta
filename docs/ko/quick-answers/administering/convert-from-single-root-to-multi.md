@@ -10,9 +10,9 @@ lang: ko
 기본 구성은 단일 로컬 저장소 루트를 사용하도록 설정됩니다(즉, 모든 프로젝트 파일이 `/sgtk/projects` 같은 단일 루트 지점에 저장됨). 그리고 일부 프로젝트 파일을 저장할 새 저장소 루트를 추가할 수 있습니다. 보통 디스크 공간이 부족하거나 일부 미디어를 더 빠른 저장소에 저장하고 싶을 때 이렇게 하게 됩니다.
 그럼 이제 이름이 "secondary"인 다른 루트를 추가해 보겠습니다. 수행해야 할 단계는 다음과 같습니다.
 
-## {% include product %}에서 로컬 저장소 추가
+## {% include product %}의 로컬 저장소 추가
 
-- {% include product %}에서 **관리자(Admin) > 사이트 기본 설정(Site Preferences)** 페이지로 이동
+- {% include product %}에서 관리자(Admin) > 사이트 기본 설정(Site Preferences)** 페이지로 이동**
 - **파일 관리(File Management)** 섹션 열기
 - **[+] 로컬 파일 저장소 추가([+] Add Local File Storage)** 클릭
 - 해당하는 모든 플랫폼에서 이름("secondary") 및 저장소 루트 경로 입력. *특정 플랫폼을 사용하고 있지 않다면 그냥 비워 두어도 됩니다.*
@@ -22,7 +22,7 @@ lang: ko
 
 ## 파이프라인 구성에 새 루트 추가
 
-툴킷은 파이프라인 구성에서 사용되는 로컬 저장소에 관한 정보를 `config/core/roots.yml` 파일에 캐시합니다. {% include product %}에서 지금 막 생성한 새로운 **secondary** 저장소 루트를 추가하려면 이 파일을 편집합니다.
+툴킷은 파이프라인 구성에서 사용되는 로컬 저장소에 관한 정보를 `config/core/roots.yml` 파일에 캐시합니다. {% include product %}에서 지금 막 생성한 새로운 **보조** 저장소 루트를 추가하려면 이 파일을 편집합니다.
 
     primary: {
         linux_path: /mnt/hgfs/sgtk/projects,

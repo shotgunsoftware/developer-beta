@@ -9,7 +9,7 @@ lang: ko
 
 앱 또는 엔진이 더 이상 존재하지 않도록 구성의 환경 YAML 파일을 편집하여 앱 또는 엔진을 제거할 수 있습니다.
 환경 파일을 사용하면 앱을 완전히 제거하는 대신 특정 컨텍스트 또는 엔진에서만 사용할 수 있도록 앱을 구성할 수 있습니다.
-일반적인 환경 파일 편집에 대한 자세한 내용은 [이 안내서](../../toolkit/learning-resources/guides/editing_app_setting.md)를 참조하십시오.
+일반적인 환경 파일 편집에 대한 자세한 내용은 [이 안내서](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)를 참조하십시오.
 
 ## 예시
 
@@ -47,4 +47,4 @@ lang: ko
 
 ### 앱 위치 제거
 
-기본 구성에서 모든 앱은 [.../env/includes/app_locations.yml](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/app_locations.yml) 파일에 해당 위치 설명자를 저장합니다. `tk-multi-publish2.yml`은 이를 참조하므로 [설명자 줄](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/app_locations.yml#L52-L56)을 제거해야 합니다.
+기본 구성에서 모든 앱은 [.../env/includes/app_locations.yml](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/app_locations.yml) 파일에 해당 위치 디스크립터를 저장합니다. `tk-multi-publish2.yml`은 이를 참조하므로 [디스크립터 줄](https://github.com/shotgunsoftware/tk-config-default2/blob/e09236bf4b91a6dd79ca5b3ef1258d0eb0afd871/env/includes/app_locations.yml#L52-L56)을 제거해야 합니다.

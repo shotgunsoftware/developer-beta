@@ -7,7 +7,7 @@ lang: zh_CN
 
 # 我的日志文件位于何处？
 
-默认情况下，{% include product %} Desktop 和 {% include product %} 集成将其日志文件存储在以下目录中：
+默认情况下，{% include product %} Desktop 和 ShotGrid 集成将其日志文件存储在以下目录中：
 
 **Mac**
 

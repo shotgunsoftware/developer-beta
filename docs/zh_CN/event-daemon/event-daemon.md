@@ -7,7 +7,7 @@ lang: zh_CN
 
 
 # {% include product %} 事件框架
-该软件最初由 [Patrick Boucher](http://www.patrickboucher.com) 开发，[Rodeo Fx](http://rodeofx.com) 和 Oblique 提供支持。该软件现已加入 [{% include product %} Software](http://www.shotgunsoftware.com) 的[开源计划](https://github.com/shotgunsoftware)。
+该软件最初由 [Patrick Boucher](http://www.patrickboucher.com) 开发，[Rodeo Fx](http://rodeofx.com) 和 Oblique 提供支持。该软件现已加入 [{% include product %} Software](http://www.shotgridsoftware.com) 的[开源计划](https://github.com/shotgunsoftware)。
 
 该软件根据 MIT 许可提供；如需获取该许可，请访问 LICENSE 文件或[开源计划](http://www.opensource.org/licenses/mit-license.php)网站。
 

@@ -11,11 +11,11 @@ lang: zh_CN
 
 以下是所要检查事项的快速列表，下面我们将详细介绍这些内容：
 
-- 确保您的应用、插件、框架、核心和 {% include product %} Desktop [都是最新的](#keeping-up-to-date)。
+- 确保您的应用、插件、框架、核心和 {% include product %} Desktop 都是[最新的](#keeping-up-to-date)。
 - 确保在常规使用期间没有启用[调试日志记录](./turn-debug-logging-on.md)。
 - 仅[创建所需的文件夹](#folder-creation-is-slow)并限制文件夹，以便仅在确实需要这些文件夹时才创建它们。在数据结构中添加太多文件夹会降低速度。
 - 将用户缓存存储在服务器上可能会很慢。通过将 [`{% include product %}_HOME` 环境变量](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables)设置为指向本地驱动器上的位置，来重定向用户的 {% include product %} 缓存。
-- [配置 Workfiles 和加载器应用](#file-open-file-save-or-the-loader-app-is-slow)以过滤出美工人员不需要的内容。考虑按状态进行过滤，这有助于保持实体列表简短且与美工人员的当前任务相关。
+- [配置 Workfiles 和加载器应用](#file-open-file-save-or-the-loader-app-is-slow)以过滤出艺术家不需要的内容。考虑按状态进行过滤，这有助于保持实体列表简短且与美工人员的当前任务相关。
 - 检查您是否有任何自定义挂钩，并且它们不会增加额外开销。
 
 下面列出了一些良好做法和常见的性能下降场景。这不是一个详尽的列表，当我们看到新的模式时，可以尝试将它添加到列表中。如果本手册不能帮助您找到您所面临问题的根源，请随时提交[支持工单](https://support.shotgunsoftware.com/hc/en-us/requests/new)，我们的团队将很乐意进一步帮助您。
@@ -23,7 +23,7 @@ lang: zh_CN
 目录：
 - [常规良好做法](#general-good-practice)
    - [缓存位置](#cache-location)
-   - [保持更新](#keeping-up-to-date)
+   - [保持最新](#keeping-up-to-date)
    - [集中式配置与分布式配置](#centralized-configs-vs-distributed-configs)
    - [调试](#debugging)
 - [启动软件时速度很慢](#launching-software-is-slow)
@@ -42,13 +42,13 @@ lang: zh_CN
 
 {% include product %} Toolkit [将数据缓存到用户的主目录](../administering/where-is-my-cache.md)。此缓存可以包括许多不同的 SQLite 数据库以及缓存的应用和配置。通常，用户的主目录存储在计算机的本地硬盘驱动器上，但是工作室将它们重定向到网络存储是相当常见的。这样做会影响性能，尤其是 SQLite 数据库，这些数据库用于浏览器集成和文件夹创建/查找等。
 
-如果您的用户目录存储在服务器位置，我们建议使用 [`{% include product %}_HOME` 环境变量](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables)重新指定 {% include product %} Toolkit 缓存的路径。`{% include product %}_HOME` 环境变量用于设置 Toolkit 缓存各种数据的位置，例如包缓存、缩略图、用于快速查找数据和其他内容的 SQLite 数据库。
+如果您的用户目录存储在服务器位置，我们建议使用 [`{% include product %}_HOME` 环境变量](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables)重新指定 {% include product %} Toolkit 缓存的路径。`{% include product %}_HOME` 环境变量用于设置 Toolkit 缓存各种数据的位置，例如缓存、缩略图、用于快速查找数据和其他内容的 SQLite 数据库。
 
 ### 调试
 
 您可以在 {% include product %} Toolkit 中启用调试日志记录，以便能够从各个进程获取更详细的输出。这在尝试诊断问题时非常有用，但是，调试设置不是设计为在日常使用期间启用的。日志记录输出的增加可能会对性能产生显著影响。
 
-当遇到性能问题时，尤其是本地化到特定计算机或用户的问题时，请先确认未启用[调试日志记录](./turn-debug-logging-on.md)。
+当遇到性能问题时，尤其是局限于特定计算机或用户的问题时，请先确认未启用[调试日志记录](./turn-debug-logging-on.md)。
 
 ### 保持更新
 
@@ -70,9 +70,9 @@ lang: zh_CN
 
 总之，如果您的存储速度较慢，但是 Internet 连接良好，那么分布式配置可能是最佳的解决方案，但是如果您的服务器存储性能很好，而 Internet 连接很差，那么集中式配置可能更合适。
 
-{% include info title="注意" content="如果您对分布式配置感兴趣，但担心按计算机下载依赖项，则可以仅集中包缓存，以便在所有用户之间共享。" %}
+{% include info title="注意" content="如果您对分布式配置感兴趣，但担心按计算机下载依赖项，则可以仅集中缓存，以便在所有用户之间共享。" %}
 
-当使用分布式配置时，用户只需在缓存中找不到相关内容时才下载它，一旦某个用户已下载它，其他用户也能够利用它。为此，您可以在每台计算机上设置 [`{% include product %}_BUNDLE_CACHE_PATH` 环境变量](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables) 以指向共享位置。
+当使用分布式配置时，用户只需在缓存中找不到相关内容时才下载它，一旦某个用户已下载它，其他用户也能够利用它。为此，您可以在每台计算机上设置 [`{% include product %}_BUNDLE_CACHE_PATH` 环境变量](https://developer.shotgridsoftware.com/tk-core/initializing.html#environment-variables)以指向共享位置。
 
 ## 启动软件时速度很慢
 

@@ -7,7 +7,7 @@ lang: ja
 
 
 # {% include product %} イベント フレームワーク
-このソフトウェアは、[Rodeo Fx](http://rodeofx.com) と Oblique のサポートを受けて [Patrick Boucher](http://www.patrickboucher.com) により開発されました。これは現在、[{% include product %}ソフトウェア](http://www.shotgunsoftware.com)の[オープン ソース イニシアチブ](https://github.com/shotgunsoftware)の一部になっています。
+このソフトウェアは、[Rodeo Fx](http://rodeofx.com) と Oblique のサポートを受けて [Patrick Boucher](http://www.patrickboucher.com) により開発されました。これは現在、[{% include product %}ソフトウェア](http://www.shotgridsoftware.com)の[オープン ソース イニシアチブ](https://github.com/shotgunsoftware)の一部になっています。
 
 このソフトウェアは、LICENSE ファイルまたは[オープン ソース イニシアチブ](http://www.opensource.org/licenses/mit-license.php)の Web サイトにある MIT ライセンスの下で提供されます。
 

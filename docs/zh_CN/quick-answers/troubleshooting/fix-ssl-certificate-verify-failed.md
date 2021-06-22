@@ -38,18 +38,18 @@ Python API 依赖与 API 捆绑在一起且位于计算机上的一组证书才�
 
    或
 
-   b. 在实例化 `ShotGrid` 对象时更新脚本并设置 `ca_certs=/path/to/shotgun_api3/lib/httplib2/cacerts.txt`。
+   b. 在实例化 `Shotgun` 对象时更新脚本并设置 `ca_certs=/path/to/shotgun_api3/lib/httplib2/cacerts.txt`。
 
 ### 如果使用 Toolkit
 
 1. 通过 `tank core` 命令或通过更新工作流配置的 `core/core_api.yml` 文件升级到最新版本的 Toolkit API，具体取决于您部署 Toolkit 的方式。
 
-2. 从 [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](ttps://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem) 下载最新的证书列表。
+2. 从 [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem) 下载最新的证书列表。
 
 3. 将 `{% include product %}_API_CACERTS` 设置为该文件的保存位置。与 Python API 类似，Toolkit 不允许您在创建连接时指定 `ca_certs` 参数。
 
 ### 如果无法更新 Python API 或 Toolkit
 
-1. 从 [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](ttps://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem) 下载最新的证书列表。
+1. 从 [https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem](https://github.com/certifi/python-certifi/blob/master/certifi/cacert.pem) 下载最新的证书列表。
 
 2. 将 `SSL_CERT_FILE` 环境变量设置为该文件的保存位置。

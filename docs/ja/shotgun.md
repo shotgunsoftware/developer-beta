@@ -5,7 +5,7 @@ pagename: shotgun-index
 lang: ja
 ---
 
-# {% include product %} の開発
+# {% include product %} 開発
 
 プロダクション管理では、すべての個別の要素を同期させる必要があるため、多大な労力を必要とします。
 

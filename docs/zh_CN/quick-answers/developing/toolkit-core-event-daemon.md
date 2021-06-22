@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 如何使用 {% include product %} Event 进程加载不同的 Toolkit 核心模块？
+title: 如何使用 ShotGrid 事件进程加载不同的 Toolkit 核心模块？
 pagename: toolkit-core-event-daemon
 lang: zh_CN
 ---
@@ -13,7 +13,7 @@ lang: zh_CN
 
 Toolkit 的 sgtk API 以项目为中心。换句话说，您必须专门从要使用它的项目导入此 API。这意味着，如果您在单个 Python 会话中对多个项目使用 sgtk API 操作，您将会遇到问题，因为 Python 仅允许具有相同名称的模块导入一次。
 
-如果您使用的是 [{% include product %} Event 进程](https://github.com/shotgunsoftware/shotgunEvents)，您可能需要在特定事件对应的插件内部执行 Toolkit 操作。这并非易事，因为 Python 仅导入一次模块。因此，如果您在第一次运行该插件时导入了用于项目 A 的 Toolkit 核心 API，则在此进程的使用周期内将始终导入该版本。这意味着，如果分派给该插件的下一个事件用于项目 B，则当您尝试使用来自项目 A 的核心 API 实例化用于项目 B 的新 Toolkit 对象时，可能会发生错误。
+如果您使用的是 [{% include product %} 事件进程](https://github.com/shotgunsoftware/shotgunEvents)，您可能需要在特定事件对应的插件内部执行 Toolkit 操作。这并非易事，因为 Python 仅导入一次模块。因此，如果您在第一次运行该插件时导入了用于项目 A 的 Toolkit 核心 API，则在此进程的使用周期内将始终导入该版本。这意味着，如果分派给该插件的下一个事件用于项目 B，则当您尝试使用来自项目 A 的核心 API 实例化用于项目 B 的新 Toolkit 对象时，可能会发生错误。
 
 **使用集中式配置时的问题示例：**
 

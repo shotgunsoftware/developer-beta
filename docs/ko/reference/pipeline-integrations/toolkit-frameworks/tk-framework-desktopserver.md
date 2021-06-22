@@ -70,7 +70,7 @@ whitelist=*.shotgunstudio.com
 
 Linux에서 서버는 libffi에 대한 종속성을 도입합니다.  시작 시 데스크톱에서 충돌이 발생하고 로그에서 libffi를 찾을 수 없다는 메시지가 표시되는 경우 이 패키지를 설치해야 합니다.
 
-설치 중에 문제 또는 질문이 있는 경우 support@shotgunsoftware.com으로 이메일을 보내주십시오.  서버 실행에 문제가 있는 경우 **config.ini** 파일에서 **debug**를 **1**로 설정하고 데스크톱의 로그 파일을 포함시키십시오.
+설치 중에 문제 또는 질문이 있는 경우 [지원 사이트](https://knowledge.autodesk.com/ko/contact-support)를 방문하십시오.  서버 실행에 문제가 있는 경우 **config.ini** 파일에서 **debug**를 **1**로 설정하고 데스크톱의 로그 파일을 포함시키십시오.
 
 로그 파일은 다음 위치에 있습니다.
 

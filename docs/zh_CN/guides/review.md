@@ -13,4 +13,4 @@ lang: zh_CN
 
 查看 RV-SDI 手册，了解我们如何将 NVIDIA SDI 视频设备作为演示模式设备进行实施。
 
-借助与 Maya、Nuke 甚至 ShotGrid 本身的集成软件包，实现无缝工作流。
+借助与 Maya、Nuke 甚至 {% include product %} 本身的集成软件包，实现无缝工作流。

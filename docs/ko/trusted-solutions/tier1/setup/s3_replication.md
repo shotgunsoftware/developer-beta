@@ -9,7 +9,7 @@ lang: en
 
 ## Description
 
-It's possible to add S3 replication between two S3 buckets in different regions and configure ShotGrid to leverage it for faster access to media.
+It's possible to add S3 replication between two S3 buckets in different regions and configure {% include product %} to leverage it for faster access to media.
 
 ![S3 Replication Diagram](../images/tier1-s3-replication.png)
 
@@ -40,10 +40,10 @@ The `IP Adresses for S3 replication` preference can be edited in Site Preference
 # Setup steps
 
   * Create the replica S3 bucket in a new AWS region. See [Media Isolation](./s3_bucket.md)
-  * Update your existing ShotGrid role policy to allow ShotGrid to also access the replica bucket
+  * Update your existing {% include product %} role policy to allow {% include product %} to also access the replica bucket
   * Setup the replication rules on the primary S3 bucket. See [How do I add a replication rule to an S3 bucket?](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/enable-replication.html#enable-replication-add-rule)
   * Setup a VPC + Direct Connect + S3 proxy in the new AWS region. See [Media Traffic Isolation](./media_segregation.md)
-  * Contact ShotGrid Support to configure your site to use the new S3 replica bucket, providing the following information:
+  * Contact {% include product %} Support to configure your site to use the new S3 replica bucket, providing the following information:
     * Replica Bucket Name
     * Replica Bucket Region
     * Replica S3 proxy URL

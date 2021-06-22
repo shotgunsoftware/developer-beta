@@ -20,19 +20,19 @@ lang: ja
 
 ここで追加するアプリは、{% include product %} Python コンソール アプリです。Maya には独自の Python コンソールがありますが、Toolkit アプリには Maya コンソールにない機能がいくつか用意されています。
 
-このガイドでは、「[パイプライン設定を編集する](./editing_app_setting.md)」ガイドで作成したパイプライン設定を利用します。 このガイドをまだ完了していない場合は、既存のパイプライン設定を使用してアプリを追加してください。
+このガイドでは、「[パイプライン設定を編集する](./editing_app_setting.md)」ガイドで作成したパイプライン設定を利用します。このガイドをまだ完了していない場合は、既存のパイプライン設定を使用してアプリを追加してください。
 
 ## このドキュメントの使い方
 
 このガイドを使用して Toolkit アプリをインストールするには、以下が必要です。
 
-1. アクティブな [{% include product %}](https://www.shotgunsoftware.com/jp/signup/) サイト。
-2. 指定したプロジェクトのパイプライン設定。この設定がない場合は、「[設定の基本操作](./advanced_config.md)」ガイドの手順を完了し、その演習で作成した設定を使用します。
+1. アクティブな [{% include product %}](https://www.shotgridsoftware.com/signup/) サイト。
+2. 指定したプロジェクトのパイプライン設定、または「[設定の基本操作](./advanced_config.md)」ガイドを参照して、この演習で作成された設定を使用します。
 3. パイプライン設定の保存先のファイルシステムに最適になるように設定された読み取りおよび書き込み権限。
-4. システムにインストールされた {% include product %} Desktop。
+4.  システムにインストールされた {% include product %} Desktop。
 5. Maya の有効なサブスクリプション。Maya の 30 日間無償体験版は[こちら](https://www.autodesk.co.jp/products/maya/free-trial)から取得してください。
 
-{% include info title="注" content="このガイドは tk-config-default2 パイプライン設定をベースにしています。 設定が変更されている場合は、YAML 設定のファイル、フォルダ、およびブロックの場所がここに記載されている内容と異なる可能性があります。"%}
+{% include info title="注" content="このガイドは tk-config-default2 パイプライン設定をベースにしています。設定が変更されている場合は、YAML 設定のファイル、フォルダ、およびブロックの場所がここに記載されている内容と異なる可能性があります。"%}
 
 ## {% include product %} Toolkit アプリについて
 
@@ -63,11 +63,11 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 ![Python アプリの情報](./images/installing_app/2_python_app_info.png)
 
-**[System Name]**は主要な識別子です(`tk-multi-pythonconsole`)。**[Latest Version:]**も必要です( v1.1.2)。
+**システム名**は主要な識別子です(`tk-multi-pythonconsole`)。**最新バージョン**も必要です( v1.1.2)。
 
 ### Maya のプロジェクト環境内に Python コンソール アプリが含まれていないことを確認する
 
-**手順 2:** Maya を起動し、{% include product %} メニューを選択して(**[{% include product %}] > プロジェクト the_other_side**)、プロジェクト環境内にある、このプロジェクトで使用可能なアプリのリストを表示します。
+**手順 2:** Maya を起動し、{% include product %} メニューから、**[{% include product %}] > [プロジェクト the_other_side](Project the_other_side)**を選択して、プロジェクト環境内にある、このプロジェクトで使用可能なアプリのリストを表示します。
 
 ![アプリのリスト](./images/installing_app/3_list_of_apps.png)
 
@@ -79,21 +79,21 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 ## アプリを追加するパイプライン設定のクローンを作成する
 
-### [パイプラインの設定]（Pipeline Configuration）リストに移動します。
+### [パイプラインの設定](Pipeline Configuration)リストに移動します。
 
-**手順 3**: {% include product %} を開き、右上にある**[管理者]（Admin）メニュー（アバター） > [既定のレイアウト]（Default Layouts） > [パイプラインの設定]（Pipeline Configuration） > [パイプライン設定リスト]（Pipeline Configuration List）**を選択します。
+**手順 3**: {% include product %} を開き、右上にある**[管理者] (Admin)メニュー(アバター) > [既定のレイアウト](Default Layouts) > [パイプラインの設定](Pipeline Configuration) > [パイプライン設定リスト](Pipeline Configuration List)**を選択します。
 
 ![パイプライン設定リスト](./images/installing_app/4_REPLACE_pipeline_configuration_list.png)
 
 この操作を行うと、{% include product %} サイトのすべてのパイプライン設定の詳細なリストが表示されます。
 
-**手順 4:** [パイプライン設定リスト]（Pipeline Configuration List）が表示されたら、列見出しの右端にある**[+]**記号を選択して、**[プロジェクト]（Projects）**列を追加します。
+**手順 4:** [パイプライン設定リスト](Pipeline Configuration List)が表示されたら、列見出しの右端にある**[+]**記号を選択して、**[プロジェクト] (Projects)**列を追加します。
 
 ![プロジェクト列を追加](./images/installing_app/5_add_project_column.png)
 
 ### プロジェクトの設定の配置場所を確認する
 
-**手順 5:** オペレーティング システムに該当する**[パス]（Path）**フィールドを追加します。
+**手順 5:** オペレーティング システムに該当する**[パス] (Path)**フィールドを追加します。
 
 ![設定のパス](./images/installing_app/6_path_to_config.png)
 
@@ -101,11 +101,11 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 ![設定のパス 2](./images/installing_app/7_path_to_config2.png)
 
-**手順 6:** **[プライマリ]（Primary）**行項目の横にある空のスペース内で**右クリック**して、コンテキスト メニューから**[この設定のクローンを作成...]（Clone this Configuration…）**を選択します。
+**手順 6:** **[プライマリ] (Primary)**行項目の横にある空のスペース内で**右クリック**して、コンテキスト メニューから**[この設定のクローンを作成...](Clone this Configuration…)**を選択します。
 
 ![クローン作成完了](./images/installing_app/8_clone_complete.png)
 
-**手順 7:** [パイプライン設定リスト]（Pipeline Configuration List）内の設定およびディレクトリ内のファイルに、それぞれ「Primary Clone Config 2」および「the_other_side_clone2」という名前を付けます。**[OK]**をクリックします。
+**手順 7:** [パイプライン設定リスト](Pipeline Configuration List)内の設定およびディレクトリ内のファイルに、それぞれ「Primary Clone Config 2」および「the_other_side_clone2」という名前を付けます。**[OK]**をクリックします。
 
 ![クローンに名前を付ける](./images/installing_app/9_name_clone.png)
 
@@ -115,7 +115,7 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 完了すると、クローンが作成された設定の情報を使用して[パイプライン設定リスト]が更新され、ローカルな config フォルダに新しい設定が追加されます。
 
-{% include info title="注" content="**[ユーザ制限]（User Restrictions）**の下にユーザ名が追加されています。ShotGrid は、この設定を作成したユーザのみが新しい設定にアクセスできるよう、自動的に制限します。この設定を編集し、テストして、最終的に使用するユーザを追加することができます。ただし、ShotGrid の柔軟性を高めて、詳細なコントロールを可能にする方法がもう 1 つあります。"%}
+{% include info title="注" content="**[ユーザ制限](User Restrictions)**の下にユーザ名が追加されています。ShotGrid は、この設定を作成したユーザのみが新しい設定にアクセスできるよう、自動的に制限します。この設定を編集し、テストして、最終的に使用するユーザを追加することができます。ただし、ShotGrid の柔軟性を高めて、詳細なコントロールを可能にする方法がもう 1 つあります。"%}
 
 ## クローン作成された設定にプロジェクトを関連付ける
 
@@ -123,7 +123,7 @@ Toolkit アプリの「アドレス」は既定の設定の `config/env/includes
 
 ![クローンを選択](./images/installing_app/11_select_clone.png)
 
-これで、{% include product %} Desktop がこのプロジェクトでクローン作成した設定を使用するようになりました。
+ これで、{% include product %} Desktop がこのプロジェクトでクローン作成した設定を使用するようになりました。
 
 ## パイプライン設定を編集する
 
@@ -256,7 +256,7 @@ Windows の場合:
 
 ![Maya のクローン作成された設定](./images/installing_app/14_maya_cloned_config.png)
 
-**手順 17:** Desktop から Maya を起動して、メニュー **[{% include product %}] > [プロジェクト]（Project） > […]**を選択します。
+**手順 17:** Desktop から Maya を起動して、メニュー **[{% include product %}] > [プロジェクト] (Project) > […]**を選択します。
 
 次の場合:
 
@@ -324,7 +324,7 @@ Please type in the id of the configuration to push to (ENTER to exit):
 
 クローン作成した設定のプッシュ先に指定できるパイプライン設定のリストが表示されます。設定を更新しているプロジェクトのプライマリ パイプライン設定の ID を入力します。
 
-{% include info title="注" content="このガイドの「**手順 3**」に示した ShotGrid の[パイプラインの設定]（Pipeline Configuration）ページにも、パイプライン設定の ID が表示されています。プロジェクト ID を検索するには、設定リストに移動して、ID 列を追加します。"%}
+{% include info title="注" content="このガイドの「**手順 3**」に示した ShotGrid の[パイプラインの設定](Pipeline Configuration)ページにも、パイプライン設定の ID が表示されています。プロジェクト ID を検索するには、設定リストに移動して、ID 列を追加します。"%}
 
 ![ID 列](./images/installing_app/17_id_column.png)
 
@@ -352,7 +352,7 @@ Push Complete!
 
 ![Maya の設定の変更](./images/installing_app/18_change_config_maya.png)
 
-**手順 20:** Desktop から Maya を起動して、メニュー**[{% include product %}] > [プロジェクト]（Project） > […]**を参照して、{% include product %} Python コンソールを検索します。
+**手順 20:** Desktop から Maya を起動して、メニュー**[{% include product %}] > [プロジェクト] (Project) > […]**を参照して、{% include product %} Python コンソールを検索します。
 
 ![Maya のアプリ](./images/installing_app/19_app_in_maya.png)
 
@@ -362,9 +362,9 @@ Python コンソール アプリが、選択されたプロジェクトのプロ
 
 ### {% include product %} 開発者のコミュニティ
 
-Toolkit の素晴らしい点の 1 つに、Toolkit アプリを誰でも作成できることがあります。また、アプリの所有権を維持したり、[{% include product %} コミュニティ](https://support.shotgunsoftware.com/hc/ja/articles/219039828)内でアプリを共有して {% include product %} ツールに追加したりできます。非常に便利なアプリを作成したため、{% include product %} コミュニティ ページで共有したい場合は、[support@shotgunsoftware.com](mailto:support@shotgunsoftware.com) にメールでお問い合わせください。
+Toolkit の素晴らしい点の 1 つに、Toolkit アプリを誰でも作成できることがあります。また、アプリの所有権を維持したり、[{% include product %} コミュニティ](https://support.shotgunsoftware.com/hc/ja/articles/219039828)内でアプリを共有して {% include product %} ツールに追加したりできます。{% include product %} コミュニティ ページで共有可能な便利なアプリを作成した場合は、[サポート サイト](https://knowledge.autodesk.com/ja/contact-support)にアクセスしてサポートを依頼してください。
 
-標準的な Toolkit アプリや、愛情のこもった {% include product %} コミュニティで作成されたアプリについては、**[{% include product %}-dev Google グループ](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups&hl=ja#!forum/shotgun-dev)**で活発に議論されています。{% include product %} コミュニティの貢献度が高まるにつれて、知識やツールの基盤も拡大しています。
+標準的な Toolkit アプリや、愛情のこもった {% include product %} コミュニティで作成されたアプリについては、**[{% include product %}-dev Google グループ](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups#!forum/shotgun-dev)**で活発に議論されています。{% include product %} コミュニティの貢献度が高まるにつれて、知識やツールの基盤も拡大しています。
 
 ### 設定の拡張方法を調べる
 
