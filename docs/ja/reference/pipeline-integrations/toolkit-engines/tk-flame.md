@@ -23,26 +23,20 @@ Flame を {% include product %} から初めて起動すると、Flame プロジ
 
 ただし、{% include product %} と統合すると、パイプラインに最適な値があらかじめ設定されるため、アーティストは設定値について検討しなくてもすぐに使用することができます。既定値は `project_setup_hook` を介してカスタマイズできます。次のオプションをサポートしています。
 
-`use_project_settings_ui`
-: `True` に設定すると、プロジェクト作成 UI が表示されます。`False` の場合、Flame プロジェクトはフック内の他の既定値に基づいて自動的に作成されます。
+`use_project_settings_ui` `True` に設定すると、プロジェクト作成 UI が表示されます。`False` の場合、Flame プロジェクトはフック内の他の既定値に基づいて自動的に作成されます。
 
 `get_server_hostname`
-: 既定では「localhost」に設定されますが、必要に応じてオーバーライドできます。
+ 既定では「localhost」に設定されますが、必要に応じてオーバーライドできます。
 
-`get_project_name`
-: 既定では {% include product %} プロジェクトと同じ値に設定されますが、必要に応じてオーバーライドできます。
+`get_project_name` 既定では {% include product %} プロジェクトと同じ値に設定されますが、必要に応じてオーバーライドできます。
 
-`get_volume`
-: 既定では最初に利用可能なストレージに設定されますが、必要に応じてオーバーライドできます。
+`get_volume` 既定では最初に利用可能なストレージに設定されますが、必要に応じてオーバーライドできます。
 
-`get_workspace`
-: 既定では、Flame は標準的なワークスペース作成ロジックに従って既定のワークスペースを作成しますが、必要に応じてオーバーライドできます。
+`get_workspace` 既定では、Flame は標準的なワークスペース作成ロジックに従って既定のワークスペースを作成しますが、必要に応じてオーバーライドできます。
 
-`get_user`
-: Flame マシンにログインしたユーザと {% include product %} のユーザの関連付けを試行します。
+`get_user` Flame マシンにログインしたユーザと {% include product %} のユーザの関連付けを試行します。
 
-`get_project_settings`
-: Flame のメイン設定を指定し、フックで Flame プロジェクト XML ストリームを構築する場所です。次のパラメータを指定する必要**があります。
+`get_project_settings` Flame のメイン設定を指定し、フックで Flame プロジェクト XML ストリームを構築する場所です。次のパラメータを指定する必要**があります。
 
 * FrameWidth (例: `1280`)
 * FrameHeight (例: `1080`)

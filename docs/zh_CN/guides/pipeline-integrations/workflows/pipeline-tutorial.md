@@ -1,11 +1,11 @@
 ---
 layout: default
-title: 工作流教程
+title: 动画工作流教程
 pagename: toolkit-pipeline-tutorial
 lang: zh_CN
 ---
 
-# 工作流教程
+# 动画工作流教程
 
 本教程介绍如何为动画或视觉效果制作打造一个简化但却典型的工作流。按照本教程，您将打造一个全面的工作流，为资产的建模、视觉开发到融入制作场景提供所有必要环节。
 
@@ -37,7 +37,7 @@ lang: zh_CN
 
 * [{% include product %} 支持站点](https://support.shotgunsoftware.com/hc/zh-cn)
 
-* [{% include product %} 集成](https://www.shotgunsoftware.com/zh-cn/integrations/)
+* [{% include product %} 集成](https://www.shotgridsoftware.com/integrations/)
 
    * [用户手册](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574)
 
@@ -55,9 +55,9 @@ lang: zh_CN
 
    * **_桌子_**道具
 
-* 一个**镜头序列**
+* 一个**场**
 
-* 一个链接至您创建的**镜头序列**的**镜头**
+* 一个链接至您创建的**场**的**镜头**
 
 * 每个工作流工序一个**任务**
 
@@ -65,7 +65,7 @@ lang: zh_CN
 
 {% include figure src="./images/tutorial/image_1.png" caption="茶壶和桌子资产" %}
 
-{% include figure src="./images/tutorial/image_2.png" caption="链接至镜头序列的镜头" %}
+{% include figure src="./images/tutorial/image_2.png" caption="链接至场的镜头" %}
 
 {% include figure src="./images/tutorial/image_3.png" caption="任务" width="400px" %}
 
@@ -83,7 +83,7 @@ lang: zh_CN
 
 # 配置
 
-配置定义项目的美工人员工作流。这包括指定哪些 {% include product %} 集成包含在艺术家要启动的 DCC 中，如何定义项目的文件夹结构，以及艺术家共享数据时创建的文件和文件夹的命名约定。
+配置定义项目的艺术家工作流。这包括指定哪些 {% include product %} 集成包含在艺术家要启动的 DCC 中，如何定义项目的文件夹结构，以及艺术家共享数据时创建的文件和文件夹的命名约定。
 
 默认情况下，所有新项目均配置为使用基本 [{% include product %} 集成](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574)，这些集成提供了使用许多现成的软件包在艺术家之间共享文件的基本工作流。以下各节概述了如何接管项目的工作流配置以及如何为您的工作室对其进行自定义。
 
@@ -207,7 +207,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 {% include figure src="./images/tutorial/image_16.png" %}
 
-当您对自己的作品满意后，再次运行**“{% include product %} > File Save…”**菜单动作。此时，在对话框中版本号默认设置为 2。文件版本自动递增功能让艺术家可维护所完成工作的完整历史记录。单击“保存”(Save)按钮。
+当您对自己的作品满意后，再次运行**“{% include product %} > File Save…”**菜单动作。 此时，在对话框中版本号默认设置为 2。文件版本自动递增功能让艺术家可维护所完成工作的完整历史记录。单击“保存”(Save)按钮。
 
 {% include figure src="./images/tutorial/image_17.png" %}
 
@@ -334,7 +334,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 这是您将添加用于收集当前会话中发现的任何网格的新方法。此方法将创建着色器发布插件（您将在后面创建）可以对其进行操作的网格项。要传入的项是将作为网格项的父项的会话项。
 
-{% include info title="注意" content="这是一种修改现有发布插件的非常有针对性的方法。要深入了解发布器的结构及其所有移动部分，请[参见开发人员文档](http://developer.shotgridsoftware.com/tk-multi-publish2/)。" %}
+{% include info title="注意" content="这是一种修改现有发布插件的非常有针对性的方法。要深入了解发布器的结构及其所有移动部分，请参见[开发人员文档](http://developer.shotgridsoftware.com/tk-multi-publish2/)。" %}
 
 现在，将下面的新方法定义添加到文件底部：
 
@@ -457,11 +457,11 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 ### 发布着色器网络
 
-现在可以查看更改项目配置的效果。从 {% include product %} 菜单启动发布应用。您应该会看到收集的茶壶网格项以及附加的**“Publish Shaders”**插件：
+现在可以查看更改项目配置的效果。从 {% include product %} 菜单启动发布应用。 您应该会看到收集的茶壶网格项以及附加的**“Publish Shaders”**插件：
 
 {% include figure src="./images/tutorial/image_32.png" %}
 
-输入作品说明，并截取已贴图茶壶的缩略图以与已发布的文件关联。最后，单击“Publish”将茶壶着色器导出到磁盘并在 {% include product %} 中将文件注册为发布。完成后，请注意，会话发布插件已自动将您的工作文件保存为下一个可用版本。这是 {% include product %} 集成支持的所有 DCC 中的默认行为。
+输入作品说明，并截取已贴图茶壶的缩略图以与已发布的文件关联。最后，单击“Publish”将茶壶着色器导出到磁盘并在 {% include product %} 中将文件注册为发布。 完成后，请注意，会话发布插件已自动将您的工作文件保存为下一个可用版本。这是 {% include product %} 集成支持的所有 DCC 中的默认行为。
 
 
 现在，您可以浏览到 {% include product %} 中的茶壶资产以验证是否一切都符合预期。
@@ -476,7 +476,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 ## 装配工作流
 
-此时，您应该可以非常轻松地使用 {% include product %} 提供的 Workfiles 和“发布”应用打开（或创建）、保存和发布工作文件。此外，您还曾使用加载器应用加载来自上游的发布。使用所学内容完成以下任务：
+此时，您应该可以非常轻松地使用 {% include product %} 提供的 Workfiles 和“发布”应用打开（或创建）、保存和发布工作文件。 此外，您还曾使用加载器应用加载来自上游的发布。使用所学内容完成以下任务：
 
 * 从 {% include product %} Desktop 启动 Maya
 
@@ -628,7 +628,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 {% include figure src="./images/tutorial/image_45.png" %}
 
-如图中所示，收集了新摄影机项并附加了发布插件。继续操作并单击**“Publish”**将摄影机写入磁盘，然后向 {% include product %} 注册该摄影机。
+如图中所示，收集了新摄影机项并附加了发布插件。继续操作并单击**“Publish”**将摄影机写入磁盘，然后向 ShotGrid 注册该摄影机。
 
 {% include info title="注意" content="与 Alembic 导出类似，摄影机发布插件需要加载 FBX 导出插件。如果您没有看到摄影机发布插件项，请确保 FBX 插件已加载，然后重新启动发布器。" %}
 
@@ -795,7 +795,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 ## 合成工作流
 
-在本教程的最后一节中，将向您介绍 Nuke 提供的一些默认集成。除了在前面各节中提到的应用之外，您还将了解 {% include product %} 可识别的写入节点和一个用于将渲染快速发送给其他人以供审核的应用。
+在本教程的最后一节中，将向您介绍 Nuke 提供的一些默认集成。除了在前面各节中提到的应用之外，您还将了解 ShotGrid 可识别的写入节点和一个用于将渲染快速发送给其他人以供审核的应用。
 
 首先，执行以下步骤来准备工作文件。
 
@@ -816,7 +816,7 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 当您对自己的合成满意后，使用**“{% include product %} > File Save…”**菜单动作保存工作文件。
 
-然后，单击 Nuke 的左侧菜单中的 {% include product %} 标识。在该菜单中单击一个 {% include product %} 可识别的写入节点：
+然后，单击 Nuke 的左侧菜单中的 {% include product %} 标识。在该菜单中单击一个 ShotGrid 可识别的写入节点：
 
 {% include figure src="./images/tutorial/image_59.png" width="400px" %}
 
@@ -844,9 +844,9 @@ Maya 加载完毕后，将会显示“File Open”对话框。在此对话框中
 
 # 总结
 
-祝贺您，您已完成本教程！我们希望本教程能为您使用 {% include product %} 集成打造自己的自定义工作流奠定良好的基础。学完本教程，您应该能够了解如何根据自己工作室的特定需求扩展默认的集成。
+祝贺您，您已完成本教程！我们希望本教程能为您使用 {% include product %} 集成打造自己的自定义工作流奠定良好的基础。 学完本教程，您应该能够了解如何根据自己工作室的特定需求扩展默认的集成。
 
-在 [shotgun-dev Google 组](https://groups.google.com/a/shotgunsoftware.com/forum/#!forum/shotgun-dev)中提出问题，了解其他工作室如何使用 Toolkit。请订阅以查看最新的帖子！
+在 [shotgun-dev Google 组](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups&hl=zh_CN#!forum/shotgun-dev)中提出问题，了解其他工作室如何使用 Toolkit。请订阅以查看最新的帖子！
 
 如果您认为默认的集成未涵盖某些功能或工作流，可以随时编写自己的应用。[这里是一份详实的文档](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033158)，可帮助您开始编写您的第一个应用。
 

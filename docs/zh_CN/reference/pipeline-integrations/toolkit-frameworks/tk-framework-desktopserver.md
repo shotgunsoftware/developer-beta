@@ -74,7 +74,7 @@ whitelist=*.shotgunstudio.com
 
 在 Linux 平台上，该服务器增加了对 libffi 的依赖。  如果 Desktop 在启动时崩溃，并且日志中包含未找到 libffi 的消息，您需要安装此软件包。
 
-如果您在设置过程中遇到任何问题或有任何疑问，请发送电子邮件至 support@shotgunsoftware.com。  如果运行服务器时遇到问题，请在 **config.ini** 文件中将 **debug** 设置为 **1**，并包含 Desktop 的日志文件。
+如果您在设置期间遇到任何问题，请访问我们的[支持站点](https://knowledge.autodesk.com/zh-hans/contact-support)。如果运行服务器时遇到问题，请在 **config.ini** 文件中将 **debug** 设置为 **1**，并包含 Desktop 的日志文件。
 
 日志文件可在以下位置找到：
 

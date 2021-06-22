@@ -15,7 +15,7 @@ Communication between your client systems and S3 bucket targets a number of AWS 
 An S3 Proxy component is deployed within your VPC; which is then used as the endpoint for all S3 communication. It can also be made publicly available using AWS Global Accelerator. 
 
 ## How it works
-ShotGrid can be configured to use an S3 Proxy address to communicate with your S3 bucket. Deploying the S3 Proxy component within your VPC makes it possible to isolate traffic from the public Internet completely, or to allow more tightly controlled access from the Internet to your media.
+{% include product %} can be configured to use an S3 Proxy address to communicate with your S3 bucket. Deploying the S3 Proxy component within your VPC makes it possible to isolate traffic from the public Internet completely, or to allow more tightly controlled access from the Internet to your media.
 
 <img alt="media-traffic-isolation-arch" src="../images/media-traffic-isolation-arch.png" width="400">
 

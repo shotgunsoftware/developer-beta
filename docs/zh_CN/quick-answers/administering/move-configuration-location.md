@@ -164,7 +164,7 @@ lang: zh_CN
 
 3. 在 {% include product %} 中找到与此项目对应的 PipelineConfiguration 实体，并修改“Linux 路径”(Linux Path)、“Mac 路径”(Mac Path)和“Windows 路径”(Windows Path)字段值，以匹配您在上面所做的更改。
 
-![{% include product %} 中的工作流配置位置。](images/new-pipeline-configuration-locations.png)
+![ShotGrid 中的工作流配置位置。](images/new-pipeline-configuration-locations.png)
 
 现在，您的工作流配置应该会在新位置按预期工作。
 

@@ -7,6 +7,10 @@ lang: ja
 
 # デバッグ ログをオフにするにはどうすればいいですか?
 
+Toolkit ツールの出力よりも多くのログ データを既定で表示することが必要な場合があります。詳細なログ出力を表示するには、**デバッグ ログ**を有効にします。このための方法はいくつかあります。
+
+{% include info title="注" content="ログ ファイルの検索場所が不明な場合は、「[ログ ファイルはどこにありますか?](./where-are-my-log-files.md)」ドキュメントを参照してください。" %}
+
 ## {% include product %} Desktop によるデバッグを有効にする
 
 デバッグを有効にする最も簡単な方法は、{% include product %} Desktop アプリを使用してオンに切り替えることです。これは、{% include product %} Desktop にログインした後で設定できます。アプリの右下にあるプロファイル画像をクリックして、**[Advanced] -> [Toggle Debug Logging]**を選択します。この設定はセッションの終了後も維持されるため、デバッグが終了したら忘れずにオフにしてください。
@@ -26,7 +30,7 @@ lang: ja
 
 - **デバッグ ログを常にオンにするには、Windows アイコン > [コントロール パネル] > [システム] > [システムの詳細設定] > [環境変数…] > [新規…]にアクセスします**
 
-![Windows の環境変数の設定](images/windows-setting-environment-variable.png)
+![Windows 環境変数を設定する](images/windows-setting-environment-variable.png)
 
 
 - **変数名**: `TK_DEBUG`
@@ -57,19 +61,17 @@ b. `TK_DEBUG` 環境変数を削除します。
 
 次に、ターミナルを介して Desktop を起動します。
 
-{% include info title="注" content="ShotGrid Desktop とターミナルを閉じると、デバッグ ログはオンではなくなります。"%}
+{% include info title="注" content="ShotGrid Desktop とターミナルを閉じると、デバッグ ログはオンではなくなります。" %}
 
-## ログ ファイルでデバッグ出力を確認する
 
-[ログ ファイルはどこにありますか?](./where-are-my-log-files.md) ドキュメントを参照してログ ファイルの場所を特定します。
 
 ## 詳細設定のデバッグ ログ オプション
 
-詳細設定にはいくつかのオプションがあります。 この機能は、Toolkit の設定をコントロールできる場合のみ利用可能です。
+詳細設定にはいくつかのオプションがあります。この機能は、Toolkit の設定をコントロールできる場合のみ利用可能です。
 
-すべてのエンジンの環境ファイルには `debug_logging` 設定があります。これをオンにすると、ソフトウェア(Nuke または Maya のスクリプト エディタなど)の既定の出力に追加のデバッグレベル ログ メッセージが送信されます。 エンジンで実行中のアプリすべてがこのようなデバッグ レベルのメッセージを発行するため、エンジンでこの設定をオンにすると、すべてのアプリの設定も実質的にオンになります。
+すべてのエンジンの環境ファイルには `debug_logging` 設定があります。これをオンにすると、ソフトウェア(Nuke または Maya のスクリプト エディタなど)の既定の出力に追加のデバッグレベル ログ メッセージが送信されます。エンジンで実行中のアプリすべてがこのようなデバッグ レベルのメッセージを発行するため、エンジンでこの設定をオンにすると、すべてのアプリの設定も実質的にオンになります。
 
-これにより、ファイルにログ メッセージが出力されることはありません。標準的なロギング フレームワークでこの出力が可能になるように現在取り組んでいます。例外は [SG Desktop](https://support.shotgunsoftware.com/hc/ja/articles/219039818-Shotgun-Desktop) および [Photoshop エンジン](https://support.shotgunsoftware.com/hc/ja/articles/115000026653-Photoshop-CC)で、これらは出力を GUI コンソールとファイルの両方に記録します。
+これにより、ファイルにログ メッセージが出力されることはありません。標準的なロギング フレームワークでこの出力が可能になるように現在取り組んでいます。例外は [{% include product %} Desktop](https://support.shotgunsoftware.com/hc/ja/articles/219039818-Shotgun-Desktop) および [Photoshop エンジン](https://support.shotgunsoftware.com/hc/ja/articles/115000026653-Photoshop-CC)で、これらはログの出力を GUI コンソールとファイルの両方に記録します。
 
 ### ソフトウェアでエンジンのデバッグ ログをオンにする
 
@@ -94,6 +96,8 @@ engines:
 ```
 
 ファイルを保存し、ショットのステップ環境で Nuke を再起動します。これで、スクリプト エディタ ウィンドウにデバッグ出力が表示されます。
+
+{% include info title="注" content="ShotGrid Desktop のチェックボックス、環境変数、またはエンジン設定のいずれかを使用してデバッグ ログが有効になっている場合は、デバッグ ログが出力されます。また、この 3 つの各設定は、他の設定とは別に変更されます。チェックボックスの値を設定すると、アプリが永続的に設定されますが、この設定はエンジンの設定または環境変数から完全に独立しています。つまり、Desktop のチェックボックスをオフにした場合も、他のいずれかの方法を使用してデバッグ ログを有効にすることができます。"%}
 
 ### tank コマンドのデバッグ ログをオンにする
 
@@ -147,7 +151,8 @@ tank コマンドを実行し、ターミナルでデバッグ出力を確認す
     ----------------------------------------------------------------------
 
 
-    Welcome to the Shotgun Pipeline Toolkit update checker!
+    Welcome to the {% include product %} Pipeline Toolkit update checker!
+
     This script will check if the Toolkit Core API installed
     in /sgtk/software/shotgun/scarlet
     is up to date.
@@ -163,3 +168,4 @@ tank コマンドを実行し、ターミナルでデバッグ出力を確認す
     You are currently running version v0.15.18 of the Shotgun Pipeline Toolkit
     No need to update the Toolkit Core API at this time!
     DEBUG [10:11:39 981.74405098]: Exiting with exit code None
+

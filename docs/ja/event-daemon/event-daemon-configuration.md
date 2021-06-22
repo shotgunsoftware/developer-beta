@@ -144,7 +144,7 @@ Web ブラウザに戻り、エンティティに変更を加えます。次に�
 <a id="Common_Errors"></a>
 ## 一般的なエラー
 
-次に、発生する一般的なエラーとその解決方法をいくつか示します。完全に行き詰ってしまった場合は、{% include product %} ソフトウェア チーム (support@shotgunsoftware.com) までお気軽にお問い合わせください。弊社がサポートいたします。
+次に、発生する一般的なエラーとその解決方法をいくつか示します。解決方法が何も見つからない場合は、[サポート サイト](https://knowledge.autodesk.com/ja/contact-support)にアクセスしてサポートを依頼してください。
 
 ### 無効なパス: $PLUGIN_PATHS$
 
@@ -184,7 +184,7 @@ pidFile: /var/log/shotgunEventDaemon.pid
 
 eventIdFile は、デーモンが最後に処理された {% include product %} イベントの ID を保存する場所を参照します。これにより、デーモンは最後にシャットダウンされたときに停止した場所を取得できるため、イベントが見逃されることはありません。最後のデーモンのシャットダウン以降のイベントを無視する場合は、デーモンを開始する前にこのファイルを削除します。これにより、デーモンは起動時に作成された新しいイベントのみを処理します。
 
-このファイルは、* の各 * プラグインの最後のイベント ID を記録し、この情報を pickle 形式で保存します。
+このファイルは、*の各* プラグインの最後のイベント ID を記録し、この情報を pickle 形式で保存します。
 
 ```
 eventIdFile: /var/log/shotgunEventDaemon.id
@@ -286,7 +286,7 @@ fetch_interval = 5
 server: %(SG_ED_SITE_URL)s
 ```
 
-{% include info title="注" content="既定値はありません。環境変数 `SG_ED_SITE_URL` を ShotGrid サーバの URL (https://awesome.shotgunstudio.com)に設定します" %}
+{% include info title="注" content="既定値はありません。環境変数 `SG_ED_SITE_URL` を ShotGrid サーバの URL ( https://awesome.shotgunstudio.com)に設定します" %}
 
 **name**
 
@@ -296,7 +296,7 @@ server: %(SG_ED_SITE_URL)s
 name: %(SG_ED_SCRIPT_NAME)s
 ```
 
-{% include info title="注" content="既定値はありません。環境変数 `SG_ED_SCRIPT_NAME` を ShotGrid サーバのスクリプト名(`shotgunEventDaemon`)に設定します" %}
+{% include info title="注" content="既定値はありません。環境変数 `SG_ED_SCRIPT_NAME` を ShotGrid サーバのスクリプト名( `shotgunEventDaemon`)" %}
 
 **key**
 
@@ -351,7 +351,7 @@ SMTP 接続に使用するサーバ。ユーザ名とパスワードの値は、
 server: smtp.yourdomain.com
 ```
 
-{% include info title="注" content="既定値はありません。smtp.yourdomain.com トークンを SMTP サーバのアドレス(`smtp.mystudio.com`)に置き換える必要があります。" %}
+{% include info title="注" content="既定値はありません。smtp.yourdomain.com トークンを SMTP サーバのアドレス(`smtp.mystudio.com`)." %}
 
 **username**
 
@@ -377,7 +377,7 @@ password: %(SG_ED_EMAIL_PASSWORD)s
 from: support@yourdomain.com
 ```
 
-{% include info title="注" content="既定値はありません。`support@yourdomain.com` を有効な値(`noreply@mystudio.com`)に置き換える必要があります。" %}
+{% include info title="注" content="既定値はありません。`support@yourdomain.com` を有効な値(`noreply@mystudio.com`)." %}
 
 **to**
 
@@ -387,7 +387,7 @@ from: support@yourdomain.com
 to: you@yourdomain.com
 ```
 
-{% include info title="注" content="既定値はありません。`you@yourdomain.com` を有効な値(`shotgun_admin@mystudio.com`)に置き換える必要があります。" %}
+{% include info title="注" content="既定値はありません。`you@yourdomain.com` を有効な値(`shotgun_admin@mystudio.com`)." %}
 
 **subject**
 

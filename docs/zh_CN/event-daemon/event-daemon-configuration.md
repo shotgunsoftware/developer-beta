@@ -144,7 +144,7 @@ $ sudo tail -f /var/log/shotgunEventDaemon/shotgunEventDaemon
 <a id="Common_Errors"></a>
 ## 常见错误
 
-下面介绍可能遇到的一些常见错误以及如何解决这些错误。如果您感觉非常困难，请随时联系 {% include product %} 软件团队 (support@shotgunsoftware.com)，我们将帮助您解决问题。
+下面介绍可能遇到的一些常见错误以及如何解决这些错误。如果您真的很难找到，请访问我们的[支持站点](https://knowledge.autodesk.com/zh-hans/contact-support)以获取帮助。
 
 ### 无效路径：$PLUGIN_PATHS$
 
@@ -353,7 +353,7 @@ server: smtp.yourdomain.com
 
 {% include info title="注意" content="此处没有默认值。必须使用您的 SMTP 服务器的地址替换 smtp.yourdomain.com 令牌（即 `smtp.mystudio.com`）。" %}
 
-**用户名**
+**username**
 
 如果 SMTP 服务器需要身份认证，请取消注释此行，并确保已使用连接到 SMTP 服务器所需的用户名配置 `SG_ED_EMAIL_USERNAME` 环境变量。
 
@@ -361,7 +361,7 @@ server: smtp.yourdomain.com
 username: %(SG_ED_EMAIL_USERNAME)s
 ```
 
-**密码**
+**password**
 
 如果 SMTP 服务器需要身份认证，请取消注释此行，并确保已使用连接到 SMTP 服务器所需的密码配置 `SG_ED_EMAIL_PASSWORD` 环境变量。
 
@@ -369,7 +369,7 @@ username: %(SG_ED_EMAIL_USERNAME)s
 password: %(SG_ED_EMAIL_PASSWORD)s
 ```
 
-**从**
+**from**
 
 应在电子邮件中使用的发件人地址。
 
@@ -379,7 +379,7 @@ from: support@yourdomain.com
 
 {% include info title="注意" content="此处没有默认值。必须将 `support@yourdomain.com` 替换为有效值（即 `noreply@mystudio.com`）。" %}
 
-**到**
+**to**
 
 应将这些警告发送到的电子邮件地址的逗号分隔列表。
 

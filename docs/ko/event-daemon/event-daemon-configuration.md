@@ -144,7 +144,7 @@ $ sudo tail -f /var/log/shotgunEventDaemon/shotgunEventDaemon
 <a id="Common_Errors"></a>
 ## 일반적인 오류
 
-다음은 직면할 수 있는 몇몇 일반적인 오류와 그 해결 방법에 대한 몇 가지 설명입니다. 문제가 해결되지 않을 경우 언제든지 {% include product %} 소프트웨어 팀(support@shotgunsoftware.com)으로 문의해 주십시오. 저희가 도와드리겠습니다.
+다음은 직면할 수 있는 몇몇 일반적인 오류와 그 해결 방법에 대한 몇 가지 설명입니다. 문제가 발생하면 [지원 사이트](https://knowledge.autodesk.com/ko/contact-support)에서 도움을 요청하십시오.
 
 ### 잘못된 경로: $PLUGIN_PATHS$
 
@@ -296,7 +296,7 @@ server: %(SG_ED_SITE_URL)s
 name: %(SG_ED_SCRIPT_NAME)s
 ```
 
-{% include info title="참고" content="여기에는 기본값이 없습니다. `SG_ED_SCRIPT_NAME` 환경 변수를 ShotGrid 서버의 스크립트 이름(예: `shotgunEventDaemon`)으로 설정하십시오." %}
+{% include info title="참고" content="여기에는 기본값이 없습니다. `SG_ED_SCRIPT_NAME` 환경 변수를 ShotGrid 서버의 스크립트 이름(예: `shotgunEventDaemon`)" %}
 
 **key**
 

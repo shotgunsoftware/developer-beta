@@ -33,7 +33,7 @@ Nuke に **{% include product %} ノード メニュー**が作成され、さ�
     icon: "icons/custom_work_icon.png"
 ```
 
-[{% include product %} の現在のプロジェクト](ShotGrid Current Project)というお気に入りが、定義済みの各ルートに自動的に追加されます。`project_favourite_name` 設定を使用して名前をカスタマイズするか、値を空の文字列 `''` に設定してお気に入りを無効にします。
+[{% include product %} の現在のプロジェクト] (Shotgun Current Project)というお気に入りが、定義済みの各ルートに自動的に追加されます。`project_favourite_name` 設定を使用して名前をカスタマイズするか、値を空の文字列 `''` に設定してお気に入りを無効にします。
 
 
 
@@ -202,7 +202,7 @@ if project is None:
 
 #### Hiero と連携するようにフックを設定する方法
 
-通常、Hiero で設定したマルチ アプリでは、どのプロジェクトがクリックされているかを特定する必要があります。たとえば、`tk-multi-workfiles` アプリでプロジェクトの[{% include product %} を名前を付けて保存](ShotGrid Save As)を実行する必要があるとします。そのため、ユーザが bin ビュー内のプロジェクトを右クリックして *[名前を付けて保存](Save As)*オプションを選択できるように、Hiero の bin メニューに Tank Save As コマンドを追加します。
+通常、Hiero で設定したマルチ アプリでは、どのプロジェクトがクリックされているかを特定する必要があります。たとえば、`tk-multi-workfiles` アプリでプロジェクトの[{% include product %} を名前を付けて保存] (Shotgun Save As)を実行する必要があるとします。そのため、ユーザが bin ビュー内のプロジェクトを右クリックして *[名前を付けて保存] (Save As)*オプションを選択できるように、Hiero の bin メニューに Tank Save As コマンドを追加します。
 
 ![メニュー](../images/engines/nuke-hiero-bin_menu.png)
 

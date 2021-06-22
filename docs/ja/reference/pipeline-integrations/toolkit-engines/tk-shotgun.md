@@ -7,7 +7,7 @@ lang: ja
 
 # {% include product %}
 
-{% include product %} Engine は {% include product %} 内から起動できるアプリを管理します。この Toolkit アプリをアクション**として参照することもあります。通常、このアプリは {% include product %} 内のメニュー項目として表示されます。
+{% include product %} Engine は {% include product %} 内から起動できるアプリを管理します。この Toolkit アプリを *アクション* として参照することもあります。通常、このアプリは {% include product %} 内のメニュー項目として表示されます。
 
 ## {% include product %} Pipeline Toolkit アクションを使用する
 

@@ -36,7 +36,7 @@ Toolkit は、{% include product %} サーバに対する不要な呼び出し�
 
 **分散設定**
 
-バンドル キャッシュとは、{% include product %} サイト上のプロジェクトすべてで使用される、すべてのアプリケーション、エンジン、およびフレームワークのキャッシュ コレクションです。 分散設定用のバンドル キャッシュは次の場所に保存されています。
+バンドル キャッシュとは、{% include product %} サイト上のプロジェクトすべてで使用される、すべてのアプリケーション、エンジン、およびフレームワークのキャッシュ コレクションです。分散設定用のバンドル キャッシュは次の場所に保存されています。
 
 Mac: `~/Library/Caches/Shotgun/bundle_cache`
 
@@ -57,6 +57,6 @@ Linux: `~/.shotgun/bundle_cache`
 
 ## サムネイル
 
-Toolkit アプリ([Loader](https://support.shotgunsoftware.com/hc/ja/articles/219033078) など)で使用されるサムネイルは、Toolkit のローカル キャッシュに保存されます。 サムネイルは、プロジェクト、パイプライン設定、およびアプリごとに(必要に応じて)保存されます。ルート キャッシュ ディレクトリ下の構造は次のとおりです。
+Toolkit アプリ([Loader](https://support.shotgunsoftware.com/hc/ja/articles/219033078) など)で使用されるサムネイルは、Toolkit のローカル キャッシュに保存されます。サムネイルは、プロジェクト、パイプライン設定、およびアプリごとに(必要に応じて)保存されます。ルート キャッシュ ディレクトリ下の構造は次のとおりです。
 
 `<site_name>/p<project_id>c<pipeline_configuration_id>/<app_or_framework_name>/thumbs/`

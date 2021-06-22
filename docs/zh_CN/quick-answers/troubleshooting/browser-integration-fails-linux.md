@@ -8,7 +8,7 @@ lang: zh_CN
 # 无法在 Linux 上启动 {% include product %} Desktop/浏览器集成
 
 首次在 Linux 上运行 {% include product %} Desktop 时，可能会出现以下错误消息之一。如果出现这些消息，请按照具体错误下方的步骤进行操作，以确定能否解决问题。
-如果问题仍存在，请随时发送电子邮件到 support@shotgunsoftware.com 以联系我们。
+如果您仍然遇到困难，请访问我们的[支持站点](https://knowledge.autodesk.com/zh-hans/contact-support)以获取帮助。
 
 ### 目录
 - [OPENSSL_1.0.1_EC 或 HTTPSConnection 相关问题](#openssl_101_ec-or-httpsconnection-related-issues)
@@ -71,7 +71,7 @@ certutil: function failed: SEC_ERROR_BAD_DATABASE: security library: bad databas
 
 **解决方案**
 
-如果您的计算机上已经安装 Google Chrome，请启动它，然后重新启动 {% include product %} Desktop。如果仍有问题，请发送电子邮件到 support@shotgunsoftware.com。
+如果您的计算机上已经安装 Google Chrome，请启动它，然后重新启动 {% include product %} Desktop。如果仍有此问题，请访问我们的[支持站点](https://knowledge.autodesk.com/zh-hans/contact-support)以获取帮助。
 
 如果没有安装 Chrome，请打开终端并运行以下命令：
 

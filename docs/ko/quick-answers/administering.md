@@ -11,7 +11,7 @@ lang: ko
 툴킷 설정 관리 및 구성을 기반으로 한 빠른 답변 모음입니다.
 
 #### {% include product %} 데스크톱:
-- [{% include product %} 데스크톱을 사용하여 툴킷 프로젝트를 다시 설정하는 방법은 무엇입니까?](./administering/resetup-project-with-sg-desktop.md)
+- [{% include product %} 데스크톱을 사용하여 툴킷 프로젝트를 다시 설정하려면 어떻게 해야 합니까?](./administering/resetup-project-with-sg-desktop.md)
 - [Windows에서 {% include product %} 데스크톱을 자동으로 설치하려면 어떻게 해야 합니까?](./administering/install-desktop-silent.md)
 - [Linux에서 {% include product %} 데스크톱의 데스크톱/시작 관리자 아이콘을 어떻게 설정합니까?](./administering/create-shotgun-desktop-shortcut.md)
 - [{% include product %} 데스크톱의 브라우저 통합을 어떻게 비활성화할 수 있습니까?](./administering/disable-browser-integration.md)

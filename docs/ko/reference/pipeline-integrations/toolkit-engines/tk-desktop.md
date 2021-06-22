@@ -23,7 +23,7 @@ tk-desktop 엔진은 툴킷 앱을 쉽게 실행할 수 있게 해 주는 응용
 
 ## 커스텀 패널 등록
 
-[패널 기반 UI](http://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.Engine.show_panel)가 있는 툴킷 앱은 실행 시 데스크톱 내부의 탭에 자동으로 고정됩니다.
+[패널 기반 UI](http://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.Engine.show_panel)가 있는 툴킷 앱은 실행 시 데스크톱 내부의 탭에 자동으로 고정됩니다.
 
 {% include product %} Panel과 같은 패널 기반 앱이 있고 {% include product %} 데스크톱에 탭으로 표시하려면 시작 시 실행되도록 구성하면 됩니다. 데스크톱이 사이트 컨텍스트 모드(모든 프로젝트 표시)에서 시작되면 자동 시작으로 등록된 모든 항목이 시작됩니다. 이러한 항목 중 하나가 패널이면 패널이 고정됩니다. 항목은 구성에서 정의된 순서대로 처리되며 탭 순서도 지정됩니다.
 

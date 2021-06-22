@@ -112,7 +112,7 @@ Push Complete!
 Your old configuration has been backed up into the following folder:
 /my/staging/sandbox/config.bak.20140108_093218
 ```
-请注意我们如何从项目主配置向临时沙盒推送内容。我们的做法是运行主配置的 __`tank` 命令。 如果您有多个沙盒设置，也可以在这些沙盒之间推送数据。
+请注意我们如何从项目主配置向临时沙盒推送内容。我们的做法是运行__主配置的 `tank` 命令。 如果您有多个沙盒设置，也可以在这些沙盒之间推送数据。
 
 ### 删除克隆配置
 

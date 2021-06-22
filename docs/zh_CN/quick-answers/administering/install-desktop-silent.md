@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 如何在 Windows 上静默安装 {% include product %} Desktop？
+title: 如何在 Windows 上静默安装 ShotGrid Desktop？
 pagename: install-desktop-silent
 lang: zh_CN
 ---

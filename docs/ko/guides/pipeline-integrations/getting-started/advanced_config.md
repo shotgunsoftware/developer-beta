@@ -23,7 +23,7 @@ lang: ko
 
 이 안내서를 사용하고 프로젝트에 대해 커스터마이즈 가능한 구성을 생성하려면 다음과 같은 준비가 필요합니다.
 
-1. 유효한 {% include product %} 사이트. [여기서 {% include product %}에 등록](https://www.shotgunsoftware.com/kr/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management)하면 30일 무료 체험판을 다운로드해 직접 체험해 볼 수 있습니다.
+1. 유효한 {% include product %} 사이트. [여기서 {% include product %}에 등록](https://www.shotgridsoftware.com/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management)하면 30일 무료 체험판을 다운로드해 직접 체험해 볼 수 있습니다.
 2. {% include product %} 데스크톱. 데스크톱이 설치되어 있지 않은 경우 [이 링크를 따라 시작할 수 있습니다.](https://support.shotgunsoftware.com/hc/ko/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop)
 3. 프로젝트 파일과 파이프라인 구성을 저장할 수 있는 파일 시스템. 파일 시스템에 `Shotgun` 폴더를 생성하고, 이 폴더 안에 `projects` 및 `configs` 폴더를 생성합니다.
 
@@ -50,8 +50,8 @@ lang: ko
 | 접근성 | 시스템 위치에 저장됨 | 수동으로 편집 가능한 파일 |
 | 업데이트 | 자동으로 업데이트됨 | 수동으로 업데이트됨 |
 | 파일 시스템 지원 | 파일 시스템 스키마 지원 안 함 | 폴더 구조와 파일 명명 표준을 지원하는 도구 포함 |
-| 소프트웨어 통합 | 3ds Max, Houdini, Maya, Nuke, Photoshop, Flame | Basic + Hiero, Motionbulder, Mari |
-| 툴킷 앱 | {% include product %} Panel, Publisher, Loader | Basic + Workfiles, Snap Shot, Scene Breakdown, Nuke Write Node, Houdini Mantra Node 등 |
+| 소프트웨어 통합 | 3ds Max, Houdini, Maya, Nuke, Photoshop, Flame | 기초 구성 + Hiero, Motionbulder, Mari |
+| 툴킷 앱 | {% include product %} Panel, Publisher, Loader | 기초 구성 + Workfiles, Snap Shot, Scene Breakdown, Nuke Write Node, Houdini Mantra Node 등 |
 
 이 안내서에서는 {% include product %} 데스크톱의 마법사를 사용하여 기본 구성을 기반으로 프로젝트의 파이프라인 구성을 생성합니다. 이 구성을 생성하면 자체 프로덕션 파이프라인을 지원하는 데 필요한 커스터마이즈를 수행할 수 있게 됩니다.
 
@@ -83,15 +83,15 @@ lang: ko
 
 ![고급 프로젝트 설정](./images/advanced_config/6_advanced_project_setup.png)
 
-네 개의 옵션이 있고 그중에 {% include product %} 기본값({% include product %} Default)이 선택되어 있는 대화상자가 표시됩니다. 여기서 프로젝트의 파이프라인 구성을 기존 프로젝트의 구성, git 리포지토리의 구성, 디스크의 경로 중 무엇을 기반으로 할지 선택할 수 있습니다.
+네 개의 옵션이 있고 그중에 Shotgun 기본값({% include product %} Default)이 선택되어 있는 대화상자가 표시됩니다. 여기서 프로젝트의 파이프라인 구성을 기존 프로젝트의 구성, git 리포지토리의 구성, 디스크의 경로 중 무엇을 기반으로 할지 선택할 수 있습니다.
 
-이 연습에서는 **{% include product %} 기본값**({% include product %} Default)을 선택하겠습니다. 이 옵션을 선택하면 {% include product %}의 기본 구성을 기반으로 프로젝트의 파이프라인 구성이 생성됩니다.
+이 연습에서는 **{% include product %} 기본값(Shotgun Default)**을 선택하겠습니다. 이 옵션을 선택하면 {% include product %}의 기본 구성을 기반으로 프로젝트의 파이프라인 구성이 생성됩니다.
 
 ![구성 선택](./images/advanced_config/7_select_config.png)
 
 **5단계:** **계속**(Continue)을 선택합니다.
 
-두 개의 옵션이 있고 그중에서 **기본값**(Default)이 선택되어 있는 대화상자가 표시됩니다. 이 대화상자에는 레거시(Legacy) 기본 구성 설정을 선택할 수 있는 옵션이 있습니다. 이 구성 설정은 이전 버전의 {% include product %}을 계속 사용하는 스튜디오를 위해 제공되는 이전 버전의 설정입니다. 이 연습에서는 기본값(Default)을 사용하겠습니다.
+두 개의 옵션이 있고 그중에서 **기본값**(Default)이 선택되어 있는 대화상자가 표시됩니다. 이 대화상자에는 레거시(Legacy) 기본 구성 설정을 선택할 수 있는 옵션이 있습니다. 이 구성 설정은 이전 버전의 {% include product %}를 계속 사용하는 스튜디오를 위해 제공되는 이전 버전의 설정입니다. 이 연습에서는 기본값(Default)을 사용하겠습니다.
 
 ![구성 선택](./images/advanced_config/8_select_config.png)
 
@@ -113,7 +113,7 @@ lang: ko
 
 ![저장소 루트 폴더](./images/advanced_config/11_storage_root_folder.png)
 
-이 설정을 진행하면 프로덕션 데이터 저장 위치로 지정한 폴더에만 {% include product %}이 액세스할 수 있게 됩니다. 이 연습의 준비 과정에서 {% include product %} 루트 디렉토리에 `projects/` 디렉토리를 추가했습니다. `projects/` 디렉토리는 툴킷이 로컬 프로젝트 관련 정보를 저장할 위치입니다.
+이 설정을 진행하면 프로덕션 데이터 저장 위치로 지정한 폴더에만 {% include product %}가 액세스할 수 있게 됩니다. 이 연습의 준비 과정에서 {% include product %} 루트 디렉토리에 `projects/` 디렉토리를 추가했습니다. `projects/` 디렉토리는 툴킷이 로컬 프로젝트 관련 정보를 저장할 위치입니다.
 
 ![저장소 정의](./images/advanced_config/12_define_Storage3.png)
 
@@ -145,7 +145,7 @@ lang: ko
 
 ![설정 완료](./images/advanced_config/17_project_setup_complete.png)
 
-**팁:** {% include product %} 데스크톱에 신속하게 액세스하기 위해 메뉴 막대에 앱을 고정할 수 있습니다. 이렇게 하려면 **아바타**를 선택하고 **메뉴에 고정**(Pin to Menu)을 선택하십시오.
+**팁:** {% include product %} 데스크톱에 신속하게 액세스하기 위해 메뉴 막대에 앱을 고정할 수 있습니다. 이렇게 하려면 **아바타**를 선택하고 **메뉴에 고정(Pin to Menu)**을 선택하십시오.
 
 다 되었습니다. 프로젝트 설정이 완료되었습니다. 이제 기본 구성을 기반으로 지정한 위치에 프로젝트에 대한 툴킷 파이프라인 구성이 생성되었으므로 커스터마이즈 작업을 시작할 수 있습니다.
 
@@ -157,7 +157,7 @@ lang: ko
 
 ## 고급 항목
 
-{% include product %} 툴킷에서는 구성을 간편하게 편집하고 복제하고 가져올 수 있는 방법을 다양하게 제공합니다. 기존의 구성을 확장하면 시간을 절약할 수 있으며 네트워크에 있는 다른 작업자가 만든 모든 멋진 구성을 이용할 수 있습니다. 필요한 구성을 찾기 위해 방대한 {% include product %} [커뮤니티](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups&hl=ko#!forum/shotgun-dev)를 활용할 수 있습니다. {% include product %} 커뮤니티는 정보를 공유하는 커뮤니티이므로 서로에게 친절하게 대하고, 작업에 도움이 되는 구성을 발견하면 작성자의 공로를 인정하고 감사의 인사를 전해 주시기 바랍니다. 그리고 다른 사람에게 도움이 될 새로운 정보를 게시하는 것도 잊지 마십시오. 이런 식으로 우리는 서로를 도와가며 특별한 커뮤니티를 만들어 가고 있습니다!
+{% include product %} 툴킷에서는 구성을 간편하게 편집하고 복제하고 가져올 수 있는 방법을 다양하게 제공합니다. 기존의 구성을 확장하면 시간을 절약할 수 있으며 네트워크에 있는 다른 작업자가 만든 모든 멋진 구성을 이용할 수 있습니다. 필요한 구성을 찾기 위해 방대한 {% include product %} [커뮤니티](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups&hl=ko#!forum/shotgun-dev)를 활용할 수 있습니다. {% include product %} 커뮤니티는 정보를 공유하는 커뮤니티이므로 서로에게 친절하게 대하고, 작업에 도움이 되는 구성을 발견하면 작성자의 공로를 인정하고 감사의 인사를 전해 주시기 바랍니다. 그리고 {% include product %} 사용자들에게 도움이 될 새로운 정보를 게시하는 것도 잊지 마십시오. 이런 식으로 우리는 서로를 도와가며 특별한 커뮤니티를 만들어 가고 있습니다!
 
 다음은 재미있게 구성 관련 작업을 진행할 수 있는 몇 가지 방법입니다.
 
@@ -180,10 +180,10 @@ lang: ko
 
 ### 파이프라인 구성의 클라우드 배포
 
-이 안내서에서는 공유 네트워크 위치에 있으면서 모든 사용자가 액세스하게 되는 파이프라인 구성의 단일 사본인 **중앙 집중식 구성**을 생성하는 과정을 살펴봅니다. 하지만 작업 인력이 여러 위치 및 네트워크에 분산되어 있는 경우 파이프라인 구성의 단일 사본을 공유하는 것이 가능하지 않을 수 있습니다. 이 시나리오의 툴킷을 사용하면 **분산 구성** 옵션을 통해 파이프라인 구성을 {% include product %}에 업로드할 수 있으며 사용자가 프로젝트에 액세스할 때마다 구성이 다운로드되고 로컬로 캐시됩니다. [Core API 개발자 문서](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)에서 분산 구성에 대한 자세한 내용을 알아볼 수 있습니다.
+이 안내서에서는 공유 네트워크 위치에 있으면서 모든 사용자가 액세스하게 되는 파이프라인 구성의 단일 사본인 **중앙 집중식 구성**을 생성하는 과정을 살펴봅니다. 하지만 작업 인력이 여러 위치 및 네트워크에 분산되어 있는 경우 파이프라인 구성의 단일 사본을 공유하는 것이 가능하지 않을 수 있습니다. 이 시나리오의 툴킷을 사용하면 **분산 구성** 옵션을 통해 파이프라인 구성을 {% include product %}에 업로드할 수 있으며 사용자가 프로젝트에 액세스할 때마다 구성이 다운로드되고 로컬로 캐시됩니다. [Core API 개발자 문서](https://developer.shotgunsoftware.com/tk-core/initializing.html#distributed-configurations)에서 분산 구성에 대한 자세한 내용을 알아볼 수 있습니다.
 
 ### 둘 이상의 루트 폴더 사용
 
 스튜디오에서 대개 특정한 작업에 맞게 최적화하는 것을 이상적으로 여깁니다. 둘 이상의 루트 폴더를 사용하여 한 서버에서는 데일리를 위한 비디오 재생과 같은 작업을, 다른 서버에서는 대화식 처리를 수행하는 식으로 작업을 최적화할 수 있습니다. 툴킷에서는 이와 같은 워크플로우를 용이하게 하기 위해 둘 이상의 저장소 루트를 사용할 수 있도록 허용합니다. [단일 루트에서 다중 루트 구성으로 변환하는 방법](../../../quick-answers/administering/convert-from-single-root-to-multi.md)을 확인하십시오.
 
-프로젝트에 대한 파이프라인 구성을 갖추었으므로 편집을 시작해 보시기 바랍니다. 다음 안내서인 [파이프라인 구성 편집](./editing_app_setting.md)으로 이동하여 방법을 알아보십시오.
+프로젝트에 대한 파이프라인 구성을 갖추었으므로 편집을 시작해 보시기 바랍니다. 다음 안내서인 [파이프라인 구성 편집](editing_app_setting.md)으로 이동하여 방법을 알아보십시오.

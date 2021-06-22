@@ -325,7 +325,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 ### 日志
 
-浏览器集成的日志位于 Toolkit 的[标准日志位置](https://developer.shotgridsoftware.com/38c5c024/)。相关日志文件是 `tk-desktop.log` 和 `tk-shotgun.log`。 此外，如果使用的是 Google Chrome，有时部分相关日志输出会保存在该浏览器的开发人员控制台中。
+浏览器集成的日志位于 Toolkit 的[标准日志位置](https://developer.shotgridsoftware.com/zh_CN/38c5c024/)。相关日志文件是 `tk-desktop.log` 和 `tk-shotgun.log`。 此外，如果使用的是 Google Chrome，有时部分相关日志输出会保存在该浏览器的开发人员控制台中。
 
 ### 疑难解答
 
@@ -344,7 +344,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 ![](images/Integration-admin-guide/regenerate_certs.png)
 
-1. {% include product %} Desktop 的 websocket 服务器无法在启动时启动。可能仅在公开发布的 websocket 服务器版本错误时出现此情况，这应该极少发生。在这种情况下，日志记录将位于 [tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/) 中，用于说明该错误，可以将其[发送到 {% include product %} 的支持团队](https://support.shotgunsoftware.com/hc/zh-cn/requests/new)。
+1. {% include product %} Desktop 的 websocket 服务器无法在启动时启动。可能仅在公开发布的 websocket 服务器版本错误时出现此情况，这应该极少发生。在这种情况下，日志记录将位于 [tk-desktop.log](https://developer.shotgridsoftware.com/zh_CN/38c5c024/) 中，用于说明该错误，可以将其[发送到 {% include product %} 的支持团队](https://support.shotgunsoftware.com/hc/zh-cn/requests/new)。
 
 **动作菜单中未显示任何动作**
 
@@ -354,7 +354,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 1. 在正确的环境 YAML 文件中配置了 `tk-shotgun` 插件，但该配置中没有应用。 在此情况下，可能是有意设计此实体类型没有动作。
 
-2. 在正确的环境 YML 文件中配置了 `tk-shotgun` 插件，且存在应用，但菜单中仍未显示动作。 这可能是由于应用无法初始化。在此情况下，可以在 [tk-shotgun.log 和 tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/) 中找到描述相关问题的信息。
+2. 在正确的环境 YML 文件中配置了 `tk-shotgun` 插件，且存在应用，但菜单中仍未显示动作。 这可能是由于应用无法初始化。在此情况下，可以在 [tk-shotgun.log 和 tk-desktop.log](https://developer.shotgridsoftware.com/zh_CN/38c5c024/) 中找到描述相关问题的信息。
 
 3. 对应于此实体类型的环境不包含 `tk-shotgun` 的配置。 此处的最终结果与此列表中的第一种情况相同。在此情况下，您可以查看工作流配置的 `pick_environment` 挂钩来确定正在为此实体类型加载哪个环境，可以在那里验证 `tk-shotgun` 的配置。
 
@@ -383,9 +383,9 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 1. 指向文件路径的名为 `SGTK_PREFERENCES_LOCATION` 的环境变量。
 2. 在 {% include product %} Toolkit 首选项文件夹中：（请注意，默认情况下这些位置不存在此文件；您必须创建此文件。）
-   - Windows：  `%APPDATA%\Shotgun\Preferences\toolkit.ini`
+   - Windows： `%APPDATA%\Shotgun\Preferences\toolkit.ini`
    - macOS：  `~/Library/Preferences/Shotgun/toolkit.ini`
-   - Linux：  `~/.shotgun/preferences/toolkit.ini`
+   - Linux： `~/.shotgun/preferences/toolkit.ini`
 
 通过 `SGTK_PREFERENCES_LOCATION` 环境变量选项，您可以将您的配置文件存储在计算机或网络上的其他位置。 请注意，`toolkit.ini` 为当前标准文件名。 如果您使用的是 `config.ini`，请参见下面的“旧位置”部分。__
 
@@ -403,9 +403,9 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 1. 指向文件的名为 `SGTK_DESKTOP_CONFIG_LOCATION` 的环境变量。
 2. 在以下路径中：
-   - Windows：  `%APPDATA%\Shotgun\desktop\config\config.ini`
+   - Windows： `%APPDATA%\Shotgun\desktop\config\config.ini`
    - macOS：  `~/Library/Caches/Shotgun/desktop/config/config.ini`
-   - `~/shotgun/desktop/config/config.ini`Linux：
+   - Linux： `~/shotgun/desktop/config/config.ini`
 
 **代理配置**
 
@@ -415,15 +415,15 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 **使用本地托管站点时运行 {% include product %} Desktop**
 
-如果您的 {% include product %} 站点 URL 不是以 `shotgunstudio.com` 结尾，表示您正在运行本地 {% include product %} 站点。在这种情况下，可能是您的站点尚未完全准备好实施 {% include product %} 集成，{% include product %} 团队可能需要参与进来并进行一些小的调整，然后您才能继续！在这种情况下，[请提交工单](https://support.shotgunsoftware.com/hc/zh-cn/requests/new)，我们将帮助您解决问题。
+如果您的 {% include product %} 站点 URL 不是以 `shotgunstudio.com` 或 `shotgrid.autodesk.com` 结尾，表示您正在运行本地 {% include product %} 站点。在这种情况下，可能是您的站点尚未完全准备好实施 {% include product %} 集成，{% include product %} 团队可能需要参与进来并进行一些小的调整，然后您才能继续！在这种情况下，[请提交工单](https://support.shotgunsoftware.com/hc/zh-cn/requests/new)，我们将帮助您解决问题。
 
-**使用本地托管站点时连接到应用存储**
+**使用本地托管站点时连接到应用商店**
 
-如果您要在使用本地 {% include product %} 站点时通过代理访问 Internet，您可能希望设置一个 HTTP 代理用于访问应用存储，但不用于访问本地 {% include product %} 网站。为此，只需将以下行添加到 `toolkit.ini`：
+如果您要在使用本地 {% include product %} 站点时通过代理访问 Internet，您可能希望设置一个 HTTP 代理用于访问应用商店，但不用于访问本地 {% include product %} 网站。为此，只需将以下行添加到 `toolkit.ini`：
 
 `app_store_http_proxy: <proxy_server_address>`
 
-其中 `<proxy_server_address>` 是一个遵循[开发人员文档](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)中所述约定的字符串。
+其中 `<proxy_server_address>` 是一个遵循[开发人员文档](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)
 
 如果您需要按每个项目覆盖此设置，可以在项目工作流配置的 `config/core/shotgun.yml` 中完成此操作。
 
@@ -441,7 +441,7 @@ _情况：我要运行 {% include product %} 集成，但未连接到 Internet�
 
 **解决方案**
 
-- 如果您可以临时连接到 Internet，只需下载 {% include product %} Desktop。它预先打包了一组[集成](https://support.shotgunsoftware.com/hczh-cn/articles/115000068574#Introduction)，且预先捆绑了适用于所有受支持 DCC 的 {% include product %} 集成所需的各种应用和插件。启动后，它将自动尝试查找升级，但如果无法连接到 {% include product %} 应用商店，它将仅运行本地的最新版本。
+- 如果您可以临时连接到 Internet，只需下载 {% include product %} Desktop。它预先打包了一组[集成](https://support.shotgunsoftware.com/hc/zh-cn/articles/115000068574#Introduction)，且预先捆绑了适用于所有受支持 DCC 的 {% include product %} 集成所需的各种应用和插件。启动后，它将自动尝试查找升级，但如果无法连接到 {% include product %} 应用商店，它将仅运行本地的最新版本。
 
 **补充知识**
 
@@ -457,7 +457,7 @@ _情况：我们的美工人员工作站已断开 Internet 连接，因此无法
 
 - 在连接到 Internet 的工作站上运行 {% include product %} Desktop。该工作站启动后，在 Desktop 启动时将自动下载最新升级。
 - 选项 1：共享 Desktop 包
-- 将[缓存](https://developer.shotgridsoftware.com/7c9867c0/)复制到所有计算机都可以访问的共享位置。
+- 将[包缓存](https://developer.shotgridsoftware.com/zh_CN/7c9867c0/)复制到所有计算机都可以访问的共享位置。
 - 在脱机计算机上设置 `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS` 环境变量以指向此位置。
 - 在脱机计算机上启动 Desktop 后，它们将选取缓存中可用的最新升级。
 - 选项 2：本地部署
@@ -641,7 +641,7 @@ _情况：我想要锁定站点中除测试项目以外的其他所有项目，�
 
 ![](images/Integration-admin-guide/wizard_browse.png)
 
-如果您的配置在磁盘上（以文件夹形式，或压缩为 zip 文件），请使用此选项。如果有人通过电子邮件向您发送了配置，或如果您在磁盘上保留了一个主配置，您基于它来建立所有项目，这会很有用。这通常是专家选项，我们建议使用另一个项目的配置或我们的应用存储默认配置中的一个。
+如果您的配置在磁盘上（以文件夹形式，或压缩为 zip 文件），请使用此选项。如果有人通过电子邮件向您发送了配置，或如果您在磁盘上保留了一个主配置，您基于它来建立所有项目，这会很有用。这通常是专家选项，我们建议使用另一个项目的配置或我们的应用商店默认配置中的一个。
 
 #### 设置存储
 

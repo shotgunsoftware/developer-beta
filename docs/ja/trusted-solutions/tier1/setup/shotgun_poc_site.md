@@ -5,11 +5,11 @@ pagename: tier1-setup-shotgun_poc_site
 lang: en
 ---
 
-# ShotGrid Migration Test Site
+# {% include product %} Migration Test Site
 
 Activating the isolation feature set is an intrusive procedure that can have an impact on the usability of your site. To prevent a production stopping event, we require clients to follow an approach where the configuration is first validated on a test site, before being applied to the production site.
 
-The ShotGrid team will create a temporary site to be used as a Proof of Concept for your ShotGrid Isolation deployment. Upon the successful completion of the setup process, your existing ShotGrid site can be migrated to your ShotGrid Isolation environment.
+The {% include product %} team will create a temporary site to be used as a Proof of Concept for your {% include product %} Isolation deployment. Upon the successful completion of the setup process, your existing {% include product %} site can be migrated to your {% include product %} Isolation environment.
 
 If your Migration Test Site has not been created yet, please reach out to our Support team through your Zendesk ticket or your dedicated on-boarding Slack Channel.
 

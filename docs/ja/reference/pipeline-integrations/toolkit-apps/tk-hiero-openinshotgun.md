@@ -9,7 +9,7 @@ lang: ja
 
 このアプリによって、Hiero のスプレッドシートとタイムラインにコンテキスト メニューが追加されるため、任意のトラック項目にショットがある場合に、{% include product %} でこの項目を表示することができます。
 
-![ShotGrid で開く](../images/apps/hiero-open_in_shotgun.png)
+![Shotgun で開く](../images/apps/hiero-open_in_shotgun.png)
 
 通常、このアプリを設定する場合は、{% include product %} Engine for Nuke の環境設定に次のコードを追加すると、Hiero のタイムラインとスプレッドシートのメニューにアプリが表示されます。
 

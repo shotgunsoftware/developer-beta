@@ -23,26 +23,21 @@ lang: zh_CN
 
 但是，利用 {% include product %} 集成，我们可以为这些设置预先填充适合工作流的值，帮助艺术家不假思索地快速获取需要的内容。默认值可通过 `project_setup_hook` 进行自定义，此设置支持以下选项：
 
-`use_project_settings_ui`
-- 如果设置为 `True`，将显示项目创建用户界面。  如果设置为 `False`，将根据挂钩中的其余默认值自动创建 Flame 项目。
+`use_project_settings_ui` 如果设置为 `True`，将显示项目创建用户界面。  如果设置为 `False`，将根据挂钩中的其余默认值自动创建 Flame 项目。
 
-`get_server_hostname`
-- 默认情况下，此选项设置为“localhost”，但可根据需要改写。
+`get_server_hostname` 默认情况下，此选项设置为“localhost”，但可根据需要改写。
 
 `get_project_name`
 默认情况下，此选项设置为与 {% include product %} 项目相同的值，但可根据需要改写。
 
-`get_volume`
-- 默认情况下，此选项设置为第一个可用的存储设备，但可根据需要改写。
+`get_volume` 默认情况下，此选项设置为第一个可用的存储设备，但可根据需要改写。
 
-`get_workspace`
-- 默认情况下，Flame 会根据其标准工作空间创建逻辑创建一个默认工作空间，但可根据需要改写。
+`get_workspace` 默认情况下，Flame 会根据其标准工作空间创建逻辑创建一个默认工作空间，但可根据需要改写。
 
 `get_user`
 此选项会尝试将登录到 Flame 计算机的用户与 {% include product %} 中的用户关联。
 
-`get_project_settings`
-- 这是配置 Flame 主要设置的地方，挂钩将帮助用户构建 Flame 项目的 XML 流。  *必须*提供以下参数：
+`get_project_settings` 这是配置 Flame 主要设置的地方，挂钩将帮助用户构建 Flame 项目的 XML 流。  *必须*提供以下参数：
 
 * FrameWidth（例如 `1280`）
 * FrameHeight（例如 `1080`）

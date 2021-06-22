@@ -188,7 +188,7 @@ action_mappings:
 
 Publish 앱은 퍼블리싱을 위해 항목이 아티스트에게 제공되는 방식과 해당 항목이 그 이후 처리되는 방식을 제어하는 후크를 통해 커스터마이즈할 수 있는 범위가 매우 넓습니다.
 
-Publisher 앱의 전체 개발자 문서를 이제 [툴킷 개발자 사이트](http://developer.shotgridsoftware.com/tk-multi-publish2)에서 살펴볼 수 있습니다.
+Publisher 앱의 전체 개발자 문서를 이제 [툴킷 개발자 사이트](http://developer.shotgunsoftware.com/tk-multi-publish2)에서 살펴볼 수 있습니다.
 
 Publish 앱을 사용하는 자세한 방법은 [사용자 안내서](https://support.shotgunsoftware.com/hc/ko/articles/115000067513-Integrations-Developer-Guide#User_guide_link)를 참조하십시오. 1세대 Publisher에 대한 자세한 내용을 보려면 [클래식 게시자 문서](https://support.shotgunsoftware.com/hc/ko/articles/115000067513-Integrations-Developer-Guide#classic_publisher_link)를 참조하십시오.
 

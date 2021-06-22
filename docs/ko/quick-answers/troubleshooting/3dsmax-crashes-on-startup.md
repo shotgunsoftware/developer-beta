@@ -54,4 +54,4 @@ class BeforeAppLaunch(tank.get_hook_baseclass()):
 
 그런 다음, 파이프라인 구성에서 `config/env/includes/app_launchers.yml`을 열고 `launch_3dsmax` 항목을 찾습니다. `hook_before_app_launch: default`를 `hook_before_app_launch: '{config}/before_app_launch.py'`로 바꿔야 합니다.
 
-이제 {% include product %} 및 {% include product %} 데스크톱에서 3ds Max가 올바로 실행될 것입니다. 그래도 문제가 발생하면 support@shotgunsoftware.com으로 문의하시기 바랍니다.
+이제 {% include product %} 및 {% include product %} 데스크톱에서 3ds Max가 올바로 실행될 것입니다. 그래도 문제가 발생하면 [지원 사이트](https://knowledge.autodesk.com/ko/contact-support)에서 도움을 요청하십시오.

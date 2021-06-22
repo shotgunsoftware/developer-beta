@@ -156,7 +156,7 @@ shotgun_entity タイプ フォルダは、親が作成されるとフォルダ�
 
 ## 正規表現トークンの一致
 
-Toolkit では、正規表現を使用して、{% include product %} フィールド名の一部を抽出できます。これにより、{% include product %} の値でフォルダの作成を制御できる単純な式を作成できます。たとえば、{% include product %} 内のすべてのアセットに、3 文字のプリフィックスとその後に続くアンダースコア(`AAT_Boulder7` など)が名前として付けられている場合、 この名前を 2 つのファイルシステム フォルダのレベルに分割できます(例: `AAT/Boulder7`)。
+Toolkit では、正規表現を使用して、{% include product %} フィールド名の一部を抽出できます。これにより、{% include product %} の値でフォルダの作成を制御できる単純な式を作成できます。たとえば、{% include product %} 内のすべてのアセットに、3 文字のプリフィックスとその後に続くアンダースコア(`AAT_Boulder7` など)が名前として付けられている場合、この名前を 2 つのファイルシステム フォルダのレベルに分割できます(例: `AAT/Boulder7`)。
 
     <a name="the type of dynamic content"></a>
     # the type of dynamic content
@@ -265,7 +265,7 @@ Toolkit では、正規表現を使用して、{% include product %} フィー�
     <a name="the {% include product %} field to use for the folder name. This field needs to come from a step entity."></a>
     # the {% include product %} field to use for the folder name. このフィールドは、ステップ エンティティから取得する必要があります。name: "short_name"
 
-ここで、[{% include product %}前述の ShotGrid エンティティ](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Shotgun%20List%20Field%20Folders)で使用したように名前の式を使用できます。{% include product %} エンティティ フォルダ設定が検出されるまで、ノードは親や祖親などを探します。このエンティティ フォルダはステップに関連付けられ、エンティティのタイプを使用して作成するステップが決定されます。
+ここで、[{% include product %}前述の Shotgun エンティティ](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Shotgun%20List%20Field%20Folders)で使用したように名前の式を使用できます。{% include product %} エンティティ フォルダ設定が検出されるまで、ノードは親や祖親などを探します。このエンティティ フォルダはステップに関連付けられ、エンティティのタイプを使用して作成するステップが決定されます。
 
 {% include info title="注" content="パイプライン ステップの上位フォルダを作成する場合は、単純に ShotGrid エンティティ ノードを使用して関連するタイプをステップに設定します。" %}
 
@@ -823,7 +823,7 @@ Toolkit テンプレート ファイルは Toolkit 設定のハブの 1 つで�
 
 ![configuration](images/file-system-config-reference/templates_file.png)
 
-このファイルには「テンプレート」の定義とその「キー」が含まれます。____
+このファイルには _「テンプレート」_ の定義とその _「キー」_ が含まれます。
 
 **キー**は定義された動的フィールドです。これには、名前、バージョン番号、スクリーン解像度、ショット名などを指定できます。キーには型が設定されるため、キーに文字列または整数などを定義できます。また、キーにはフォーマットを設定することもできるため、文字列に含められるのは英数字のみと定義したり、すべての整数にゼロを 8 個追加する必要があると定義したりできます。
 
@@ -1105,7 +1105,7 @@ assets フォルダが単なる別のシーケンスではないことを Toolki
 
 ![episode_hierarchy](images/file-system-config-reference/episode_hierarchy.jpg)
 
-{% include info title="注" content="Toolkit でネスト関係を再確認するには(ShotGrid のプロジェクト階層から完全に独立)、「[上記の親フォルダを使用して作成する](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Create%20With%20Parent%20Folder)」を参照してください。" %}
+{% include info title="注" content="Toolkit でネスト関係を再確認するには(ShotGrid のプロジェクト階層から完全に独立)、上記の「[親フォルダを使用して作成する](https://support.shotgunsoftware.com/hc/ja/articles/219039868#Create%20With%20Parent%20Folder)」を参照してください。" %}
 
 **追加の参考資料:**
 

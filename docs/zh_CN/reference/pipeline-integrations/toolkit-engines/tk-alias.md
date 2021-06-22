@@ -5,7 +5,7 @@ pagename: tk-alias
 lang: zh_CN
 ---
 
-# 别名
+# Alias
 
 {% include product %} Alias 插件包含一个用于在 Alias 中集成 {% include product %} 应用的标准平台。它采用轻量型设计，操作简单直观，并会向 Alias 菜单中添加一个 {% include product %} 菜单。
 
@@ -17,7 +17,7 @@ lang: zh_CN
 
 ## Alias 项目管理
 
-{% include product %} Alias 插件在每次启动时，都会将 Alias 项目设置为指向此插件的设置中定义的位置。这意味着，当您打开新文件时，项目也可能会发生变化。设置ShotGrid Alias 项目的详细信息，可以使用模板系统，在配置文件中配置。
+{% include product %} Alias 插件在每次启动时，都会将 Alias 项目设置为指向此插件的设置中定义的位置。这意味着，当您打开新文件时，项目也可能会发生变化。设置Shotgun Alias 项目的详细信息，可以使用模板系统，在配置文件中配置。
 
 ***
 

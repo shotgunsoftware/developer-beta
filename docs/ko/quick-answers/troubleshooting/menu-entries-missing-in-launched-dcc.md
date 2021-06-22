@@ -1,11 +1,11 @@
 ---
 layout: default
-title: SG 데스크톱에서 Nuke/Maya 등을 실행했는데 ShotGrid 메뉴에 해당 항목이 없습니다
+title: ShotGrid 데스크톱에서 Nuke/Maya 등을 실행했는데 ShotGrid 메뉴에 해당 항목이 없습니다
 pagename: menu-entries-missing-in-launched-dcc
 lang: ko
 ---
 
-# SG 데스크톱에서 Nuke/Maya 등을 실행했는데 {% include product %} 메뉴에 해당 항목이 없습니다
+# 제가 {% include product %} 데스크톱에서 Nuke/Maya 등을 실행했는데 {% include product %} 메뉴에 해당 항목이 없습니다.
 
 {% include product %} 메뉴에 표시되는 액션은 상황에 맞게 구성됩니다. 즉, 사용 가능한 액션 목록은 상황에 따라 다를 수 있습니다.
 잘못된 상황에 있기 때문에 앱이 표시되지 않을 수 있습니다.

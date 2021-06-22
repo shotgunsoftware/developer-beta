@@ -10,7 +10,7 @@ lang: en
 ## In This Section
 <!-- When updating this, also update tier1.md -->
 * [Connecting Your Studio With Your AWS VPC](./connecting.md)
-* [ShotGrid AWS Direct Connect Onboarding](./direct_connect_onboarding.md)
+* [{% include product %} AWS Direct Connect Onboarding](./direct_connect_onboarding.md)
 * [S3](./s3.md)
 * [VPC / IAM / Security Group](./vpc_iam_sec.md)
 * [Direct Connect](./direct_connect.md)

@@ -15,7 +15,7 @@ lang: ko
 
 기본 구성에서 에셋은 `asset_type/asset/pipeline_step`과 같은 폴더 구조로 관리됩니다. 이 안내서에서는 "Set"라는 커스텀 엔티티를 사용하여 각 에셋이 사용되는 프로덕션 세트별로 에셋을 추가 구성합니다. 먼저 {% include product %}에서 커스텀 엔티티를 설정한 다음 이를 사용하여 지정된 세트에 생성된 에셋을 관리합니다. 폴더 구조는 `set/asset_type/asset/pipeline_step`과 같은 형태입니다.
 
-일부 씬은 차고에서 진행되고 나머지 씬은 다이닝룸에서 진행하는 프로젝트를 수행한다고 가정하고 세트별로 에셋을 구성하는 방식을 설명하겠습니다. 설정을 사용하면, "렌치", "기름통" 또는 “작업대"와 같은 에셋에 대한 파일은 "garage" 폴더에 구성되고 "접시", "와인병" 또는 "테이블보"와 같은 에셋에 대한 파일은 "dining_room" 폴더에 구성됩니다. 예제에서 군침 도는 "필레" 에셋은 적절하게 다이닝룸에 배치됩니다.
+일부 씬은 차고에서 진행되고 나머지 씬은 다이닝룸에서 진행하는 프로젝트를 수행한다고 가정하고 세트별로 에셋을 구성하는 방식을 설명하겠습니다. 설정을 사용하면, "wrench", "oilcan" 또는 “workbench"와 같은 에셋에 대한 파일은 "garage" 폴더에 구성되고 "plate", "winebottle" 또는 "tablecloth"와 같은 에셋에 대한 파일은 "dining_room" 폴더에 구성됩니다. 예제에서 군침 도는 "filet" 에셋은 적절하게 다이닝룸에 배치됩니다.
 
 예제에서는 프로젝트에 대한 파일 명명 템플릿도 편집하여 에셋에 대한 Maya 작업 파일에 해당 이름의 세트가 포함되도록 합니다. 동적으로 생성된 파일 이름은 다이닝룸에 대한 파일과 다른 세트에서 사용된 파일로 구분됩니다.
 
@@ -29,14 +29,14 @@ lang: ko
 
 이 안내서를 사용하려면 다음이 필요합니다.
 
-1. 유효한 [{% include product %}](https://www.shotgunsoftware.com/kr/signup/) 사이트. 하나 이상의 에셋이 생성된 프로젝트가 있어야 합니다. 에셋에는 모델 태스크가 있어야 합니다.
+1. 활성 [{% include product %}](https://www.shotgridsoftware.com/signup/) 사이트 하나 이상의 에셋이 생성된 프로젝트가 있어야 합니다. 에셋에는 모델 태스크가 있어야 합니다.
 2. {% include product %} 사이트를 에셋 관리에 사용하는 방법에 대한 기본적인 이해
 3. [{% include product %} 데스크톱](https://support.shotgunsoftware.com/hc/ko/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop)이 시스템에 설치되어 있어야 함
 4. 식별된 프로젝트에 대한 복제된 파이프라인 구성이나 [구성 시작하기](./advanced_config.md) 안내서를 완료하고 해당 연습에서 생성한 구성 복제
 5. YAML에 대한 기본 지식
 6. 파이프라인 구성이 저장된 파일 시스템에 대해 읽기 및 쓰기 권한을 적절하게 설정합니다.
 7. 툴킷이 프로덕션 파일 시스템에 읽고 쓸 수 있도록 읽기 및 쓰기 권한을 적절하게 설정합니다.
-8. 활성 상태의 Maya 멤버쉽. [Maya](https://www.autodesk.co.kr/products/maya/free-trial)의 30일 체험판을 구할 수 있습니다.
+8. 활성 상태의 Maya 서브스크립션. [Maya](https://www.autodesk.co.kr/products/maya/free-trial)의 30일 체험판을 구할 수 있습니다.
 
 {% include info title="참고" content="이 안내서는 `tk-config-default2` 파이프라인 구성을 기반으로 합니다. 이 구성을 수정한 경우 YAML 설정의 파일, 폴더 및 블록의 위치가 여기에 설명된 것과 다를 수 있습니다." %}
 
@@ -98,7 +98,7 @@ lang: ko
 
 이 안내서에서는 이를 **현재 프로젝트만**(Only the current project)으로 적용하고 **필드 만들기**(Create Field)를 선택합니다.
 
-{% include product %}이 새 필드를 구성합니다.
+{% include product %}가 새 필드를 구성합니다.
 
 ![Python 앱](./images/dynamic_filesystem_configuration/8_only_current_project.png)
 
@@ -130,7 +130,7 @@ lang: ko
 
 {% include info title="참고" content="활성 프로덕션 구성에 영향을 주지 않도록 *복제된* 구성에서 구성을 테스트하는 것이 좋습니다. 복제 프로세스는 구성의 *복사본*을 만들어 변경 사항을 라이브 구성에 적용하기 전에 안전하게 편집할 수 있습니다. 구성 복제에 대한 자세한 내용은 [구성 스테이징 및 롤아웃](https://support.shotgunsoftware.com/hc/ko/articles/219033168-Configuration-staging-and-rollout#Cloning%20your%20Configuration) 문서에서 찾을 수 있습니다." %}
 
-**7단계:** 파이프라인 구성으로 이동합니다. 스키마 폴더(`<pipeline_configuration_root>/config/core/schema`)로 드릴다운하고 `project` 폴더를 엽니다.
+**7단계:** 파이프라인 구성으로 이동합니다. 스키마 폴더(`<pipeline_configuration_root>/config/core/schema`)로 찾아 들어가고 `project` 폴더를 엽니다.
 
 ![Python 앱](./images/dynamic_filesystem_configuration/15_file_structure.png)
 
@@ -180,7 +180,7 @@ filters:
     - { "path": "project", "relation": "is", "values": [ "$project" ] }
 ```
 
-YAML 파일은 툴킷에서 `CustomEntity01` 폴더 이름을 무엇으로 지정할지에 대한 지침을 제공합니다. 여기서는 유형이 `{% include product %}_entity`인 폴더를 만들고 있으며 이는 {% include product %} 쿼리에 해당함을 의미합니다. `entity_type` 필드는 {% include product %}에서 `CustomEntity01` 엔티티를 쿼리함을 나타내고 `name` 필드는 쿼리할 엔티티에 대한 *필드*를 나타내며 여기서는 `CustomEntity01`에서 `code` 필드를 가져옵니다.
+YAML 파일은 툴킷에서 `CustomEntity01` 폴더 이름을 무엇으로 지정할지에 대한 지침을 제공합니다. 여기서는 유형이 `{% include product %}_entity`인 폴더를 만들고 있으며 이는 {% include product %} 쿼리에 해당함을 의미합니다.  `entity_type` 필드는 {% include product %}에서 `CustomEntity01` 엔티티를 쿼리함을 나타내고 `name`필드는 쿼리할 엔티티에 대한 *필드*를 나타내며 여기서는 `CustomEntity01`에서 `code` 필드를 가져옵니다.
 
 `filters` 필드는 이 동적 폴더를 만들어야 하는 경우를 제한합니다.
 
@@ -215,7 +215,7 @@ assets/Classroom/Prop/spoon
 filters:
     - { "path": "project", "relation": "is", "values": [ "$project" ] }
     - { "path": "sg_asset_type", "relation": "is", "values": [ "$asset_type"] }
-    - { "path": "sg_set", "relation": "is", "values": [ "$CustomEntity04" ] }
+    - { "path": "sg_set", "relation": "is", "values": [ "$CustomEntity01" ] }
 ```
 
 
@@ -226,7 +226,7 @@ filters:
 폴더는 툴킷 파이프라인 워크플로우의 몇 지점에서 생성됩니다.
 
 * **응용프로그램 시작 관리자**: 사용자가 태스크에 대한 DCC를 시작할 때마다 툴킷은 해당 태스크에 대한 디렉토리를 만듭니다(아직 없는 경우). 툴킷을 사용하여 수행하는 첫 번째 작업이 보통 DCC를 시작하는 것이기 때문에 이 방법이 디렉토리를 생성하는 가장 일반적인 방법입니다. 이 작업은 {% include product %} 또는 {% include product %} 데스크톱이나 Create 앱에서 마우스 오른쪽 버튼 클릭 메뉴를 통해 수행할 수 있습니다.
-* **{% include product %} 메뉴**: 태스크에 대해 폴더를 만드는 가장 직접적인 방법은 {% include product %}에서 태스크를 마우스 오른쪽 버튼으로 클릭하고 "폴더 만들기"(Create Folders) 메뉴 항목을 선택하는 것입니다.
+* ** {% include product %} 메뉴**: 태스크에 대해 폴더를 만드는 가장 직접적인 방법은 {% include product %}에서 태스크를 마우스 오른쪽 버튼으로 클릭하고 "폴더 만들기"(Create Folders) 메뉴 항목을 선택하는 것입니다.
 * **툴킷 API**: 툴킷 API를 통해 직접 디렉토리 생성 로직을 트리거할 수 있습니다. 툴킷 API는 커스텀 시작 관리자에 툴킷을 연결하거나, {% include product %}에서 샷이 생성될 때 샷에 대한 디렉토리를 자동으로 만들려는 워크플로우의 이벤트 트리거 등에 사용할 수 있습니다.
 * **tank 명령**: {% include product %}의 메뉴 항목과 유사하며 `tank folders` 터미널 명령도 태스크에 대한 폴더를 만듭니다.
 
@@ -307,7 +307,7 @@ Workfiles **파일 열기**(File Open) 액션을 사용하여 파일이 액세�
 
 그런 다음 Maya에서 에셋 단계의 작업 파일에 대한 템플릿을 수정하여 세트도 파일 이름에 포함하도록 합니다. 기본 구성에서 문제의 템플릿은 `maya_asset_work`이며 이 템플릿부터 살펴보겠습니다.
 
-{% include info title="참고" content="Maya에서 에셋 기반 Workfiles에 대해 `maya_asset_work`라는 템플릿을 사용하는 것이 기본 구성의 규칙입니다. 올바른 템플릿인지 확인하려면 `asset_step` 환경(여기서는 GitHub)[(https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.4/env/includes/settings/tk-multi-workfiles2.yml#L217)]에서 `tk-maya` 엔진의 `tk-multi-workfiles2`에 대한 `template_work` 설정 값을 확인합니다." %}
+{% include info title="참고" content="Maya에서 에셋 기반 Workfiles에 대해 `maya_asset_work`라는 템플릿을 사용하는 것이 기본 구성의 규칙입니다. 올바른 템플릿인지 확인하려면 `asset_step` 환경([여기서는 GitHub](https://github.com/shotgunsoftware/tk-config-default2/blob/v1.2.4/env/includes/settings/tk-multi-workfiles2.yml#L217))에서 `tk-maya` 엔진의 `tk-multi-workfiles2`에 대한 `template_work` 설정 값을 확인합니다." %}
 
 **15단계:** `templates.yml`을 열고 `maya_asset_work`를 찾습니다.
 
@@ -375,7 +375,7 @@ Maya에서 **{% include product %} > 파일 열기(File Open)**로 이동하여 
 
 **파일 저장**(File Save) 대화상자에 새 템플릿 설정을 사용하여 **미리보기: Dining-Room_scene.v001.ma**(Preview: Dining-Room_scene.v001.ma)가 표시되어 있습니다.
 
-**작업 영역**(Work Area)에는 Workfiles가 파일을 저장하는 경로인 **.../{% include product %}/projects/the_other_side/assets/Dining-Room/Prop/Filet/model/work/maya**가 표시되어 있습니다.
+**작업 영역(Work Area)**에는 Workfiles가 파일을 저장하는 경로인 **...{% include product %}/projects/the_other_side/assets/Dining-Room/Prop/Filet/model/work/maya**가 표시되어 있습니다.
 
 ## 고급 항목
 

@@ -9,7 +9,8 @@ lang: zh_CN
 
 {% include product %} Toolkit 允许您在启动过程中使用挂钩来配置环境并运行自定义代码。
 
-通过 {% include product %} Desktop 或浏览器集成启动软件（如 Nuke 或 Maya）时，将运行 `tk-multi-launchapp`。此应用负责启动软件并确保 {% include product %} 集成按预期启动。在此过程中将通过挂钩公开两个点以允许运行自定义代码。
+通过 {% include product %} Desktop 或浏览器集成启动软件（如 Nuke 或 Maya）时，将运行 `tk-multi-launchapp`。
+此应用负责启动软件并确保 {% include product %} 集成按预期启动。在此过程中将通过挂钩公开两个点以允许运行自定义代码。
 
 ## before_app_launch.py
 
@@ -29,7 +30,8 @@ class BeforeAppLaunch(tank.Hook):
             os.environ["MY_CUSTOM_MAYA_ENV_VAR"] = "Some Maya specific setting"
 ```
 
-{% include warning title="警告" content="请注意，不要完全重新定义 ShotGrid 设置的环境变量。例如，如果需要将路径添加到 `NUKE_PATH`（对于 Nuke）或 `PYTHONPATH`（对于 Maya）中，请确保将您的路径附加到现有值，而不是将其替换。您可以使用便捷方法实现此目的：
+{% include warning title="警告" content="请注意，不要完全重新定义 ShotGrid 设置的环境变量。
+例如，如果需要将路径添加到 `NUKE_PATH`（对于 Nuke）或 `PYTHONPATH`（对于 Maya）中，请确保将您的路径附加到现有值，而不是将其替换。您可以使用便捷方法实现此目的：
 
 ```python
 tank.util.append_path_to_env_var(\"NUKE_PATH\", \"/my/custom/path\")

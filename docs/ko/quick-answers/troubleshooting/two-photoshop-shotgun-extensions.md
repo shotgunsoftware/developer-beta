@@ -9,13 +9,13 @@ lang: ko
 
 ## 어떤 문제가 있습니까?
 
-After Effects 통합 릴리즈에는 {% include product %}과 통합되는 모든 Adobe 앱에서 사용할 수 있는 공통 플러그인이 있습니다. 이를 구현하는 과정에서, 이전 Photoshop 통합과의 호환성을 유지하고 스튜디오에서 확실하게 해당 업데이트로 전환할 수 있도록 하기 위해 익스텐션의 이름을 변경해야 했습니다.
+After Effects 통합 릴리즈에는 {% include product %}와 통합되는 모든 Adobe 앱에서 사용할 수 있는 공통 플러그인이 있습니다. 이를 구현하는 과정에서, 이전 Photoshop 통합과의 호환성을 유지하고 스튜디오에서 확실하게 해당 업데이트로 전환할 수 있도록 하기 위해 익스텐션의 이름을 변경해야 했습니다.
 
 하지만 이로 인해 업그레이드할 때 두 개의 {% include product %} 익스텐션이 설치될 수 있습니다.
 
-![Photoshop 메뉴에 여러 개의 {% include product %} 익스텐션 표시](./images/photoshop-extension-panel.png)
+![Photoshop 메뉴에 여러 개의 {% include product %} 익스텐션 표시.](/images/photoshop-extension-panel.png)
 
-**{% include product %} Adobe 패널**은 새로운 익스텐션으로, `v1.7.0` 이상의 Photoshop 통합을 사용하는 경우에 사용해야 합니다.
+**{% include product %} Adobe Panel**은 새로운 익스텐션으로, `v1.7.0` 이상의 Photoshop 통합을 사용하는 경우에 사용해야 합니다.
 
 ## 문제를 어떻게 해결할 수 있습니까?
 
@@ -24,7 +24,7 @@ After Effects 통합 릴리즈에는 {% include product %}과 통합되는 모�
 - OSX: `~/Library/Application Support/Adobe/CEP/extensions/com.sg.basic.ps`
 - Windows: `%AppData%\Adobe\CEP\extensions\com.sg.basic.ps`
 
-![Photoshop 메뉴에 여러 개의 {% include product %} 익스텐션 표시](./images/shotgun-desktop-console-photoshop-extension.png)
+![Photoshop 메뉴에 여러 개의 {% include product %} 익스텐션 표시.](/images/shotgun-desktop-console-photoshop-extension.png)
 
 Photoshop을 종료하고 해당 디렉토리를 제거하고 난 후 다시 시작하면 하나의 익스텐션만 확인됩니다.
 

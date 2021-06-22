@@ -1,41 +1,63 @@
-# Translated text strings used by the table of contents
+﻿# Translated text strings used by the table of contents
 # 
 # For documentation, see https://developer.shotgridsoftware.com/tk-doc-generator/authoring/toc/
 #
 
+reference: 참조
+guides: 가이드
+trusted-solutions: 신뢰할 수 있는 솔루션
+
 rv: RV
 toolkit: 툴킷
 shotgun: ShotGrid
+review: 리뷰
 quick-answers: 빠른 답변
+pipeline-integrations: 파이프라인 통합
 
 python-api: Python API
 rest-api: REST API
-event-triggers: 이벤트 기반 트리거
-jira-bridge: Jira 브리지(베타)
-examples: 예시
-reference: 참조
+event-triggers: 이벤트 구동 트리거 작성
+action-menu-items: 커스텀 액션 메뉴 항목 생성
+jira-bridge-guide: Jira 및 ShotGrid 간 데이터 동기화
+jira-bridge-ref: Jira 브리지 Dev 리소스
+examples: 예
 webinars: 웨비나 녹화
+developer-training-videos: 개발자 교육 동영상 
+episodic-pipeline-tutorial: 에피소드 파이프라인 튜토리얼
 
-core-api: Core API
+core-api: Toolkit Core API
 qt-widgets: QT Widgets
-shotgun-utils: ShotGrid 유틸리티
+shotgun-utils: ShotGrid Utils
 publish-api: 게시 API
+hiero-export-api: Hiero 내보내기 API
+development: 개발
 app-development: 앱 개발
+engine-development: 엔진 개발
+file-system-configuration: 파일 시스템 구성
 
-user-manual: 사용자 매뉴얼
+rv-user-manual: RV 사용자 매뉴얼
 technical-reference: 기술 참조
+rv-technical-reference: RV 기술 참조
 rv-sdi: RV-SDI
 forums: 포럼
 
+rv-maya-integration: RV/Maya 통합
+rv-nuke-integration: RV/Nuke 통합
+rv-shotgun-integration: RV ShotGrid 통합
 maya: Maya
 nuke: Nuke
 shotgun: ShotGrid
-screening-room: Screening Room 및 ShotGrid Review
+screening-room-and-shotgun-review: Screening Room 및 ShotGrid Review
 troubleshooting: 문제 해결
 extending-rv: RV 확장
 
-other: 기타
+videos: 동영상
+siggraph-shotgun-day: SIGGRAPH ShotGrid Day
+developer-training: 개발자 교육
+toolkit-webinars: 툴킷 웨비나
 
+other: 기타
+community: 커뮤니티
 shotgun-support: ShotGrid 지원
 service-status: 서비스 상태
 new-support-request: 새 지원 요청

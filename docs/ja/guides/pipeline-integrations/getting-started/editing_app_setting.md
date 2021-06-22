@@ -14,7 +14,7 @@ lang: ja
 
 ## このガイドについて
 
-このガイドでは、プロジェクト パイプラインの要求に応じて、既存のパイプライン設定内の設定を編集する方法について説明します。最初のガイドの『**[設定の基本操作](./advanced_config.md)**』では、パイプライン設定を編集するための準備方法について説明しました。プロジェクトに対して編集可能な設定を作成する方法を理解していない場合は、「**設定の基本操作**」を参照してから、先へ進んでください。
+このガイドでは、プロジェクト パイプラインの要求に応じて、既存のパイプライン設定内の設定を編集する方法について説明します。最初のガイドの「**設定の基本操作[](./advanced_config.md)**」では、パイプライン設定を編集するための準備方法について説明しました。プロジェクトに対して編集可能な設定を作成する方法を理解していない場合は、「**設定の基本操作**」を参照してから、先へ進んでください。
 
 {% include product %} Toolkit では、既定の設定を拡張することにより、パイプラインのワークフロー内のタスクをカスタマイズできます。カスタマイズの例としては、ユーザが Toolkit の機能を操作する方法を変更するために、いくつかのソフトウェア パッケージに含まれている Toolkit アプリのボタンを有効または無効に切り替えるだけという簡単なものがあります。Toolkit には独自の設定を行う機能があるため、カスタム ワークフローの作成、反復タスクや日常的なタスクの自動化、フックの変更、および Toolkit プラットフォーム上に構築されたカスタム ツールの追加といった作業を、スマートに、かつ短時間で行うことができます。ただし、Toolkit にアクセスするには {% include product %} ソフトウェアの統合が必要であり、衣服を洗うなどの日常的なタスク向けのリリースはまだ実現していません。
 
@@ -24,14 +24,14 @@ lang: ja
 
 このガイドを使用してパイプライン設定を編集するには、以下が必要です。
 
-1. アクティブな [{% include product %}](https://www.shotgunsoftware.com/jp/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) サイト。
+1. アクティブな [{% include product %}](https://www.shotgridsoftware.com/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management) サイト。
 2. 1 つ以上のアセットを含むプロジェクト。最初のガイドで作成した the_other_side プロジェクトにアセットを追加できます。プロジェクトのアセットを作成する方法については、「[設定の基本操作](./advanced_config.md)」ガイドを確認してください。
-3. 指定したプロジェクトのパイプライン設定。この設定がない場合は、「[設定の基本操作](./advanced_config.md)」ガイドを参照し、その演習で作成した設定を使用します。
+3. 指定したプロジェクトのパイプライン設定、または「[設定の基本操作](./advanced_config.md)」ガイドを参照して、この演習で作成された設定を使用します。
 4. パイプライン設定を保存するファイルシステムに最適になるように設定された読み取りおよび書き込み権限。
-5. システムにインストールされた {% include product %} Desktop。
+5.  システムにインストールされた {% include product %} Desktop。
 6. Maya の有効なサブスクリプション。Maya の 30 日間無償体験版は[こちら](https://www.autodesk.co.jp/products/maya/free-trial)から取得してください。
 
-{% include info title="注" content="このガイドは `tk-config-default2` パイプライン設定をベースにしています。 設定が変更されている場合は、YAML 設定のファイル、フォルダ、およびブロックの場所がここに記載されている内容と異なる可能性があります。"%}
+{% include info title="注" content="このガイドは `tk-config-default2` パイプライン設定をベースにしています。設定が変更されている場合は、YAML 設定のファイル、フォルダ、およびブロックの場所がここに記載されている内容と異なる可能性があります。"%}
 
 ## Workfiles アプリについて
 
@@ -45,21 +45,21 @@ Workfiles アプリは、{% include product %} ソフトウェア統合のファ
 
 **手順 1:** この演習で使用するプロジェクトを管理している **{% include product %} サイト**を開きます。
 
-**手順 2:** **{% include product %} サイト**の **[プロジェクト]（Projects）ページ**でプロジェクトを選択して、{% include product %} サイトのプロジェクトにアクセスします。
+**手順 2:** **[プロジェクト] (Projects)ページ**から **{% include product %} サイト**を選択してプロジェクトにアクセスします。
 
 ![{% include product %} プロジェクト](./images/editing_app_setting/1_shotgun_project.png)
 
-**手順 3:** 右上にある**アバター**を選択して、**[管理者]（ADMIN）**メニューを表示し、下にスクロールして**[既定のレイアウト]（Default Layouts）> [パイプラインの設定]（Pipeline Configuration）> [パイプライン設定リスト]（Pipeline Configuration List）**を選択します。
+**手順 3:** 右上にある**アバター**を選択して、**[管理者] (ADMIN)**メニューを表示し、下にスクロールして**[既定のレイアウト](Default Layouts)> [パイプラインの設定](Pipeline Configuration)> [パイプライン設定リスト](Pipeline Configuration List)**を選択します。
 
 ![パイプラインの設定](./images/editing_app_setting/2_pipeline_configuration.png)
 
-**手順 4:** **[パイプライン設定リスト]（Pipeline Configuration List）**が表示されたら、列見出しの右端にある**[+]**記号を選択して、列をもう 1 つ追加します。ドロップダウン リストで、オペレーティング システムに該当するパスを選択します。
+**手順 4:** **[パイプライン設定リスト](Pipeline Configuration List)**が表示されたら、列見出しの右端にある**[+]**記号を選択して、列をもう 1 つ追加します。ドロップダウン リストで、オペレーティング システムに該当するパスを選択します。
 
 ![OS のパス](./images/editing_app_setting/3_mac_path.png)
 
 新しいフィールドにパスが表示されます。
 
-![ OS パス 2 ](./images/editing_app_setting/4_mac_path2.png)
+![OS パス 2](./images/editing_app_setting/4_mac_path2.png)
 
 **手順 5:** 端末またはファイル マネージャで、プロジェクトのパイプライン設定が保存されているフォルダを参照して、開きます。
 
@@ -75,7 +75,7 @@ Toolkit は YAML ファイルを使用して機能を設定します。YAML が�
 
 ## 設定ファイルを編集する
 
-{% include product %} Toolkit を使用すると、さまざまなソフトウェア パッケージ内に統合されたアプリを変更できます。Workfiles アプリの機能の例としては、**[+New Task]** ボタンがあります。ユーザはこのボタンをクリックして、**[File Open]**ダイアログ ボックスに新しいタスクを追加できます。既定では、この機能はプロジェクトのすべてのフェーズで、すべてのユーザに対して有効になっています。ただし、スタジオでこの機能を制限したい場合があります。たとえば、特定の命名規則がある場合や、タスクの作成をプロジェクトのプロダクション管理チームに限定する場合などです。この場合は、アーティストが Maya で作業するパイプライン内のすべてのポイントで、**[+New Task]**ボタンを無効にします。
+ {% include product %} Toolkit を使用すると、さまざまなソフトウェア パッケージ内に統合されたアプリを変更できます。Workfiles アプリの機能の例としては、**[+New Task]** ボタンがあります。ユーザはこのボタンをクリックして、**[File Open]**ダイアログ ボックスに新しいタスクを追加できます。既定では、この機能はプロジェクトのすべてのフェーズで、すべてのユーザに対して有効になっています。ただし、スタジオでこの機能を制限したい場合があります。たとえば、特定の命名規則がある場合や、タスクの作成をプロジェクトのプロダクション管理チームに限定する場合などです。この場合は、アーティストが Maya で作業するパイプライン内のすべてのポイントで、**[+New Task]**ボタンを無効にします。
 
 ## Maya のプロジェクトに対して[+New Task]ボタンを無効にする
 
@@ -91,7 +91,7 @@ Toolkit は YAML ファイルを使用して機能を設定します。YAML が�
 
 **{% include product %}** メニューが完全にロードされるまで待ちます。インターネット接続速度が遅い場合は、この間に設定を行いましょう。つまり、適度な量のクリームを入れて一杯の完璧なエスプレッソを作るようなものです。
 
-Maya および {% include product %} が完全にロードされると、**[File Open]**ダイアログ ボックスが自動的に開きます。{% include product %} Desktop から Maya を起動すると、Maya は **project** 環境になり、Toolkit ワークフローの設定はファイル `config/env/project.yml` によって制御されます。既定の設定で識別される環境は、`project`、`sequence`、`shot`、`shot_step`、`asset`、`asset_step` です。
+Maya と {% include product %} が完全にロードされると、**[File Open]**ダイアログ ボックスが自動的に開きます。{% include product %} Desktop から Maya を起動すると、Maya は **project** 環境になり、Toolkit ワークフローの設定はファイル `config/env/project.yml` によって制御されます。既定の設定で識別される環境は、`project`、`sequence`、`shot`、`shot_step`、`asset`、`asset_step` です。
 
 **手順 10:** **[File Open]**ダイアログ ボックスの左側のペインで**[Assets]**タブを選択します。検索結果に表示されたフォルダ内のいずれかのアセットを選択します。
 
@@ -105,7 +105,7 @@ Toolkit のパイプライン設定は、パイプラインに対するユーザ
 
 **手順 11:** **[Project (プロジェクト名)]**の横にある**[File Open]**ウィンドウの上部にある **[>]** を選択します。
 
-この参照ボックスには、**[File Open]**ウィンドウの機能をコントロールする構成設定の詳細が表示されます。Toolkit の一部のアプリには、アプリに使用される設定と、既定の設定を表示する参照ボックスがあります。**[Location:]**に注目してください。識別子は **tk-multi-workfiles2** です。これは、Workfiles アプリを作成するコードのバンドルの識別子です。パイプライン設定を検索する場合、この名前でアプリの設定の配置場所を識別します。{% include product %} の統合で使用可能な機能に関するすべての構成設定、アプリ、エンジンがリストされた「[アプリとエンジンの概要](https://support.shotgunsoftware.com/hc/ja/articles/219039798-Integrations-Apps-and-Engines)」ページがあります。
+この参照ボックスには、**[File Open]**ウィンドウの機能をコントロールする構成設定の詳細が表示されます。Toolkit の一部のアプリには、アプリに使用される設定と、既定の設定を表示する参照ボックスがあります。**[Location:]**に注目してください。識別子は **tk-multi-workfiles2** です。これは、Workfiles アプリを作成するコードのバンドルの識別子です。パイプライン設定を検索する場合、この名前でアプリの設定の配置場所を識別します。{% include product %} の統合で使用可能な機能に関するすべての構成設定、アプリ、エンジンについては、「[アプリとエンジンの概要](https://support.shotgunsoftware.com/hc/ja/articles/219039798-Integrations-Apps-and-Engines)」ページを参照してください。
 
 ![Current_work_area](./images/editing_app_setting/9_current_work_area.png)
 
@@ -113,7 +113,7 @@ Toolkit のパイプライン設定は、パイプラインに対するユーザ
 
 ![Configuration_ref](./images/editing_app_setting/10_configuration_ref.png)
 
-{% include info title="注" content=" **my_tasks_filters** の設定の後に、**launch_at_startup** の設定があります。この設定に注意することは重要です。この設定がプロジェクト環境内の**[File Open]**設定の既定の設定になります。この設定は、Shotgun Desktop から Maya を起動したときに、**[File Open]**ダイアログが自動的に開くことを示します。"%}
+{% include info title="注" content=" **my_tasks_filters** の設定の後に、**launch_at_startup** の設定があります。この設定に注意することは重要です。この設定がプロジェクト環境内の**[File Open]**設定の既定の設定になります。この設定は、ShotGrid Desktop から Maya を起動したときに、**[File Open]**ダイアログが自動的に開くことを示します。" %}
 
 **[Setting allow_task_creation]**まで下にスクロールします。この設定の既定値は**[True]**です。この値の場合、ユーザは Maya プロジェクト環境内から新しいタスクを作成できます。
 
@@ -135,15 +135,15 @@ Toolkit のパイプライン設定は、パイプラインに対するユーザ
 
 **手順 12:** メインの Maya ウィンドウを前面に表示します。
 
-**手順 13:** Maya ウィンドウの右上にある**[{% include product %}]** メニュー項目を特定します。
+**手順 13:** Maya ウィンドウの右上にある**[{% include product %}]**メニュー項目を特定します。
 
 ![Maya {% include product %}2](./images/editing_app_setting/12_Maya_Shotgun2.png)
 
 **ヒント:** メニューが表示されない場合は、一部のメニュー項目が非表示になっていることを示す**[>>]**が表示されています。**[>>]**を選択して {% include product %} メニューを表示するか、Maya ウィンドウの幅を広げます。
 
-**手順 14:** **メニューの右上にある[{% include product %}] > プロジェクト the_other_side > [Work Area Info...]**を選択します。
+**手順 14:** メニューの右上にある**[{% include product %}] > [Project the_other_side] > [Work Area Info...]**を選択します。
 
-![Work Area Info](./images/editing_app_setting/13_work_area_info.png)
+![Work area info](./images/editing_app_setting/13_work_area_info.png)
 
 **[Work Area Info]**ダイアログ ボックスには、現在の作業領域の内容と詳細が表示されます。この情報には、ユーザが作業している環境、および設定が配置されてい環境設定ファイルのパスが含まれています。
 
@@ -219,7 +219,7 @@ frameworks: "@frameworks"
 
 この行全体は、インクルードされたファイル内の `settings.tk-maya.project` ブロックを探して、Maya エンジン `tk-maya` の構成設定を探すようユーザに指示しています。
 
-{% include product %} Toolkit は YAML ファイル内で単純な用語を使用して、設定の名前や、設定に到達するためのパスを示します。Maya の**[File Open]**参照ボックスを調べて気づいたように、**[+New Task]**ボタンの実行方法をコントロールするコード バンドルは `tk-multi-workfiles2` で識別されます。Toolkit のバンドルは、YAML ファイル内でこれらの識別子を使用して参照されています。「tk-multi-workfiles2」は、Workfiles アプリのコード バンドルの識別子です。**[+New Task]**ボタンは、Workfiles アプリの機能です。
+ {% include product %} Toolkit は YAML ファイル内で単純な用語を使用して、設定の名前や、設定に到達するためのパスを示します。Maya の**[File Open]**参照ボックスを調べて気づいたように、**[+New Task]**ボタンの実行方法をコントロールするコード バンドルは `tk-multi-workfiles2` で識別されます。Toolkit のバンドルは、YAML ファイル内でこれらの識別子を使用して参照されています。「tk-multi-workfiles2」は、Workfiles アプリのコード バンドルの識別子です。**[+New Task]**ボタンは、Workfiles アプリの機能です。
 
 tk-maya.yml での Workfiles アプリの検索
 
@@ -350,11 +350,11 @@ Workfiles アプリのシステム名は `tk-multi-workfiles2` です。名前�
 
 ### カスタム環境を作成する
 
-既定の設定には、`project`、`sequence`、`shot`、`shot_step`、`asset`、および `asset_step` という、パイプラインに関する一連の定義済みの手順が付属しています。ただし、スタジオによっては、パイプラインのステージごとに異なる構成設定が必要な場合があります(`asset_step_rig`、`asset_step_model`、`shot_step_anim`、`shot_step_light` など)。Toolkit はカスタム環境をサポートしています。詳しくは、[『環境設定リファレンス』の「カスタム環境」セクション](../../../toolkit/env_config_ref.md#custom-environments)を参照してください。
+既定の設定には、`project`、`sequence`、`shot`、`shot_step`、`asset`、および `asset_step` という、パイプラインに関する一連の定義済みの手順が付属しています。ただし、スタジオによっては、パイプラインのステージごとに異なる構成設定が必要な場合があります(`asset_step_rig`、`asset_step_model`、`shot_step_anim`、`shot_step_light` など)。Toolkit はカスタム環境をサポートしています。詳細については、[『環境設定リファレンス』の「カスタム環境」セクション](../../../reference/pipeline-integrations/env-config-ref.md#custom-environments)を参照してください。
 
 ### ビデオのリソース
 
 * [Toolkit 設定の概要](https://www.youtube.com/watch?v=7qZfy7KXXX0&t=1961s)(SIGGRAPH 2018 Developer Day で収録)
 * [既定の設定の概要ウェビナー](https://www.youtube.com/watch?v=eKHaC1dZCeE)
 
-アプリの構成設定の変更に関する学習は以上です。次は、[Toolkit の構成にアプリを追加](./installing_app.md)してみましょう。
+アプリの構成設定の変更に関する学習は以上です。次は、[Toolkit の構成にアプリを追加](installing_app.md)してみましょう。

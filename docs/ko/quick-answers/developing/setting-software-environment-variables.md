@@ -9,7 +9,7 @@ lang: ko
 
 {% include product %} 툴킷을 사용하면 실행 프로세스 중에 후크를 사용하여 환경을 구성하고 커스텀 코드를 실행할 수 있습니다.
 
-Nuke 또는 Maya와 같은 소프트웨어를 실행할 때 {% include product %} 데스크톱 또는 브라우저 통합을 통해 `tk-multi-launchapp`이 실행됩니다.
+Nuke 또는 Maya와 같은 소프트웨어를 실행할 때 {% include product %} 데스크톱 또는 브라우저 통합을 통해 `tk-multi-launchapp`가 실행됩니다.
 이 앱은 소프트웨어 실행을 담당하며 {% include product %} 통합이 예상대로 시작되게 합니다. 이 프로세스 중에 후크를 통해 표시되는 두 지점을 사용하여 커스텀 코드를 실행할 수 있습니다.
 
 ## before_app_launch.py

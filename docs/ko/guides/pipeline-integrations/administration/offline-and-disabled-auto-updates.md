@@ -1,150 +1,145 @@
 ---
 layout: default
-title: Disabling auto updates and offline usage
+title: 오프라인 사용 및 자동 업데이트 비활성화
 pagename: disabling-auto-updates-and-offline
 lang: ko
 ---
 
-# Disabling auto updates and offline usage
+# 오프라인 사용 및 자동 업데이트 비활성화
 
-## Auto updates
-### What parts auto update?
+- [자동 업데이트](#auto-updates)
+   - [자동 업데이트되는 부분](#what-parts-auto-update)
+   - [자동으로 업데이트되지 않는 부분](#what-doesnt-auto-update)
+- [오프라인으로 통합 실행](#running-the-integrations-offline)
+   - [초기 설정](#initial-setup)
+   - [업데이트 관리](#managing-updates)
+- [자동 업데이트 비활성화](#disabled-auto-updates)
+   - [프로젝트 또는 사이트 수준에서 업데이트 비활성화](#disabling-updates-at-a-project-or-site-level)
+   - [한 프로젝트만 제외하고 모든 프로젝트에 대한 업데이트 비활성화](#disabling-updates-for-all-but-one-project)
+   - [업그레이드](#upgrading)
 
-By default {% include product %} Desktop will automatically check for updates, and install them to the local machine if it finds any.
+## 자동 업데이트
+### 자동 업데이트되는 부분
 
-It checks for updates on two components:
+기본적으로 {% include product %} 데스크톱은 업데이트를 자동으로 확인하고, 업데이트가 있을 경우 로컬 컴퓨터에 설치합니다.
 
-- `tk-framework-desktopstartup` - A frame work which aids the launch of {% include product %} Desktop.
-- `tk-config-basic` - The default site config.
+다음 두 구성요소에 대한 업데이트를 확인합니다.
 
-The configuration acts as a manifest for the versions of the apps, engines, frameworks, and core version that should be used by {% include product %} Desktop.
-By updating the config, you are potentially updating any of these components as well.
-Any updates that are found are downloaded and stored in the user's local cache, rather than modifying the original {% include product %} Desktop installed files.
+- `tk-framework-desktopstartup` - {% include product %} 데스크톱 시작을 지원하는 프레임 작업입니다.
+- `tk-config-basic` - 기본 사이트 구성입니다.
 
-{% include product %} Create as an application has it's own update mechanism separate from {% include product %} Desktop which is not covered here.
-However the integration features provided in {% include product %} Create work in a similar way, and will also auto update `tk-config-basic` into the same user cache.
+구성은 {% include product %} 데스크톱에서 사용해야 하는 앱, 엔진, 프레임워크 및 코어 버전의 매니페스트 역할을 합니다.
+구성을 업데이트해야 이러한 구성요소도 업데이트할 수 있게 됩니다.
+업데이트가 검색되면 다운로드되어 {% include product %} 데스크톱에 설치된 원래 파일을 수정하지 않고 사용자의 로컬 캐시에 저장됩니다.
 
-### What doesn't auto update?
+응용프로그램인 {% include product %} Create는 {% include product %} 데스크톱과는 별개의 자체 업데이트 메커니즘을 보유하고 있습니다(여기서는 다루지 않음).
+그러나 {% include product %} Create에서 제공되는 통합 기능은 유사한 방식으로 작동하며 `tk-config-basic`도 동일한 사용자 캐시로 자동 업데이트됩니다.
 
-If you have taken over a site configuration, then it won't check for newer `tk-config-basic` updates but more on that further down.
-Also any projects that aren't using the default site configuration (I.e. a project where the Toolkit advanced setup wizard has been run on it.), will not have their configuration auto updated.
+### 자동으로 업데이트되지 않는 부분
 
-### What if I can't or don't want to auto update?
+- 사이트 구성을 인계받은 경우 `tk-config-basic`에 새로운 업데이트가 있는지 확인하지 않고 그 아래 단위에서만 [추가 사항](#disabling-updates-at-a-project-or-site-level)을 확인합니다.
 
-There are scenarios where you might want to run integrations in an environment where there is no connection to the internet or just have control when updates roll out.
-{% include info title="Note" content="If possible we recommend that you continue to allow auto updates to avoid missing out on new features and bug fixes." %}
+- 기본 사이트 구성을 사용하지 않는 프로젝트(예: 툴킷 고급 설정 마법사를 실행한 프로젝트)에서는 해당 구성이 자동 업데이트되지 않습니다.
 
-The following sections describes how to address each of these scenarios.
+- {% include product %} 데스크톱과 함께 번들로 제공되는 Python 및 QT와 같은 리소스는 자동 업데이트되지 않습니다.
+   이러한 부분을 업데이트해야 할 경우에는 새 {% include product %} 데스크톱 설치 프로그램을 릴리즈해야 합니다.
 
-- Offline Usage Scenarios
-- Disabling auto updates
+## 오프라인으로 통합 실행
 
-## Running the integrations offline.
+### 초기 설정
 
-### Initial Setup
+스튜디오에서 인터넷 액세스를 제한했거나 인터넷에 액세스할 수 없는 경우 필요한 모든 부분이 로컬로 캐시되어야 합니다.
+{% include product %} Create 또는 {% include product %} 데스크톱을 다운로드하려면 인터넷에 연결할 수 있는 컴퓨터가 한 대 있어야 합니다.
 
-If your studio has restricted internet access or no internet access then you will need to ensure that you have all the required parts cached locally.
-You will still need one machine that can connect to the internet in order to download {% include product %} Create or {% include product %} Desktop.
+{% include product %} 데스크톱에는 기본 통합을 실행하는 데 필요한 모든 종속 요소가 미리 패키징되어 있습니다.
+또한 {% include product %} Create는 종속 요소와 함께 번들로 제공되지만 [업데이트 관리)#managing-updates](에 설명된 단계도 따라야 합니다.
 
-{% include product %} Create and {% include product %} Desktop come prepackaged with all the dependencies required to run the basic integrations.
-When you start either of them up, it will automatically try to look for updates, but if it cannot connect to the {% include product %} App Store, it will simply run the most recent version that exists locally.
+둘 중 하나를 시작하면 자동으로 업그레이드를 검색합니다. {% include product %} 앱 스토어에 연결할 수 없는 경우에는 로컬에 있는 가장 최신 버전을 실행합니다.
 
-It is recommended that you follow the "Managing updates" steps bellow after installing {% include product %} Desktop, as the components bundled with the installer may not be the latest.
+설치 프로그램과 함께 번들로 제공되는 구성요소가 최신 버전이 아닐 수도 있으므로 {% include product %} 데스크톱을 설치한 후에는 [업데이트 관리](#managing-updates) 단계를 따르는 것이 좋습니다.
 
-{% include info title="Note" content="Depending on your network setup, it can sometimes get stuck looking for updates online even though it won't be able to access them. 
-In this situation you can set the environment variable `SHOTGUN_DISABLE_APPSTORE_ACCESS` to `\"1\"` to stop it from trying." %}
+{% include info title="참고" content="네트워크 설정에 따라서는 업데이트를 액세스할 수 없더라도 온라인에서 업데이트를 찾는 것이 이따금씩 중단될 수 있습니다.
+이 경우 `SHOTGUN_DISABLE_APPSTORE_ACCESS` 환경 변수를 `\"1\"`로 설정하여 검색을 중지할 수 있습니다." %}
 
-{% include info title="Note" content="You will still need to be able to connect to your ShotGrid site. When we say offline we are talking about not being able to connect to our app store to download updates." %}
+{% include info title="참고" content="ShotGrid 사이트에는 계속 연결할 수 있어야 합니다. 오프라인은 앱 스토어에 연결하여 업데이트를 다운로드할 수 없는 것을 말합니다." %}
 
-### Managing updates
+### 업데이트 관리
 
-To update the `tk-framework-desktopstartup` component, you will need to [download the latest version](https://github.com/shotgunsoftware/tk-framework-desktopstartup/releases), and set the environment variable
-`SGTK_DESKTOP_STARTUP_LOCATION` to point to its location on disk.
+`tk-framework-desktopstartup` 구성요소를 업데이트하려면 [최신 버전을 다운로드](https://github.com/shotgunsoftware/tk-framework-desktopstartup/releases)하고 디스크의 해당 위치를 가리키도록 `SGTK_DESKTOP_STARTUP_LOCATION` 환경 변수를 설정해야 합니다({% include product %} 데스크톱에만 적용됨).
 
-For the `tk-config-basic` component it's a bit more tricky, due to all its dependencies.
+`tk-config-basic` 구성요소의 경우 모든 종속성으로 인해 약간 더 까다로워집니다.
 
-1. Run {% include product %} Desktop on a workstation connected to the internet. When it starts up, the latest upgrades will be automatically downloaded.
-(Ensure `SHOTGUN_DISABLE_APPSTORE_ACCESS` is not set on this machine.)
-2. Copy the bundle cache to a shared location where all machines can access it.
-3. Set the `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS` environment variable on offline machines to point to this location.
-4. When Desktop starts up on offline machines, they will pick up the latest upgrades that are available in the bundle cache.
+1. 인터넷에 연결된 워크스테이션에서 {% include product %} 데스크톱 또는 {% include product %} Create를 실행합니다.  시작할 때 최신 업그레이드가 자동으로 다운로드됩니다.
+   (이 컴퓨터에 `SHOTGUN_DISABLE_APPSTORE_ACCESS` 항목이 설정되어 있지 않은 것을 확인하십시오.)
+2. 번들 캐시를 모든 컴퓨터가 액세스할 수 있는 공유 위치에 복사합니다.
+3. 오프라인 컴퓨터에서 `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS` 환경 변수가 이 위치를 가리키도록 설정합니다.
+4. 오프라인 컴퓨터에서 {% include product %} 데스크톱 또는 {% include product %} Create를 시작하면 오프라인 컴퓨터가 번들 캐시에 있는 최신 업그레이드를 선택합니다.
 
-{% include info title="Warning" content="Depending on your network setup, it can sometimes get stuck looking for updates online even though it won't be able to access them. 
-In this situation you can set the environment variable `SHOTGUN_DISABLE_APPSTORE_ACCESS` to `\"1\"` to stop it from trying." %}
+{% include info title="경고" content="네트워크 설정에 따라서는 업데이트를 액세스할 수 없더라도 온라인에서 업데이트를 찾는 것이 이따금씩 중단될 수 있습니다.
+이 경우 `SHOTGUN_DISABLE_APPSTORE_ACCESS` 환경 변수를 `\"1\"`로 설정하여 검색을 중지할 수 있습니다." %}
 
-**CREATE does come with it's own bundled config, however it doesn't seem to have the engines, or atleast doesn't share them when launching Maya for example.**
+## 자동 업데이트 비활성화
 
-## Disabling auto updates
+### 프로젝트 또는 사이트 수준에서 업데이트 비활성화
 
-### Disabling updates for a single project
+{% include info title="참고" content="가능하면 자동 업데이트를 계속 허용하여 새로운 기능 및 버그 수정에 대한 업데이트가 누락되지 않도록 하는 것이 좋습니다." %}
 
-1. Determine the version you want to lock your project to. You can find the integration releases [here](https://support.shotgunsoftware.com/hc/en-us/sections/115000020494-Integrations).
-2. In {% include product %}, create a Pipeline Configuration entity for the project you want to lock down, with the following fields populated (In this example, we are locking down the config to use v1.0.36 of the integrations):
-    - Name: `Primary`
-    - Project: The project you want to lock down
-    - Plugin ids: `basic.*`
-    - Descriptor: `sgtk:descriptor:app_store?name=tk-config-basic&version=v1.0.36`
-  ![Pipeline Configuration entity with a setup for a project with disabled updates.](images/offline-and-disabled-auto-updates/freeze_single_project.png)
- 
-3. Anyone starting {% include product %} Desktop on the project will now always use `v1.0.36`. Any new users starting to work on the project will also get `v1.0.36`.
+통합에 대한 자동 업데이트를 비활성화하려면 다음 단계를 수행하십시오.
 
-#### Good to know
+1. 유지할 버전을 결정합니다. 통합 릴리즈는 [여기](https://support.shotgunsoftware.com/hc/en-us/sections/115000020494-Integrations)에서 찾을 수 있습니다.
+2. {% include product %}의 프로젝트 또는 전역 페이지에서 파이프라인 구성 엔티티를 만들고 다음 필드를 입력합니다(이 예에서는 v1.0.36의 통합을 사용하도록 구성을 잠금).
 
-- The next time a user launches Desktop while connected to the Internet, `v1.0.36` of the basic config, and all of its related code, will be downloaded to their machine.
-- `basic.*` means that all plugins in the basic configuration will pick up this override. If, for example, you wanted to freeze the Nuke and Maya integrations only, you could specify `basic.maya`, `basic.nuke`.
-- To test, you can create a duplicate of this Pipeline Configuration entity, and add your username to the `User Restrictions` field. This will restrict the entity such that it's only available to you and won't impact other users. You can then launch Maya or some other software from this duplicate configuration and confirm that it’s running the expected integrations versions. 
+   1. 이름: `Primary`
+   2. 프로젝트: 모든 프로젝트에 대해 업데이트를 비활성화하려면 비어 있는 상태로 두고, 단일 프로젝트에 대해서만 잠그려면 특정 프로젝트를 선택합니다.
+   3. 플러그인 ID: `basic.*`
+   4. 디스크립터: `sgtk:descriptor:app_store?name=tk-config-basic&version=v1.0.36`
 
-#### Known issues
+   ![업데이트가 비활성화된 프로젝트에 대한 설정이 포함된 파이프라인 구성 엔티티.](images/offline-and-disabled-auto-updates/freeze-all-projects.jpg)
+3. {% include product %} 데스크톱을 시작합니다. 프로젝트 필드를 비워 둔 경우에는 {% include product %} 데스크톱이 이 버전을 사용하도록 전환됩니다(아직 사용하지 않은 경우).
 
-- The Flame integration is namespaced `basic.flame`, and so is implied to be part of `basic.*`. 
-However, the Flame integration isn't actually included in the basic config. So, if you are using Flame for a project and implement this override, the Flame integration will stop working.
-The solution would be to create an additional Pipeline Configuration override specifically for flame:
-    - Name: `Primary`
-    - Project: The project you want to lock down (or None for all projects)
-    - Plugin ids: `basic.flame`
-    - Descriptor: `sgtk:descriptor:app_store?name=tk-config-flameplugin`
+   ![{% include product %} 데스크톱 정보](images/offline-and-disabled-auto-updates/shotgun-desktop-about.png)
 
-### Disabling updates for all projects
+   프로젝트를 설정한 경우 해당 프로젝트만 영향을 받으며 {% include product %} 데스크톱 정보 창에 변경 사항이 표시되지 않습니다.
+4. [선택 사항] `tk-framework-desktopstartup` 버전을 잠그려면 [최신 버전을 다운로드](https://github.com/shotgunsoftware/tk-framework-desktopstartup/releases)하고 디스크의 해당 위치를 가리키도록 `SGTK_DESKTOP_STARTUP_LOCATION` 환경 변수를 설정해야 합니다({% include product %} 데스크톱에만 적용됨).
 
-To disable updates for all your projects, you can follow the steps in the above example, but leave the `Project` field blank.
+대부분의 기능은 이전 단계에서 잠글 수 있는 구성에 의해 제어되지만 "자동 업데이트되는 부분" 섹션에서 설명한 대로 구성요소도 업데이트되며 구성과 별도로 처리됩니다. 이 또한 {% include product %} 데스크톱에만 적용됩니다.
 
-With no override in the `Project` field, this Pipeline Configuration entity will apply to all projects, including the “site” project, i.e., the site configuration that is used by Desktop outside of any project.
+#### 유용한 정보
 
-![Pipeline Configuration entity with a setup for disabled updates on all projects.](images/offline-and-disabled-auto-updates/freeze_all_projects.jpg)
+- 구성의 릴리즈를 수동으로 다운로드할 필요가 없으며, {% include product %} 데스크톱은 이 구성이 실행되거나 프로젝트를 시작할 때 이 문제를 처리합니다.
+- `basic.*`은 기초 구성에 있는 모든 플러그인이 이 재정의를 선택하게 됨을 의미합니다. 예를 들어 Nuke 및 Maya 통합만 중지하려는 경우 `basic.maya`, `basic.nuke`를 지정하면 됩니다.
+- 테스트하려면 이 파이프라인 구성 엔티티를 복제한 다음 `User Restrictions` 필드에 사용자 이름을 추가하면 됩니다. 이렇게 하면 엔티티를 제한하게 되는데, 사용자에게만 적용되고 다른 사용자에게는 영향을 주지 않습니다. 그런 다음 이 복제 구성에서 Maya 또는 다른 소프트웨어를 시작하여 예상 통합 버전을 실행 중인지 확인할 수 있습니다.
+- 프로젝트 필드를 비워 두면 사이트 구성을 사용하는 것입니다. {% include product %} 데스크톱은 프로젝트 외부에서 작동하므로 사이트 구성을 사용합니다. {% include product %} 데스크톱에서 프로젝트를 선택하면 프로젝트 구성도 로드됩니다.
 
-#### Good to know
+- Flame 통합의 네임스페이스는 `basic.flame`으로 지정되기 때문에 `basic.*`의 일부로 생각될 수 있습니다.
+   그러나 실제로 Flame 통합은 기초 구성에 포함되지 않습니다. 따라서 프로젝트에 Flame을 사용 중이고 이 재정의를 구현하는 경우 Flame 통합의 작동이 중지됩니다.
+   이 솔루션은 특히 Flame에 있어 추가 파이프라인 구성 재정의를 생성하게 됩니다.
+   - 이름: `Primary`
+   - 프로젝트: 잠그려는 프로젝트(또는 모든 프로젝트에 대해 "없음(None)")
+   - 플러그인 ID: `basic.flame`
+   - 디스크립터: `sgtk:descriptor:app_store?name=tk-config-flameplugin`
 
-If you lock down your entire site to use, for example, `v1.2.3`, you can still lock down an individual project to use another config (see "Disabling updates for all but one project" bellow).
+### 한 프로젝트만 제외하고 모든 프로젝트에 대한 업데이트 비활성화
 
-#### Known issues
+위의 예에서 설명한 대로 모든 프로젝트에 대한 업데이트를 비활성화했지만 특정 프로젝트에 대한 업데이트를 사용하려는 경우 다음을 수행할 수 있습니다.
 
-Flame would be affected by this. See the ‘Known Issues’ section of the above scenario for a solution.
+1. 위 섹션에서 설명한 대로 사이트에 대한 업데이트를 비활성화합니다.
+2. 예외 프로젝트의 파이프라인 구성 엔티티가 다음 필드 값을 갖도록 구성합니다.
+   - 이름: `Primary`
+   - 프로젝트: 잠그지 않으려는 프로젝트
+   - 플러그인 ID: `basic.*`
+   - 디스크립터: `sgtk:descriptor:app_store?name=tk-config-basic`
+      ![두 개의 파이프라인 구성. 하나는 전체 사이트에 대한 업데이트를 비활성화하는 것이고 다른 하나는 단일 프로젝트에 대한 업데이트를 활성화하는 것입니다.](images/offline-and-disabled-auto-updates/freeze-all-but-one-project.jpg)
+      디스크립터 필드에서 생략한 버전 번호로 이제 프로젝트는 기본 구성의 최신 릴리즈를 추적합니다.
 
-### Disabling updates for all but one project
+### 업그레이드
 
-If you have disabled updates on all projects as mentioned in the example above, but would like to enable updates on a specific project
-You can
+구성을 업데이트하게 되면 모든 사용자에게 롤아웃하기 전에 최신 버전을 테스트할 수 있습니다.
 
-- Disabling updates for your site as described in the above section.
-- Configure the exception project’s Pipeline Configuration entity to have the following field values:
-    - Name: `Primary`
-    - Project: The project you want not to lock down
-    - Plugin ids: `basic.*`
-    - Descriptor: `sgtk:descriptor:app_store?name=tk-config-basic`
-    ![Two Pipeline Configurations, one disabling updates to the whole site, and the other enabling updates on a single project](images/offline-and-disabled-auto-updates/freeze_all_but_one_project.jpg)
-
-#### Good to know
-
-Note that you’ve omitted the version number from the Descriptor field for the project. This will mean that the project is tracking the latest release of the basic config.
-
-### Upgrading
-Scenario: We’re locked down to v1.0.0, and we’d like to upgrade to v2.0.0, but first I want to test out the new version before deploying it to the studio.*
-Solution
-
-Duplicate the Pipeline Configuration entity in {% include product %} by right-clicking on it and selecting "Duplicate Selected".
-Name the cloned config “update test”, and assign yourself to the User Restrictions field.
-You will now begin to use this Pipeline Configuration.
-Change the descriptor to point to the version you wish to test.
-You can invite any users you want to partake in testing by adding them to the User Restrictions field.
-Once you are happy with testing, simply update the main Pipeline Configuration to use that version.
-Once users restart Desktop or DCCs, the update will be picked up.
+1. {% include product %}에서 파이프라인 구성 엔티티를 마우스 오른쪽 버튼으로 클릭하고 **"선택 항목 복제(Duplicate Selected)"**를 선택하여 복제합니다.
+2. 복제한 구성 이름을 "update test"로 지정하고 자신을 사용자 제한(User Restrictions) 필드에 할당합니다.
+3. 이제 이 파이프라인 구성을 사용하기 시작합니다.
+4. 테스트할 버전을 가리키도록 디스크립터를 변경합니다.
+4. 테스트에 참여하게 하려는 모든 사용자를 `User Restrictions` 필드에 추가하면 초대할 수 있습니다.
+5. 테스트에 만족한 경우 기본 파이프라인 구성이 해당 버전을 사용하도록 업데이트하기만 하면 됩니다.
+6. 사용자가 {% include product %} 데스크톱을 다시 시작하고 {% include product %} 통합이 실행 중인 상태에서 현재 열려 있는 소프트웨어를 다시 시작하면 업데이트가 선택됩니다.

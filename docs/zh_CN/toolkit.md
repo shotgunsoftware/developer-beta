@@ -1,13 +1,12 @@
 ---
 layout: default
-title: 概述
+title: 工作流集成
 pagename: toolkit-index
 lang: zh_CN
 ---
 
-# Toolkit 平台
+# 工作流集成
 
-Toolkit 是一个可扩展的平台，用于将美工人员应用程序和工作流工具与 {% include product %} 相集成。
+{% include product %} 包含各种集成，可将 {% include product %} 体验融入艺术家每天使用的创意工具中。开箱即用，您可以获取艺术家工具中的插件，从而为您的基本发布工作流奠定基础。
 
-所有集成均基于此 Toolkit 核心 API 平台构建而成。核心 API 可处理应用、插件和平台的基本方面以及文件系统组织和工具部署。
-
+这些集成基于 Toolkit 平台、一系列 API、UI 和配置构建而成，可为工作室提供各种工具以构建自定义工作流。

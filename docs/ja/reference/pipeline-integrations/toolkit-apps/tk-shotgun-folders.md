@@ -1,11 +1,11 @@
 ---
 layout: default
-title: ShotGrid Folders
+title: ShotGrid フォルダ
 pagename: tk-shotgun-folders
 lang: ja
 ---
 
-# ShotGrid Folders
+# ShotGrid フォルダ
 
 {% include product %} Toolkit には、設定に基づいて標準化されたフォルダ構造を作成するシステムが組み込まれています。このため、複数のショットで一貫したファイル システム レイアウトを簡単に作成できます。
 

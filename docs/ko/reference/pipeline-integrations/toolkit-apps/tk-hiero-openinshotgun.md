@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Shotgun에서 Hiero/Nuke Studio 열기
+title: ShotGrid에서 Hiero/Nuke Studio 열기
 pagename: tk-hiero-openinshotgun
 lang: ko
 ---

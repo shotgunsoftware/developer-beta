@@ -7,7 +7,7 @@ lang: ko
 
 
 # {% include product %} 이벤트 프레임워크
-이 소프트웨어는 [Rodeo Fx](http://rodeofx.com) 및 Oblique의 지원을 받아 [Patrick Boucher](http://www.patrickboucher.com)에서 처음 개발했습니다. 이제 [{% include product %} 소프트웨어](http://www.shotgunsoftware.com) [오픈 소스 이니셔티브](https://github.com/shotgunsoftware)의 일부가 되었습니다.
+이 소프트웨어는 [Rodeo Fx](http://rodeofx.com) 및 Oblique의 지원을 받아 [Patrick Boucher](http://www.patrickboucher.com)에서 처음 개발했습니다. 이제 [{% include product %} 소프트웨어](http://www.shotgridsoftware.com) [오픈 소스 이니셔티브](https://github.com/shotgunsoftware)의 일부가 되었습니다.
 
 이 소프트웨어는 라이선스 파일 또는 [오픈 소스 이니셔티브](http://www.opensource.org/licenses/mit-license.php) 웹 사이트에서 찾을 수 있는 MIT 라이선스로 제공됩니다.
 

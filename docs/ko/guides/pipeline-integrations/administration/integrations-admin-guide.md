@@ -17,7 +17,7 @@ lang: ko
 
 ### 기초 구성
 
-기본 제공 통합은 구성 파일을 설정하거나 수정할 필요 없이 실행할 수 있도록 디자인되었습니다. 기본 제공 통합을 사용할 때에는 관리할 필요가 없습니다. 하지만 툴킷이 내부에서 함축된 파이프라인 구성을 사용하는 경우에는 이 파이프라인 구성을 기초 구성이라고 합니다. 기초 구성은 지원되는 모든 소프트웨어 패키지에서 사용할 수 있는 3개의 툴킷 앱(Panel, Publisher 및 Loader)을 구성하며, {% include product %}의 소프트웨어 엔티티를 고려하여 {% include product %} 데스크톱에 표시할 소프트웨어 패키지를 결정합니다. 기초 구성에는 파일 시스템 위치 지원이 포함되지 않습니다. 프로젝트에서 기본 제공 통합을 사용할 때에는 데스크톱을 시작할 때마다 기초 구성 사본이 자동으로 업데이트되므로 통합을 항상 최신 버전으로 유지할 수 있습니다. [여기에서 릴리즈 정보를 구독](https://support.shotgunsoftware.com/hc/en-us/sections/115000020494-Integrations)하고 [여기에서 Github의 기본 구성을 확인](https://github.com/shotgunsoftware/tk-config-basic/)할 수 있습니다.
+기본 제공 통합은 구성 파일을 설정하거나 수정할 필요 없이 실행할 수 있도록 디자인되었습니다. 기본 제공 통합을 사용할 때에는 관리할 필요가 없습니다. 하지만 툴킷이 내부에서 함축된 파이프라인 구성을 사용하는 경우에는 이 파이프라인 구성을 기초 구성이라고 합니다. 기초 구성은 지원되는 모든 소프트웨어 패키지에서 사용할 수 있는 3개의 툴킷 앱(Panel, Publisher 및 Loader)을 구성하며, {% include product %}의 소프트웨어 엔티티를 고려하여 {% include product %} 데스크톱에 표시할 소프트웨어 패키지를 결정합니다. 기초 구성에는 파일 시스템 위치 지원이 포함되지 않습니다. 프로젝트에서 기본 제공 통합을 사용할 때에는 데스크톱을 시작할 때마다 기초 구성 사본이 자동으로 업데이트되므로 통합을 항상 최신 버전으로 유지할 수 있습니다. [여기에서 릴리즈 정보를 구독](https://support.shotgunsoftware.com/hc/en-us/sections/115000020494-Integrations)하고 [여기에서 Github의 기초 구성을 확인](https://github.com/shotgunsoftware/tk-config-basic/)할 수 있습니다.
 
 ### 기본 구성
 
@@ -27,7 +27,7 @@ lang: ko
 
 이전의 기본 구성 구조에 익숙한 경우 [기본 구성 업데이트 FAQ](https://support.shotgunsoftware.com/hc/en-us/community/posts/115003376154-Default-Configuration-Update-FAQ)를 참조하십시오.
 
-{% include info title="참고" content="이전 구성 구조를 찾고 계십니까? v1.1 통합 릴리즈의 경우 효율성과 가독성을 극대화하고 기본 구성의 구조를 보다 일관되게 유지할 수 있도록 기본 구성 구조를 재편성했습니다. 여전히 레거시 기본 구성을 기반으로 프로젝트를 만들 수 있습니다. 데스크톱 설정 프로젝트 마법사에 구성을 선택하라는 메시지가 표시되면 '레거시 기본값(Legacy Default)'을 선택하기만 하면 됩니다." %}
+{% include info title="참고" content="이전 구성 구조를 찾고 계십니까? v1.1 통합 릴리즈의 경우 효율성과 가독성을 극대화하고 기초 구성의 구조를 보다 일관되게 유지할 수 있도록 기본 구성 구조를 재편성했습니다. 여전히 레거시 기본 구성을 기반으로 프로젝트를 만들 수 있습니다. 데스크톱 설정 프로젝트 마법사에 구성을 선택하라는 메시지가 표시되면 '레거시 기본값(Legacy Default)'을 선택하기만 하면 됩니다." %}
 
 ## Publisher
 
@@ -196,7 +196,7 @@ Loader는 `file://` URL 해석도 지원합니다. 게시할 때 게시 중인 �
 
 ### 고급 구성
 
-PublishedFile 경로 해석을 수행하는 기본 방법에 대한 자세한 정보는 [개발자 참조 문서](http://developer.shotgridsoftware.com/tk-core/utils.html#sgtk.util.resolve_publish_path)를 참조하십시오.
+PublishedFile 경로 해석을 수행하는 기본 방법에 대한 자세한 정보는 [개발자 참조 문서](http://developer.shotgunsoftware.com/tk-core/utils.html#sgtk.util.resolve_publish_path)를 참조하십시오.
 
 고급 프로젝트 설정을 사용하는 경우 `resolve_publish` 코어 후크를 커스터마이즈하는 방식으로 로컬 파일 링크 및 `file://` URL 이상의 지원을 추가할 수 있습니다. 가능한 커스터마이즈 항목은 다음과 같습니다.
 
@@ -325,13 +325,13 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 ### 로그
 
-브라우저 통합 로그는 툴킷의 [표준 로그 위치](https://developer.shotgridsoftware.com/38c5c024/)에서 확인할 수 있습니다. 관련 로그 파일은 `tk-desktop.log` 및 `tk-shotgun.log`입니다. 또한 Google Chrome을 사용하는 경우 브라우저의 개발자 콘솔에서 몇 가지 관련 로그 출력을 사용할 수도 있습니다.
+브라우저 통합 로그는 툴킷의 [표준 로그 위치](https://developer.shotgunsoftware.com/38c5c024/)에서 확인할 수 있습니다. 관련 로그 파일은 `tk-desktop.log` 및 `tk-shotgun.log`입니다. 또한 Google Chrome을 사용하는 경우 브라우저의 개발자 콘솔에서 몇 가지 관련 로그 출력을 사용할 수도 있습니다.
 
 ### 문제 해결
 
 웹 응용프로그램과 로컬 데스크톱 사이의 통신은 복잡하기 때문에 그 과정에서 장애가 발생할 수도 있습니다. 다음은 그러한 몇 가지 상황과 장애 발생 시 취해야 하는 첫 번째 단계의 제안 사항입니다.
 
-**액션 메뉴에 "{% include product %} 데스크톱을 열거나 설치...(Open or install ShotGrid Desktop...)"가 표시됨**
+**액션 메뉴에 "{% include product %} 데스크톱을 열거나 설치...(Open or install Shotgun Desktop...)"가 표시됨**
 
 ![](images/Integration-admin-guide/install_desktop.png)
 
@@ -344,7 +344,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 ![](images/Integration-admin-guide/regenerate_certs.png)
 
-1. 시작 시 {% include product %} 데스크톱의 Websocket 서버를 시작하지 못했습니다. 이 상황은 잘못된 Websocket 서버 릴리즈가 사용자에게 공개된 경우에만 해당되며 거의 발생하지 않습니다. 이 상황에서, 로깅은 오류에 대해 설명하는 [tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/)에 표시되며 이 내용은 [{% include product %}의 지원 팀으로 전송](https://support.shotgunsoftware.com/hc/en-us/requests/new)될 수 있습니다.
+1. 시작 시 {% include product %} 데스크톱의 Websocket 서버를 시작하지 못했습니다. 이 상황은 잘못된 Websocket 서버 릴리즈가 사용자에게 공개된 경우에만 해당되며 거의 발생하지 않습니다. 이 상황에서, 로깅은 오류에 대해 설명하는 [tk-desktop.log](https://developer.shotgunsoftware.com/38c5c024/)에 표시되며 이 내용은 [{% include product %}의 지원 팀으로 전송](https://support.shotgunsoftware.com/hc/ko/requests/new)될 수 있습니다.
 
 **액션 메뉴에 표시되는 액션이 없음**
 
@@ -354,7 +354,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 1. `tk-shotgun` 엔진이 올바른 환경 YAML 파일에서 구성되었지만 해당 구성에 앱이 없습니다. 이 경우, 이 엔티티 유형에 대한 액션이 없는 것이 의도된 것일 수 있습니다.
 
-2. `tk-shotgun` 엔진이 올바른 환경 YAML 파일에서 구성되었고 앱도 있지만 메뉴에 여전히 액션이 표시되지 않습니다. 앱을 초기화하지 못한 것이 원인일 가능성이 높습니다. 이 경우 [tk-shotgun.log and tk-desktop.log](https://developer.shotgridsoftware.com/38c5c024/)에 해당 문제를 설명하는 정보가 있을 것입니다.
+2. `tk-shotgun` 엔진이 올바른 환경 YAML 파일에서 구성되었고 앱도 있지만 메뉴에 여전히 액션이 표시되지 않습니다. 앱을 초기화하지 못한 것이 원인일 가능성이 높습니다. 이 경우 [tk-shotgun.log and tk-desktop.log](https://developer.shotgunsoftware.com/38c5c024/)에 해당 문제를 설명하는 정보가 있을 것입니다.
 
 3. 이 엔티티 유형에 해당하는 환경에 `tk-shotgun`에 대한 구성이 포함되어 있지 않습니다. 최종 결과는 이 목록에 있는 1번과 동일합니다. 이 경우, 파이프라인 구성의 `pick_environment` 후크를 살펴보고 이 엔티티 유형에 대해 로드되고 있는 환경을 살펴본 후에 거기에서 `tk-shotgun`의 구성을 검증하면 됩니다.
 
@@ -372,7 +372,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 1. Websocket 서버가 아직 캐싱 액션을 완료하지 않았습니다. 이번이 프로젝트 구성에 대한 중요한 업데이트 후 검색하는 첫 번째 액션인 경우 프로세스를 완료하는 데 시간이 약간 걸릴 수 있습니다. 조금 더 기다리다가 아직 진행 중인지 확인하려면 `tk-desktop.log`의 내용을 살펴봅니다.
 
-2. Websocket 서버가 계속 응답하지 않습니다. 이런 상황은 드물게 나타나지만 `tk-desktop.log`를 살펴보았을 때 액션 요청의 결과로 발생하는 추가 프로세스가 없는 것이 확실하다면, [ShotGrid 지원 팀에 문의](https://support.shotgunsoftware.com/hc/en-us/requests/new)하고 관련 로그 데이터를 제공합니다.
+2. Websocket 서버가 계속 응답하지 않습니다. 이런 상황은 드물게 나타나지만 `tk-desktop.log`를 살펴보았을 때 액션 요청의 결과로 발생하는 추가 프로세스가 없는 것이 확실하다면, [ShotGrid 지원 팀에 문의](https://support.shotgunsoftware.com/hc/ko/requests/new)하고 관련 로그 데이터를 제공합니다.
 
 3. 사용자가 두 개 이상의 {% include product %} 사이트에서 작업 중입니다. 단일 사이트에서 {% include product %} 데스크톱을 인증한 상태에서 두 번째 {% include product %} 사이트에서 메뉴 액션을 요청하면 사용자에게 {% include product %} 데스크톱을 다시 시작하여 새 사이트에 로그인하라는 메시지가 표시됩니다. 해당 요청을 무시하면 두 번째 사이트는 메뉴 액션 목록을 받을 수 없습니다.
 
@@ -415,7 +415,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 **로컬에서 호스팅되는 사이트를 통해 {% include product %} 데스크톱 실행**
 
-{% include product %} 사이트 URL이 `shotgunstudio.com`으로 끝나지 않는 경우 로컬 {% include product %}사이트에서 실행 중임을 의미합니다. 이 경우 아직 사이트가 {% include product %} 통합에 맞춰 완벽하게 준비되지 않았을 가능성이 있기 때문에 {% include product %} 팀에서 현장을 방문하여 통합을 진행하기 전에 약간의 조정 작업을 해야 할 수 있습니다! 이 경우 [티켓을 제출](https://support.shotgunsoftware.com/hc/en-us/requests/new)하면 준비를 지원해 드리겠습니다.
+{% include product %} 사이트 URL이 `shotgunstudio.com` 또는 `shotgrid.autodesk.com`으로 끝나지 않는 경우 로컬 {% include product %} 사이트에서 실행 중임을 의미합니다. 이 경우 아직 사이트가 {% include product %} 통합에 맞춰 완벽하게 준비되지 않았을 가능성이 있기 때문에 {% include product %} 팀에서 현장을 방문하여 통합을 진행하기 전에 약간의 조정 작업을 해야 할 수 있습니다! 이 경우 [티켓을 제출](https://support.shotgunsoftware.com/hc/en-us/requests/new)하면 준비를 지원해 드리겠습니다.
 
 **로컬에서 호스팅되는 사이트를 통해 앱 스토어에 연결**
 
@@ -423,7 +423,7 @@ Linux: ~/.shotgun\<site_name>\site.basic.desktop\tk-desktop
 
 `app_store_http_proxy: <proxy_server_address>`
 
-여기서 `<proxy_server_address>`는 [개발자 문서](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)에 설명된 규칙을 따르는 문자열입니다.
+여기서 `<proxy_server_address>`는 [개발자 문서](http://developer.shotgridsoftware.com/python-api/reference.html?highlight=reference%20methods#shotgun-methods)
 
 프로젝트에 따라 이 설정을 재지정해야 하는 경우 프로젝트의 파이프라인 구성에 있는 `config/core/shotgun.yml`에서 수행할 수 있습니다.
 
@@ -457,7 +457,7 @@ _시나리오: 아티스트의 워크스테이션이 인터넷에 연결되어 �
 
 - 인터넷에 연결된 워크스테이션에서 {% include product %} 데스크톱을 실행합니다. 시작할 때 최신 업그레이드가 자동으로 다운로드됩니다.
 - 옵션 1: 공유 데스크톱 번들
-- [번들 캐시](https://developer.shotgridsoftware.com/7c9867c0/)를 모든 컴퓨터가 액세스할 수 있는 공유 위치에 복사합니다.
+- [번들 캐시](https://developer.shotgunsoftware.com/7c9867c0/)를 모든 컴퓨터가 액세스할 수 있는 공유 위치에 복사합니다.
 - 오프라인 컴퓨터에서 `SHOTGUN_BUNDLE_CACHE_FALLBACK_PATHS` 환경 변수가 이 위치를 가리키도록 설정합니다.
 - 오프라인 컴퓨터에서 데스크톱을 시작하면 번들 캐시에서 사용할 수 있는 최신 업그레이드를 선택합니다.
 - 옵션 2: 로컬 배포
@@ -494,12 +494,12 @@ _시나리오: 프로젝트가 거의 마무리 단계인데 {% include product 
 
 - 업데이트는 로컬 컴퓨터에 다운로드됩니다.
 - 다음에 사용자가 인터넷에 연결된 상태에서 데스크톱을 시작하면 기초 구성 `v1.0.36` 및 해당 기초 구성의 모든 관련 코드가 컴퓨터로 다운로드됩니다.
-- `basic.*`은 기본 구성에 있는 모든 플러그인이 이 재정의를 선택하게 됨을 의미합니다. 예를 들어, Nuke 및 Maya 통합만 중지하려는 경우 `basic.maya, basic.nuke`를 지정하면 됩니다.
+- `basic.*`은 기초 구성에 있는 모든 플러그인이 이 재정의를 선택하게 됨을 의미합니다. 예를 들어, Nuke 및 Maya 통합만 중지하려는 경우 `basic.maya, basic.nuke`를 지정하면 됩니다.
 - 테스트하려면 이 파이프라인 구성 엔티티를 복제한 다음 `User Restrictions` 필드에 사용자 이름을 추가하면 됩니다. 이렇게 하면 엔티티를 제한하게 되는데, 사용자에게만 적용되고 다른 사용자에게는 영향을 주지 않습니다. 그런 다음 이 복제 구성에서 Maya 또는 다른 소프트웨어를 시작하여 예상 통합 버전을 실행 중인지 확인할 수 있습니다.
 
 **알려진 문제**
 
-- Flame 통합의 네임스페이스는 `basic.flame`으로 지정되기 때문에 `basic.*`의 일부로 생각될 수 있습니다. 그러나 실제로 Flame 통합은 기본 구성에 포함되지 않습니다. 따라서 프로젝트에 Flame을 사용 중이고 이 재정의를 구현하는 경우 Flame 통합의 작동이 중지됩니다.
+- Flame 통합의 네임스페이스는 `basic.flame`으로 지정되기 때문에 `basic.*`의 일부로 생각될 수 있습니다. 그러나 실제로 Flame 통합은 기초 구성에 포함되지 않습니다. 따라서 프로젝트에 Flame을 사용 중이고 이 재정의를 구현하는 경우 Flame 통합의 작동이 중지됩니다.
 - 이 솔루션은 특히 Flame에 있어 추가 파이프라인 구성 재정의를 생성하게 됩니다.
 - 이름: `Primary`
 - 프로젝트: 잠그려는 프로젝트(또는 모든 프로젝트에 대해 "없음(None)")

@@ -45,7 +45,7 @@ If you plan to activate any of the Traffic Isolation feature, you will need a wa
   * AWS Direct Connect
   * Other VPN solution
 
-We highly recommand you to leverage Direct Connect. Direct Connect guarantees the lowest latency possible to the ShotGrid services, a consistent network experience, and allow you to leverage the optimization AWS is relying on to guarantee an optimal performance across the globe.
+We highly recommand you to leverage Direct Connect. Direct Connect guarantees the lowest latency possible to the {% include product %} services, a consistent network experience, and allow you to leverage the optimization AWS is relying on to guarantee an optimal performance across the globe.
 
 ## Next Step
 

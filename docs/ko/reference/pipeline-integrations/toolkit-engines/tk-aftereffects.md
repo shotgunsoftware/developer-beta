@@ -140,7 +140,7 @@ shelf_favorites:
 - 또한 설정된 경우 `SGTK_PHOTOSHOP_NETWORK_DEBUG`도 적용됩니다.
 - `SHOTGUN_ADOBE_PYTHON` - 엔진을 시작할 때 사용할 Python 실행 파일의 경로입니다. 설정되지 않은 경우 시스템 Python이 사용됩니다. Photoshop이 {% include product %} 데스크톱과 같은 Python 프로세스에서 또는 tk-shell 엔진을 통해 시작되면 해당 프로세스에서 사용되는 Python이 Photoshop 통합에서 사용됩니다.
 
-참고: Adobe 프레임워크에 추가 환경 변수가 존재합니다. 자세한 내용은 [개발자 설명서](https://developer.shotgridsoftware.com/tk-framework-adobe/)를 참조하십시오.
+참고: Adobe 프레임워크에 추가 환경 변수가 존재합니다. 자세한 내용은 [개발자 설명서](https://developer.shotgunsoftware.com/tk-framework-adobe/)를 참조하십시오.
 
 
 ## 컨텍스트 필드 표시 후크
@@ -163,6 +163,6 @@ shelf_favorites:
 
 ## After Effects API
 
-After Effects API에 대한 자세한 내용은 [개발자 설명서](https://developer.shotgridsoftware.com/tk-aftereffects)에서 참조하십시오.
+After Effects API에 대한 자세한 내용은 [개발자 설명서](https://developer.shotgunsoftware.com/tk-aftereffects)에서 참조하십시오.
 
 

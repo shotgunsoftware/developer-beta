@@ -9,7 +9,7 @@ lang: zh_CN
 
 ## 简介
 
-本手册概述了什么是 Toolkit 应用，说明了如何创建应用，并介绍了有关应用开发的一些基础知识。ShotGrid Pipeline Toolkit 不仅是 ShotGrid Software 维护的一套应用和插件，还是一个可用来轻松快速构建自定义工作流工具的开发平台！
+本手册概述了什么是 Toolkit 应用，说明了如何创建应用，并介绍了有关应用开发的一些基础知识。{% include product %} Pipeline Toolkit 不仅是 {% include product %} Software 维护的一套应用和插件，还是一个可用来轻松快速构建自定义工作流工具的开发平台！
 
 - [什么是 Toolkit 应用？](#what-is-a-toolkit-app)
 - [创建自己的应用](#creating-your-own-app)
@@ -34,18 +34,18 @@ lang: zh_CN
 
 Toolkit 应用可定义如下：
 
-- 通常由最终用户使用 ShotGrid 集成运行的工具。
-- 这些应用通常具有图形用户界面，用户可以使用该界面来指导应用的操作，但这不是必需的。应用也可以是向集成注册的命令，由用户从宿主软件中的 ShotGrid 菜单触发。
+- 通常由最终用户使用 {% include product %} 集成运行的工具。
+- 这些应用通常具有图形用户界面，用户可以使用该界面来指导应用的操作，但这不是必需的。应用也可以是向集成注册的命令，由用户从宿主软件中的 {% include product %} 菜单触发。
 - 它们可以包含 API/公共方法，其他流程或应用可以通过这些方法进行交互。
 - 它们可以支持多平台且与软件无关。
-- 可以将它们设置为根据[环境](https://developer.shotgridsoftware.com/zh_CN/487a9f2c/#%E4%BB%80%E4%B9%88%E6%98%AF%E7%8E%AF%E5%A2%83)进行不同配置。
+- 可以将它们设置为根据[环境](https://developer.shotgridsoftware.com/zh_CN/487a9f2c/?title=Environment+Configuration+Reference#what-is-an-environment)进行不同配置。
 - 它们可以支持上下文感知。例如，应用可以识别用户正在处理的任务，并执行相应的动作。
 - 只能从 Toolkit 插件运行它们。
 
 Toolkit 应用由 Toolkit 插件初始化。[插件](https://developer.shotgridsoftware.com/tk-core/platform.html#engines)设计为在特定软件环境中运行，它们在其中提供用于运行 Toolkit 应用的界面。插件消除了需要从应用处理各种软件环境的复杂性。这意味着，应用只需专注于提供实现其用途的功能，无需考虑其他方面，例如，处理窗口父子关系、跟踪用户的上下文或提供用于启动本身的快捷方式。
 
 ## 创建自己的应用。
-ShotGrid Software 维护和发布的应用和插件全部开源，可从 [GitHub](https://github.com/shotgunsoftware) 获取它们。
+{% include product %} Software 维护和发布的应用和插件全部开源，可从 [GitHub](https://github.com/shotgunsoftware) 获取它们。
 
 本部分介绍如何使用我们的入门模板创建新应用。
 我们假设您熟悉 GitHub 和 Git 工作流。但是请注意，即使您不使用 Git 作为源代码管理解决方案，也可以进行 Toolkit 开发。
@@ -65,7 +65,8 @@ ShotGrid Software 维护和发布的应用和插件全部开源，可从 [GitHub
 ## 第 3 部分：将应用添加到配置
 建议阅读“[添加应用](../getting-started/installing_app.md)”手册，此手册详细介绍了如何将应用添加到配置。
 
-在将应用添加到配置时，需要考虑应用的使用位置，即，可能只在 Nuke 中、在多个不同的软件中或与 ShotGrid Desktop 分开单独使用。
+在将应用添加到配置时，需要考虑应用的使用位置，即，可能只在 Nuke 中、在多个不同的软件中或与 {% include product %} Desktop 分开单独使用。
+
 此外，还需要考虑应用将依赖的上下文。
 例如，您的应用仅在您知道用户正在处理的任务时才能运行，还是只要知道项目就可以运行？
 了解这一点将决定需要向哪些环境 YAML 和插件添加应用设置。
@@ -131,7 +132,7 @@ template = app.get_setting("save_template")
 
 如果您知道将要使用框架，可以将其添加到清单文件中。
 
-例如，如果您计划为应用使用 Qt 控件和 ShotGrid 实用程序框架，请将以下内容添加到 `info.yml` 中：
+例如，如果您计划为应用使用 Qt 控件和 {% include product %} 实用程序框架，请将以下内容添加到 `info.yml` 中：
 
 ```python
 # the frameworks required to run this app
@@ -157,21 +158,22 @@ frameworks:
 有关框架及其用途的详细信息，请参见以下链接：
 
 - [Qt 控件框架](https://developer.shotgridsoftware.com/tk-framework-qtwidgets/)
-- [ShotGrid 实用程序框架](https://developer.shotgridsoftware.com/tk-framework-shotgunutils/)
+- [{% include product %} 实用程序框架](https://developer.shotgridsoftware.com/tk-framework-shotgunutils/)
 
 ### 重新加载更改
 
-如果您在 Maya 等软件中测试应用，那么只要您的配置中有一个或多个开发项，Toolkit 就会自动将**“Reload and Restart”**选项添加到 ShotGrid 菜单中。![ShotGrid 菜单中的“Reload and Restart”选项](./images/reload-restart.png)
+如果您在 Maya 等软件中测试应用，那么只要您的配置中有一个或多个开发项，Toolkit 就会自动将**“Reload and Restart”**选项添加到 {% include product %} 菜单中。![{% include product %} 菜单中的“Reload and Restart”选项](./images/reload-restart.png)
 
 单击此选项将重新加载配置和代码，然后重新启动插件。这意味着您可以快速进行迭代：只需启动 Maya 一次，之后每次做出所需的代码或配置更改时，只需单击**“Reload and Restart”**按钮，即可调入这些更改。
 
 {% include info title="注意" content="如果屏幕上有任何 UI 处于激活状态，这些 UI 不会自动更新，您必须进入菜单重新启动它们。"%}
 
 ## 第 5 部分：测试
-当您想要测试代码时，可以轻松邀请其他用户访问您的开发沙盒，方法是将他们添加到 ShotGrid 中 `PipelineConfiguration` 实体的 `User Restrictions` 字段中。
-添加用户后，他们随即就会在 ShotGrid Create 中自己的菜单和浏览器动作中看到新条目，以及一个用于在 ShotGrid Desktop 中选取配置的选项。
+当您想要测试代码时，可以轻松邀请其他用户访问您的开发沙盒，方法是将他们添加到 {% include product %} 中 `PipelineConfiguration` 实体的 `User Restrictions` 字段中。
 
-![ShotGrid Desktop 中的可选择开发配置](./images/dev-configuration.png)
+添加用户后，他们随即就会在 {% include product %} Create 中自己的菜单和浏览器动作中看到新条目，以及一个用于在 {% include product %} Desktop 中选取配置的选项。
+
+![{% include product %} Desktop 中的可选择开发配置](./images/dev-configuration.png)
 
 {% include info title="注意" content="确保他们也有权查看您的应用代码，否则应用将不会加载。" %}
 
@@ -179,7 +181,7 @@ frameworks:
 
 在[第 3 部分](#part-3---adding-the-app-to-your-config)中，已使用 dev 描述符将配置设置为指向应用。对于发布的软件，您希望确保应用可供所有用户访问，并且对内容进行版本控制，以便安全、轻松地升级。
 
-ShotGrid 提供的所有应用均使用 Toolkit 应用商店跟踪更新和版本发布，它们带有一个类似如下的 location 标记：
+{% include product %} 提供的所有应用均使用 Toolkit 应用商店跟踪更新和版本发布，它们带有一个类似如下的 location 标记：
 
 ```yaml
 location:
@@ -193,7 +195,7 @@ location:
 有几个不同的选项可用于为应用版本提供来源。
 
 - [Git](https://developer.shotgridsoftware.com/tk-core/descriptor.html#tracking-against-tags-in-git) 和 [GitHub](https://developer.shotgridsoftware.com/tk-core/descriptor.html#tracking-against-releases-on-github)
-- [ShotGrid 上传](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)
+- [{% include product %} 上传](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-at-a-file-attachment-in-shotgun)
 - [本地路径](https://developer.shotgridsoftware.com/tk-core/descriptor.html#pointing-to-a-path-on-disk)
 
 在您的制作配置中，可以添加应用，并转为使用符合您的需求的描述符。
@@ -213,10 +215,11 @@ Toolkit 支持即时使用 Git (http://git-scm.com/)，在对配置运行 `tank 
 当您在 Git 中创建好第一个标记后（例如 `v1.0.0`），就可以将配置设置为使用指向您的标记的 Git 描述符。然后，您就可以直接运行 `tank updates`，如果已创建新标记，程序将提示您是否要升级。
 此时，整个工作流便与官方应用商店的流程完全相同。
 
-{% include warning title="注意" content="Git 描述符适用于[集中式配置](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)，采用这种配置时，通常由管理员对应用运行缓存，并且缓存的应用会存储到所有用户均可访问的中心位置。但是，如果您使用的是[分布式配置](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)，那么这种描述符可能不适合。您的应用将按用户下载，这意味着每个用户都需要安装并设置 Git 才能向您的库认证身份并访问代码。" %}
+{% include warning title="注意" content="Git 描述符适用于[集中式配置](https://developer.shotgridsoftware.com/tk-core/initializing.html#centralized-configurations)，采用这种配置时，通常由管理员对应用运行缓存，并且缓存的应用会存储到所有用户均可访问的中心位置。 但是，如果您使用的是[分布式配置](https://developer.shotgridsoftware.com/tk-core/initializing.html#distributed-configurations)，那么这种描述符可能不适合。 您的应用将按用户下载，这意味着每个用户都需要安装并设置 Git 才能向您的库认证身份并访问代码。" %}
 
 ## 修改现有应用
-有时，我们并不会使用空白的入门模板从头创建应用，而是需要为现有应用（例如 ShotGrid Software 的某个标准应用）添加一项小功能。
+有时，我们并不会使用空白的入门模板从头创建应用，而是需要为现有应用（例如 {% include product %} Software 的某个标准应用）添加一项小功能。
+
 处理修改版的应用时，您通常会想要比照源应用，确保定期下载更改和错误修复。
 
 当您进行这类开发时，首先是提取父代码，然后应用自己的更改，再将此版本发布到您的工作流中。
@@ -241,4 +244,4 @@ Toolkit 支持即时使用 Git (http://git-scm.com/)，在对配置运行 `tank 
 我们随后可以将更改合并到应用的主版本中。
 或者，在我们的[路线图页面](https://www.shotgunsoftware.com/roadmap/)上添加有关新想法的建议。
 
-如果您开发了完整的应用并愿意与社区共享，请在[论坛](https://community.shotgunsoftware.com/)上告诉大家！
+如果您开发了完整的应用并愿意与社区共享，请在[论坛](https://community.shotgridsoftware.com/)上告诉大家！

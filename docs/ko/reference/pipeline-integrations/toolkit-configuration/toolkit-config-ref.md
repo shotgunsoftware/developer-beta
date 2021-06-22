@@ -130,7 +130,7 @@ engines:
 
 `dev` 디스크립터에는 `app_store` 디스크립터와 다른 설정이 있습니다. 다른 설정을 가져올 수 있지만 디스크에 있는 앱 위치를 가리키는 `path` 설정으로 간단하게 설정할 수 있습니다.
 
-사용 가능한 모든 디스크립터 유형 및 해당 설정에 대한 자세한 내용은 [Toolkit Core API 문서의 디스크립터 섹션](https://developer.shotgridsoftware.com/tk-core/descriptor.html)을 참조하십시오.
+사용 가능한 모든 디스크립터 유형 및 해당 설정에 대한 자세한 내용은 [Toolkit Core API 문서의 디스크립터 섹션](https://developer.shotgunsoftware.com/tk-core/descriptor.html)을 참조하십시오.
 
 ### 앱 블록
 
@@ -345,7 +345,7 @@ engines:
 * [툴킷 기본 사항 안내서: 파이프라인 구성 편집](../../guides/pipeline-integrations/getting-started/editing_app_setting.md)
 * [툴킷 기본 사항 안내서: 앱 추가](../../guides/pipeline-integrations/getting-started/installing_app.md)
 * [애니메이션 파이프라인 튜토리얼](../../guides/pipeline-integrations/workflows/pipeline-tutorial.md)
-* [디스크립터 참조 설명서](https://developer.shotgridsoftware.com/tk-core/descriptor.html#descriptors)
+* [디스크립터 참조 설명서](https://developer.shotgunsoftware.com/tk-core/descriptor.html#descriptors)
 * [웨비나: 툴킷 관리](https://youtu.be/7qZfy7KXXX0)
 * [파일 시스템 구성 참조](https://support.shotgunsoftware.com/hc/ko/articles/219039868-Integrations-File-System-Reference)
 * [기본 구성 환경 구조 읽어보기](https://github.com/shotgunsoftware/tk-config-default2/blob/master/env/README.md)

@@ -23,7 +23,7 @@ lang: ja
 
 このガイドを使用してカスタマイズ可能なプロジェクトの設定を作成するには、以下が必要になります。
 
-1. アクティブな {% include product %} サイト。[こちら](https://www.shotgunsoftware.com/jp/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management)から {% include product %} に登録し、30 日間の無償体験版を取得して試してみることができます。
+1. アクティブな {% include product %} サイト。[こちらから {% include product %} に登録](https://www.shotgridsoftware.com/signup/?utm_source=autodesk.com&utm_medium=referral&utm_campaign=creative-project-management)し、30 日間の無償体験版を取得して試してみることができます。
 2. {% include product %} Desktop。Desktop がインストールされていない場合は、[こちらのリンク](https://support.shotgunsoftware.com/hc/ja/articles/115000068574-Integrations-user-guide#Installation%20of%20Desktop)に従ってインストールを開始できます。
 3. プロジェクト ファイルおよびパイプライン設定を保存できるファイルシステムへのアクセス権。ファイルシステム上に `Shotgun` というフォルダを作成し、その中に `projects` と `configs` という 2 つのフォルダを作成します。
 
@@ -32,8 +32,8 @@ lang: ja
 {% include product %} Desktop の[Advanced Project Setup]ウィザードは、既定の設定に基づいてパイプライン設定を生成します。既定の設定により、パイプライン プロセスをサポートするカスタマイズ可能な設定、アプリ、UI 要素を備えた、構築のための強固な基盤が提供されます。ユーザはプロジェクトのパイプラインに関するニーズに合わせて、このウィザードで作成される設定を編集したり、拡張したりできます。
 
 既定の設定は、次のとおりです。
-* ディスク上のファイルの配置場所を決定する、ファイルシステムの基本的なスキーマおよびテンプレート
-* ユーザのソフトウェア アプリケーション内から {% include product %} およびパイプラインの機能を直接操作できる、サポート対象のすべての[ソフトウェア統合](https://support.shotgunsoftware.com/hc/ja/articles/219039798-Integrations-Apps-and-Engines)
+* ディスク上のファイルの配置場所を決定する、ファイルシステムの基本的なスキーマおよびテンプレート。
+* ユーザのソフトウェア アプリケーション内から {% include product %} およびパイプラインの機能を直接操作できる、サポート対象のすべての[ソフトウェア統合](https://support.shotgunsoftware.com/hc/ja/articles/219039798-Integrations-Apps-and-Engines)。
 
 カスタマイズするには、想像力、賢さ、プログラミング上の知識の他に、{% include product %} コミュニティ内の他のユーザが作成した作品から借用する能力が必要です。
 
@@ -51,7 +51,7 @@ lang: ja
 | 更新 | 自動的に更新 | 手動で更新 |
 | ファイルシステムのサポート | ファイルシステム スキーマはサポートされない | フォルダ構造とファイルの命名基準をサポートするためのツールが付属 |
 | ソフトウェア統合 | 3ds Max、Houdini、Maya、Nuke、Photoshop、Flame | 基本設定に加えて、Hiero、Motionbulder、Mari |
-| Toolkit アプリ | {% include product %} Panel、Publisher、Loader | 基本設定に加えて、Workfiles、Snapshot、Scene Breakdown、Nuke 書き込みノード、Houdini Mantra ノードなど |
+| Toolkit アプリ |  {% include product %} Panel、Publisher、Loader | 基本設定に加えて、Workfiles、Snapshot、Scene Breakdown、Nuke 書き込みノード、Houdini Mantra ノードなど |
 
 このガイドでは、{% include product %} Desktop のウィザードを使用し、既定の設定に基づいてプロジェクトのパイプライン設定を生成します。この設定を生成すると、独自のプロダクション パイプラインをサポートするために必要なカスタマイズを実行できるようになります。
 
@@ -81,17 +81,17 @@ lang: ja
 
 **手順 4:** プロジェクトがロードされたら、画面の右下にあるプロファイルの**アバター**を選択します。ポップアップメニューで、**[Advanced project setup...]**を選択して、ウィザードを開始します。
 
-![高度なプロジェクトを設定](./images/advanced_config/6_advanced_project_setup.png)
+![高度なプロジェクト設定](./images/advanced_config/6_advanced_project_setup.png)
 
 ダイアログ ボックスが開き、[{% include product %} Default]が選択された状態で 4 つのオプションが表示されます。この時点で、プロジェクトのパイプライン設定のベースを既存のプロジェクトの設定にするのか、GIT リポジトリの設定にするのか、それともディスクのパスにするのかを選択できます。
 
-この演習では**[{% include product %} Default]**を選択します。このオプションを使用すると、{% include product %} の既定の設定に基づいてプロジェクトのパイプライン設定が作成されます。
+この演習では**[{% include product %} Default]** を選択します。このオプションを使用すると、{% include product %} の既定の設定に基づいてプロジェクトのパイプライン設定が作成されます。
 
 ![設定を選択](./images/advanced_config/7_select_config.png)
 
 **手順 5:** **[Continue]**を選択します。
 
-ダイアログ ボックスが開き、**[Default]**が選択された状態で 2 つのオプションが表示されます。この時点で、[Legacy Default]設定オプションを選択することができます。この設定は、まだ以前のバージョンの {% include product %} を使用しているスタジオのために、以前のバージョンの {% include product %} の設定を継承しています。この演習では[Default]を使用します。
+ダイアログ ボックスが開き、**[Default]**が選択された状態で 2 つのオプションが表示されます。この時点で、[Legacy Default]設定オプションを選択することができます。この設定は、まだ以前のバージョンの {% include product %} を使用しているスタジオのために、以前のバージョンの Shotgun の設定を継承しています。この演習では[Default]を使用します。
 
 ![設定を選択](./images/advanced_config/8_select_config.png)
 
@@ -107,7 +107,7 @@ lang: ja
 
 ![保存場所を定義](./images/advanced_config/10_define_storage2.png)
 
-{% include product %} Toolkit では、Linux、Mac、Windows の 3 つのオペレーティング システムをサポートしています。
+ {% include product %} Toolkit では、Linux、Mac、Windows の 3 つのオペレーティング システムをサポートしています。
 
 **手順 8:** プロジェクト データを保存するのに利用するオペレーティング システムの横にあるフィールドを選択します。フォルダ アイコンを選択し、この演習の前にファイルシステム上に作成したプロジェクト フォルダにナビゲートします。
 
@@ -157,13 +157,13 @@ Toolkit は、2 つのいずれかの設定で機能します。パイプライ�
 
 ## 高度なトピック
 
-{% include product %} Toolkit では、さまざまな方法で設定の編集、クローン作成、またはやり直しを行うことができます。既存の設定を拡張することにより、作業時間を短縮し、ネットワーク内の他のユーザが作成したすべての便利なツールにアクセスできます。広大な {% include product %} の[コミュニティ](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups&hl=ja#!forum/shotgun-dev)を利用して、必要な設定を取得することができます。{% include product %} のコミュニティは共有コミュニティです。そのため、他のユーザに対して親切に対応し、感謝を示し、あなたのジョブに役立つ設定を作成してくれたユーザに賞賛の念を示すことが大切です。そして「お返し」をすることを忘れてはいけません。それこそが {% include product %} の仲間をサポートし、このコミュニティへの参加が特別なことであることを示す理由なのです。
+ {% include product %} Toolkit では、さまざまな方法で設定の編集、クローン作成、またはやり直しを行うことができます。既存の設定を拡張することにより、作業時間を短縮し、ネットワーク内の他のユーザが作成したすべての便利なツールにアクセスできます。広大な {% include product %}[ のコミュニティ](https://groups.google.com/a/shotgunsoftware.com/forum/?fromgroups&hl=ja#!forum/shotgun-dev) を利用して、必要な設定を取得することができます。{% include product %} のコミュニティは共有コミュニティです。そのため、他のユーザに対して親切に対応し、感謝を示し、あなたのジョブに役立つ設定を作成してくれたユーザに賞賛の念を示すことが大切です。そして「お返し」をすることを忘れてはいけません。それこそが {% include product %} の仲間をサポートし、このコミュニティへの参加が特別なことであることを示す理由なのです。
 
 次に、設定による楽しみ方の例をいくつかを示します。
 
 ### コマンド ラインを使用して既定の設定を作成する
 
-いずれかのプロジェクト設定内で `tank` コマンドを使用すると、端末から管理コマンドを実行できます。各プロジェクトには専用の `tank` コマンドがあります。`tank setup_project` コマンドの機能は、[Advanced Setup Wizard]の機能と似ていて、既存のプロジェクトの設定や既定の設定に基づいて、プロジェクトで使用される編集可能な設定をディスク上に作成することができます。[ の実行方法については、`tank setup_project`こちら](https://support.shotgunsoftware.com/hc/ja/articles/219033178#setup_project)を、[ コマンドの詳細については、`tank`こちら](https://support.shotgunsoftware.com/hc/ja/articles/219033178#Using%20the%20tank%20command)を参照してください。
+いずれかのプロジェクト設定内で `tank` コマンドを使用すると、端末から管理コマンドを実行できます。各プロジェクトには専用の `tank` コマンドがあります。`tank setup_project` コマンドの機能は、[Advanced Setup Wizard]の機能と似ていて、既存のプロジェクトの設定や既定の設定に基づいて、プロジェクトで使用される編集可能な設定をディスク上に作成することができます。`tank setup_project` の実行方法については、[こちら](https://support.shotgunsoftware.com/hc/ja/articles/219033178#setup_project)を、`tank` コマンドの詳細については、[ こちら](https://support.shotgunsoftware.com/hc/ja/articles/219033178#Using%20the%20tank%20command)を参照してください。
 
 ### プロダクション中に設定を編集する
 
@@ -187,4 +187,4 @@ Toolkit は、2 つのいずれかの設定で機能します。パイプライ�
 
 理想的なのは、特定のタスクに合わせて施設を最適化することです。複数のルート フォルダを使用すると、1 台のサーバで日常業務を行い、もう 1 台のサーバでインタラクティブな処理を行うようビデオの再生を最適化することができます。Toolkit では複数のストレージのルートを操作し、上記のようなワークフローを容易に実行することができます。[単一ルート設定からマルチルート設定への変換方法](../../../quick-answers/administering/convert-from-single-root-to-multi.md)を確認してください。
 
-これで、プロジェクトのパイプライン設定が作成されたので、編集してみましょう。詳細については、次のガイドの「[パイプライン設定の編集](./editing_app_setting.md)」にアクセスしてください。
+これで、プロジェクトのパイプライン設定が作成されたので、編集してみましょう。詳細については、次のガイドの「[パイプライン設定の編集](editing_app_setting.md)」にアクセスしてください。

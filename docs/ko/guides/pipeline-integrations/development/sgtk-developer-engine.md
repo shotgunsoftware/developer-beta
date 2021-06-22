@@ -31,14 +31,14 @@ lang: ko
 그러면 다양한 엔진이 내부 복잡성에 따라 이 기본 클래스의 여러 요소를 다시 구현합니다.
 엔진은 일반적으로 다음과 같은 서비스를 처리 또는 제공합니다.
 
-- 메뉴 관리. 엔진 시작 시 앱이 로드되고 나면 엔진은 해당 ShotGrid 메뉴를 생성하고, 여러 앱을 이 메뉴에 추가합니다.
+- 메뉴 관리. 엔진 시작 시 앱이 로드되고 나면 엔진은 해당 {% include product %} 메뉴를 생성하고, 여러 앱을 이 메뉴에 추가합니다.
 - 일반적으로 로깅 방식은 소프트웨어의 로그/콘솔에 기록하도록 재정의됩니다.
 - UI 대화상자 및 창을 표시하는 방식. 엔진이 QT를 처리하는 방식이 기본적인 기본 클래스 동작과 다를 경우 이 방식은 툴킷 앱 및 기본 호스트 소프트웨어 창 관리 설정에서 시작한 창을 원활하게 통합할 수 있도록 재정의됩니다.
 - 앱에 의해 등록된 모든 명령 객체를 포함하는 `commands` 사전(dictionary) 제공. 보통 메뉴 항목이 생성될 때 이 사전에 액세스합니다.
 - 기본 클래스는 시작 프로세스의 여러 지점에서 실행되는 다양한 init 및 destroy 방식을 제공합니다. 시작 및 종료 실행을 제어하기 위해 이 방식을 재정의할 수 있습니다.
 - 자동 소프트웨어 탐색 및 시작 시 `tk-multi-launchapp`에 의해 호출되는 시작 로직.
 
-엔진은 [`sgtk.platform.start_engine()`](https://developer.shotgridsoftware.com/tk-core/platform.html#sgtk.platform.start_engine) 또는 [`sgtk.bootstrap.ToolkitManager.bootstrap_engine()`](https://developer.shotgridsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 방식을 사용하여 툴킷 플랫폼에 의해 시작됩니다.
+엔진은 [`sgtk.platform.start_engine()`](https://developer.shotgunsoftware.com/tk-core/platform.html#sgtk.platform.start_engine) 또는 [`sgtk.bootstrap.ToolkitManager.bootstrap_engine()`](https://developer.shotgunsoftware.com/tk-core/initializing.html#sgtk.bootstrap.ToolkitManager.bootstrap_engine) 방식을 사용하여 툴킷 플랫폼에 의해 시작됩니다.
 이 명령은 구성 파일을 읽고, 엔진을 시작하고, 모든 앱을 로드하는 등의 역할을 수행합니다.
 엔진의 목표는 일단 시작된 후에 앱에 일관된 Python/QT 인터페이스를 제공하는 것입니다.
 모든 엔진이 같은 기본 클래스를 구현하므로 앱은 UI 생성 등의 작업을 수행하기 위해 엔진에서 이 방식을 호출할 수 있습니다.
@@ -46,17 +46,17 @@ lang: ko
 
 ## 시작하기 전에 알아야 할 사항
 
-ShotGrid 팀에서는 가장 일반적으로 사용되는 컨텐츠 생성 소프트웨어에 대한 [통합](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)을 제공합니다.
+Shotgun 팀에서는 가장 일반적으로 사용되는 컨텐츠 생성 소프트웨어에 대한 [통합](https://support.shotgunsoftware.com/hc/ko/articles/219039798-Integrations-Apps-and-Engines)을 제공합니다.
 [툴킷 커뮤니티 멤버가 빌드하고 공유한](https://support.shotgunsoftware.com/hc/ko/articles/219039828-Community-Shared-Integrations) 엔진도 있습니다. 하지만 툴킷 엔진이 없는 소프트웨어에 대한 파이프라인 통합이 필요한 경우도 있습니다.
 
 시간과 리소스가 있다면 누락된 엔진 중 사용하고 싶은 엔진을 직접 작성하여 툴킷 커뮤니티(그리고 여러분 자신)를 지원해 주시기 바랍니다!
 
-코드 작성을 시작하기 전에 [저희에게 알려 주십시오!](toolkitsupport@shotgunsoftware.com) 약속을 드리기는 어렵지만 귀하의 의견을 제안해 주시면 감사하겠습니다.
+코드 작성을 시작하기 전에 [저희에게 알려 주십시오!](https://knowledge.autodesk.com/ko/contact-support) 약속을 드리기는 어렵지만 귀하의 의견을 제안해 주시면 감사하겠습니다.
 관심이 있거나 같은 엔진에서 작업한 경험이 있는 다른 사용자들과 연결해 드릴 수 있을 것입니다.
 가능한 경우 툴킷을 통합하려는 소프트웨어의 기술 담당자나 개발자와의 커뮤니케이션 채널을 열어 두면
 가능성이나 장애물에 대한 정보를 파악할 수 있어 작업을 진행하는 데 도움이 될 것입니다.
 커뮤니케이션 채널을 설정하고 생각하고 있는 기본적인 사항에 대한 이야기를 나눈 후에는 저희 팀을 대화에 초대해 함께 미팅을 진행하면서 엔진의 특정 요소에 대한 대화를 나눌 수 있습니다.
-[ShotGrid 커뮤니티 포럼](https://community.shotgunsoftware.com/c/pipeline)에서 툴킷 커뮤니티에 참여할 수도 있습니다.
+[{% include product %} 커뮤니티 포럼](https://community.shotgunsoftware.com/c/pipeline)에서 툴킷 커뮤니티에 참여할 수도 있습니다.
 
 더욱 발전할 새로운 통합을 기대합니다! 툴킷 커뮤니티에 열성적으로 참여해 주시는 여러분의 노력에 늘 감사드립니다.
 
@@ -70,7 +70,7 @@ ShotGrid 팀에서는 가장 일반적으로 사용되는 컨텐츠 생성 소�
 
 ### Qt , PyQt/PySide 및 Python이 포함되는 호스트 소프트웨어
 이 방식이 최선의 툴킷 설정입니다. 엔진을 Qt, Python 및 PySide를 지원하는 호스트 소프트웨어에 구현하는 작업은 매우 직관적입니다.
-[Nuke 엔진](https://github.com/shotgunsoftware/tk-nuke) 또는 [Maya 엔진](https://github.com/shotgunsoftware/tk-maya)이 좋은 예입니다. 통합은 단지 일부 로그 파일 관리를 연결하고, 코드를 작성하여 ShotGrid 메뉴를 설정하는 것에 불과합니다.
+[Nuke 엔진](https://github.com/shotgunsoftware/tk-nuke) 또는 [Maya 엔진](https://github.com/shotgunsoftware/tk-maya)이 좋은 예입니다. 통합은 단지 일부 로그 파일 관리를 연결하는 것이며, 코드를 작성하여 {% include product %} 메뉴를 설정합니다.
 
 
 ### Qt 및 Python은 포함되지만 PySide/PyQt는 포함되지 않는 호스트 소프트웨어
@@ -96,7 +96,7 @@ Python 스크립팅이 없지만 C++ 플러그인을 생성할 수 있습니다.
 보조 프로세스가 실행되고 나면 IPC 레이어를 사용하여 명령이 양방향으로 전송됩니다.
 이 호스트 소프트웨어 유형의 경우 적절한 엔진 솔루션을 얻기 위해서는 상당한 작업이 필요합니다.
 
-{% include info title="팁" content="ShotGrid 팀에서는 Photoshop 및 After Effects 엔진을 사용하여 실제로 [Adobe 플러그인을 처리하는 프레임워크](https://github.com/shotgunsoftware/tk-framework-adobe)를 만들었습니다.
+{% include info title="팁" content="Shotgun 팀에서는 Photoshop 및 After Effects 엔진을 사용하여 실제로 [Adobe 플러그인을 처리하는 프레임워크](https://github.com/shotgunsoftware/tk-framework-adobe)를 만들었습니다.
 두 엔진 모두 프레임워크를 사용해 호스트 소프트웨어와 커뮤니케이션하고 나머지 Adobe 제품군에 대한 엔진을 더 쉽게 빌드할 수 있습니다." %}
 
 
@@ -112,7 +112,7 @@ Python 스크립팅이 없지만 C++ 플러그인을 생성할 수 있습니다.
 ## 시작 동작
 엔진은 소프트웨어 시작 방법 및 통합의 시작 방법도 담당합니다.
 이 로직은 `tk-multi-launchapp`이 엔진을 사용해 소프트웨어를 시작하려고 할 때 호출됩니다.
-이 설정 방법에 대한 자세한 내용은 [코어 설명서](https://developer.shotgridsoftware.com/tk-core/initializing.html?highlight=create_engine_launcher#launching-software)에서 확인할 수 있습니다.
+이 설정 방법에 대한 자세한 내용은 [코어 설명서](https://developer.shotgunsoftware.com/tk-core/initializing.html?highlight=create_engine_launcher#launching-software)에서 확인할 수 있습니다.
 
 ## 호스트 소프트웨어 위시리스트
 다음 호스트 소프트웨어 특성을 툴킷 엔진이 활용할 수 있습니다.

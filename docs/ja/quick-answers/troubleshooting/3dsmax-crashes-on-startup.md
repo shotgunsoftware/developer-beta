@@ -54,4 +54,4 @@ class BeforeAppLaunch(tank.get_hook_baseclass()):
 
 次に、パイプライン設定で `config/env/includes/app_launchers.yml` を開き、エントリ `launch_3dsmax` を探します。`hook_before_app_launch: default` を `hook_before_app_launch: '{config}/before_app_launch.py'` に置き換える必要があります。
 
-これで {% include product %} と {% include product %} Desktop から 3ds Max を正しく起動できるようになりました。まだ問題が解決しない場合は、support@shotgunsoftware.com までご連絡ください。
+これで {% include product %} と {% include product %} Desktop から 3ds Max を正しく起動できるようになりました。問題が解決しない場合は、[サポート サイト](https://knowledge.autodesk.com/ja/contact-support)にアクセスしてサポートを依頼してください。

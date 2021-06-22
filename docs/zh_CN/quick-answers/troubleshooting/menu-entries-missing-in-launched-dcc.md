@@ -17,10 +17,11 @@ lang: zh_CN
 
 ![{% include product %} 菜单项目动作](images/shotgun-menu-project-actions.png)
 
-您可以使用 [{% include product %} Workfiles 应用](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088-Your-Work-Files)选择要处理的资产、镜头或任务。这将加载相应的新环境，这样，更多的应用便会启用 {% include product %} 菜单中的菜单项。
+您可以使用 [{% include product %} Workfiles 应用](https://support.shotgunsoftware.com/hc/zh-cn/articles/219033088)选择要处理的资产、镜头或任务。这将加载相应的新环境，这样，更多的应用便会启用 {% include product %} 菜单中的菜单项。
 
 **默认 Maya 资产任务动作：**
 
 ![{% include product %} 菜单项目动作](images/shotgun-menu-asset-step-actions.png)
 
-如果您认为您处于正确的环境，但动作仍未显示，则下一步是检查相关[日志](where-are-my-log-files.md)，查看是否存在任何错误。您可能需要[启用调试日志记录](turn-debug-logging-on.md)以获得完整输出。
+如果您认为您处于正确的环境，但动作仍未显示，则下一步是检查相关[日志](where-are-my-log-files.md)，查看是否存在任何错误。
+您可能需要[启用调试日志记录](turn-debug-logging-on.md)以获得完整输出。

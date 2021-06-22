@@ -7,26 +7,26 @@ lang: en
 
 # Web Traffic Isolation
 
-The goal is to set up an AWS PrivateLink to privately access your ShotGrid site.
+The goal is to set up an AWS PrivateLink to privately access your {% include product %} site.
 
 ## Set up PrivateLink to ShotGrid
 
-  * Ask ShotGrid support to provide you with the ShotGrid PrivateLink service name for your AWS region.
+  * Ask {% include product %} support to provide you with the {% include product %} PrivateLink service name for your AWS region.
 
-  * Update the private VPC CloudFormation stack you created earlier and set ShotgunPrivateServiceName parameter.
+  * Update the private VPC CloudFormation stack you created earlier and set {% include product %}PrivateServiceName parameter.
 
 ### Manual steps if needed
 
   * Add a new VPC Endpoint in your VPC
 
-  * For the security group, ShotGrid service only requires the inbound port tcp/443 to be open.
+  * For the security group, {% include product %} service only requires the inbound port tcp/443 to be open.
 
 ![Create endpoint](../images/tier1-endpoint-create_privatelink.png)
 
 
 ## DNS Configuration
 
-Provide your PrivateLink DNS name to ShotGrid support. We will setup a new private URL for your site that will look like `mystudio-staging.priv.shotgunstudio.com`.
+Provide your PrivateLink DNS name to {% include product %} support. We will setup a new private URL for your site that will look like `mystudio-staging.priv.shotgunstudio.com`.
 
 ## Validation
 

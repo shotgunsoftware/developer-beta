@@ -9,7 +9,7 @@ lang: en
 
 ![isolation-theme](./tier1/images/isolation_theme.jpg)
 
-The isolation feature set is an hybrid solution that satisfies strict security and legal requirements, while minimizing ShotGrid System Admin specific required knowledge and maintenance. These features enable creative studios to confidently meet their supplier’s and studio’s highly stringent security, privacy, and performance requirements—from the cloud.
+The isolation feature set is an hybrid solution that satisfies strict security and legal requirements, while minimizing {% include product %} System Admin specific required knowledge and maintenance. These features enable creative studios to confidently meet their supplier’s and studio’s highly stringent security, privacy, and performance requirements—from the cloud.
 
 Continue to [About the isolation feature set](./tier1/getting_started/about.md) for more details.
 
@@ -46,7 +46,7 @@ Go to [Setup](./tier1/setup/setup.md) if you are ready to activate the Isolation
 ### AWS Knowledge
 <!-- When updating this, also update knowledge/knowledge.md -->
 * [Connecting Your Studio With Your AWS VPC](./tier1/knowledge/connecting.md)
-* [ShotGrid AWS Direct Connect Onboarding](./tier1/knowledge/direct_connect_onboarding.md)
+* [{% include product %} AWS Direct Connect Onboarding](./tier1/knowledge/direct_connect_onboarding.md)
 * [S3](./tier1/knowledge/s3.md)
 * [VPC / IAM / Security Group](./tier1/knowledge/vpc_iam_sec.md)
 * [Direct Connect](./tier1/knowledge/direct_connect.md)

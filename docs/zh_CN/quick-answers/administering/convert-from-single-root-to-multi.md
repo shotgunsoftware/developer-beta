@@ -50,7 +50,7 @@ Toolkit 在 `config/core/roots.yml` 文件中缓存工作流配置中使用的�
 
 您已定义新存储根并且 Toolkit 基本上了解了该存储根，现在，您需要决定如何在您的目录结构中使用该存储根。本例中，假设您希望将所有资产工作转到 secondary 存储中，而所有镜头工作转到 primary 存储中。您可能会在 `config/core/schema` 中将您的数据结构设置为如下所示：
 
-![多根数据结构布局](images/schema-multi-root.png)
+![多存储数据结构布局](images/schema-multi-root.png)
 
 **config/core/schema/project.yml**
 
