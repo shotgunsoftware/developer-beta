@@ -5,7 +5,7 @@ pagename: fix-ssl-certificate-verify-failed
 lang: en
 ---
 
-# Fixing the SSL: CERTIFICATE_VERIFY_FAILED issues with the Python API
+# Fixing the SSL: CERTIFICATE_VERIFY_FAILED issues with the Python API on Windows
 
 The Python API relies on a list of certificates that is bundled with the API and on your machine in order to connect to the various webservices {% include product %} uses. Unfortunately, new certificate authorities can be released and those might not be bundled with the Python API or OS.
 

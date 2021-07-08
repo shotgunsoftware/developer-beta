@@ -16,7 +16,7 @@ A collection of quick answers aimed at troubleshooting issues.
 - [How do I turn on debug logging?](./troubleshooting/turn-debug-logging-on.md)
 - [Where are my log files?](./troubleshooting/where-are-my-log-files.md)
 - [Why is my context is missing the Task/Step when it exists as part of the filename?](./troubleshooting/context-missing-task-step.md)
-- [Fixing the SSL: CERTIFICATE_VERIFY_FAILED issues with the Python API](./troubleshooting/fix-ssl-certificate-verify-failed.md)
+- [Fixing the SSL: CERTIFICATE_VERIFY_FAILED issues with the Python API on Windows](./troubleshooting/fix-ssl-certificate-verify-failed.md)
 
 #### Software integrations.
 - [Why are my Houdini {% include product %} integrations not starting?](./troubleshooting/houdini-integrations-not-starting.md)
