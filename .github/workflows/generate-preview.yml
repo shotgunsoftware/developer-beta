@@ -17,24 +17,37 @@ jobs:
         with:
           # we need to checkout tk-doc-generator submodule as well.
           submodules: 'true'
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Lint markdown
+        uses: avto-dev/markdown-lint@v1.5.0
         with:
-          ruby-version: 2.6
-      - name: Install Pandoc
-        run: sudo apt-get install -y pandoc
-      - name: Install Jekyll dependencies
-        run: bundle install --gemfile=./tk-doc-generator/Gemfile --deployment
-      - name: Install tk-doc-generator requirements
-        run: pip install -r ./tk-doc-generator/requirements.txt
-      - name: Generate and publish preview
-        env:
-          AWS_S3_ACCESS_KEY: ${{ secrets.AWS_S3_ACCESS_KEY }}
-          AWS_S3_ACCESS_TOKEN: ${{ secrets.AWS_S3_ACCESS_TOKEN }}
-          TK_GITHUB_TOKEN: ${{ secrets.TK_GITHUB_TOKEN }}
-          S3_BUCKET: sg-devdocs
-          S3_WEB_URL: http://sg-devdocs.s3-website-us-east-1.amazonaws.com
-          DOC_URL: https://developer.shotgridsoftware.com
-          DOC_PATH:
-          PR_NUMBER: ${{ github.event.number }}
-        run: python ./tk-doc-generator/actions-generate-docs.py
+          args: './docs/**/*.md'
+      # TODO re-enable!
+      # Temp disable this since it's been generated once and we're not
+      # interested in the work associated with regenerating -- we can test off
+      # the hosted site for now.
+      # - name: Setup Ruby
+      #   uses: ruby/setup-ruby@v1
+      #   with:
+      #     ruby-version: 2.6
+      # - name: Install Pandoc
+      #   run: sudo apt-get install -y pandoc
+      # - name: Install Jekyll dependencies
+      #   run: bundle install --gemfile=./tk-doc-generator/Gemfile --deployment
+      # - name: Install tk-doc-generator requirements
+      #   run: pip install -r ./tk-doc-generator/requirements.txt
+      # - name: Generate and publish preview
+      #   env:
+      #     AWS_S3_ACCESS_KEY: ${{ secrets.AWS_S3_ACCESS_KEY }}
+      #     AWS_S3_ACCESS_TOKEN: ${{ secrets.AWS_S3_ACCESS_TOKEN }}
+      #     TK_GITHUB_TOKEN: ${{ secrets.TK_GITHUB_TOKEN }}
+      #     S3_BUCKET: sg-devdocs
+      #     S3_WEB_URL: http://sg-devdocs.s3-website-us-east-1.amazonaws.com
+      #     DOC_URL: https://developer.shotgridsoftware.com
+      #     DOC_PATH:
+      #     PR_NUMBER: ${{ github.event.number }}
+      #   run: python ./tk-doc-generator/actions-generate-docs.py
+      
+      - name: Check for broken links
+        uses: filiph/linkcheck@v2.0.15+1
+        with:
+          arguments: http://sg-devdocs.s3-website-us-east-1.amazonaws.com/tk-doc-generator/fac5c220b799ca61e5e504c9532aa5bab645f8be/
